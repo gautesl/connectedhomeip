@@ -1,4 +1,4 @@
-#CHIP EFR32 Lighting Example
+# CHIP EFR32 Lighting Example
 
 An example showing the use of CHIP on the Silicon Labs EFR32 MG12.
 

@@ -1,4 +1,4 @@
-#CHIP P6 OTA Requestor Example
+# CHIP P6 OTA Requestor Example
 
 An example demonstrating the OTA Requestor cluster on a Infineon
 CY8CKIT-062S2-43012 board.

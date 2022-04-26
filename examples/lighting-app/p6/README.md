@@ -1,4 +1,4 @@
-#CHIP P6 Lighting Example
+# CHIP P6 Lighting Example
 
 An example showing the use of Matter on the Infineon CY8CKIT-062S2-43012 board.
 
