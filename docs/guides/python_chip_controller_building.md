@@ -6,15 +6,13 @@ into the network and to communicate with it using the Zigbee Cluster Library
 
 <hr>
 
--   [Source files](#source)
--   [Building Android CHIPTool](#building)
--   [Running the tool](#running)
--   [Using Python CHIP Controller for Matter accessory testing](#using)
--   [List of commands](#commands)
+-   [Source files](#source-files)
+-   [Building Android CHIPTool](#building-and-installing)
+-   [Running the tool](#running-the-tool)
+-   [Using Python CHIP Controller for Matter accessory testing](#using-python-chip-controller-for-matter-accessory-testing)
+-   [List of commands](#list-of-commands)
 
 <hr>
-
-<a name="source"></a>
 
 ## Source files
 
@@ -25,8 +23,6 @@ The tool uses the generic CHIP Device Controller library, available in the
 `src/controller` directory.
 
 <hr>
-
-<a name="building"></a>
 
 ## Building and installing
 
@@ -85,8 +81,6 @@ To build and run the Python CHIP controller:
 
 <hr>
 
-<a name="running"></a>
-
 ## Running the tool
 
 1. Activate the Python virtual environment:
@@ -109,8 +103,6 @@ To build and run the Python CHIP controller:
     ```
 
 <hr>
-
-<a name="using"></a>
 
 ## Using Python CHIP Controller for Matter accessory testing
 
@@ -282,8 +274,6 @@ chip-device-ctrl > zclread Basic SoftwareVersion 1234 1 0
 > Cluster.
 
 <hr>
-
-<a name="commands"></a>
 
 ## List of commands
 
