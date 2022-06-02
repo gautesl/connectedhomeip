@@ -48,8 +48,6 @@ The lighting example is intended to serve both as a means to explore the
 workings of Matter as well as a template for creating real products based on the
 Silicon Labs platform.
 
-<a name="building"></a>
-
 ## Building
 
 -   Download the
@@ -189,16 +187,12 @@ Mac OS X
           $ ninja -C out/debug
           ```
 
-    [Running Pigweed RPC console](#running-pigweed-rpc-console)
-
 For more build options, help is provided when running the build script without
 arguments
 
          ```
          ./scripts/examples/gn_efr32_example.sh
          ```
-
-<a name="flashing"></a>
 
 ## Flashing the Application
 
@@ -210,8 +204,6 @@ arguments
           ```
 
 -   Or with the Ozone debugger, just load the .out file.
-
-<a name="view-logging"></a>
 
 ## Viewing Logging Output
 
@@ -270,8 +262,6 @@ combination with JLinkRTTClient as follows:
           ```
           $ JLinkRTTClient
           ```
-
-<a name="running-complete-example"></a>
 
 ## Running the Complete Example
 

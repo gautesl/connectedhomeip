@@ -16,7 +16,7 @@ network.
 
 <hr>
 
--   [CHIP K32W061 Lighting Example Application](#chip-k32w-lighting-example-application) -
+-   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application) -
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
@@ -32,16 +32,12 @@ network.
 -   [Tinycrypt ECC operations](#tinycrypt)
     -   [Building steps](#tinycrypt-building-steps)
 -   [OTA](#ota)
-
-    -   [Writing the SSBL](#ssbl)
-    -   [Writing the PSECT](#psect)
-    -   [Writing the application](#appwrite)
-    -   [OTA Testing](#otatesting)
-    -   [Known issues](#otaissues)
-
+    - [Writing the SSBL](#writing-the-ssbl)
+    - [Writing the PSECT](#writing-the-psect)
+    - [Writing the application](#writing-the-application)
+    - [OTA Testing](#ota-testing) 
+    - [Known issues](#known-issues-1)
     </hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -270,16 +266,12 @@ All you have to do is to replace the Openthread binaries from the above
 documentation with _out/debug/chip-k32w0x-light-example.bin_ if DK6Programmer is
 used or with _out/debug/chip-k32w0x-light-example_ if MCUXpresso is used.
 
-<a name="tokenizer"></a>
-
 ## Pigweed tokenizer
 
 The tokenizer is a pigweed module that allows hashing the strings. This greatly
 reduces the flash needed for logs. The module can be enabled by building with
 the gn argument _chip_pw_tokenizer_logging=true_. The detokenizer script is
 needed for parsing the hashed scripts.
-
-<a name="detokenizer"></a>
 
 ### Detokenizer script
 
@@ -309,8 +301,6 @@ where the decoded logs will be stored. This parameter is required for file usage
 and optional for serial usage. If not provided when used with serial port, it
 will show the decoded log only at the stdout and not save it to file.
 
-<a name="detokenizer-notes"></a>
-
 ### Notes
 
 The token database is created automatically after building the binary if the
@@ -324,8 +314,6 @@ detokenizer script to see logs of a lighting app:
 ```
 python3 ../../../../../examples/platform/nxp/k32w/k32w0/scripts/detokenizer.py serial -i /dev/ttyACM0 -d out/debug/chip-k32w0x-light-example-database.bin -o device.txt
 ```
-
-<a name="detokenizer-known-issues"></a>
 
 ### Known issues
 
@@ -344,11 +332,7 @@ If run, closed and rerun with the serial option on the same serial port, the
 detokenization script will get stuck and not show any logs. The solution is to
 unplug and plug the board and then rerun the script.
 
-<a name="tinycrypt"></a>
-
 ## Tinycrypt ECC operations
-
-<a name="tinycrypt-building-steps"></a>
 
 ### Building steps
 
@@ -364,8 +348,6 @@ To disable tinycrypt ecc operations, simply build with _chip_crypto=\"mbedtls\"_
 and with or without _mbedtls_repo_. If used with _mbedtls_repo_ the mbedtls
 implementation from `NXPmicro/mbedtls` library will be used.
 
-<a name="ota"></a>
-
 ## OTA
 
 The internal flash needs to be prepared for the OTA process. First 16K of the
@@ -373,8 +355,6 @@ internal flash needs to be populated with a Secondary Stage Bootloader (SSBL)
 related data while the last 8.5K of flash space is holding image directory
 related data (PSECT). The space between these two zones will be filled by the
 application.
-
-<a name="ssbl"></a>
 
 ### Writing the SSBL
 
@@ -404,8 +384,6 @@ k32w061dk6_ssbl.bin must be written at address 0 in the internal flash:
 ```
 DK6Programmer.exe -V2 -s <COM_PORT> -P 1000000 -Y -p FLASH@0x00="k32w061dk6_ssbl.bin"
 ```
-
-<a name="psect"></a>
 
 ### Writing the PSECT
 
@@ -439,8 +417,6 @@ CD04     -> 0x4C9 pages of 512-bytes (= 612,5kB)
 01       -> image type for the application
 ```
 
-<a name="appwrite"></a>
-
 ### Writing the application
 
 DK6Programmer can be used for flashing the application:
@@ -453,8 +429,6 @@ If debugging is needed, MCUXpresso can be used then for flashing the
 application. Please make sure that the application is written at address 0x4000:
 
 ![FLASH_LOCATION](../../../../platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
-
-<a name="otatesting"></a>
 
 ### OTA Testing
 
@@ -532,8 +506,6 @@ Start the OTA process:
 ```
 user@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
 ```
-
-<a name="otaissues"></a>
 
 ## Known issues
 

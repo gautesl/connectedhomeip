@@ -16,7 +16,7 @@ network.
 
 <hr>
 
--   [CHIP K32W0 Lock Example Application](#chip-k32w-lock-example-application) -
+-   [CHIP K32W0 Lock Example Application](#chip-k32w061-lock-example-application) -
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
@@ -36,8 +36,6 @@ network.
     -   [Known issues](#low-power-issues)
 
     </hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -166,8 +164,6 @@ DS3, which can be found on the DK6 board.
 
 Also, by long pressing the **USERINTERFACE** button, the factory reset action
 will be initiated.
-
-<a name="building"></a>
 
 ## Building
 
