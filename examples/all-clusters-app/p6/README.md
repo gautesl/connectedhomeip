@@ -4,7 +4,7 @@ An example showing the use of Matter on the Infineon CY8CKIT-062S2-43012 board.
 
 <hr>
 
--   [Matter P6 All Clusters Example](#chip-p6-clusters-example)
+-   [Matter P6 All Clusters Example](#chip-p6-all-clusters-example)
     -   [Introduction](#introduction)
     -   [Building](#building)
     -   [Flashing the Application](#flashing-the-application)
@@ -14,8 +14,6 @@ An example showing the use of Matter on the Infineon CY8CKIT-062S2-43012 board.
             -   [Notes](#notes)
 
 <hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -27,8 +25,6 @@ The P6 device can be commissioned over Bluetooth Low Energy where the device and
 the Matter controller will exchange security information with the Rendezvous
 procedure. Wi-Fi Network credentials are then provided to the P6 device which
 will then join the network.
-
-<a name="building"></a>
 
 ## Building
 
@@ -63,8 +59,6 @@ will then join the network.
           $ rm -rf out/
           ```
 
-<a name="flashing"></a>
-
 ## Flashing the Application
 
 -   Put CY8CKIT-062S2-43012 board on KitProg3 CMSIS-DAP Mode by pressing the
@@ -78,13 +72,9 @@ will then join the network.
           $ python3 out/clusters_app_p6/chip-p6-clusters-example.flash.py
           ```
 
-<a name="Commissioning and cluster control"></a>
-
 ## Commissioning and cluster control
 
 Commissioning can be carried out using BLE.
-
-<a name="Setting up chip-tool"></a>
 
 ### Setting up Chip tool
 
@@ -104,8 +94,6 @@ perform commissioning and cluster control.
            $ ./out/debug/chip-tool
            ```
 
-<a name="Commissioning over BLE"></a>
-
 ### Commissioning over BLE
 
 Run the built executable and pass it the discriminator and pairing code of the
@@ -121,8 +109,6 @@ remote device, as well as the network credentials to use.
          4. SSID : Wi-Fi SSID
          5. PASSWORD : Wi-Fi Password
          ```
-
-<a name="Notes"></a>
 
 #### Notes
 

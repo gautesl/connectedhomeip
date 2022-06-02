@@ -14,8 +14,6 @@ An example testing and demonstrating the key value storage API.
 
 <hr>
 
-<a name="introduction"></a>
-
 ## Introduction
 
 This example serves to both test the key value storage implementation and API as
@@ -25,14 +23,10 @@ to use the API.
 In the future this example can be moved into a unit test when available on all
 platforms.
 
-<a name="ESP32"></a>
-
 ## ESP32
 
 The ESP32 platform KVS is not yet fully implemented. In particular offset and
 partial reads are not yet supported.
-
-<a name="building"></a>
 
 ### Building
 
@@ -86,8 +80,6 @@ make sure the IDF_PATH has been exported(See the manual setup steps above).
 
           $ idf.py build
 
-<a name="flashing"></a>
-
 ### Flashing the Application
 
 -   After building the application, to flash it outside of VSCode, connect your
@@ -104,8 +96,6 @@ make sure the IDF_PATH has been exported(See the manual setup steps above).
     Note: Some users might have to install the
     [VCP driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
     before the device shows up on `/dev/tty`.
-
-<a name="view-logging"></a>
 
 ### Flashing app using script
 

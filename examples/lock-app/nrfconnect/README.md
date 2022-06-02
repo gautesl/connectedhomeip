@@ -5,10 +5,8 @@ device with one basic bolt. It uses buttons to test changing the lock and device
 states and LEDs to show the state of these changes. You can use this example as
 a reference for creating your own application.
 
-<p align="center">
-  <img src="../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
-  <img src="../../platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
-</p>
+<img src="../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
+<img src="../../platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
 
 The example is based on
 [Matter](https://github.com/project-chip/connectedhomeip) and Nordic
@@ -25,7 +23,7 @@ into an existing Matter network and can be controlled by this network.
     -   [Bluetooth LE rendezvous](#bluetooth-le-rendezvous)
     -   [Device Firmware Upgrade](#device-firmware-upgrade)
 -   [Requirements](#requirements)
-    -   [Supported devices](#supported_devices)
+    -   [Supported devices](#supported-devices)
 -   [Device UI](#device-ui)
 -   [Setting up the environment](#setting-up-the-environment)
     -   [Using Docker container for setup](#using-docker-container-for-setup)
@@ -43,8 +41,6 @@ into an existing Matter network and can be controlled by this network.
     -   [Testing Device Firmware Upgrade](#testing-device-firmware-upgrade)
 
 <hr>
-
-<a name="overview"></a>
 
 ## Overview
 
@@ -153,15 +149,11 @@ section to learn how to change MCUboot and flash configuration in this example.
 
 <hr>
 
-<a name="requirements"></a>
-
 ## Requirements
 
 The application requires a specific revision of the nRF Connect SDK to work
 correctly. See [Setting up the environment](#setting-up-the-environment) for
 more information.
-
-<a name="supported_devices"></a>
 
 ### Supported devices
 
@@ -173,8 +165,6 @@ The example supports building and running on the following devices:
 | [nRF5340 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF5340-DK)   | `nrf5340dk_nrf5340_cpuapp` | <details><summary>nRF5340 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF5340_DK_info-medium.jpg" alt="nRF5340 DK"/></details>    |
 
 <hr>
-
-<a name="device-ui"></a>
 
 ## Device UI
 
@@ -258,7 +248,7 @@ image that has the tools pre-installed.
 If you are a macOS user, you won't be able to use the Docker container to flash
 the application onto a Nordic development kit due to
 [certain limitations of Docker for macOS](https://docs.docker.com/docker-for-mac/faqs/#can-i-pass-through-a-usb-device-to-a-container).
-Use the [native shell](#using-native-shell) for building instead.
+Use the [native shell](#using-native-shell-for-setup) for building instead.
 
 ### Using Docker container for setup
 
@@ -340,8 +330,6 @@ To use the native shell for setup, complete the following steps:
 Now you can proceed with the [Building](#building) instruction.
 
 <hr>
-
-<a name="building"></a>
 
 ## Building
 
@@ -447,8 +435,6 @@ example `nrf52840dk_nrf52840`), edit the `pm_static_dfu.yml` file located in the
 
 <hr>
 
-<a name="configuring"></a>
-
 ## Configuring the example
 
 The Zephyr ecosystem is based on Kconfig files and the settings can be modified
@@ -496,8 +482,6 @@ For more information, see the
 page.
 
 <hr>
-
-<a name="flashing"></a>
 
 ## Flashing and debugging
 

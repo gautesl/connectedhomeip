@@ -7,7 +7,6 @@ An example showing the use of CHIP on the Silicon Labs EFR32 MG12.
 -   [CHIP EFR32 Lighting Example](#chip-efr32-lighting-example)
     -   [Introduction](#introduction)
     -   [Building](#building)
-        -   [Note](#note)
     -   [Flashing the Application](#flashing-the-application)
     -   [Viewing Logging Output](#viewing-logging-output)
     -   [Running the Complete Example](#running-the-complete-example)
@@ -18,8 +17,6 @@ An example showing the use of CHIP on the Silicon Labs EFR32 MG12.
     -   [OTA Software Update](#ota-software-update)
 
 <hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -38,8 +35,6 @@ information for the BLE connection and starting the Rendez-vous procedure.
 The lighting example is intended to serve both as a means to explore the
 workings of CHIP as well as a template for creating real products based on the
 Silicon Labs platform.
-
-<a name="building"></a>
 
 ## Building
 
@@ -139,16 +134,12 @@ Silicon Labs platform.
           $ ninja -C out/debug
           ```
 
-    [Running Pigweed RPC console](#running-pigweed-rpc-console)
-
 For more build options, help is provided when running the build script without
 arguments
 
          ```
          ./scripts/examples/gn_efr32_example.sh
          ```
-
-<a name="flashing"></a>
 
 ## Flashing the Application
 
@@ -160,8 +151,6 @@ arguments
           ```
 
 -   Or with the Ozone debugger, just load the .out file.
-
-<a name="view-logging"></a>
 
 ## Viewing Logging Output
 
@@ -220,8 +209,6 @@ combination with JLinkRTTClient as follows:
           ```
           $ JLinkRTTClient
           ```
-
-<a name="running-complete-example"></a>
 
 ## Running the Complete Example
 
@@ -309,8 +296,6 @@ combination with JLinkRTTClient as follows:
 
 #Add Ipv6 route on PC(Linux)
 `sudo ip route add <Thread global ipv6 prefix>/64 via 2002::2`
-
-<a name="running-pigweed-rpc-console"></a>
 
 ## Running RPC console
 

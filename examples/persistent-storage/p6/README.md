@@ -4,15 +4,13 @@ An example testing and demonstrating the key value storage API.
 
 <hr>
 
--   [CHIP P6 Persistent Storage Example](#chip-P6-persistent-storage-example)
+-   [CHIP P6 Persistent Storage Example](#chip-p6-persistent-storage-example)
     -   [Introduction](#introduction)
-    -   [P6](#P6)
+    -   [P6](#p6)
         -   [Building](#building)
         -   [Flashing the Application](#flashing-the-application)
 
 <hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -23,14 +21,10 @@ to use the API.
 In the future this example can be moved into a unit test when available on all
 platforms.
 
-<a name="P6"></a>
-
 ## P6
 
 The P6 platform KVS is fully implemented, the KVS is enabled and configured by
 providing a file during the init call.
-
-<a name="building"></a>
 
 ### Building
 
@@ -39,8 +33,6 @@ providing a file during the init call.
           $ git submodule update --init
           $ source third_party/connectedhomeip/scripts/activate.sh
           $ ./scripts/examples/gn_p6_example.sh examples/persistent-storage/p6 out/persistent_storage_app_p6
-
-<a name="flashing"></a>
 
 ### Flashing the Application
 

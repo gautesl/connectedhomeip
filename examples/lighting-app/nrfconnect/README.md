@@ -23,7 +23,7 @@ into an existing Matter network and can be controlled by this network.
     -   [Bluetooth LE rendezvous](#bluetooth-le-rendezvous)
     -   [Device Firmware Upgrade](#device-firmware-upgrade)
 -   [Requirements](#requirements)
-    -   [Supported devices](#supported_devices)
+    -   [Supported devices](#supported-devices)
 -   [Device UI](#device-ui)
 -   [Setting up the environment](#setting-up-the-environment)
     -   [Using Docker container for setup](#using-docker-container-for-setup)
@@ -36,16 +36,14 @@ into an existing Matter network and can be controlled by this network.
 -   [Configuring the example](#configuring-the-example)
     -   [Example build types](#example-build-types)
 -   [Flashing and debugging](#flashing-and-debugging)
-    -   [Flashing on the development kits](#nrfdks_flashing)
-    -   [Flashing on the nRF52840 Dongle](#nrf52840dongle_flashing)
+    -   [Flashing on the development kits](#flashing-on-the-development-kits)
+    -   [Flashing on the nRF52840 Dongle](#flashing-on-the-nrf52840-dongle)
 -   [Testing the example](#testing-the-example)
     -   [Testing using CHIPTool](#testing-using-chiptool)
     -   [Testing Device Firmware Upgrade](#testing-device-firmware-upgrade)
     -   [Device Tracing](#device-tracing)
 
 <hr>
-
-<a name="overview"></a>
 
 ## Overview
 
@@ -155,15 +153,11 @@ section to learn how to change MCUboot and flash configuration in this example.
 
 <hr>
 
-<a name="requirements"></a>
-
 ## Requirements
 
 The application requires a specific revision of the nRF Connect SDK to work
 correctly. See [Setting up the environment](#setting-up-the-environment) for
 more information.
-
-<a name="supported_devices"></a>
 
 ### Supported devices
 
@@ -176,8 +170,6 @@ The example supports building and running on the following devices:
 | [nRF52840 Dongle](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-Dongle) | `nrf52840dongle_nrf52840`  | <details><summary>nRF52840 Dongle</summary><img src="../../platform/nrfconnect/doc/images/nRF52840_Dongle-medium.jpg" alt="nRF52840 Dongle"/></details> |
 
 <hr>
-
-<a name="device-ui"></a>
 
 ## Device UI
 
@@ -274,7 +266,7 @@ image that has the tools pre-installed.
 If you are a macOS user, you won't be able to use the Docker container to flash
 the application onto a Nordic development kit due to
 [certain limitations of Docker for macOS](https://docs.docker.com/docker-for-mac/faqs/#can-i-pass-through-a-usb-device-to-a-container).
-Use the [native shell](#using-native-shell) for building instead.
+Use the [native shell](#using-native-shell-for-setup) for building instead.
 
 ### Using Docker container for setup
 
@@ -368,8 +360,6 @@ To use the native shell for setup, complete the following steps:
 Now you can proceed with the [Building](#building) instruction.
 
 <hr>
-
-<a name="building"></a>
 
 ## Building
 
@@ -486,8 +476,6 @@ example `nrf52840dk_nrf52840`), edit the `pm_static_dfu.yml` file located in the
 
 <hr>
 
-<a name="configuring"></a>
-
 ## Configuring the example
 
 The Zephyr ecosystem is based on Kconfig files and the settings can be modified
@@ -541,14 +529,10 @@ page.
 
 <hr>
 
-<a name="flashing"></a>
-
 ## Flashing and debugging
 
 The flashing and debugging procedure is different for the development kits and
 the nRF52840 Dongle.
-
-<a name="nrfdks_flashing"></a>
 
 ### Flashing on the development kits
 
@@ -568,8 +552,6 @@ directory:
         ```
         $ west debug
         ```
-
-<a name="nrf52840dongle_flashing"></a>
 
 ### Flashing on the nRF52840 Dongle
 

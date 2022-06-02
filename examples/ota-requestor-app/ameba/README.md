@@ -37,7 +37,7 @@ A prototype application that demonstrates OTA Requestor capabilities.
 
 ## Testing the Example Application
 
-Launch the linux [ota-provider-app](../../ota-provider-app/linux) and provide
+Launch the linux [ota-provider-app](../../ota-provider-app/linux/README.md) and provide
 the SW_IMAGE_FILE
 
     $ ./chip-ota-provider-app -f ${SW_IMAGE_FILE}

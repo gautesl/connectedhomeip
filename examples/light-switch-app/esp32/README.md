@@ -4,7 +4,7 @@ This example demonstrates the Matter Light-switch application on ESP platforms.
 
 ---
 
--   [Matter ESP32 Light-switch Example](#Matter-ESP32-Light-switch-Example)
+-   [Matter ESP32 Light-switch Example](#matter-esp32-light-switch-example)
     -   [Supported Devices](#supported-devices)
     -   [Building the Example Application](#building-the-example-application)
     -   [Commissioning over BLE using chip-tool](#commissioning-over-ble-using-chip-tool)
@@ -102,7 +102,7 @@ make sure the IDF_PATH has been exported(See the manual setup steps above).
 
 ## Commissioning over BLE using chip-tool
 
--   Please build the standalone chip-tool as described [here](../../chip-tool)
+-   Please build the standalone chip-tool as described [here](../../chip-tool/README.md)
 -   Commissioning the Lighting device
 
         $ ./out/debug/chip-tool pairing ble-wifi 12344321 <ssid> <passphrase> 20202021 3840
