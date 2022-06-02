@@ -5,7 +5,7 @@ A prototype application that demonstrates OTA Requestor capabilities.
 ## Prerequisite
 
 Before moving ahead, make sure you have
-[OTA Provider](../../ota-provider-app/esp32) is commissioned and running.
+[OTA Provider](../../ota-provider-app/esp32/README.md) is commissioned and running.
 
 ## Supported Devices
 
@@ -27,7 +27,7 @@ idf.py -p <OTARequestorSerialPort> flash monitor
 
 ## Commissioning over BLE using chip-tool
 
--   Please build the standalone chip-tool as described [here](../../chip-tool)
+-   Please build the standalone chip-tool as described [here](../../chip-tool/README.md)
 -   Commissioning the OTA Requestor
 
 ```
@@ -51,7 +51,7 @@ application of OTA image.
 
 ## ESP32 OTA Requestor with Linux OTA Provider
 
--   Build the [Linux OTA Provider](../../ota-provider-app/linux)
+-   Build the [Linux OTA Provider](../../ota-provider-app/linux/README.md)
 -   Run the Linux OTA Provider with OTA image.
 
 ```

@@ -180,7 +180,7 @@ make sure the IDF_PATH has been exported(See the manual setup steps above).
 
 ## Commissioning over BLE using chip-tool
 
--   Please build the standalone chip-tool as described [here](../../chip-tool)
+-   Please build the standalone chip-tool as described [here](../../chip-tool/README.md)
 -   Commissioning the WiFi Lighting devices(ESP32, ESP32C3, ESP32S3)
 
         $ ./out/debug/chip-tool pairing ble-wifi 12345 <ssid> <passphrase> 20202021 3840

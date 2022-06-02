@@ -9,16 +9,13 @@ the TV.
 
 <hr>
 
--   [Requirements for building](#requirements)
-    -   [ABIs and TARGET_CPU](#abi)
-    -   [Gradle & JDK Version](#jdk)
--   [Preparing for build](#preparing)
--   [Building & Installing the app](#building-installing)
--   [Running the app on Android](#running-the-app-on-android)
+-   [Requirements for building](#requirements-for-building)
+    -   [ABIs and TARGET_CPU](#abis-and-target_cpu)
+    -   [Gradle & JDK Version](#gradle--jdk-version)
+-   [Preparing for build](#preparing-for-build)
+-   [Building & Installing the app](#building--installing-the-app)
 
 <hr>
-
-<a name="requirements"></a>
 
 ## Requirements for building
 
@@ -26,8 +23,6 @@ You need Android SDK 21 & NDK downloaded to your machine. Set the
 `$ANDROID_HOME` environment variable to where the SDK is downloaded and the
 `$ANDROID_NDK_HOME` environment variable to point to where the NDK package is
 downloaded.
-
-<a name="abi"></a>
 
 ### ABIs and TARGET_CPU
 
@@ -40,8 +35,6 @@ architecture:
 | arm64-v8a   | arm64      |
 | x86         | x86        |
 | x86_64      | x64        |
-
-<a name="jdk"></a>
 
 ### Gradle & JDK Version
 
@@ -57,8 +50,6 @@ export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
 
 <hr>
 
-<a name="preparing"></a>
-
 ## Preparing for build
 
 Complete the following steps to prepare the Matter build:
@@ -70,8 +61,6 @@ Complete the following steps to prepare the Matter build:
     ```shell
     source scripts/bootstrap.sh
     ```
-
-<a name="building-installing"></a>
 
 ## Building & Installing the app
 

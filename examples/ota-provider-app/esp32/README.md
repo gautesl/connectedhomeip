@@ -34,7 +34,7 @@ idf.py -p <OTAProviderSerialPort> flash
 
 ## Commissioning over BLE using chip-tool
 
--   Please build the standalone chip-tool as described [here](../../chip-tool)
+-   Please build the standalone chip-tool as described [here](../../chip-tool/README.md)
 -   Commissioning the OTA Provider
 
 ```
@@ -81,4 +81,4 @@ privileges to all nodes for the OTA Provider cluster (0x0029) on every endpoint
 ---
 
 Once OTA provider is commissioned then head over to
-[OTA Requestor Example](../../ota-requestor-app/esp32).
+[OTA Requestor Example](../../ota-requestor-app/esp32/README.md).

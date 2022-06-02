@@ -16,30 +16,26 @@ network.
 
 <hr>
 
--   [CHIP K32W061 Lighting Example Application](#chip-k32w-lighting-example-application) -
+-   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application) -
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
 -   [Device UI](#device-ui)
 -   [Building](#building)
--   [Flashing and debugging](#flashdebug)
--   [Pigweed Tokenizer](#tokenizer)
-    -   [Detokenizer script](#detokenizer)
-    -   [Notes](#detokenizer-notes)
-    -   [Known issues](#detokenizer-known-issues)
--   [Tinycrypt ECC operations](#tinycrypt)
-    -   [Building steps](#tinycrypt-building-steps)
+-   [Flashing and debugging](#flashing-and-debugging)
+-   [Pigweed Tokenizer](#pigweed-tokenizer)
+    -   [Detokenizer script](#detokenizer-script)
+    -   [Notes](#notes)
+    -   [Known issues](#known-issues)
+-   [Tinycrypt ECC operations](#tinycrypt-ecc-operations)
+    -   [Building steps](#building-steps)
 -   [OTA](#ota)
-
-    -   [Writing the SSBL](#ssbl)
-    -   [Writing the PSECT](#psect)
-    -   [Writing the application](#appwrite)
-    -   [OTA Testing](#otatesting)
-    -   [Known issues](#otaissues)
-
+    - [Writing the SSBL](#writing-the-ssbl)
+    - [Writing the PSECT](#writing-the-psect)
+    - [Writing the application](#writing-the-application)
+    - [OTA Testing](#ota-testing) 
+    - [Known issues](#known-issues-1)
     </hr>
-
-<a name="intro"></a>
 
 ## Introduction
 
@@ -167,8 +163,6 @@ DS3, which can be found on the DK6 board.
 Also, by long pressing the **USERINTERFACE** button, the factory reset action
 will be initiated.
 
-<a name="building"></a>
-
 ## Building
 
 In order to build the Project CHIP example, we recommend using a Linux
@@ -227,8 +221,6 @@ pycryptodome           3.9.8
 
 The resulting output file can be found in out/debug/chip-k32w061-light-example.
 
-<a name="flashdebug"></a>
-
 ## Flashing and debugging
 
 Program the firmware using the official
@@ -238,16 +230,12 @@ All you have to do is to replace the Openthread binaries from the above
 documentation with _out/debug/chip-k32w061-light-example.bin_ if DK6Programmer
 is used or with _out/debug/chip-k32w061-light-example_ if MCUXpresso is used.
 
-<a name="tokenizer"></a>
-
 ## Pigweed tokenizer
 
 The tokenizer is a pigweed module that allows hashing the strings. This greatly
 reduces the flash needed for logs. The module can be enabled by building with
 the gn argument _chip_pw_tokenizer_logging=true_. The detokenizer script is
 needed for parsing the hashed scripts.
-
-<a name="detokenizer"></a>
 
 ### Detokenizer script
 
@@ -275,8 +263,6 @@ where the decoded logs will be stored. This parameter is required for file usage
 and optional for serial usage. If not provided when used with serial port, it
 will show the decoded log only at the stdout and not save it to file.
 
-<a name="detokenizer-notes"></a>
-
 ### Notes
 
 The token database is created automatically after building the binary if the
@@ -285,8 +271,6 @@ argument _chip_pw_tokenizer_logging=true_ was used.
 The detokenizer script must be run inside the example's folder after a
 successful run of the _scripts/activate.sh_ script. The pw_tokenizer module used
 by the script is loaded by the environment.
-
-<a name="detokenizer-known-issues"></a>
 
 ### Known issues
 
@@ -305,11 +289,7 @@ If run, closed and rerun with the serial option on the same serial port, the
 detokenization script will get stuck and not show any logs. The solution is to
 unplug and plug the board and then rerun the script.
 
-<a name="tinycrypt"></a>
-
 ## Tinycrypt ECC operations
-
-<a name="tinycrypt-building-steps"></a>
 
 ### Building steps
 
@@ -324,8 +304,6 @@ In order to use the tinycrypt ecc operations, use the following build arguments:
 To disable tinycrypt ecc operations, simply build without
 _mbedtls_use_tinycrypt=true_ and without _mbedtls_repo_.
 
-<a name="ota"></a>
-
 ## OTA
 
 The internal flash needs to be prepared for the OTA process. First 16K of the
@@ -333,8 +311,6 @@ internal flash needs to be populated with a Secondary Stage Bootloader (SSBL)
 related data while the last 8.5K of flash space is holding image directory
 related data (PSECT). The space between these two zones will be filled by the
 application.
-
-<a name="ssbl"></a>
 
 ### Writing the SSBL
 
@@ -364,8 +340,6 @@ k32w061dk6_ssbl.bin must be written at address 0 in the internal flash:
 ```
 DK6Programmer.exe -V2 -s <COM_PORT> -P 1000000 -Y -p FLASH@0x00="k32w061dk6_ssbl.bin"
 ```
-
-<a name="psect"></a>
 
 ### Writing the PSECT
 
@@ -399,8 +373,6 @@ CD04     -> 0x4CD pages of 512-bytes (= 614,5kB)
 01       -> image type for the application
 ```
 
-<a name="appwrite"></a>
-
 ### Writing the application
 
 DK6Programmer can be used for flashing the application:
@@ -413,8 +385,6 @@ If debugging is needed, MCUXpresso can be used then for flashing the
 application. Please make sure that the application is written at address 0x4000:
 
 ![FLASH_LOCATION](../../../../platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
-
-<a name="otatesting"></a>
 
 ### OTA Testing
 
@@ -492,8 +462,6 @@ Start the OTA process:
 ```
 doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
 ```
-
-<a name="otaissues"></a>
 
 ## Known issues
 
