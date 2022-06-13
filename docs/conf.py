@@ -55,6 +55,7 @@ myst_enable_extensions = ["html_image"]
 
 external_content_contents = [
     (MATTER_BASE / "docs", "[!_]*"),
+    (MATTER_BASE / "docs", "_static/images"),
     (MATTER_BASE, "examples/**/*.md"),
     (MATTER_BASE, "guides/**/*.md"),
     (MATTER_BASE, "examples/**/*.png"),
