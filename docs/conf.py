@@ -82,3 +82,6 @@ breathe_domain_by_extension = {
     "cpp": "cpp",
     "c": "c",
 }
+
+def setup(app):
+    app.srcdir = str(Path("_build/src").resolve())
