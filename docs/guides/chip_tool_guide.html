@@ -1,0 +1,2352 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Working with the CHIP Tool &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matter Software Update with Infineon P6 example applications" href="infineon_p6_software_update.html" />
+    <link rel="prev" title="Building Android" href="android_building.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/chip_tool_guide.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/chip_tool_guide.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-files">
+   Source files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-running-the-chip-tool">
+   Building and running the CHIP Tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-chip-tool">
+     Building the CHIP Tool
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-chip-tool">
+     Running the CHIP Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-chip-tool-for-matter-device-testing">
+   Using CHIP Tool for Matter device testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-prepare-the-matter-device">
+     Step 1: Prepare the Matter device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-enable-bluetooth-le-advertising-on-matter-device">
+     Step 2: Enable Bluetooth LE advertising on Matter device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-make-sure-the-ip-network-is-set-up">
+     Step 3: Make sure the IP network is set up
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-determine-network-pairing-credentials">
+     Step 4: Determine network pairing credentials
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#thread-network-credentials">
+       Thread network credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wi-fi-network-credentials">
+       Wi-Fi network credentials
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-determine-matter-device-s-discriminator-and-setup-pin-code">
+     Step 5: Determine Matter device’s discriminator and setup PIN code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-6-commission-matter-device-into-existing-ip-network">
+     Step 6: Commission Matter device into existing IP network
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#commissioning-over-bluetooth-le">
+       Commissioning over Bluetooth LE
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-into-thread-network-over-bluetooth-le">
+         Commissioning into Thread network over Bluetooth LE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-into-wi-fi-network-over-bluetooth-le">
+         Commissioning into Wi-Fi network over Bluetooth LE
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#commissioning-into-a-network-over-ip">
+       Commissioning into a network over IP
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-setup-pin-code">
+         Commissioning with setup PIN code
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-long-discriminator">
+         Commissioning with long discriminator
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-qr-code-payload-or-manual-pairing-code">
+         Commissioning with QR code payload or manual pairing code
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#forgetting-the-already-commissioned-device">
+       Forgetting the already-commissioned device
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-7-control-application-data-model-clusters">
+     Step 7: Control application Data Model clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-8-read-basic-information-from-the-matter-device">
+     Step 8: Read basic information from the Matter device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supported-commands-and-options">
+   Supported commands and options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-mode-versus-single-command-mode">
+     Interactive mode versus single command mode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-all-supported-clusters">
+     Printing all supported clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-commands-supported-for-a-specific-cluster">
+     Getting the list of commands supported for a specific cluster
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-attributes-supported-for-a-specific-cluster">
+     Getting the list of attributes supported for a specific cluster
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-command-options">
+     Getting the list of command options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selected-command-options">
+       Selected command options
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#choosing-the-bluetooth-adapter">
+         Choosing the Bluetooth adapter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#using-message-tracing">
+         Using message tracing
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-test-suite-against-a-paired-peer-device">
+     Running a test suite against a paired peer device
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-running-testclusters-test">
+       Example: running
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         TestClusters
+        </span>
+       </code>
+       test
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-the-setup-payload">
+     Parsing the setup payload
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-additional-data-payload">
+     Parsing additional data payload
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discover-actions">
+     Discover actions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolving-node-name">
+       Resolving node name
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discovering-available-matter-devices">
+       Discovering available Matter devices
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discovering-available-matter-commissioners">
+       Discovering available Matter commissioners
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pairing">
+     Pairing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interacting-with-data-model-clusters">
+     Interacting with Data Model clusters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples">
+       Examples
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#writing-acl-to-the-accesscontrol-cluster">
+         Writing ACL to the
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           accesscontrol
+          </span>
+         </code>
+         cluster
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#adding-a-binding-table-to-the-binding-cluster">
+         Adding a binding table to the
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           binding
+          </span>
+         </code>
+         cluster
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Working with the CHIP Tool</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-files">
+   Source files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-running-the-chip-tool">
+   Building and running the CHIP Tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-chip-tool">
+     Building the CHIP Tool
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-chip-tool">
+     Running the CHIP Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-chip-tool-for-matter-device-testing">
+   Using CHIP Tool for Matter device testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-prepare-the-matter-device">
+     Step 1: Prepare the Matter device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-enable-bluetooth-le-advertising-on-matter-device">
+     Step 2: Enable Bluetooth LE advertising on Matter device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-make-sure-the-ip-network-is-set-up">
+     Step 3: Make sure the IP network is set up
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-determine-network-pairing-credentials">
+     Step 4: Determine network pairing credentials
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#thread-network-credentials">
+       Thread network credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wi-fi-network-credentials">
+       Wi-Fi network credentials
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-determine-matter-device-s-discriminator-and-setup-pin-code">
+     Step 5: Determine Matter device’s discriminator and setup PIN code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-6-commission-matter-device-into-existing-ip-network">
+     Step 6: Commission Matter device into existing IP network
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#commissioning-over-bluetooth-le">
+       Commissioning over Bluetooth LE
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-into-thread-network-over-bluetooth-le">
+         Commissioning into Thread network over Bluetooth LE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-into-wi-fi-network-over-bluetooth-le">
+         Commissioning into Wi-Fi network over Bluetooth LE
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#commissioning-into-a-network-over-ip">
+       Commissioning into a network over IP
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-setup-pin-code">
+         Commissioning with setup PIN code
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-long-discriminator">
+         Commissioning with long discriminator
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#commissioning-with-qr-code-payload-or-manual-pairing-code">
+         Commissioning with QR code payload or manual pairing code
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#forgetting-the-already-commissioned-device">
+       Forgetting the already-commissioned device
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-7-control-application-data-model-clusters">
+     Step 7: Control application Data Model clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-8-read-basic-information-from-the-matter-device">
+     Step 8: Read basic information from the Matter device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supported-commands-and-options">
+   Supported commands and options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-mode-versus-single-command-mode">
+     Interactive mode versus single command mode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-all-supported-clusters">
+     Printing all supported clusters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-commands-supported-for-a-specific-cluster">
+     Getting the list of commands supported for a specific cluster
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-attributes-supported-for-a-specific-cluster">
+     Getting the list of attributes supported for a specific cluster
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-list-of-command-options">
+     Getting the list of command options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selected-command-options">
+       Selected command options
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#choosing-the-bluetooth-adapter">
+         Choosing the Bluetooth adapter
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#using-message-tracing">
+         Using message tracing
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-test-suite-against-a-paired-peer-device">
+     Running a test suite against a paired peer device
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-running-testclusters-test">
+       Example: running
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         TestClusters
+        </span>
+       </code>
+       test
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-the-setup-payload">
+     Parsing the setup payload
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-additional-data-payload">
+     Parsing additional data payload
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discover-actions">
+     Discover actions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolving-node-name">
+       Resolving node name
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discovering-available-matter-devices">
+       Discovering available Matter devices
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discovering-available-matter-commissioners">
+       Discovering available Matter commissioners
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pairing">
+     Pairing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interacting-with-data-model-clusters">
+     Interacting with Data Model clusters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples">
+       Examples
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#writing-acl-to-the-accesscontrol-cluster">
+         Writing ACL to the
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           accesscontrol
+          </span>
+         </code>
+         cluster
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#adding-a-binding-table-to-the-binding-cluster">
+         Adding a binding table to the
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           binding
+          </span>
+         </code>
+         cluster
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="working-with-the-chip-tool">
+<h1>Working with the CHIP Tool<a class="headerlink" href="#working-with-the-chip-tool" title="Permalink to this headline">#</a></h1>
+<p>The CHIP Tool (<code class="docutils literal notranslate"><span class="pre">chip-tool</span></code>) is a Matter controller implementation that allows to
+commission a Matter device into the network and to communicate with it using
+Matter messages, which may encode Data Model actions, such as cluster commands.
+The tool also provides other utilities specific to Matter, such as parsing of
+the setup payload or performing discovery actions.</p>
+<hr>
+<ul class="simple">
+<li><p><a class="reference internal" href="#source-files"><span class="std std-doc">Source files</span></a></p></li>
+<li><p><a class="reference internal" href="#building-and-running-the-chip-tool"><span class="std std-doc">Building and running the CHIP Tool</span></a></p></li>
+<li><p><a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a></p></li>
+<li><p><a class="reference internal" href="#supported-commands-and-options"><span class="std std-doc">Supported commands and options</span></a></p></li>
+</ul>
+<hr>
+<section id="source-files">
+<h2>Source files<a class="headerlink" href="#source-files" title="Permalink to this headline">#</a></h2>
+<p>You can find source files of the CHIP Tool in the <code class="docutils literal notranslate"><span class="pre">examples/chip-tool</span></code>
+directory.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The CHIP Tool caches the configuration state in the
+<code class="docutils literal notranslate"><span class="pre">/tmp/chip_tool_config.ini</span></code> file. Deleting this and other <code class="docutils literal notranslate"><span class="pre">.ini</span></code> files in the
+<code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory can sometimes resolve issues related to stale configuration.</p>
+</div></blockquote>
+<hr>
+</section>
+<section id="building-and-running-the-chip-tool">
+<h2>Building and running the CHIP Tool<a class="headerlink" href="#building-and-running-the-chip-tool" title="Permalink to this headline">#</a></h2>
+<p>Before you can use the CHIP Tool, you must compile it from source on Linux
+(amd64/aarch64) or macOS. If you want to run it on Raspberry Pi, it must use a
+64-bit OS.</p>
+<blockquote>
+<div><p><strong>Note:</strong> To ensure compatibility, always build the CHIP Tool and the Matter
+device from the same revision of the <code class="docutils literal notranslate"><span class="pre">connectedhomeip</span></code> repository.</p>
+</div></blockquote>
+<section id="building-the-chip-tool">
+<h3>Building the CHIP Tool<a class="headerlink" href="#building-the-chip-tool" title="Permalink to this headline">#</a></h3>
+<p>To build and run the CHIP Tool:</p>
+<ol class="arabic">
+<li><p>Install all required packages for Matter and prepare the source code and the
+build system. Read the <a class="reference internal" href="BUILDING.html"><span class="doc std std-doc">Building Matter</span></a> guide for instructions.</p></li>
+<li><p>Open a command prompt in the <code class="docutils literal notranslate"><span class="pre">connectedhomeip</span></code> directory.</p></li>
+<li><p>Run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">gn_build_example</span><span class="o">.</span><span class="n">sh</span> <span class="n">examples</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">BUILD_PATH</span>
+</pre></div>
+</div>
+<p>In this command, <code class="docutils literal notranslate"><span class="pre">BUILD_PATH</span></code> specifies where the target binaries are to be
+placed.</p>
+</li>
+</ol>
+</section>
+<section id="running-the-chip-tool">
+<h3>Running the CHIP Tool<a class="headerlink" href="#running-the-chip-tool" title="Permalink to this headline">#</a></h3>
+<p>To check if the CHIP Tool runs correctly, execute the following command from the
+<code class="docutils literal notranslate"><span class="pre">BUILD_PATH</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool
+</pre></div>
+</div>
+<p>As a result, the CHIP Tool prints all available commands. These are called
+<em>clusters</em> in this context, but not all listed commands correspond to the
+<em>clusters</em> in the Data Model (for example, pairing or discover commands). Each
+listed command can however become the root of the new more complex command by
+appending it with sub-commands. Examples of specific commands and their use
+cases are described in the <a class="reference internal" href="#supported-commands-and-options"><span class="std std-doc">Supported commands and options</span></a> section.</p>
+<hr>
+</section>
+</section>
+<section id="using-chip-tool-for-matter-device-testing">
+<h2>Using CHIP Tool for Matter device testing<a class="headerlink" href="#using-chip-tool-for-matter-device-testing" title="Permalink to this headline">#</a></h2>
+<p>This section describes how to use CHIP Tool to test the Matter device. The
+following steps depend on the application clusters that you implemented on the
+device.</p>
+<p>This tutorial is using the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app">Matter Lighting Application Example</a>
+with the Bluetooth LE commissioning method support. You can use other Matter
+examples and still follow this procedure. If you use a different example, the
+<a class="reference internal" href="#step-7-control-application-data-model-clusters"><span class="std std-doc">Step 7</span></a> may vary depending on
+the clusters implemented in your application.</p>
+<section id="step-1-prepare-the-matter-device">
+<h3>Step 1: Prepare the Matter device<a class="headerlink" href="#step-1-prepare-the-matter-device" title="Permalink to this headline">#</a></h3>
+<p>Build and program the device with the Matter device firmware by following the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app">Matter Lighting Application Example</a>
+documentation.</p>
+</section>
+<section id="step-2-enable-bluetooth-le-advertising-on-matter-device">
+<h3>Step 2: Enable Bluetooth LE advertising on Matter device<a class="headerlink" href="#step-2-enable-bluetooth-le-advertising-on-matter-device" title="Permalink to this headline">#</a></h3>
+<p>Some examples are configured to advertise automatically on boot. Other examples
+require physical trigger, for example pushing a button. Follow the documentation
+of the Matter device example to learn how Bluetooth LE advertising is enabled
+for the given example.</p>
+</section>
+<section id="step-3-make-sure-the-ip-network-is-set-up">
+<h3>Step 3: Make sure the IP network is set up<a class="headerlink" href="#step-3-make-sure-the-ip-network-is-set-up" title="Permalink to this headline">#</a></h3>
+<p>To follow the next steps, the IP network must be up and running. For instance,
+the Thread network can be established using
+<a class="reference external" href="https://openthread.io/codelabs/openthread-border-router#0">OpenThread Border Router</a>.</p>
+</section>
+<section id="step-4-determine-network-pairing-credentials">
+<h3>Step 4: Determine network pairing credentials<a class="headerlink" href="#step-4-determine-network-pairing-credentials" title="Permalink to this headline">#</a></h3>
+<p>You must provide the CHIP Tool with network credentials that will be used in the
+device commissioning procedure to configure the device with a network interface,
+such as Thread or Wi-Fi.</p>
+<p>The Matter specification does not define the preferred way of how the network
+credentials are to be obtained by controller. In this guide, we are going to
+obtain Thread network credentials.</p>
+<section id="thread-network-credentials">
+<h4>Thread network credentials<a class="headerlink" href="#thread-network-credentials" title="Permalink to this headline">#</a></h4>
+<p>Fetch and store the current Active Operational Dataset from the Thread Border
+Router. This step may vary depending on the Thread Border Router implementation.</p>
+<p>If you are using
+<a class="reference external" href="https://openthread.io/codelabs/openthread-border-router#0">OpenThread Border Router</a>
+(OTBR), retrieve this information using one of the following commands:</p>
+<ul>
+<li><p>For OTBR running in Docker:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">otbr</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;sudo ot-ctl dataset active -x&quot;</span>
+<span class="mf">0e080000000000010000000300001335060004001</span><span class="n">fffe002084fe76e9a8b5edaf50708fde46f999f0698e20510d47f5027a414ffeebaefa92285cc84fa030f4f70656e5468726561642d653439630102e49c0410b92f8c7fbb4f9f3e08492ee3915fbd2f0c0402a0fff8</span>
+<span class="n">Done</span>
+</pre></div>
+</div>
+</li>
+<li><p>For OTBR native installation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ot</span><span class="o">-</span><span class="n">ctl</span> <span class="n">dataset</span> <span class="n">active</span> <span class="o">-</span><span class="n">x</span>
+<span class="mf">0e080000000000010000000300001335060004001</span><span class="n">fffe002084fe76e9a8b5edaf50708fde46f999f0698e20510d47f5027a414ffeebaefa92285cc84fa030f4f70656e5468726561642d653439630102e49c0410b92f8c7fbb4f9f3e08492ee3915fbd2f0c0402a0fff8</span>
+<span class="n">Done</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>For Thread, you might also use a different out-of-band method to fetch the
+network credentials.</p>
+</section>
+<section id="wi-fi-network-credentials">
+<h4>Wi-Fi network credentials<a class="headerlink" href="#wi-fi-network-credentials" title="Permalink to this headline">#</a></h4>
+<p>You must get the following Wi-Fi network credentials to commission the Matter
+device to the Wi-Fi network in the following steps:</p>
+<ul class="simple">
+<li><p>Wi-Fi SSID</p></li>
+<li><p>Wi-Fi password</p></li>
+</ul>
+<p>The steps required to determine the SSID and password may vary depending on the
+setup. For instance, you might need to contact your local Wi-Fi network
+administrator.</p>
+</section>
+</section>
+<section id="step-5-determine-matter-device-s-discriminator-and-setup-pin-code">
+<h3>Step 5: Determine Matter device’s discriminator and setup PIN code<a class="headerlink" href="#step-5-determine-matter-device-s-discriminator-and-setup-pin-code" title="Permalink to this headline">#</a></h3>
+<p>Matter uses a 12-bit value called <em>discriminator</em> to discern between multiple
+commissionable device advertisements and a 27-bit <em>setup PIN code</em> to
+authenticate the device. You can find these values in the logging terminal of
+the device (for instance, UART) when the device boots up. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">:</span> <span class="mi">254</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span><span class="n">Device</span> <span class="n">Configuration</span><span class="p">:</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">257</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Serial</span> <span class="n">Number</span><span class="p">:</span> <span class="n">TEST_SN</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">260</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Vendor</span> <span class="n">Id</span><span class="p">:</span> <span class="mi">65521</span> <span class="p">(</span><span class="mh">0xFFF1</span><span class="p">)</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">263</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Product</span> <span class="n">Id</span><span class="p">:</span> <span class="mi">32768</span> <span class="p">(</span><span class="mh">0x8000</span><span class="p">)</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">267</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Hardware</span> <span class="n">Version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">270</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Setup</span> <span class="n">Pin</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">20202021</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">273</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Setup</span> <span class="n">Discriminator</span><span class="p">:</span> <span class="mi">3840</span> <span class="p">(</span><span class="mh">0xF00</span><span class="p">)</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">278</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Manufacturing</span> <span class="n">Date</span><span class="p">:</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">set</span><span class="p">)</span>
+<span class="n">I</span><span class="p">:</span> <span class="mi">281</span> <span class="p">[</span><span class="n">DL</span><span class="p">]</span> <span class="n">Device</span> <span class="n">Type</span><span class="p">:</span> <span class="mi">65535</span> <span class="p">(</span><span class="mh">0xFFFF</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In above printout, the <em>discriminator</em> is <code class="docutils literal notranslate"><span class="pre">3840</span> <span class="pre">(0xF00)</span></code> and the <em>setup PIN
+code</em> is equal to <code class="docutils literal notranslate"><span class="pre">20202021</span></code>.</p>
+</section>
+<section id="step-6-commission-matter-device-into-existing-ip-network">
+<h3>Step 6: Commission Matter device into existing IP network<a class="headerlink" href="#step-6-commission-matter-device-into-existing-ip-network" title="Permalink to this headline">#</a></h3>
+<p>Before communicating with the Matter device, first it must join an existing IP
+network.</p>
+<p>Matter devices may use different commissioning channel. Typically, devices which
+are not yet connected to the target IP network use Bluetooth LE as the
+commissioning channel. However, if the device has already joined an IP network,
+the only thing needed is to commission it to the Matter network over the IP
+protocol.</p>
+<section id="commissioning-over-bluetooth-le">
+<h4>Commissioning over Bluetooth LE<a class="headerlink" href="#commissioning-over-bluetooth-le" title="Permalink to this headline">#</a></h4>
+<p>This section describes how your device can join the existing IP network over
+Bluetooth LE and then be commissioned into a Matter network.</p>
+<p>After connecting the device over Bluetooth LE, the controller will print the
+following log:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Secure</span> <span class="n">Session</span> <span class="n">to</span> <span class="n">Device</span> <span class="n">Established</span>
+</pre></div>
+</div>
+<p>This log will mean that the PASE (Password-Authenticated Session Establishment)
+session using SPAKE2+ protocol has been established.</p>
+<section id="commissioning-into-thread-network-over-bluetooth-le">
+<h5>Commissioning into Thread network over Bluetooth LE<a class="headerlink" href="#commissioning-into-thread-network-over-bluetooth-le" title="Permalink to this headline">#</a></h5>
+<p>To commission the device to the existing Thread network, use the following
+command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing ble-thread &lt;node_id&gt; hex:&lt;operational_dataset&gt; &lt;pin_code&gt; &lt;discriminator&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the node being commissioned.</p></li>
+<li><p><em>&lt;operational_dataset&gt;</em> is the Operational Dataset determined in the
+step 3.</p></li>
+<li><p><em>&lt;pin_code&gt;</em> and <em>&lt;discriminator&gt;</em> are device-specific keys determined in
+the step 4.</p></li>
+</ul>
+</section>
+<section id="commissioning-into-wi-fi-network-over-bluetooth-le">
+<h5>Commissioning into Wi-Fi network over Bluetooth LE<a class="headerlink" href="#commissioning-into-wi-fi-network-over-bluetooth-le" title="Permalink to this headline">#</a></h5>
+<p>To commission the device to the existing Wi-Fi network, use the following
+command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing ble-wifi &lt;node_id&gt; &lt;ssid&gt; &lt;password&gt; &lt;pin_code&gt; &lt;discriminator&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the node being commissioned.</p></li>
+<li><p><em>&lt;ssid&gt;</em> and <em>&lt;password&gt;</em> are credentials determined in the step 3.</p></li>
+<li><p><em>&lt;pin_code&gt;</em> and <em>&lt;discriminator&gt;</em> are device-specific keys determined in
+the step 4.</p></li>
+</ul>
+<p>If you prefer the hexadecimal format, use the <code class="docutils literal notranslate"><span class="pre">hex:</span></code> prefix. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing ble-wifi &lt;node_id&gt; hex:&lt;ssid&gt; hex:&lt;password&gt; &lt;pin_code&gt; &lt;discriminator&gt;
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> The <em>&lt;node_id&gt;</em> can be provided as a hexadecimal value with the <code class="docutils literal notranslate"><span class="pre">0x</span></code>
+prefix.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="commissioning-into-a-network-over-ip">
+<h4>Commissioning into a network over IP<a class="headerlink" href="#commissioning-into-a-network-over-ip" title="Permalink to this headline">#</a></h4>
+<p>This option is available when the Matter device is already present in an IP
+network, but it has not been commissioned to a Matter network yet.</p>
+<p>To commission the device, you can use either the setup PIN code or the setup PIN
+code and the discriminator, both of which you obtained in the step 5.
+Alternatively, you can also use a QR code payload.</p>
+<section id="commissioning-with-setup-pin-code">
+<h5>Commissioning with setup PIN code<a class="headerlink" href="#commissioning-with-setup-pin-code" title="Permalink to this headline">#</a></h5>
+<p>Use the following command pattern to discover devices and try to pair with the
+first discovered one using the provided setup code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing onnetwork &lt;node_id&gt; &lt;pin_code&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the node being commissioned.</p></li>
+<li><p><em>&lt;pin_code&gt;</em> is device specific <em>setup PIN code</em> determined in the step 4
+and used to discover the device.</p></li>
+</ul>
+</section>
+<section id="commissioning-with-long-discriminator">
+<h5>Commissioning with long discriminator<a class="headerlink" href="#commissioning-with-long-discriminator" title="Permalink to this headline">#</a></h5>
+<p>Use the following command pattern to discover devices with a long discriminator
+and try to pair with the first discovered one using the provided setup code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing onnetwork-long &lt;node_id&gt; &lt;pin_code&gt; &lt;discriminator&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the node being commissioned.</p></li>
+<li><p><em>&lt;pin_code&gt;</em> and <em>&lt;discriminator&gt;</em> are device specific keys determined in
+the step 4.</p></li>
+</ul>
+</section>
+<section id="commissioning-with-qr-code-payload-or-manual-pairing-code">
+<h5>Commissioning with QR code payload or manual pairing code<a class="headerlink" href="#commissioning-with-qr-code-payload-or-manual-pairing-code" title="Permalink to this headline">#</a></h5>
+<p>Matter devices log the QR code payload and manual pairing code when they boot.</p>
+<p>Use the following command pattern to discover devices based on the given QR code
+payload or manual pairing code and try to pair with the first discovered one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing code &lt;node_id&gt; &lt;qrcode_payload-or-manual_code&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the node being commissioned.</p></li>
+<li><p><em>&lt;qrcode_payload-or-manual_code&gt;</em> is the QR code payload ID, for example
+<code class="docutils literal notranslate"><span class="pre">MT:Y.K9042C00KA0648G00</span></code>, or a manual pairing code like
+<code class="docutils literal notranslate"><span class="pre">749701123365521327694</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="forgetting-the-already-commissioned-device">
+<h4>Forgetting the already-commissioned device<a class="headerlink" href="#forgetting-the-already-commissioned-device" title="Permalink to this headline">#</a></h4>
+<p>The following command removes the device with the given node ID from the list of
+commissioned Matter devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing unpair &lt;node_id&gt;
+</pre></div>
+</div>
+<p>In this command, <em>&lt;node_id&gt;</em> is the user-defined ID of the node which is going
+to be forgotten by the CHIP Tool.</p>
+</section>
+</section>
+<section id="step-7-control-application-data-model-clusters">
+<h3>Step 7: Control application Data Model clusters<a class="headerlink" href="#step-7-control-application-data-model-clusters" title="Permalink to this headline">#</a></h3>
+<p>Having completed all previous steps, you have the Matter device successfully
+commissioned to the network. You can now test the device by interacting with
+Data Model clusters.</p>
+<p>For instance, in case of the lighting application, the application has the
+On/Off and Level Control clusters implemented. This means that you can test it
+by toggling the bulb (using the <code class="docutils literal notranslate"><span class="pre">onoff</span></code> cluster commands) or manipulating its
+brightness (using the <code class="docutils literal notranslate"><span class="pre">levelcontrol</span></code> cluster commands).</p>
+<p>Use the following command pattern to toggle the LED state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool onoff toggle &lt;node_id&gt; &lt;endpoint_id&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the commissioned node.</p></li>
+<li><p><em>&lt;endpoint_id&gt;</em> is the ID of the endpoint with OnOff cluster implemented.</p></li>
+</ul>
+<p>Alternatively, use the following command pattern to change the brightness of the
+LED:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool levelcontrol move-to-level &lt;level&gt; &lt;transition_time&gt; &lt;option_mask&gt; &lt;option_override&gt; &lt;node_id&gt; &lt;endpoint_id&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;level&gt;</em> is the brightness level encoded between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">254</span></code>, unless a
+custom range is configured in the cluster.</p></li>
+<li><p><em>&lt;transition_time&gt;</em> is the transition time.</p></li>
+<li><p><em>&lt;option_mask&gt;</em> is the option mask.</p></li>
+<li><p><em>&lt;option_override&gt;</em> is the option override.</p></li>
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the commissioned node.</p></li>
+<li><p><em>&lt;endpoint_id&gt;</em> is the ID of the endpoint with LevelControl cluster
+implemented.</p></li>
+</ul>
+</section>
+<section id="step-8-read-basic-information-from-the-matter-device">
+<h3>Step 8: Read basic information from the Matter device<a class="headerlink" href="#step-8-read-basic-information-from-the-matter-device" title="Permalink to this headline">#</a></h3>
+<p>Every Matter device supports the Basic cluster, which maintains the collection
+of attributes that a controller can obtain from a device. These attributes can
+include the vendor name, the product name, or the software version.</p>
+<p>Use the CHIP Tool’s <code class="docutils literal notranslate"><span class="pre">read</span></code> command on the <code class="docutils literal notranslate"><span class="pre">basic</span></code> cluster to read those values
+from the device:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool basic read vendor-name &lt;node_id&gt; &lt;endpoint_id&gt;
+$ ./chip-tool basic read product-name &lt;node_id&gt; &lt;endpoint_id&gt;
+$ ./chip-tool basic read software-version &lt;node_id&gt; &lt;endpoint_id&gt;
+</pre></div>
+</div>
+<p>In these commands:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the user-defined ID of the commissioned node.</p></li>
+<li><p><em>&lt;endpoint_id&gt;</em> is the ID of the endpoint with Basic cluster implemented.</p></li>
+</ul>
+<p>You can also use the following command to list all available commands for Basic
+cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool basic
+</pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="supported-commands-and-options">
+<h2>Supported commands and options<a class="headerlink" href="#supported-commands-and-options" title="Permalink to this headline">#</a></h2>
+<p>This section contains a general list of various CHIP Tool commands and options,
+not limited to commissioning procedure and cluster interaction.</p>
+<section id="interactive-mode-versus-single-command-mode">
+<h3>Interactive mode versus single command mode<a class="headerlink" href="#interactive-mode-versus-single-command-mode" title="Permalink to this headline">#</a></h3>
+<p>By default, chip-tool runs in single command mode where if any single command
+does not complete within a certain timeout period, chip-tool will exit with a
+timeout error.</p>
+<p>Example of error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1650992689511</span><span class="p">]</span> <span class="p">[</span><span class="mi">32397</span><span class="p">:</span><span class="mi">1415601</span><span class="p">]</span> <span class="n">CHIP</span><span class="p">:</span> <span class="p">[</span><span class="n">TOO</span><span class="p">]</span> <span class="n">Run</span> <span class="n">command</span> <span class="n">failure</span><span class="p">:</span> <span class="o">../../../</span><span class="n">examples</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span><span class="o">/</span><span class="n">commands</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">CHIPCommand</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">392</span><span class="p">:</span> <span class="n">CHIP</span> <span class="n">Error</span> <span class="mh">0x00000032</span><span class="p">:</span> <span class="n">Timeout</span>
+</pre></div>
+</div>
+<p>This timeout can be modified for any command execution by supplying the optional
+<code class="docutils literal notranslate"><span class="pre">--timeout</span></code> parameter, which takes a value in seconds, with the maximum being
+65535 seconds.</p>
+<p>Example of command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool otasoftwareupdaterequestor subscribe-event state-transition 5 10 0x1234567890 0 --timeout 65535
+</pre></div>
+</div>
+<p>For commands such as event subscriptions that need to run for an extended period
+of time, chip-tool can be started in interactive mode first before running the
+command. In interactive mode, there will be no timeout and multiple commands can
+be issued.</p>
+<p>Example of command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool interactive start
+otasoftwareupdaterequestor subscribe-event state-transition 5 10 ${NODE_ID} 0
+</pre></div>
+</div>
+</section>
+<section id="printing-all-supported-clusters">
+<h3>Printing all supported clusters<a class="headerlink" href="#printing-all-supported-clusters" title="Permalink to this headline">#</a></h3>
+<p>To print all clusters supported by the CHIP Tool, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool
+</pre></div>
+</div>
+<p><strong>Example of output:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647346057</span>.900626<span class="o">][</span><span class="m">394605</span>:394605<span class="o">]</span> CHIP:TOO: Missing cluster name
+Usage:
+  ./chip-tool cluster_name command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> Clusters:                                                                           <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> * accesscontrol                                                                     <span class="p">|</span>
+  <span class="p">|</span> * accountlogin                                                                      <span class="p">|</span>
+  <span class="p">|</span> * administratorcommissioning                                                        <span class="p">|</span>
+  <span class="p">|</span> * alarms                                                                            <span class="p">|</span>
+  <span class="p">|</span> * any                                                                               <span class="p">|</span>
+  <span class="p">|</span> * appliancecontrol                                                                  <span class="p">|</span>
+  <span class="p">|</span> * applianceeventsandalert                                                           <span class="p">|</span>
+  <span class="p">|</span> * applianceidentification                                                           <span class="p">|</span>
+  <span class="p">|</span> * appliancestatistics                                                               <span class="p">|</span>
+  <span class="p">|</span> * applicationbasic                                                                  <span class="p">|</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-the-list-of-commands-supported-for-a-specific-cluster">
+<h3>Getting the list of commands supported for a specific cluster<a class="headerlink" href="#getting-the-list-of-commands-supported-for-a-specific-cluster" title="Permalink to this headline">#</a></h3>
+<p>To print the list of commands supported by a specific cluster, use the following
+command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool &lt;cluster_name&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;cluster_name&gt;</em> is one of the available clusters (listed with
+<code class="docutils literal notranslate"><span class="pre">chip-tool</span></code>).</p></li>
+</ul>
+<p><strong>Example of command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool onoff
+</pre></div>
+</div>
+<p><strong>Example of output:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417645</span>.182824<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span> CHIP:TOO: Missing <span class="nb">command</span> name
+Usage:
+  ./chip-tool onoff command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> * command-by-id                                                                     <span class="p">|</span>
+  <span class="p">|</span> * off                                                                               <span class="p">|</span>
+  <span class="p">|</span> * on                                                                                <span class="p">|</span>
+  <span class="p">|</span> * toggle                                                                            <span class="p">|</span>
+  <span class="p">|</span> * off-with-effect                                                                   <span class="p">|</span>
+  <span class="p">|</span> * on-with-recall-global-scene                                                       <span class="p">|</span>
+  <span class="p">|</span> * on-with-timed-off                                                                 <span class="p">|</span>
+  <span class="p">|</span> * read-by-id                                                                        <span class="p">|</span>
+  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
+  <span class="p">|</span> * write-by-id                                                                       <span class="p">|</span>
+  <span class="p">|</span> * write                                                                             <span class="p">|</span>
+  <span class="p">|</span> * subscribe-by-id                                                                   <span class="p">|</span>
+  <span class="p">|</span> * subscribe                                                                         <span class="p">|</span>
+  <span class="p">|</span> * read-event-by-id                                                                  <span class="p">|</span>
+  <span class="p">|</span> * subscribe-event-by-id                                                             <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647417645</span>.183836<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:84: Error 0x0000002F
+</pre></div>
+</div>
+</section>
+<section id="getting-the-list-of-attributes-supported-for-a-specific-cluster">
+<h3>Getting the list of attributes supported for a specific cluster<a class="headerlink" href="#getting-the-list-of-attributes-supported-for-a-specific-cluster" title="Permalink to this headline">#</a></h3>
+<p>To get the list of attributes for a specific cluster, use the following command
+pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool &lt;cluster_name&gt; read
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;cluster_name&gt;</em> is one of the available clusters (listed with
+<code class="docutils literal notranslate"><span class="pre">chip-tool</span></code>).</p></li>
+</ul>
+<p><strong>Example of command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool onoff read
+</pre></div>
+</div>
+<p><strong>Example of output:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417857</span>.913942<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span> CHIP:TOO: Missing attribute name
+Usage:
+  ./chip-tool onoff <span class="nb">read</span> attribute-name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> Attributes:                                                                         <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> * on-off                                                                            <span class="p">|</span>
+  <span class="p">|</span> * global-scene-control                                                              <span class="p">|</span>
+  <span class="p">|</span> * on-time                                                                           <span class="p">|</span>
+  <span class="p">|</span> * off-wait-time                                                                     <span class="p">|</span>
+  <span class="p">|</span> * start-up-on-off                                                                   <span class="p">|</span>
+  <span class="p">|</span> * server-generated-command-list                                                     <span class="p">|</span>
+  <span class="p">|</span> * client-generated-command-list                                                     <span class="p">|</span>
+  <span class="p">|</span> * attribute-list                                                                    <span class="p">|</span>
+  <span class="p">|</span> * feature-map                                                                       <span class="p">|</span>
+  <span class="p">|</span> * cluster-revision                                                                  <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647417857</span>.914110<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:120: Error 0x0000002F
+</pre></div>
+</div>
+</section>
+<section id="getting-the-list-of-command-options">
+<h3>Getting the list of command options<a class="headerlink" href="#getting-the-list-of-command-options" title="Permalink to this headline">#</a></h3>
+<p>To get the list of parameters for a specific command, use the following command
+pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool &lt;cluster_name&gt; &lt;target_command&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;cluster_name&gt;</em> is one of the available clusters (listed with
+<code class="docutils literal notranslate"><span class="pre">chip-tool</span></code>).</p></li>
+<li><p><em>&lt;target_command&gt;</em> is one of the target command names.</p></li>
+</ul>
+<p><strong>Example of command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool onoff on
+</pre></div>
+</div>
+<p><strong>Example of output:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417976</span>.556313<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span> CHIP:TOO: InitArgs: Wrong arguments number: <span class="m">0</span> instead of <span class="m">2</span>
+Usage:
+  ./chip-tool onoff on node-id/group-id endpoint-id-ignored-for-group-commands <span class="o">[</span>--paa-trust-store-path<span class="o">]</span> <span class="o">[</span>--commissioner-name<span class="o">]</span> <span class="o">[</span>--trace_file<span class="o">]</span> <span class="o">[</span>--trace_log<span class="o">]</span> <span class="o">[</span>--ble-adapter<span class="o">]</span> <span class="o">[</span>--timedInteractionTimeoutMs<span class="o">]</span> <span class="o">[</span>--suppressResponse<span class="o">]</span>
+<span class="o">[</span><span class="m">1647417976</span>.556362<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:135: Error 0x0000002F
+</pre></div>
+</div>
+<section id="selected-command-options">
+<h4>Selected command options<a class="headerlink" href="#selected-command-options" title="Permalink to this headline">#</a></h4>
+<p>This section lists selected options that can be used to configure the input
+command.</p>
+<section id="choosing-the-bluetooth-adapter">
+<h5>Choosing the Bluetooth adapter<a class="headerlink" href="#choosing-the-bluetooth-adapter" title="Permalink to this headline">#</a></h5>
+<p>To choose the Bluetooth adapter used by the CHIP Tool, use the following command
+pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">ble</span><span class="o">-</span><span class="n">adapter</span> <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;id&gt;</em> is the ID of HCI device.</p></li>
+</ul>
+<p><strong>Example of usage:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing ble-thread 1 hex:0e080000000000010000000300001335060004001fffe002084fe76e9a8b5edaf50708fde46f999f0698e20510d47f5027a414ffeebaefa92285cc84fa030f4f70656e5468726561642d653439630102e49c0410b92f8c7fbb4f9f3e08492ee3915fbd2f0c0402a0fff8 20202021 3840 --ble-adapter 0
+</pre></div>
+</div>
+</section>
+<section id="using-message-tracing">
+<h5>Using message tracing<a class="headerlink" href="#using-message-tracing" title="Permalink to this headline">#</a></h5>
+<p>Message tracing allows to capture CHIP Tool secure messages that can be used for
+test automation.</p>
+<p>The following flags that control where the traces should go are available:</p>
+<ul>
+<li><p>Trace file flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">trace_file</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here, <em>&lt;filename&gt;</em> is the name of the file where the trace data is stored.
+It can be appended to a command in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing &lt;pairing_options&gt; --trace_file &lt;filename&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Trace log flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">trace_log</span> <span class="o">&lt;</span><span class="n">onoff</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here, <em>&lt;onoff&gt;</em> is a <code class="docutils literal notranslate"><span class="pre">[0/1]</span></code> flag, which when set to <code class="docutils literal notranslate"><span class="pre">1</span></code> prints the trace
+data with automation logs to the console.</p>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="running-a-test-suite-against-a-paired-peer-device">
+<h3>Running a test suite against a paired peer device<a class="headerlink" href="#running-a-test-suite-against-a-paired-peer-device" title="Permalink to this headline">#</a></h3>
+<p>The CHIP Tool allows to run a set of tests, already compiled in the tool,
+against a paired Matter device.</p>
+<p>To get the list of available tests, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool tests
+</pre></div>
+</div>
+<p>To execute a particular test against the paired device, use the following
+command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool tests &lt;test_name&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;test_name&gt;</em> is the name of the particular test.</p></li>
+</ul>
+<section id="example-running-testclusters-test">
+<h4>Example: running <code class="docutils literal notranslate"><span class="pre">TestClusters</span></code> test<a class="headerlink" href="#example-running-testclusters-test" title="Permalink to this headline">#</a></h4>
+<p>As an example of running one test suite test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean initialization of state.</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">chip_</span><span class="o">*</span>
+
+<span class="c1"># In a shell window, start the DUT device.</span>
+<span class="o">./</span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">clusters</span><span class="o">-</span><span class="n">app</span>
+
+<span class="c1"># In a second shell window, pair the DUT with chip-tool.</span>
+<span class="o">./</span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">pairing</span> <span class="n">onnetwork</span> <span class="mi">333221</span> <span class="mi">20202021</span>
+
+<span class="c1"># Now run the test</span>
+<span class="o">./</span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">tests</span> <span class="n">TestCluster</span> <span class="o">--</span><span class="n">nodeId</span> <span class="mi">333221</span>
+</pre></div>
+</div>
+<p>Developer details on how the test suite is structured can be found
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/app/tests/suites/README.md">here</a>.</p>
+</section>
+</section>
+<section id="parsing-the-setup-payload">
+<h3>Parsing the setup payload<a class="headerlink" href="#parsing-the-setup-payload" title="Permalink to this headline">#</a></h3>
+<p>The CHIP Tool offers a utility for parsing the Matter onboarding setup payload
+and printing it in a readable form. For example, the payload can be printed on
+the device console during boot.</p>
+<p>To parse the setup code, use the <code class="docutils literal notranslate"><span class="pre">payload</span></code> command with the
+<code class="docutils literal notranslate"><span class="pre">parse-setup-payload</span></code> sub-command, as in the following command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool payload parse-setup-payload &lt;payload&gt;
+</pre></div>
+</div>
+<p>Here, <em>&lt;payload&gt;</em> is the ID of the payload to be parsed.</p>
+<p><strong>Examples of commands:</strong></p>
+<ul>
+<li><p>Setup QR code payload:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+$ ./chip-tool payload parse-setup-payload MT:6FCJ142C00KA0648G00
+```
+</pre></div>
+</div>
+</li>
+<li><p>Manual pairing code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+$ ./chip-tool payload parse-setup-payload 34970112332
+```
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="parsing-additional-data-payload">
+<h3>Parsing additional data payload<a class="headerlink" href="#parsing-additional-data-payload" title="Permalink to this headline">#</a></h3>
+<p>To parse additional data payload, use the following command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool parse-additional-data-payload &lt;payload&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;payload&gt;</em> is the ID of the payload with additional data to be parsed.</p></li>
+</ul>
+</section>
+<section id="discover-actions">
+<h3>Discover actions<a class="headerlink" href="#discover-actions" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">discover</span></code> command can be used to resolve node ID and discover available
+Matter devices.</p>
+<p>Use the following command to print the available sub-commands of the <code class="docutils literal notranslate"><span class="pre">discover</span></code>
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool discover
+</pre></div>
+</div>
+<section id="resolving-node-name">
+<h4>Resolving node name<a class="headerlink" href="#resolving-node-name" title="Permalink to this headline">#</a></h4>
+<p>To resolve the DNS-SD name corresponding with the given Node ID and update the
+address of the node in the device controller, use the following command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool discover resolve &lt;node_id&gt; &lt;fabric_id&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;node_id&gt;</em> is the ID of node to be resolved.</p></li>
+<li><p><em>&lt;fabric_id&gt;</em> is the ID of the Matter fabric to which the node belongs.</p></li>
+</ul>
+</section>
+<section id="discovering-available-matter-devices">
+<h4>Discovering available Matter devices<a class="headerlink" href="#discovering-available-matter-devices" title="Permalink to this headline">#</a></h4>
+<p>To discover all Matter commissionables available in the operation area, run the
+following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool discover commissionables
+</pre></div>
+</div>
+</section>
+<section id="discovering-available-matter-commissioners">
+<h4>Discovering available Matter commissioners<a class="headerlink" href="#discovering-available-matter-commissioners" title="Permalink to this headline">#</a></h4>
+<p>To discover all Matter commissioners available in the operation area, run the
+following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool discover commissioners
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pairing">
+<h3>Pairing<a class="headerlink" href="#pairing" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pairing</span></code> command supports different means regarding Matter device
+commissioning procedure.</p>
+<p>Thread and Wi-Fi commissioning use cases are described in the
+<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a> section.</p>
+<p>To list all <code class="docutils literal notranslate"><span class="pre">pairing</span></code> sub-commands, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing
+</pre></div>
+</div>
+</section>
+<section id="interacting-with-data-model-clusters">
+<h3>Interacting with Data Model clusters<a class="headerlink" href="#interacting-with-data-model-clusters" title="Permalink to this headline">#</a></h3>
+<p>As mentioned in the <a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a>
+section, executing the <code class="docutils literal notranslate"><span class="pre">chip-tool</span></code> command with a particular cluster name lists
+all operations supported for this cluster, as in the following command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool &lt;cluster_name&gt;
+</pre></div>
+</div>
+<p><strong>Example of command:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool binding
+</pre></div>
+</div>
+<p><strong>Example of output:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647502596</span>.396184<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span> CHIP:TOO: Missing <span class="nb">command</span> name
+Usage:
+  ./chip-tool binding command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+  <span class="p">|</span> * command-by-id                                                                     <span class="p">|</span>
+  <span class="p">|</span> * read-by-id                                                                        <span class="p">|</span>
+  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
+  <span class="p">|</span> * write-by-id                                                                       <span class="p">|</span>
+  <span class="p">|</span> * write                                                                             <span class="p">|</span>
+  <span class="p">|</span> * subscribe-by-id                                                                   <span class="p">|</span>
+  <span class="p">|</span> * subscribe                                                                         <span class="p">|</span>
+  <span class="p">|</span> * read-event-by-id                                                                  <span class="p">|</span>
+  <span class="p">|</span> * subscribe-event-by-id                                                             <span class="p">|</span>
+  +-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647502596</span>.396299<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:84: Error 0x0000002F
+</pre></div>
+</div>
+<p>According to this list, the <code class="docutils literal notranslate"><span class="pre">binding</span></code> cluster supports operations such as read
+or write. Attributes from that cluster can also be subscribed by the controller,
+which means that the CHIP Tool will receive notifications, for instance when the
+attribute value is changed or a specific event happens.</p>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h4>
+<p>This section lists examples of the CHIP Tool commands dedicated to specific use
+cases.</p>
+<section id="writing-acl-to-the-accesscontrol-cluster">
+<h5>Writing ACL to the <code class="docutils literal notranslate"><span class="pre">accesscontrol</span></code> cluster<a class="headerlink" href="#writing-acl-to-the-accesscontrol-cluster" title="Permalink to this headline">#</a></h5>
+<p>The Access Control List (ACL) concept allows to govern all Data Model
+interactions (such as read attribute, write attribute, invoke command). For more
+information about ACL, see
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/access-control-guide.md">Access Control Guide</a>.</p>
+<p>To write ACL to the <code class="docutils literal notranslate"><span class="pre">accesscontrol</span></code> cluster, use the following command pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool accesscontrol write acl &lt;acl_data&gt; &lt;node_id&gt; &lt;endpoint_id&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;acl_data&gt;</em> is the ACL data formatted as a JSON array.</p></li>
+<li><p><em>&lt;node_id&gt;</em> is the ID of the node that is going to receive ACL.</p></li>
+<li><p><em>&lt;endpoint_id&gt;</em> is the ID of the endpoint on which the <code class="docutils literal notranslate"><span class="pre">accesscontrol</span></code>
+cluster is implemented.</p></li>
+</ul>
+</section>
+<section id="adding-a-binding-table-to-the-binding-cluster">
+<h5>Adding a binding table to the <code class="docutils literal notranslate"><span class="pre">binding</span></code> cluster<a class="headerlink" href="#adding-a-binding-table-to-the-binding-cluster" title="Permalink to this headline">#</a></h5>
+<p>Binding describes a relationship between the device that contains the binding
+cluster and the end device. The proper ACL must be added to allow the end device
+to receive commands from the bonded device. After the binding process, the
+bonded device contains information about connected device, such as IPv6 address
+and the route to the endpoint in the Matter network.</p>
+<p>To add a binding table to the <code class="docutils literal notranslate"><span class="pre">binding</span></code> cluster, use the following command
+pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool binding write binding  &lt;binding_data&gt; &lt;node_id&gt; &lt;endpoint_id&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;binding_data&gt;</em> is the binding data formatted as a JSON array.</p></li>
+<li><p><em>&lt;node_id&gt;</em> is the ID of the node that is going to receive the binding.</p></li>
+<li><p><em>&lt;endpoint_id&gt;</em> is the ID of the endpoint on which the <code class="docutils literal notranslate"><span class="pre">binding</span></code> cluster is
+implemented.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="android_building.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building Android</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="infineon_p6_software_update.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matter Software Update with Infineon P6 example applications</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1494 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Matter Arm Mbed OS provisioning guide &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mbed-OS platform overview" href="mbedos_platform_overview.html" />
+    <link rel="prev" title="Mbed-OS add new hardware target" href="mbedos_add_new_target.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/mbedos_commissioning.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/mbedos_commissioning.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chiptool-for-android">
+   CHIPTool for Android
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-and-installing">
+     Building and installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessory-matter-device-setup">
+     Accessory Matter device setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-android">
+     Device commissioning for Android
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sending-zcl-commands">
+     Sending ZCL commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posix-cli-chiptool">
+   POSIX CLI CHIPTool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building">
+     Building
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-cli">
+     Device commissioning for CLI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Sending ZCL commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-device-controller">
+   Python Device Controller
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Building and installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-python-device-controller">
+     Device commissioning for Python Device Controller
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Sending ZCL commands
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zcl-commands-details">
+       ZCL commands details
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matter Arm Mbed OS provisioning guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chiptool-for-android">
+   CHIPTool for Android
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-and-installing">
+     Building and installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessory-matter-device-setup">
+     Accessory Matter device setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-android">
+     Device commissioning for Android
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sending-zcl-commands">
+     Sending ZCL commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posix-cli-chiptool">
+   POSIX CLI CHIPTool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building">
+     Building
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-cli">
+     Device commissioning for CLI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Sending ZCL commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-device-controller">
+   Python Device Controller
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Building and installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device-commissioning-for-python-device-controller">
+     Device commissioning for Python Device Controller
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Sending ZCL commands
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zcl-commands-details">
+       ZCL commands details
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><img alt="ARM Mbed-OS logo" src="https://raw.githubusercontent.com/ARMmbed/mbed-os/master/logo.png" /></p>
+<section id="matter-arm-mbed-os-provisioning-guide">
+<h1>Matter Arm Mbed OS provisioning guide<a class="headerlink" href="#matter-arm-mbed-os-provisioning-guide" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview"><span class="std std-doc">Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#prerequisites"><span class="std std-doc">Prerequisites</span></a></p></li>
+<li><p><a class="reference internal" href="#chiptool-for-android"><span class="std std-doc">CHIPTool for Android</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#building-and-installing"><span class="std std-doc">Building and installing</span></a></p></li>
+<li><p><a class="reference internal" href="#accessory-matter-device-setup"><span class="std std-doc">Accessory Matter device setup</span></a></p></li>
+<li><p><a class="reference internal" href="#device-commissioning-for-android"><span class="std std-doc">Device commissioning for Android</span></a></p></li>
+<li><p><a class="reference internal" href="#sending-zcl-commands"><span class="std std-doc">Sending ZCL commands</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#posix-cli-chiptool"><span class="std std-doc">POSIX CLI CHIPTool</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#building"><span class="std std-doc">Building</span></a></p></li>
+<li><p><a class="reference internal" href="#device-commissioning-for-cli"><span class="std std-doc">Device commissioning for CLI</span></a></p></li>
+<li><p><a class="reference internal" href="#id1"><span class="std std-doc">Sending ZCL commands</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#python-device-controller"><span class="std std-doc">Python Device Controller</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2"><span class="std std-doc">Building and installing</span></a></p></li>
+<li><p><a class="reference internal" href="#device-commissioning-for-python-device-controller"><span class="std std-doc">Device commissioning for Python Device Controller</span></a></p></li>
+<li><p><a class="reference internal" href="#id3"><span class="std std-doc">Sending ZCL commands</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#zcl-commands-details"><span class="std std-doc">ZCL commands details</span></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>This document provides a step-by-step guide how to commission any Matter
+application. For demonstration purposes the Lighting app is used.</p>
+<p>The provisioning process is composed of the following stages:</p>
+<ul class="simple">
+<li><p>CHIPTool discovers a Matter accessory device over Bluetooth Low Energy
+(BLE).</p></li>
+<li><p>CHIPTool establishes a secure channel to the device over BLE, and sends
+network credentials data.</p></li>
+</ul>
+<p>BLE is only used during first phase. Afterwards, only the IP connectivity
+between the smartphone and the accessory device is needed to send messages.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>To complete all the steps in the tutorial, you need:</p>
+<ul class="simple">
+<li><p>A smartphone with Android 8+ or PC with Ubuntu 20.04 and Bluetooth
+connectivity</p></li>
+<li><p>A WiFi Access Point (smartphone router, standalone AP, wireless router or
+PC)</p></li>
+<li><p>Any currently supported target device (for example, a Cypress PSoC6
+CY8CPROTO-062-4343W board)</p></li>
+</ul>
+</section>
+<section id="chiptool-for-android">
+<h2>CHIPTool for Android<a class="headerlink" href="#chiptool-for-android" title="Permalink to this headline">#</a></h2>
+<section id="building-and-installing">
+<h3>Building and installing<a class="headerlink" href="#building-and-installing" title="Permalink to this headline">#</a></h3>
+<p>To make provisioning possible and to control the Matter device from your Android
+based smartphone, you must first build and install the CHIPTool application.</p>
+<p>To build the CHIPTool application for your smartphone, read
+<a class="reference internal" href="android_building.html"><span class="doc std std-doc">Android building guide</span></a>.</p>
+<p>After building, install the application by completing the following steps:</p>
+<ol class="arabic">
+<li><p>Install the Android Debug Bridge (adb) package by running the following
+command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+$ sudo apt install android-tools-adb
+```
+</pre></div>
+</div>
+</li>
+<li><p>Enable <strong>USB debugging</strong> on your smartphone. See the
+<a class="reference external" href="https://developer.android.com/studio/debug/dev-options">Configure on-device developer options</a>
+guide on the Android Studio hub for detailed information.</p></li>
+<li><p>If the <strong>Install via USB</strong> option is supported for your Android version,
+turn it on.</p></li>
+<li><p>Plug your smartphone into a USB port on your PC.</p></li>
+<li><p>Run the following command to install the application, with <em>matter-dir</em>
+replaced with the path to the Matter source directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ adb install out/android-$TARGET_CPU-chip-tool/outputs/apk/debug/app-debug.apk
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to settings on your smartphone and grant <strong>Camera</strong> and
+<strong>Location</strong> permissions to CHIPTool.</p></li>
+</ol>
+<p>Android CHIPTool is now ready to be used for commissioning.</p>
+</section>
+<section id="accessory-matter-device-setup">
+<h3>Accessory Matter device setup<a class="headerlink" href="#accessory-matter-device-setup" title="Permalink to this headline">#</a></h3>
+<p>To prepare the accessory Matter device for commissioning (called rendezvous),
+complete the following steps:</p>
+<ul>
+<li><p>Open a serial terminal session to connect to the UART console of the
+accessory device. You can use <strong>mbed-tools</strong> for this purpose
+(<a class="reference external" href="https://github.com/ARMmbed/mbed-tools">mbed-tools</a>):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+mbed-tools sterm -p /dev/ttyACM0 -b 115200 -e off
+```
+</pre></div>
+</div>
+</li>
+</ul>
+<p>To start the rendezvous, CHIPTool must get the commissioning information from
+the Matter device. The data payload is encoded within a QR code and is printed
+to the UART console.</p>
+<ul>
+<li><p>Reset the device.</p></li>
+<li><p>Find a message similar to the following one in the application logs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+[INFO][CHIP]: [SVR]Copy/paste the below URL in a browser to see the QR Code:
+[INFO][CHIP]: [SVR]https://dhrishi.github.io/connectedhomeip/qrcode.html?data=MT%3AYNJV7VSC00CMVH7SR00
+```
+</pre></div>
+</div>
+</li>
+<li><p>Open URL from the console to display the QR in a web browser.</p></li>
+</ul>
+</section>
+<section id="device-commissioning-for-android">
+<h3>Device commissioning for Android<a class="headerlink" href="#device-commissioning-for-android" title="Permalink to this headline">#</a></h3>
+<p>To commission Matter device onto the network created complete the following
+steps:</p>
+<ul class="simple">
+<li><p>Enable Bluetooth and Location services on your smartphone.</p></li>
+<li><p>Connect the smartphone to the WiFi Network</p></li>
+<li><p>Open the CHIPTool application on your smartphone.</p></li>
+<li><p>Tap the ‘PROVISION CHIP DEVICE WITH WI-FI’ button and scan the commissioning
+QR code.</p></li>
+<li><p>Go through the the paring and connecting Bluetooth on your smartphone (you
+will see a few pop-up messages appear as the commissioning progresses.
+Finally, the network settings screen appears.</p></li>
+<li><p>In the network settings screen enter the Wi-Fi credentials and tap the Save
+Network button to send a WiFi provisioning message to the accessory device.</p></li>
+<li><p>After successful completion of the process, the application returns to the
+main screen.</p></li>
+</ul>
+</section>
+<section id="sending-zcl-commands">
+<h3>Sending ZCL commands<a class="headerlink" href="#sending-zcl-commands" title="Permalink to this headline">#</a></h3>
+<p>After the accessory device has been successfully commissioned to the network, it
+is possible to communicate with it using IP. Matter uses Zigbee Cluster Library
+(ZCL) protocol which defines common means for applications to communicate.</p>
+<p>Communication with the device via ZCL commands is possible by using buttons of
+the main screen.</p>
+<p>For example, selecting the ‘LIGHT ON/OFF &amp; LEVEL CLUSTER’ button opens the
+screen which allows controlling the light dimming. Tap either the ON or the OFF
+button to toggle between min and max brightness. Use the slider to modify the
+brightness between 0-255.</p>
+<p>If <strong>Lighting LED</strong> is available then brightness change can be observed.</p>
+<blockquote>
+<div><p>For more details about Android CHIPTool please visit
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/android/CHIPTool/README.md">CHIPTool</a></p>
+</div></blockquote>
+</section>
+</section>
+<section id="posix-cli-chiptool">
+<h2>POSIX CLI CHIPTool<a class="headerlink" href="#posix-cli-chiptool" title="Permalink to this headline">#</a></h2>
+<section id="building">
+<h3>Building<a class="headerlink" href="#building" title="Permalink to this headline">#</a></h3>
+<p>To make provisioning possible and to control the Matter device from Linux-based
+device, you can build and run the Matter Client example application on it.</p>
+<p>To build the POSIX CLI CHIPTool application check the guide
+<a class="reference internal" href="../examples/chip-tool/README.html"><span class="doc std std-doc">POSIX CLI guide</span></a>.</p>
+</section>
+<section id="device-commissioning-for-cli">
+<h3>Device commissioning for CLI<a class="headerlink" href="#device-commissioning-for-cli" title="Permalink to this headline">#</a></h3>
+<p>In order to send commands to a device, it must be paired with the client and
+connected to the network.</p>
+<p>To run the commissioning process via BLE, run the built executable and pass it
+the node id to assign to the newly-commissioned node, network ssid and password,
+discriminator and pairing code of the remote device.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ chip-tool pairing ble-wifi node_id_to_assign network_ssid network_password 20202021 3840
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Sending ZCL commands<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>If the commissioning process was successful, it is possible to send a ZCL
+command to the device which initiate a certain action.</p>
+<p>To send a ZCL commands, run the executable and pass it the target cluster name,
+the target command name as well as an endpoint id.</p>
+<p>The endpoint id must be between 1 and 240.</p>
+<p>For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ chip-tool onoff on 1
+</pre></div>
+</div>
+<p>The client will send a single command packet and then exit.</p>
+<blockquote>
+<div><p>For more details about POSIX CLI CHIPTool please visit
+<a class="reference internal" href="../examples/chip-tool/README.html"><span class="doc std std-doc">POSIX CLI CHIPTool</span></a></p>
+</div></blockquote>
+</section>
+</section>
+<section id="python-device-controller">
+<h2>Python Device Controller<a class="headerlink" href="#python-device-controller" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h3>Building and installing<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>To make provisioning possible and to control the Matter device with Python
+application, you can build and run the Python CHIP controller.</p>
+<p>To build and install the Python Device Controller application check the guide
+<a class="reference internal" href="python_chip_controller_building.html"><span class="doc std std-doc">Python Device Controller guide</span></a>.</p>
+</section>
+<section id="device-commissioning-for-python-device-controller">
+<h3>Device commissioning for Python Device Controller<a class="headerlink" href="#device-commissioning-for-python-device-controller" title="Permalink to this headline">#</a></h3>
+<p>In order to send commands to a device, it must be paired with the client and
+connected to the network.</p>
+<p>To run the auto commissioning process via BLE:</p>
+<ul>
+<li><p>Run Device Controller:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl
+</pre></div>
+</div>
+</li>
+<li><p>Scan BLE devices:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; ble-scan
+</pre></div>
+</div>
+</li>
+<li><p>Pass the Wi-Fi credentials to the device:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; set-pairing-wifi-credential ssid credentials
+</pre></div>
+</div>
+</li>
+<li><p>Connect the device via BLE (provide the accessory device discriminator,
+setup pin code and node ID):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; connect -ble 3840 20202021 1234
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>Sending ZCL commands<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>If the commissioning process was successful, it is possible to send a ZCL
+command to the device which initiates a certain action.</p>
+<p><code class="docutils literal notranslate"><span class="pre">zcl</span> <span class="pre">&lt;Cluster&gt;</span> <span class="pre">&lt;Command&gt;</span> <span class="pre">&lt;NodeId&gt;</span> <span class="pre">&lt;EndpointId&gt;</span> <span class="pre">&lt;GroupId&gt;</span> <span class="pre">[arguments]</span></code></p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; zcl LevelControl MoveWithOnOff 12344321 1 0 moveMode=1 rate=2
+</pre></div>
+</div>
+<section id="zcl-commands-details">
+<h4>ZCL commands details<a class="headerlink" href="#zcl-commands-details" title="Permalink to this headline">#</a></h4>
+<p>To get the list of supported clusters run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; zcl ?
+</pre></div>
+</div>
+<p>To get the list of available commands in cluster run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; zcl ? &lt;Cluster&gt;
+</pre></div>
+</div>
+<p><strong>Format of arguments</strong></p>
+<p>For any integer and char string (null terminated) types, just use <code class="docutils literal notranslate"><span class="pre">key=value</span></code>,
+for example: <code class="docutils literal notranslate"><span class="pre">rate=2</span></code>, <code class="docutils literal notranslate"><span class="pre">string=123</span></code>, <code class="docutils literal notranslate"><span class="pre">string_2=&quot;123</span> <span class="pre">456&quot;</span></code></p>
+<p>For byte string type, use <code class="docutils literal notranslate"><span class="pre">key=encoding:value</span></code>, currently, we support <code class="docutils literal notranslate"><span class="pre">str</span></code> and
+<code class="docutils literal notranslate"><span class="pre">hex</span></code> encoding, the <code class="docutils literal notranslate"><span class="pre">str</span></code> encoding will encode a NULL terminated string. For
+example, <code class="docutils literal notranslate"><span class="pre">networkId=hex:0123456789abcdef</span></code> (for
+<code class="docutils literal notranslate"><span class="pre">[0x01,</span> <span class="pre">0x23,</span> <span class="pre">0x45,</span> <span class="pre">0x67,</span> <span class="pre">0x89,</span> <span class="pre">0xab,</span> <span class="pre">0xcd,</span> <span class="pre">0xef]</span></code>), <code class="docutils literal notranslate"><span class="pre">ssid=str:Test</span></code> (for
+<code class="docutils literal notranslate"><span class="pre">['T',</span> <span class="pre">'e',</span> <span class="pre">'s',</span> <span class="pre">'t',</span> <span class="pre">0x00]</span></code>).</p>
+<p>For boolean type, use <code class="docutils literal notranslate"><span class="pre">key=True</span></code> or <code class="docutils literal notranslate"><span class="pre">key=False</span></code></p>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="mbedos_add_new_target.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Mbed-OS add new hardware target</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mbedos_platform_overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mbed-OS platform overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

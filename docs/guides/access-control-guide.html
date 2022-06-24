@@ -1,0 +1,1951 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Access Control Guide &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building Android" href="android_building.html" />
+    <link rel="prev" title="Building Matter" href="BUILDING.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/access-control-guide.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/access-control-guide.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acls">
+   ACLs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#privilege">
+     Privilege
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authmode">
+     AuthMode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subjects">
+     Subjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#targets">
+     Targets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-and-restrictions">
+   Limitations and Restrictions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-administrator">
+     Single Administrator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-administrators">
+     Multiple Administrators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#client-controllers">
+     Client Controllers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-messaging">
+     Group Messaging
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-acls-using-chip-tool">
+   Managing ACLs Using Chip-Tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entire-list">
+       Entire List
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#null-fields">
+       Null Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fabric-index">
+       Fabric Index
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enums-identifiers">
+       Enums Identifiers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#automatically-installed-acl">
+       Automatically Installed ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-a-case-acl">
+       Installing a CASE ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-a-group-acl">
+       Installing a Group ACL
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-acls-using-chip-repl">
+   Managing ACLs Using Chip-Repl
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Usage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Entire List
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Null Fields
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Fabric Index
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enums-and-identifiers">
+       Enums and Identifiers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Automatically Installed ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Installing a CASE ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Installing a Group ACL
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Access Control Guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acls">
+   ACLs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#privilege">
+     Privilege
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#authmode">
+     AuthMode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subjects">
+     Subjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#targets">
+     Targets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-and-restrictions">
+   Limitations and Restrictions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-administrator">
+     Single Administrator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-administrators">
+     Multiple Administrators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#client-controllers">
+     Client Controllers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-messaging">
+     Group Messaging
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-acls-using-chip-tool">
+   Managing ACLs Using Chip-Tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entire-list">
+       Entire List
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#null-fields">
+       Null Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fabric-index">
+       Fabric Index
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enums-identifiers">
+       Enums Identifiers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#automatically-installed-acl">
+       Automatically Installed ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-a-case-acl">
+       Installing a CASE ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-a-group-acl">
+       Installing a Group ACL
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-acls-using-chip-repl">
+   Managing ACLs Using Chip-Repl
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Usage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Entire List
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Null Fields
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Fabric Index
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enums-and-identifiers">
+       Enums and Identifiers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Automatically Installed ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Installing a CASE ACL
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Installing a Group ACL
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="access-control-guide">
+<h1>Access Control Guide<a class="headerlink" href="#access-control-guide" title="Permalink to this headline">#</a></h1>
+<p>All Interaction Model operations (read attribute, write attribute, invoke
+command, read event) are governed by access control, and will be denied (status
+0x7E Access Denied) if sufficient privilege for the operation is not obtained.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>The initial <code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege is obtained by the commissioner implicitly
+over the PASE commissioning channel. This implicit <code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege is
+used to invoke commands on the server node during commissioning.</p>
+<p>As part of commissioning, the commissioner invokes the <code class="docutils literal notranslate"><span class="pre">AddNOC</span></code> command,
+providing a <code class="docutils literal notranslate"><span class="pre">CaseAdminNode</span></code> argument. As well as commissioning the server node
+onto the fabric, that command automatically installs an ACL on the server node
+for <code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege using the provided <code class="docutils literal notranslate"><span class="pre">CaseAdminNode</span></code> argument as CASE
+subject. The subject may be a single node, or multiple nodes (by providing a
+CAT). These nodes become fabric administrators on that server node.</p>
+<p>During and after commissioning, administrators manage ACLs for the fabric on the
+server node by reading and writing the fabric-scoped <code class="docutils literal notranslate"><span class="pre">ACL</span></code> attribute of the
+Access Control Cluster, which is always present on endpoint 0 on the server
+node. It is these ACLs that govern which Interaction Model operations are
+allowed or denied on that server node, for subjects on the fabric, via CASE and
+group messaging.</p>
+</section>
+<section id="acls">
+<h2>ACLs<a class="headerlink" href="#acls" title="Permalink to this headline">#</a></h2>
+<p>ACLs are fabric-scoped data structures with the following fields:</p>
+<ul class="simple">
+<li><p>Privilege</p></li>
+<li><p>AuthMode</p></li>
+<li><p>Subjects</p></li>
+<li><p>Targets</p></li>
+</ul>
+<section id="privilege">
+<h3>Privilege<a class="headerlink" href="#privilege" title="Permalink to this headline">#</a></h3>
+<p>Privileges are:</p>
+<ul class="simple">
+<li><p>View</p></li>
+<li><p>Operate</p></li>
+<li><p>Manage</p></li>
+<li><p>Administer</p></li>
+</ul>
+<p>An additional <code class="docutils literal notranslate"><span class="pre">ProxyView</span></code> privilege is not yet supported in the Matter SDK.</p>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">View</span></code> privilege is required to read attributes or events, and
+the <code class="docutils literal notranslate"><span class="pre">Operate</span></code> privilege is required to write attributes or invoke commands.</p>
+<p>However, clusters may require stricter privileges for certain operations on
+certain endpoints. For example, the Access Control Cluster requires the
+<code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege for all its operations.</p>
+<p>If applicable, the ACL grants the privilege, and all less strict privileges
+subsumed by it. Therefore an ACL for <code class="docutils literal notranslate"><span class="pre">Manage</span></code> privilege will work for operations
+which require <code class="docutils literal notranslate"><span class="pre">Operate</span></code> or <code class="docutils literal notranslate"><span class="pre">View</span></code> privilege (but not <code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege).</p>
+</section>
+<section id="authmode">
+<h3>AuthMode<a class="headerlink" href="#authmode" title="Permalink to this headline">#</a></h3>
+<p>Authentication modes are:</p>
+<ul class="simple">
+<li><p>CASE</p></li>
+<li><p>Group</p></li>
+</ul>
+<p>The ACL applies only to subjects using that authentication mode.</p>
+</section>
+<section id="subjects">
+<h3>Subjects<a class="headerlink" href="#subjects" title="Permalink to this headline">#</a></h3>
+<p>Subjects is a list containing zero, one, or more subject identifiers, which are:</p>
+<ul class="simple">
+<li><p>Node ID for CASE auth mode</p></li>
+<li><p>Group ID for Group auth mode</p></li>
+</ul>
+<p>A CASE subject may be a CAT, which has its own tag and version mechanism.</p>
+<p>The ACL applies only to the listed subjects; if no subjects are listed, the ACL
+applies to any subjects using the authentication mode.</p>
+</section>
+<section id="targets">
+<h3>Targets<a class="headerlink" href="#targets" title="Permalink to this headline">#</a></h3>
+<p>Targets is a list containing zero, one, or more structured entries with fields:</p>
+<ul class="simple">
+<li><p>Cluster</p></li>
+<li><p>Endpoint</p></li>
+<li><p>DeviceType</p></li>
+</ul>
+<p>All fields are nullable, but at least one must be present, and the endpoint and
+device type fields are mutually exclusive (only one of those two may be
+present).</p>
+<p>If cluster is present, the ACL is targeted to just that cluster.</p>
+<p>If endpoint is present, the ACL is targeted to just that endpoint.</p>
+<p>If device type is present, the ACL is targeted to just endpoints which contain
+that device type (as reported by the Descriptor Cluster).</p>
+<p>Specifying device type in targets is not yet supported in the Matter SDK.</p>
+<p>The ACL applies only to the listed targets; if no targets are listed, the ACL
+applies to any targets on the server node.</p>
+</section>
+</section>
+<section id="limitations-and-restrictions">
+<h2>Limitations and Restrictions<a class="headerlink" href="#limitations-and-restrictions" title="Permalink to this headline">#</a></h2>
+<p>The Matter Specification states that a Matter implementation must support at
+least:</p>
+<ul class="simple">
+<li><p>3 ACLs per fabric</p></li>
+<li><p>4 subjects per ACL</p></li>
+<li><p>3 targets per ACL</p></li>
+</ul>
+<p>There is no guarantee that an implementation supports any more than those
+minimums.</p>
+<p>In the Matter SDK, using the example access control implementation, these values
+can be configured globally in <code class="docutils literal notranslate"><span class="pre">CHIPConfig.h</span></code> or per-app in
+<code class="docutils literal notranslate"><span class="pre">CHIPProjectAppConfig.h</span></code> by setting:</p>
+<ul class="simple">
+<li><p>CHIP_CONFIG_EXAMPLE_ACCESS_CONTROL_MAX_ENTRIES_PER_FABRIC</p></li>
+<li><p>CHIP_CONFIG_EXAMPLE_ACCESS_CONTROL_MAX_SUBJECTS_PER_ENTRY</p></li>
+<li><p>CHIP_CONFIG_EXAMPLE_ACCESS_CONTROL_MAX_TARGETS_PER_ENTRY</p></li>
+</ul>
+</section>
+<section id="case-studies">
+<h2>Case Studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">#</a></h2>
+<section id="single-administrator">
+<h3>Single Administrator<a class="headerlink" href="#single-administrator" title="Permalink to this headline">#</a></h3>
+<p>A single controller commissions a server node, providing its own CASE node ID
+for the automatically installed ACL:</p>
+<ul class="simple">
+<li><p>Privilege: <code class="docutils literal notranslate"><span class="pre">Administer</span></code></p></li>
+<li><p>AuthMode: <code class="docutils literal notranslate"><span class="pre">CASE</span></code></p></li>
+<li><p>Subjects: <code class="docutils literal notranslate"><span class="pre">112233</span></code></p></li>
+<li><p>Targets: (all)</p></li>
+</ul>
+<p>The controller will be able to perform all Interaction Model operations on the
+server node, since it is the administrator.</p>
+</section>
+<section id="multiple-administrators">
+<h3>Multiple Administrators<a class="headerlink" href="#multiple-administrators" title="Permalink to this headline">#</a></h3>
+<p>The commissioner provides a CAT for the automatically installed ACL:</p>
+<ul class="simple">
+<li><p>Privilege: <code class="docutils literal notranslate"><span class="pre">Administer</span></code></p></li>
+<li><p>AuthMode: <code class="docutils literal notranslate"><span class="pre">CASE</span></code></p></li>
+<li><p>Subjects: <code class="docutils literal notranslate"><span class="pre">0xFFFFFFFD00010001</span></code></p></li>
+<li><p>Targets: (all)</p></li>
+</ul>
+<p>All controllers which have the CAT as part of their CASE credentials will be
+administrators for the server node.</p>
+</section>
+<section id="client-controllers">
+<h3>Client Controllers<a class="headerlink" href="#client-controllers" title="Permalink to this headline">#</a></h3>
+<p>The commissioner installs an ACL for non-administrative controllers:</p>
+<ul class="simple">
+<li><p>Privilege: <code class="docutils literal notranslate"><span class="pre">View</span></code></p></li>
+<li><p>AuthMode: <code class="docutils literal notranslate"><span class="pre">CASE</span></code></p></li>
+<li><p>Subjects: <code class="docutils literal notranslate"><span class="pre">4444</span></code>, <code class="docutils literal notranslate"><span class="pre">5555</span></code>, <code class="docutils literal notranslate"><span class="pre">6666</span></code></p></li>
+<li><p>Targets: (all)</p></li>
+</ul>
+<p>The non-administrative controllers are granted <code class="docutils literal notranslate"><span class="pre">View</span></code> privilege for the entire
+server node. This doesn’t mean they can view the entire server node, as some
+clusters may require stricter privileges for reading attributes or events.</p>
+</section>
+<section id="group-messaging">
+<h3>Group Messaging<a class="headerlink" href="#group-messaging" title="Permalink to this headline">#</a></h3>
+<p>The commissioner installs an ACL for group messaging:</p>
+<ul class="simple">
+<li><p>Privilege: <code class="docutils literal notranslate"><span class="pre">Operate</span></code></p></li>
+<li><p>AuthMode: <code class="docutils literal notranslate"><span class="pre">Group</span></code></p></li>
+<li><p>Subjects: <code class="docutils literal notranslate"><span class="pre">123</span></code>, <code class="docutils literal notranslate"><span class="pre">456</span></code></p></li>
+<li><p>Targets: <code class="docutils literal notranslate"><span class="pre">{cluster:onoff}</span></code>, <code class="docutils literal notranslate"><span class="pre">{endpoint:1}</span></code>,
+<code class="docutils literal notranslate"><span class="pre">{cluster:levelcontrol,endpoint:2}</span></code></p></li>
+</ul>
+<p>Members of groups 123 and 456 are granted <code class="docutils literal notranslate"><span class="pre">Operate</span></code> privilege for the on/off
+cluster on any endpoint, any cluster on endpoint 1, and the level control
+cluster on endpoint 2.</p>
+</section>
+</section>
+<section id="managing-acls-using-chip-tool">
+<h2>Managing ACLs Using Chip-Tool<a class="headerlink" href="#managing-acls-using-chip-tool" title="Permalink to this headline">#</a></h2>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h3>
+<section id="entire-list">
+<h4>Entire List<a class="headerlink" href="#entire-list" title="Permalink to this headline">#</a></h4>
+<p>The Access Control Cluster’s <code class="docutils literal notranslate"><span class="pre">ACL</span></code> attribute is a list.</p>
+<p>Currently, list operations for single entries (append, update, delete) are not
+yet supported in the Matter SDK, so the entire list must be written to the
+attribute to change any ACL.</p>
+<p>The write operation may employ multiple messages, making it unreliable. In any
+case, ACLs are updated as they are processed, and take effect immediately.</p>
+<p>The implication of this is that the administrator must ensure the first ACL in
+the list it is writing to the <code class="docutils literal notranslate"><span class="pre">ACL</span></code> attribute is one granting itself
+<code class="docutils literal notranslate"><span class="pre">Administer</span></code> privilege. Otherwise, the administrator may lose its administrative
+access during the write operation.</p>
+</section>
+<section id="null-fields">
+<h4>Null Fields<a class="headerlink" href="#null-fields" title="Permalink to this headline">#</a></h4>
+<p>The tool requires all fields to be provided, even if null.</p>
+<p>Incorrect: <code class="docutils literal notranslate"><span class="pre">{&quot;cluster&quot;:</span> <span class="pre">6}</span></code></p>
+<p>Correct: <code class="docutils literal notranslate"><span class="pre">{&quot;cluster&quot;:</span> <span class="pre">6,</span> <span class="pre">&quot;endpoint&quot;:</span> <span class="pre">null,</span> <span class="pre">&quot;deviceType&quot;:</span> <span class="pre">null}</span></code></p>
+</section>
+<section id="fabric-index">
+<h4>Fabric Index<a class="headerlink" href="#fabric-index" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">ACL</span></code> attribute is fabric-scoped, so each ACL has a fabric index.</p>
+<p>The tool requires this field to be provided, but ignores it when performing the
+actual write.</p>
+<p>When reading ACLs, the proper fabric index is shown.</p>
+</section>
+<section id="enums-identifiers">
+<h4>Enums Identifiers<a class="headerlink" href="#enums-identifiers" title="Permalink to this headline">#</a></h4>
+<p>The tool requires numerical values for enums and identifiers.</p>
+<p>The privileges are:</p>
+<ul class="simple">
+<li><p>View: 1</p></li>
+<li><p>Operate: 3</p></li>
+<li><p>Manage: 4</p></li>
+<li><p>Administer: 5</p></li>
+</ul>
+<p>The authentication modes are:</p>
+<ul class="simple">
+<li><p>CASE: 2</p></li>
+<li><p>Group: 3</p></li>
+</ul>
+<p>Some typical clusters:</p>
+<ul class="simple">
+<li><p>On/Off: 6</p></li>
+<li><p>Level Control: 8</p></li>
+<li><p>Descriptor: 29</p></li>
+<li><p>Binding: 30</p></li>
+<li><p>Access Control: 31</p></li>
+<li><p>Basic: 40</p></li>
+</ul>
+</section>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
+<section id="automatically-installed-acl">
+<h4>Automatically Installed ACL<a class="headerlink" href="#automatically-installed-acl" title="Permalink to this headline">#</a></h4>
+<p>After commissioning with chip-tool, assuming <code class="docutils literal notranslate"><span class="pre">CaseAdminNode</span></code> is 112233, the
+automatically installed ACL is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">accesscontrol</span> <span class="n">read</span> <span class="n">acl</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Endpoint</span><span class="p">:</span> <span class="mi">0</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mh">0x0000_001F</span> <span class="n">Attribute</span> <span class="mh">0x0000_0000</span> <span class="n">DataVersion</span><span class="p">:</span> <span class="mi">2578401031</span>
+  <span class="n">ACL</span><span class="p">:</span> <span class="mi">1</span> <span class="n">entries</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">5</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">1</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">112233</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="n">null</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="installing-a-case-acl">
+<h4>Installing a CASE ACL<a class="headerlink" href="#installing-a-case-acl" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">accesscontrol</span> <span class="n">write</span> <span class="n">acl</span> <span class="s1">&#39;[{&quot;fabricIndex&quot;: 0, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 0, &quot;privilege&quot;: 1, &quot;authMode&quot;: 2, &quot;subjects&quot;: [4444, 5555, 6666], &quot;targets&quot;: null}]&#39;</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Endpoint</span><span class="p">:</span> <span class="mi">0</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mh">0x0000_001F</span> <span class="n">Attribute</span> <span class="mh">0x0000_0000</span> <span class="n">DataVersion</span><span class="p">:</span> <span class="mi">2578401034</span>
+  <span class="n">ACL</span><span class="p">:</span> <span class="mi">2</span> <span class="n">entries</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">5</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">1</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">112233</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">3</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">4444</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">5555</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">6666</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="installing-a-group-acl">
+<h4>Installing a Group ACL<a class="headerlink" href="#installing-a-group-acl" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">standalone</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">accesscontrol</span> <span class="n">write</span> <span class="n">acl</span> <span class="s1">&#39;[{&quot;fabricIndex&quot;: 0, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 0, &quot;privilege&quot;: 1, &quot;authMode&quot;: 2, &quot;subjects&quot;: [4444, 5555, 6666], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 0, &quot;privilege&quot;: 3, &quot;authMode&quot;: 3, &quot;subjects&quot;: [123, 456], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: null, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: null, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 2, &quot;deviceType&quot;: null}]}]&#39;</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Endpoint</span><span class="p">:</span> <span class="mi">0</span> <span class="n">Cluster</span><span class="p">:</span> <span class="mh">0x0000_001F</span> <span class="n">Attribute</span> <span class="mh">0x0000_0000Da</span><span class="n">taVersion</span><span class="p">:</span> <span class="mi">2578401041</span>
+  <span class="n">ACL</span><span class="p">:</span> <span class="mi">3</span> <span class="n">entries</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">5</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">1</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">112233</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">3</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">4444</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">5555</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">6666</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span>
+      <span class="n">FabricIndex</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">Privilege</span><span class="p">:</span> <span class="mi">3</span>
+      <span class="n">AuthMode</span><span class="p">:</span> <span class="mi">3</span>
+      <span class="n">Subjects</span><span class="p">:</span> <span class="mi">2</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">123</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">456</span>
+      <span class="n">Targets</span><span class="p">:</span> <span class="mi">3</span> <span class="n">entries</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="p">{</span>
+          <span class="n">Cluster</span><span class="p">:</span> <span class="mi">6</span>
+          <span class="n">Endpoint</span><span class="p">:</span> <span class="n">null</span>
+          <span class="n">DeviceType</span><span class="p">:</span> <span class="n">null</span>
+         <span class="p">}</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">{</span>
+          <span class="n">Cluster</span><span class="p">:</span> <span class="n">null</span>
+          <span class="n">Endpoint</span><span class="p">:</span> <span class="mi">1</span>
+          <span class="n">DeviceType</span><span class="p">:</span> <span class="n">null</span>
+         <span class="p">}</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span>
+          <span class="n">Cluster</span><span class="p">:</span> <span class="mi">8</span>
+          <span class="n">Endpoint</span><span class="p">:</span> <span class="mi">2</span>
+          <span class="n">DeviceType</span><span class="p">:</span> <span class="n">null</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="managing-acls-using-chip-repl">
+<h2>Managing ACLs Using Chip-Repl<a class="headerlink" href="#managing-acls-using-chip-repl" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Usage<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h4>Entire List<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>See the important notes in the chip-tool section, as they also apply to
+chip-repl.</p>
+</section>
+</section>
+<section id="id3">
+<h3>Null Fields<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Null fields may be omitted.</p>
+<p>OK: <code class="docutils literal notranslate"><span class="pre">Target(cluster=6,</span> <span class="pre">endpoint=Null,</span> <span class="pre">deviceType=Null)</span></code></p>
+<p>Also OK: <code class="docutils literal notranslate"><span class="pre">Target(cluster=6)</span></code></p>
+<p>The above assumes Target and Null are defined at global scope, which is not
+normally the case.</p>
+<section id="id4">
+<h4>Fabric Index<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">ACL</span></code> attribute is fabric-scoped, so each ACL has a fabric index.</p>
+<p>The REPL ignores it when performing the actual write. Because null fields can be
+omitted, simply do not provide it when writing ACLs.</p>
+<p>When reading ACLs, the proper fabric index is shown.</p>
+</section>
+<section id="enums-and-identifiers">
+<h4>Enums and Identifiers<a class="headerlink" href="#enums-and-identifiers" title="Permalink to this headline">#</a></h4>
+<p>The REPL accepts numerical values for enums and identifiers, but it also accepts
+strongly typed values:</p>
+<p>The privileges are:</p>
+<ul class="simple">
+<li><p>Clusters.AccessControl.Enums.Privilege.kView</p></li>
+<li><p>Clusters.AccessControl.Enums.Privilege.kOperate</p></li>
+<li><p>Clusters.AccessControl.Enums.Privilege.kManage</p></li>
+<li><p>Clusters.AccessControl.Enums.Privilege.kAdminister</p></li>
+</ul>
+<p>The authentication modes are:</p>
+<ul class="simple">
+<li><p>Clusters.AccessControl.Enums.AuthMode.kCASE</p></li>
+<li><p>Clusters.AccessControl.Enums.AuthMode.kGroup</p></li>
+</ul>
+<p>Some typical clusters:</p>
+<ul class="simple">
+<li><p>Clusters.OnOff.id</p></li>
+<li><p>Clusters.LevelControl.id</p></li>
+<li><p>Clusters.Descriptor.id</p></li>
+<li><p>Clusters.Binding.id</p></li>
+<li><p>Clusters.AccessControl.id</p></li>
+<li><p>Clusters.Basic.id</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h3>Examples<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="id6">
+<h4>Automatically Installed ACL<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<p>After commissioning with chip-repl, assuming <code class="docutils literal notranslate"><span class="pre">CaseAdminNode</span></code> is 1, the
+automatically installed ACL is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">devCtrl</span><span class="o">.</span><span class="n">ReadAttribute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Attributes</span><span class="o">.</span><span class="n">Acl</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+│   0: {
+│   │   &lt;class &#39;chip.clusters.Objects.AccessControl&#39;&gt;: {
+│   │   │   &lt;class &#39;chip.clusters.Attribute.DataVersion&#39;&gt;: 556798280,
+│   │   │   &lt;class &#39;chip.clusters.Objects.AccessControl.Attributes.Acl&#39;&gt;: [
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kAdminister: 5&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kCase: 2&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   1
+│   │   │   │   │   ],
+│   │   │   │   │   targets=Null
+│   │   │   │   )
+│   │   │   ]
+│   │   }
+│   }
+}
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4>Installing a CASE ACL<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">devCtrl</span><span class="o">.</span><span class="n">WriteAttribute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Attributes</span><span class="o">.</span><span class="n">Acl</span><span class="p">(</span> <span class="p">[</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+    <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+  <span class="p">),</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+    <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">4444</span><span class="p">,</span> <span class="mi">5555</span><span class="p">,</span> <span class="mi">6666</span> <span class="p">],</span>
+  <span class="p">),</span>
+<span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+│   0: {
+│   │   &lt;class &#39;chip.clusters.Objects.AccessControl&#39;&gt;: {
+│   │   │   &lt;class &#39;chip.clusters.Attribute.DataVersion&#39;&gt;: 556798289,
+│   │   │   &lt;class &#39;chip.clusters.Objects.AccessControl.Attributes.Acl&#39;&gt;: [
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kAdminister: 5&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kCase: 2&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   1
+│   │   │   │   │   ],
+│   │   │   │   │   targets=Null
+│   │   │   │   ),
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kView: 1&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kCase: 2&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   4444,
+│   │   │   │   │   │   5555,
+│   │   │   │   │   │   6666
+│   │   │   │   │   ],
+│   │   │   │   │   targets=Null
+│   │   │   │   )
+│   │   │   ]
+│   │   }
+│   }
+}
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>Installing a Group ACL<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">devCtrl</span><span class="o">.</span><span class="n">WriteAttribute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Attributes</span><span class="o">.</span><span class="n">Acl</span><span class="p">(</span> <span class="p">[</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+    <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+  <span class="p">),</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+    <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">4444</span><span class="p">,</span> <span class="mi">5555</span><span class="p">,</span> <span class="mi">6666</span> <span class="p">],</span>
+  <span class="p">),</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kOperate</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kGroup</span><span class="p">,</span>
+    <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">456</span> <span class="p">],</span>
+    <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">Target</span><span class="p">(</span>
+        <span class="n">cluster</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">OnOff</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">Target</span><span class="p">(</span>
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">Target</span><span class="p">(</span>
+        <span class="n">cluster</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">LevelControl</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">]</span>
+  <span class="p">),</span>
+<span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+│   0: {
+│   │   &lt;class &#39;chip.clusters.Objects.AccessControl&#39;&gt;: {
+│   │   │   &lt;class &#39;chip.clusters.Attribute.DataVersion&#39;&gt;: 556798301,
+│   │   │   &lt;class &#39;chip.clusters.Objects.AccessControl.Attributes.Acl&#39;&gt;: [
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kAdminister: 5&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kCase: 2&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   1
+│   │   │   │   │   ],
+│   │   │   │   │   targets=Null
+│   │   │   │   ),
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kView: 1&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kCase: 2&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   4444,
+│   │   │   │   │   │   5555,
+│   │   │   │   │   │   6666
+│   │   │   │   │   ],
+│   │   │   │   │   targets=Null
+│   │   │   │   ),
+│   │   │   │   AccessControlEntry(
+│   │   │   │   │   fabricIndex=1,
+│   │   │   │   │   privilege=&lt;Privilege.kOperate: 3&gt;,
+│   │   │   │   │   authMode=&lt;AuthMode.kGroup: 3&gt;,
+│   │   │   │   │   subjects=[
+│   │   │   │   │   │   123,
+│   │   │   │   │   │   456
+│   │   │   │   │   ],
+│   │   │   │   │   targets=[
+│   │   │   │   │   │   Target(
+│   │   │   │   │   │   │   cluster=6,
+│   │   │   │   │   │   │   endpoint=Null,
+│   │   │   │   │   │   │   deviceType=Null
+│   │   │   │   │   │   ),
+│   │   │   │   │   │   Target(
+│   │   │   │   │   │   │   cluster=Null,
+│   │   │   │   │   │   │   endpoint=1,
+│   │   │   │   │   │   │   deviceType=Null
+│   │   │   │   │   │   ),
+│   │   │   │   │   │   Target(
+│   │   │   │   │   │   │   cluster=8,
+│   │   │   │   │   │   │   endpoint=2,
+│   │   │   │   │   │   │   deviceType=Null
+│   │   │   │   │   │   )
+│   │   │   │   │   ]
+│   │   │   │   )
+│   │   │   ]
+│   │   }
+│   }
+}
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="BUILDING.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building Matter</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="android_building.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Building Android</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

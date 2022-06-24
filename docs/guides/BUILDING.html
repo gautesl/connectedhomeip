@@ -1,0 +1,1475 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Building Matter &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Access Control Guide" href="access-control-guide.html" />
+    <link rel="prev" title="Guides" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/BUILDING.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/BUILDING.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-out-the-matter-code">
+   Checking out the Matter code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-linux">
+     Installing prerequisites on Linux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-macos">
+     Installing prerequisites on macOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-raspberry-pi-4">
+     Installing prerequisites on Raspberry Pi 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-for-building">
+   Prepare for building
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-for-the-host-os-linux-or-macos">
+   Build for the host OS (Linux or macOS)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-custom-configuration">
+   Build custom configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-examples">
+   Build examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unified-builds">
+   Unified builds
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introspection">
+   Introspection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maintaining-matter">
+   Maintaining Matter
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Building Matter</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-out-the-matter-code">
+   Checking out the Matter code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-linux">
+     Installing prerequisites on Linux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-macos">
+     Installing prerequisites on macOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-prerequisites-on-raspberry-pi-4">
+     Installing prerequisites on Raspberry Pi 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-for-building">
+   Prepare for building
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-for-the-host-os-linux-or-macos">
+   Build for the host OS (Linux or macOS)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-custom-configuration">
+   Build custom configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-examples">
+   Build examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unified-builds">
+   Unified builds
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introspection">
+   Introspection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maintaining-matter">
+   Maintaining Matter
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="building-matter">
+<h1>Building Matter<a class="headerlink" href="#building-matter" title="Permalink to this headline">#</a></h1>
+<p>Matter supports configuring the build with
+<a class="reference external" href="https://gn.googlesource.com/gn/">GN</a>, a fast and scalable meta-build system
+that generates inputs to <a class="reference external" href="https://ninja-build.org/">ninja</a>.</p>
+<p>Tested on:</p>
+<ul class="simple">
+<li><p>macOS 10.15</p></li>
+<li><p>Debian 11</p></li>
+<li><p>Ubuntu 20.04 LTS</p></li>
+</ul>
+<p>Build system features:</p>
+<ul class="simple">
+<li><p>Very fast and small footprint</p></li>
+<li><p>Cross-platform handling: (Linux, Darwin, embedded arm, etc.)</p></li>
+<li><p>Multiple toolchains &amp; cross toolchain dependencies</p></li>
+<li><p>Integrates automated testing framework: <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">check</span></code></p></li>
+<li><p>Introspection: <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">desc</span></code></p></li>
+<li><p>Automatic formatting: <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">format</span></code></p></li>
+</ul>
+<section id="checking-out-the-matter-code">
+<h2>Checking out the Matter code<a class="headerlink" href="#checking-out-the-matter-code" title="Permalink to this headline">#</a></h2>
+<p>To check out the Matter repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">recurse</span><span class="o">-</span><span class="n">submodules</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">project</span><span class="o">-</span><span class="n">chip</span><span class="o">/</span><span class="n">connectedhomeip</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>If you already have a checkout, run the following command to sync submodules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
+</pre></div>
+</div>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>Before building, you’ll need to install a few OS specific dependencies.</p>
+<section id="installing-prerequisites-on-linux">
+<h3>Installing prerequisites on Linux<a class="headerlink" href="#installing-prerequisites-on-linux" title="Permalink to this headline">#</a></h3>
+<p>On Debian-based Linux distributions such as Ubuntu, these dependencies can be
+satisfied with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libdbus</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">dev</span> \
+     <span class="n">libglib2</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavahi</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="n">dev</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> \
+     <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">unzip</span> <span class="n">libgirepository1</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcairo2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</section>
+<section id="installing-prerequisites-on-macos">
+<h3>Installing prerequisites on macOS<a class="headerlink" href="#installing-prerequisites-on-macos" title="Permalink to this headline">#</a></h3>
+<p>On macOS, first install Xcode from the Mac App Store. The remaining dependencies
+can be installed and satisfied using <a class="reference external" href="https://brew.sh/">Brew</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">openssl</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>However, that does not expose the package to <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code>. To fix that, one
+needs to run something like the following:</p>
+<p>Intel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pkgconfig</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">../../</span><span class="n">Cellar</span><span class="o">/</span><span class="n">openssl</span><span class="o">@</span><span class="mf">1.1</span><span class="o">/</span><span class="mf">1.1.1</span><span class="n">g</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pkgconfig</span><span class="o">/*</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">openssl&#64;1.1/1.1.1g</span></code> may need to be replaced with the actual version of
+OpenSSL installed by Brew.</p>
+<p>Apple Silicon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:&quot;/opt/homebrew/opt/openssl@3/lib/pkgconfig&quot;
+</pre></div>
+</div>
+<p>Note: If using MacPorts, <code class="docutils literal notranslate"><span class="pre">port</span> <span class="pre">install</span> <span class="pre">openssl</span></code> is sufficient to satisfy this
+dependency.</p>
+</section>
+<section id="installing-prerequisites-on-raspberry-pi-4">
+<h3>Installing prerequisites on Raspberry Pi 4<a class="headerlink" href="#installing-prerequisites-on-raspberry-pi-4" title="Permalink to this headline">#</a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">rpi-imager</span></code>, install the Ubuntu <em>21.04</em> 64-bit <em>server</em> OS for arm64
+architectures on a micro SD card. This release will have bluez 5.55 or newer
+which is required for BLE functionality.</p>
+<p>Boot the SD card, login with the default user account “ubuntu” and password
+“ubuntu”, then proceed with
+<a class="reference internal" href="#installing-prerequisites-on-linux"><span class="std std-doc">Installing prerequisites on Linux</span></a>.</p>
+<p>Finally, install some Raspberry Pi specific dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">pi</span><span class="o">-</span><span class="n">bluetooth</span> <span class="n">avahi</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</div>
+<p>You need to reboot your RPi after install <code class="docutils literal notranslate"><span class="pre">pi-bluetooth</span></code>.</p>
+<p>By default, wpa_supplicant is not allowed to update (overwrite) configuration,
+if you want the Matter app to be able to store the configuration changes
+permanently, we need to make the following changes.</p>
+<ol class="arabic simple">
+<li><p>Edit the dbus-fi.w1.wpa_supplicant1.service file to use configuration file
+instead.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">dbus</span><span class="o">-</span><span class="n">fi</span><span class="o">.</span><span class="n">w1</span><span class="o">.</span><span class="n">wpa_supplicant1</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+<p>Change the wpa_supplicant start parameters to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ExecStart</span><span class="o">=/</span><span class="n">sbin</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">i</span> <span class="n">wlan0</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Add the wpa-supplicant configuration file</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>And add the following content to the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span>
+<span class="n">update_config</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Finally, reboot your RPi.</p>
+</section>
+</section>
+<section id="prepare-for-building">
+<h2>Prepare for building<a class="headerlink" href="#prepare-for-building" title="Permalink to this headline">#</a></h2>
+<p>Before running any other build command, the <code class="docutils literal notranslate"><span class="pre">scripts/activate.sh</span></code> environment
+setup script should be sourced at the top level. This script takes care of
+downloading GN, ninja, and setting up a Python environment with libraries used
+to build and test.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">scripts</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>If this script says the environment is out of date, it can be updated by
+running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">scripts</span><span class="o">/</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">scripts/bootstrap.sh</span></code> script re-creates the environment from scratch, which
+is expensive, so avoid running it unless the environment is out of date.</p>
+</section>
+<section id="build-for-the-host-os-linux-or-macos">
+<h2>Build for the host OS (Linux or macOS)<a class="headerlink" href="#build-for-the-host-os-linux-or-macos" title="Permalink to this headline">#</a></h2>
+<p>This will build all sources, libraries, and tests for the host platform:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">scripts</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+</pre></div>
+</div>
+<p>This generates a configuration suitable for debugging. To configure an optimized
+build, specify <code class="docutils literal notranslate"><span class="pre">is_debug=false</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;is_debug=false&#39;</span>
+
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+</pre></div>
+</div>
+<p>The directory name <code class="docutils literal notranslate"><span class="pre">out/host</span></code> can be any directory, although it’s conventional
+to build within the <code class="docutils literal notranslate"><span class="pre">out</span></code> directory. This example uses <code class="docutils literal notranslate"><span class="pre">host</span></code> to emphasize that
+we’re building for the host system. Different build directories can be used for
+different configurations, or a single directory can be used and reconfigured as
+necessary via <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">args</span></code>.</p>
+<p>To run all tests, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="n">check</span>
+</pre></div>
+</div>
+<p>To run only the tests in <code class="docutils literal notranslate"><span class="pre">src/inet/tests</span></code>, you can run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="n">src</span><span class="o">/</span><span class="n">inet</span><span class="o">/</span><span class="n">tests</span><span class="p">:</span><span class="n">tests_run</span>
+</pre></div>
+</div>
+<p>Note that the build system caches passing tests, so if you see</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ninja</span><span class="p">:</span> <span class="n">no</span> <span class="n">work</span> <span class="n">to</span> <span class="n">do</span>
+</pre></div>
+</div>
+<p>that means that the tests passed in a previous build.</p>
+</section>
+<section id="build-custom-configuration">
+<h2>Build custom configuration<a class="headerlink" href="#build-custom-configuration" title="Permalink to this headline">#</a></h2>
+<p>The build is configured by setting build arguments. These are set by passing the
+<code class="docutils literal notranslate"><span class="pre">--args</span></code> option to <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">gen</span></code>, by running <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">args</span></code> on the output directory, or by
+hand editing <code class="docutils literal notranslate"><span class="pre">args.gn</span></code> in the output directory. To configure a new build or edit
+the arguments to existing build, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">scripts</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">gn</span> <span class="n">args</span> <span class="n">out</span><span class="o">/</span><span class="n">custom</span>
+
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">custom</span>
+</pre></div>
+</div>
+<p>Two key builtin build arguments are <code class="docutils literal notranslate"><span class="pre">target_os</span></code> and <code class="docutils literal notranslate"><span class="pre">target_cpu</span></code>, which control
+the OS &amp; CPU of the build.</p>
+<p>To see help for all available build arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">custom</span>
+<span class="n">gn</span> <span class="n">args</span> <span class="o">--</span><span class="nb">list</span> <span class="n">out</span><span class="o">/</span><span class="n">custom</span>
+</pre></div>
+</div>
+</section>
+<section id="build-examples">
+<h2>Build examples<a class="headerlink" href="#build-examples" title="Permalink to this headline">#</a></h2>
+<p>Examples can be built in two ways, as separate projects that add Matter in the
+third_party directory, or in the top level Matter project.</p>
+<p>To build the <code class="docutils literal notranslate"><span class="pre">chip-shell</span></code> example as a separate project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span><span class="o">/</span><span class="n">shell</span>
+<span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">debug</span>
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">debug</span>
+</pre></div>
+</div>
+<p>To build it at the top level, see below under “Unified Builds”.</p>
+</section>
+<section id="unified-builds">
+<h2>Unified builds<a class="headerlink" href="#unified-builds" title="Permalink to this headline">#</a></h2>
+<p>To build a unified configuration that approximates the set of continuous builds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">scripts</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;is_debug=true target_os=&quot;all&quot;&#39;</span>
+
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>This can be used prior to change submission to configure, build, and test the
+gcc, clang, mbedtls, &amp; examples configurations all together in one parallel
+build. Each configuration has a separate subdirectory in the output dir.</p>
+<p>This unified build can be used for day to day development, although it’s more
+expensive to build everything for every edit. To save time, you can name the
+configuration to build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="n">host_gcc</span>
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="n">check_host_gcc</span>
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">host_gcc</span></code> with the name of the configuration, which is found in the
+root <code class="docutils literal notranslate"><span class="pre">BUILD.gn</span></code>.</p>
+<p>You can also fine tune the configurations generated via arguments such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;is_debug=true target_os=&quot;all&quot; enable_host_clang_build=false&#39;</span>
+</pre></div>
+</div>
+<p>For a full list, see the root <code class="docutils literal notranslate"><span class="pre">BUILD.gn</span></code>.</p>
+<p>Note that in the unified build, targets have multiple instances and need to be
+disambiguated by adding a <code class="docutils literal notranslate"><span class="pre">(toolchain)</span></code> suffix. Use <code class="docutils literal notranslate"><span class="pre">gn</span> <span class="pre">ls</span> <span class="pre">out/debug</span></code> to list
+all of the target instances. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="s1">&#39;//src/controller(//build/toolchain/host:linux_x64_clang)&#39;</span>
+</pre></div>
+</div>
+<p>Note: Some platforms that can be built as part of the unified build require
+downloading additional tools. To add these to the build, the location must be
+provided as a build argument. For example, to add the Simplelink cc13x2_26x2
+examples to the unified build, install
+<a class="reference external" href="https://www.ti.com/tool/SYSCONFIG">SysConfig</a> and add the following build
+arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">unified</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s2">&quot;target_os=</span><span class="se">\&quot;</span><span class="s2">all</span><span class="se">\&quot;</span><span class="s2"> enable_ti_simplelink_builds=true ti_sysconfig_root=</span><span class="se">\&quot;</span><span class="s2">/path/to/sysconfig</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h2>
+<p>GN has builtin help via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">help</span>
+</pre></div>
+</div>
+<p>Recommended topics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">help</span> <span class="n">execution</span>
+<span class="n">gn</span> <span class="n">help</span> <span class="n">grammar</span>
+<span class="n">gn</span> <span class="n">help</span> <span class="n">toolchain</span>
+</pre></div>
+</div>
+<p>Also see the
+<a class="reference external" href="https://gn.googlesource.com/gn/+/master/docs/quick_start.md">quick start guide</a>.</p>
+</section>
+<section id="introspection">
+<h2>Introspection<a class="headerlink" href="#introspection" title="Permalink to this headline">#</a></h2>
+<p>GN has various introspection tools to help examine the build configuration.</p>
+<p>To show all of the targets in an output directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">ls</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+</pre></div>
+</div>
+<p>To show all of the files that will be built:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">outputs</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="s1">&#39;*&#39;</span>
+</pre></div>
+</div>
+<p>To show the GN representation of a configured target:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">inet</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>To dump the GN representation of the entire build as JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span><span class="o">/</span> <span class="s1">&#39;*&#39;</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>To show the dependency tree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="p">:</span><span class="nb">all</span> <span class="n">deps</span> <span class="o">--</span><span class="n">tree</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>To find dependency paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">path</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">transport</span><span class="o">/</span><span class="n">tests</span><span class="p">:</span><span class="n">tests</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">system</span>
+</pre></div>
+</div>
+<p>To list useful information for linking against libCHIP:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span> <span class="n">include_dirs</span>
+<span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span> <span class="n">defines</span>
+<span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span> <span class="n">outputs</span>
+
+<span class="c1"># everything as JSON</span>
+<span class="n">gn</span> <span class="n">desc</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span> <span class="o">//</span><span class="n">src</span><span class="o">/</span><span class="n">lib</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">json</span>
+</pre></div>
+</div>
+</section>
+<section id="maintaining-matter">
+<h2>Maintaining Matter<a class="headerlink" href="#maintaining-matter" title="Permalink to this headline">#</a></h2>
+<p>If you make any change to the GN build system, the next build will regenerate
+the ninja files automatically. No need to do anything.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Guides</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="access-control-guide.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Access Control Guide</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

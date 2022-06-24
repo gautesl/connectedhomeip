@@ -1,0 +1,1673 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Commissioning NXP K32W using Android CHIPTool &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setup OpenThread Border Router on Raspberry Pi" href="openthread_border_router_pi.html" />
+    <link rel="prev" title="Building and Running CHIP Linux Examples for i.MX 8M Mini EVK" href="nxp_imx8m_linux_examples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/nxp_k32w_android_commissioning.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/nxp_k32w_android_commissioning.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-programming-openthread-rcp-firmware">
+   Building and programming OpenThread RCP firmware
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuring-pc-as-a-thread-border-router">
+   Configuring PC as a Thread Border Router
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-programming-nxp-k32w-lock-light-example-application">
+   Building and programming NXP K32W Lock/Light Example Application
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-installing-android-chiptool">
+   Building and installing Android CHIPTool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forming-a-thread-network-on-the-border-router">
+   Forming a Thread network on the Border Router
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-accessory-device">
+   Preparing accessory device
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commissioning-accessory-device">
+   Commissioning accessory device
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sending-chip-commands">
+   Sending CHIP commands
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Commissioning NXP K32W using Android CHIPTool</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-programming-openthread-rcp-firmware">
+   Building and programming OpenThread RCP firmware
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuring-pc-as-a-thread-border-router">
+   Configuring PC as a Thread Border Router
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-programming-nxp-k32w-lock-light-example-application">
+   Building and programming NXP K32W Lock/Light Example Application
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-installing-android-chiptool">
+   Building and installing Android CHIPTool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forming-a-thread-network-on-the-border-router">
+   Forming a Thread network on the Border Router
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-accessory-device">
+   Preparing accessory device
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commissioning-accessory-device">
+   Commissioning accessory device
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sending-chip-commands">
+   Sending CHIP commands
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="commissioning-nxp-k32w-using-android-chiptool">
+<h1>Commissioning NXP K32W using Android CHIPTool<a class="headerlink" href="#commissioning-nxp-k32w-using-android-chiptool" title="Permalink to this headline">#</a></h1>
+<p>This article describes how to use
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/android/CHIPTool/README.md">CHIPTool</a> for Android smartphones to
+commission an NXP K32W061 DK6 running
+<a class="reference internal" href="#building-and-programming-nxp-k32w-lock-light-example-application"><span class="std std-doc">NXP K32W Lock/Light Example Application</span></a>
+onto a CHIP-enabled Thread network.</p>
+<hr>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview"><span class="std std-doc">Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#requirements"><span class="std std-doc">Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="#building-and-programming-openthread-rcp-firmware"><span class="std std-doc">Building and programming OpenThread RCP firmware</span></a></p></li>
+<li><p><a class="reference internal" href="#configuring-pc-as-a-thread-border-router"><span class="std std-doc">Configuring PC as Thread Border Router</span></a></p></li>
+<li><p><a class="reference internal" href="#building-and-programming-nxp-k32w-lock-light-example-application"><span class="std std-doc">Building and programming NXP K32W Lock/Light Example Application</span></a></p></li>
+<li><p><a class="reference internal" href="#building-and-installing-android-chiptool"><span class="std std-doc">Building and installing Android CHIPTool</span></a></p></li>
+<li><p><a class="reference internal" href="#forming-a-thread-network-on-the-border-router"><span class="std std-doc">Forming a Thread network on the Border Router</span></a></p></li>
+<li><p><a class="reference internal" href="#preparing-accessory-device"><span class="std std-doc">Preparing accessory device</span></a></p></li>
+<li><p><a class="reference internal" href="#commissioning-accessory-device"><span class="std std-doc">Commissioning accessory device</span></a></p></li>
+<li><p><a class="reference internal" href="#sending-chip-commands"><span class="std std-doc">Sending CHIP commands</span></a></p></li>
+</ul>
+<hr>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>The commissioning process is composed of the following main stages:</p>
+<ul class="simple">
+<li><p>K32W061 (CHIP accessory) device is put in BLE advertisement mode by pressing
+the USERINTERFACE button;</p></li>
+<li><p>CHIPTool discovers the CHIP accessory over BLE;</p></li>
+<li><p>CHIPTool establishes a secure channel with the accessory using a SPAKE2+
+handshake;</p></li>
+<li><p>CHIP tool sends Thread provisioning data over the secure channel;</p></li>
+<li><p>The accessory device joins a CHIP-enabled Thread network using the provided
+Thread credentials.</p></li>
+</ul>
+<p>Bluetooth LE is only used during the commissioning phase. Afterwards, only the
+IP connectivity between the smartphone and the accessory device is needed to
+send operational messages. Since a typical smartphone does not have a Thread
+radio built-in, extra effort is needed to prepare a fully-fledged testing
+environment. This page describes how to build a Thread Border Router using a PC
+with a spare Wi-Fi card and an
+<a class="reference external" href="https://openthread.io/platforms/co-processor">OpenThread Radio Co-Processor</a>
+device.</p>
+<p>The following diagram shows the connectivity between network components required
+to allow communication between devices running the CHIPTool and Lock/Light
+applications:</p>
+<p><img alt="nxp_hw_connectivity" src="../_images/nxp_hw_connectivity.JPG" /></p>
+<hr>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<p>You need the following hardware and software to build a Thread Border Router:</p>
+<ul class="simple">
+<li><p>2 K32W061 DK6 boards</p>
+<ul>
+<li><p>One K32W061 DK6 is needed to run
+<a class="reference external" href="https://openthread.io/platforms/co-processor">OpenThread Radio Co-Processor</a>
+firmware and can be replaced with another compatible device like K32W061
+Dongle.</p></li>
+</ul>
+</li>
+<li><p>Smartphone compatible with Android 8.0 or later</p></li>
+<li><p>PC with the following characteristics:</p>
+<ul>
+<li><p>Software: Ubuntu 20.04</p></li>
+<li><p>Hardware: A spare Wi-Fi card (WiFi driver needs to support AP mode).</p></li>
+</ul>
+</li>
+</ul>
+<p>While this page references Ubuntu 20.04, all the procedures can be completed
+using other popular operating systems.</p>
+<hr>
+</section>
+<section id="building-and-programming-openthread-rcp-firmware">
+<h2>Building and programming OpenThread RCP firmware<a class="headerlink" href="#building-and-programming-openthread-rcp-firmware" title="Permalink to this headline">#</a></h2>
+<p>OpenThread RCP firmware is required to allow the PC to communicate with Thread
+devices. Run the commands mentioned in the following steps to build and program
+the RCP firmware onto an K32W061 DK6:</p>
+<ol class="arabic">
+<li><p>Clone the OpenThread repository into the current directory (we recommand
+using commit ced158e65a00dd5394c04548b7b187d3a3f11eef):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+git clone https://github.com/openthread/openthread.git
+```
+</pre></div>
+</div>
+</li>
+<li><p>Enter the <em>openthread</em> directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+cd openthread
+```
+</pre></div>
+</div>
+</li>
+<li><p>Install OpenThread dependencies:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+./script/bootstrap
+```
+</pre></div>
+</div>
+</li>
+<li><p>Set up the build environment:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+./bootstrap
+```
+</pre></div>
+</div>
+</li>
+<li><p>Build OpenThread for the K32W061 DK6:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> $ make -f examples/Makefile-k32w061
+</pre></div>
+</div>
+<p>This creates an RCP image in the <code class="docutils literal notranslate"><span class="pre">bin/ot-rcp</span></code> directory.</p>
+</li>
+<li><p>Program the RCP firmware using the official
+<a class="reference external" href="https://github.com/openthread/openthread/blob/master/examples/platforms/k32w/k32w061/README.md">OpenThread Flash Instructions</a>.</p></li>
+<li><p>Plug-in the K32W061 DK6 to the PC.</p></li>
+</ol>
+<hr>
+</section>
+<section id="configuring-pc-as-a-thread-border-router">
+<h2>Configuring PC as a Thread Border Router<a class="headerlink" href="#configuring-pc-as-a-thread-border-router" title="Permalink to this headline">#</a></h2>
+<p>To make your PC work as a Thread Border Router, complete the following tasks:</p>
+<ol class="arabic">
+<li><p>Set up Thread Border Router package by following steps
+<a class="reference external" href="https://openthread.io/guides/border-router/build">3,4,5</a> from the official
+documentation. Use NETWORK_MANAGER=0 as the Wi-Fi AP will be set manually at
+the next step. Also, we recommend using commit
+83babaf236cad8471be28185d8d4351d37564919 for ot-br-posix repository.</p></li>
+<li><p>Configure the Wi-Fi AP</p>
+<ul>
+<li><p>Install the required package:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo apt-get install hostapd
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Configure hostapd (create new file and add content):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /etc/hostapd/hostapd.conf
+
+  interface=wlan0
+  driver=nl80211
+  ssid=OT-BR
+  hw_mode=g
+  channel=7
+  wmm_enabled=0
+  macaddr_acl=0
+  auth_algs=1
+  ignore_broadcast_ssid=0
+  wpa=2
+  wpa_passphrase=12345678
+  wpa_key_mgmt=WPA-PSK
+  wpa_pairwise=TKIP
+  rsn_pairwise=CCMP
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>We need to tell hostapd to use our config file by editing the main
+hostapd configuration file. Change the line that starts with
+#DAEMON_CONF (remember to remove #):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /etc/default/hostapd
+
+  DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Start hostapd:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo systemctl unmask hostapd
+  sudo systemctl enable hostapd
+  ```
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Configure Dnsmasq</p>
+<ul>
+<li><p>Install the required package:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo apt-get install dnsmasq
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Make a backup of the default config file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.org
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Set the DHCP range:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /etc/dnsmasq.conf
+
+  interface=wlan0
+  dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>On System startup, dnsmasq will not wait for wlan0 interface to
+initialize and will fail. We need to tell systemd to launch it after
+networks get ready, so we will modify dnsmasq service file by specifying
+the initialization order under the <em>After=</em> and <em>Wants=</em> sections:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /lib/systemd/system/dnsmasq.service
+
+  [Unit]
+  ...
+  After=... network-online.target
+  Wants=... network-online.target
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Force systemd to avoid using port 53 (used by dnsmasqd service):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /etc/systemd/resolved.conf
+
+  DNSStubListener=no
+  ```
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Configure static IP for the Wi-Fi AP interface</p>
+<ul>
+<li><p>Modify the cloud-init file and add content to it (use spaces, not tabs,
+USE THE ):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+$ sudo vim /etc/netplan/50-cloud-init.yaml
+
+wlan0:
+    dhcp4: false
+    addresses:
+    - 192.168.4.1/24
+```
+</pre></div>
+</div>
+</li>
+<li><p>The final configuration file should like like this (pay attention to the
+spacing used):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  network:
+      version: 2
+      ethernets:
+          eth0:
+               dhcp4: true
+               optional: true
+          wlan0:
+               dhcp4: false
+               addresses:
+               - 192.168.4.1/24
+  ```
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p>Set up RADVD</p>
+<ul>
+<li><p>Install required package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">radvd</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure RADVD for distributing the prefix <code class="docutils literal notranslate"><span class="pre">_fd11:33_::/64</span></code> to the
+devices connected to the AP, while announcing them that is also has a
+route to <code class="docutils literal notranslate"><span class="pre">_fd11:22::/64_</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ sudo vim /etc/radvd.conf
+
+      interface wlan0 {
+         AdvManagedFlag on;
+         AdvSendAdvert on;
+         MinRtrAdvInterval 30;
+         MaxRtrAdvInterval 60;
+         prefix fd11:33::1/64 {
+            AdvOnLink on;
+            AdvAutonomous on;
+            AdvRouterAddr on;
+         };
+         route fd11:22::/64 {
+         };
+      };
+</pre></div>
+</div>
+</li>
+<li><p>Enable radvd service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="n">u</span><span class="o">=</span><span class="n">rw</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">o</span><span class="o">=</span><span class="n">r</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">radvd</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">radvd</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic" start="6">
+<li><p>Configure routing:</p>
+<ul>
+<li><p>Create a configuration file for setting the routing behavior (forward
+between Thread and Wi-Fi AP interfaces):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim configurations.sh
+
+  #!/bin/bash
+  sudo iptables -A FORWARD -i wlan0 -o wpan0 -j ACCEPT
+  sudo iptables -A FORWARD -i wpan0 -o wlan0 -j ACCEPT
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Set the executable bit for the above file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo chmod +x configurations.sh
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Configure the above script to be run each time the PC is restarted using
+a systemd service configuration (change the path for <em>ExecStart</em>):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  $ sudo vim /etc/systemd/system/br.service
+
+  [Unit]
+  Description=Job
+
+  [Service]
+  ExecStart=/home/replace_with_real_path/configurations.sh
+  Type=oneshot
+  RemainAfterExit=yes
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+</pre></div>
+</div>
+</li>
+<li><p>Then run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
+  sudo systemctl daemon-reload
+  sudo systemctl enable br.service
+  ```
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>As a quick checkpoint, restart the PC and make sure that the mobile phone
+can connect to the <em>OT-BR</em> AP (password: 12345678). Also, check that it gets
+assigned an IPv4 address in the range <em>192.168.4.0/24</em> and an IPV6 address
+with the prefix <em>fd11:33::/64</em>. Commands for debugging possible issues with
+the services:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+sudo service hostapd status
+sudo service dnsmasq status
+sudo service radvd status
+sudo service br status
+```
+</pre></div>
+</div>
+</li>
+</ol>
+<hr>
+</section>
+<section id="building-and-programming-nxp-k32w-lock-light-example-application">
+<h2>Building and programming NXP K32W Lock/Light Example Application<a class="headerlink" href="#building-and-programming-nxp-k32w-lock-light-example-application" title="Permalink to this headline">#</a></h2>
+<p>See
+<a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html"><span class="doc std std-doc">NXP K32W Lock Example Application README</span></a>
+to learn how to build and program the lock example onto an K32W061 DK6.</p>
+<p>See
+<a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html"><span class="doc std std-doc">NXP K32W Light Example Application README</span></a>
+to learn how to build and program the light example onto an K32W061 DK6.</p>
+<hr>
+</section>
+<section id="building-and-installing-android-chiptool">
+<h2>Building and installing Android CHIPTool<a class="headerlink" href="#building-and-installing-android-chiptool" title="Permalink to this headline">#</a></h2>
+<p>To build the CHIPTool application for your smartphone, read
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/android/CHIPTool/README.md">Android CHIPTool README</a>.</p>
+<p>After building, install the application by completing the following steps:</p>
+<ol class="arabic">
+<li><p>Install the Android Debug Bridge (adb) package by running the following
+command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+sudo apt install android-tools-adb
+```
+</pre></div>
+</div>
+</li>
+<li><p>Enable <em>USB debugging</em> on the smartphone. See the
+<a class="reference external" href="https://developer.android.com/studio/debug/dev-options">Configure on-device developer options</a>
+guide on the Android Studio hub for detailed information.</p></li>
+<li><p>If the <em>Install via USB</em> option is supported for your Android version, turn
+it on.</p></li>
+<li><p>Plug the smartphone into an USB port on your PC.</p></li>
+<li><p>Run the following command to install the application, with <em>chip-dir</em>
+replaced with the path to the CHIP source directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+adb install -r chip-dir/src/android/CHIPTool/app/build/outputs/apk/debug/app-debug.apk
+```
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to settings on your smartphone and grant <em>Camera</em> and <em>Location</em>
+permissions to CHIPTool.</p></li>
+</ol>
+<p>CHIPTool is now ready to be used for commissioning.</p>
+<hr>
+</section>
+<section id="forming-a-thread-network-on-the-border-router">
+<h2>Forming a Thread network on the Border Router<a class="headerlink" href="#forming-a-thread-network-on-the-border-router" title="Permalink to this headline">#</a></h2>
+<ol class="arabic">
+<li><p>On the mobile phone connect to the <em>OT-BR</em> Wi-Fi network.</p></li>
+<li><p>Open a browser and type the IP address 192.168.4.1. The Thread Border Router
+Web Management page will open.</p></li>
+<li><p>Navigate to the <em>Form</em> tab then push the <em>Form</em> button using the default
+parameters:
+<img alt="nxp_form_nwk" src="../_images/form_web.JPG" /></p></li>
+<li><p>The message <em>Form operation is successful</em> should be display after a few
+seconds.</p></li>
+<li><p>In case you ever want to reset these parameters issue this command from the
+border router shell:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+sudo ot-ctl factoryreset
+```
+</pre></div>
+</div>
+</li>
+<li><p>Info: For debugging the Border Router, <em>ot-ctl</em> offers an entry point to
+<a class="reference external" href="https://github.com/openthread/openthread/blob/master/src/cli/README.md">Thread CLI Commands</a>.</p></li>
+<li><p>In case there is any issue with the Web GUI check the logs on the Border
+Router side / restart the daemon:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+sudo service otbr-web status
+```
+</pre></div>
+</div>
+<p>In case the status is not <em>leader</em> then restart the service:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+sudo service otbr-web restart
+```
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="preparing-accessory-device">
+<h2>Preparing accessory device<a class="headerlink" href="#preparing-accessory-device" title="Permalink to this headline">#</a></h2>
+<p>To prepare the accessory device for commissioning, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Make sure that JP4 and JP7 jumpers are in leftmost position and a mini-USB
+cable is connected between the LPC connector and PC
+<img alt="nxp_connectors" src="../_images/k32w-dk6-connectors.jpg" /></p></li>
+<li><p>Use a terminal emulator (e.g.: Putty) to connect to the UART console of the
+accessory device. Use a baudrate of 115200.</p>
+<p>This will grant you access to the application logs.</p>
+</li>
+<li><p>Push <em>Button SW2</em> on the accessory device and wait 6s for factory reset of
+the device.</p></li>
+<li><p>Find a message similar to the following one in the application logs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+I: 666[SVR] Copy/paste the below URL in a browser to see the QR Code:
+        https://dhrishi.github.io/connectedhomeip/qrcode.html?data=CH%3AI34DV%2A-00%200C9SS0
+```
+</pre></div>
+</div>
+</li>
+<li><p>Open the URL in a web browser to have the commissioning QR code generated.</p></li>
+</ol>
+<hr>
+</section>
+<section id="commissioning-accessory-device">
+<h2>Commissioning accessory device<a class="headerlink" href="#commissioning-accessory-device" title="Permalink to this headline">#</a></h2>
+<p>To commission the accessory device onto the Thread network created in the
+<a class="reference internal" href="#forming-a-thread-network-on-the-border-router"><span class="std std-doc">Forming Thread network</span></a> section, complete the
+following steps:</p>
+<ol class="arabic">
+<li><p>Enable <em>Bluetooth</em> and <em>Location</em> services on your smartphone;</p></li>
+<li><p>Connect the smartphone to <em>OT-BR</em> WiFi network;</p></li>
+<li><p>Open the CHIPTool application on your smartphone;</p></li>
+<li><p>Push the USERINTERFACE button on the K32W board. This will start the BLE
+advertising process;</p></li>
+<li><p>Tap the <em>PROVISION CHIP DEVICE WITH THREAD</em> button and scan the commissioning
+QR code. Several notifications will appear, informing you of commissioning
+progress with scanning, connection, and pairing. At the end of this process,
+the Thread network settings screen appears.</p>
+<p><img alt="chiptool_main_screen" src="../_images/chiptool_main_screen.png" /></p>
+</li>
+<li><p>In the Thread network settings screen, use the default settings and tap the
+<em>SAVE NETWORK</em> button to send a Thread provisioning message to the accessory
+device. You will see the “Network provisioning completed” message when the
+accessory device successfully joins the Thread network.</p>
+<p><img alt="chiptool_credentials" src="../_images/thread_credentials.png" /></p>
+</li>
+</ol>
+<hr>
+</section>
+<section id="sending-chip-commands">
+<h2>Sending CHIP commands<a class="headerlink" href="#sending-chip-commands" title="Permalink to this headline">#</a></h2>
+<ol class="arabic">
+<li><p>Once the device is commissioned, the below screen appears. This means that
+the provisioning is completed successfully and you are connected to the
+device.</p>
+<p><img alt="on_off_cluster.png" src="../_images/on_off_cluster.png" /></p>
+</li>
+<li><p>Verify that the text box on the screen is not empty and contains the IPv6
+address of the accessory device.</p></li>
+<li><p>Tap the following buttons to change the lock/light state:</p>
+<ul class="simple">
+<li><p><em>ON</em> and <em>OFF</em> buttons lock/turn on and unlock/turn off the door/light
+bulb, respectively.</p></li>
+<li><p><em>TOGGLE</em> changes the lock/light state to the opposite.</p></li>
+</ul>
+</li>
+</ol>
+<p>The <em>LED D3</em> on the device turns on or off based on the changes of the
+lock/light state.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="nxp_imx8m_linux_examples.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building and Running CHIP Linux Examples for i.MX 8M Mini EVK</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="openthread_border_router_pi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Setup OpenThread Border Router on Raspberry Pi</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

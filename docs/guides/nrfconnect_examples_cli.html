@@ -1,0 +1,1691 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using CLI in nRF Connect examples &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuring nRF Connect examples" href="nrfconnect_examples_configuration.html" />
+    <link rel="prev" title="Commissioning nRF Connect Accessory using Android CHIPTool" href="nrfconnect_android_commissioning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/nrfconnect_examples_cli.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/nrfconnect_examples_cli.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-cli-console">
+   Accessing the CLI console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listing-all-commands">
+   Listing all commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-openthread-commands">
+   Using OpenThread commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-matter-specific-commands">
+   Using Matter-specific commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device">
+     device
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#factoryreset">
+       factoryreset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#onboardingcodes">
+     onboardingcodes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qrcode">
+       qrcode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qrcodeurl">
+       qrcodeurl
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manualpairingcode">
+       manualpairingcode
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#config">
+     config
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pincode">
+       pincode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discriminator">
+       discriminator
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vendorid">
+       vendorid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#productid">
+       productid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hardwarever">
+       hardwarever
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deviceid">
+       deviceid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fabricid">
+       fabricid
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ble">
+     ble
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#help">
+       help
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-start">
+       adv start
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-stop">
+       adv stop
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-status">
+       adv status
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nfc">
+     nfc
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#start">
+       start
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stop">
+       stop
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#state">
+       state
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dns">
+     dns
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#browse">
+       browse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolve">
+       resolve
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Using CLI in nRF Connect examples</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-cli-console">
+   Accessing the CLI console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listing-all-commands">
+   Listing all commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-openthread-commands">
+   Using OpenThread commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-matter-specific-commands">
+   Using Matter-specific commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device">
+     device
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#factoryreset">
+       factoryreset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#onboardingcodes">
+     onboardingcodes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qrcode">
+       qrcode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#qrcodeurl">
+       qrcodeurl
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manualpairingcode">
+       manualpairingcode
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#config">
+     config
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pincode">
+       pincode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discriminator">
+       discriminator
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vendorid">
+       vendorid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#productid">
+       productid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hardwarever">
+       hardwarever
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deviceid">
+       deviceid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fabricid">
+       fabricid
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ble">
+     ble
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#help">
+       help
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-start">
+       adv start
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-stop">
+       adv stop
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adv-status">
+       adv status
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nfc">
+     nfc
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#start">
+       start
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stop">
+       stop
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#state">
+       state
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dns">
+     dns
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#browse">
+       browse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolve">
+       resolve
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="using-cli-in-nrf-connect-examples">
+<h1>Using CLI in nRF Connect examples<a class="headerlink" href="#using-cli-in-nrf-connect-examples" title="Permalink to this headline">#</a></h1>
+<p>Some Matter examples for the development kits from Nordic Semiconductor include
+a command-line interface that allows access to application logs and
+<a class="reference external" href="https://docs.zephyrproject.org/1.13.0/subsystems/shell.html">Zephyr shell</a>.</p>
+<section id="accessing-the-cli-console">
+<h2>Accessing the CLI console<a class="headerlink" href="#accessing-the-cli-console" title="Permalink to this headline">#</a></h2>
+<p>To access the CLI console, use a serial terminal emulator of your choice, like
+Minicom or GNU Screen. Use the baud rate set to <code class="docutils literal notranslate"><span class="pre">115200</span></code>.</p>
+<p>For example, to start using the CLI console with Minicom, run the following
+command with <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code> replaced with the device node name of your
+development kit:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+minicom -D /dev/ttyACM0 -b 115200
+```
+</pre></div>
+</div>
+<p>When you reboot the kit, you will see the boot logs in the console, similar to
+the following messages:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$
+I: nRF5 <span class="m">802154</span> radio initialized
+I: <span class="m">8</span> Sectors of <span class="m">4096</span> bytes
+I: alloc wra: <span class="m">0</span>, ff0
+I: data wra: <span class="m">0</span>, <span class="m">0</span>
+*** Booting Zephyr OS build v2.4.0-ncs1  ***
+I: Init CHIP stack
+...
+</pre></div>
+</div>
+<p>This means that the console is working correctly and you can start using shell
+commands. For example, issuing the <code class="docutils literal notranslate"><span class="pre">kernel</span> <span class="pre">threads</span></code> command will print
+information about all running threads:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ kernel threads
+Scheduler: <span class="m">277</span> since last call
+Threads:
+ 0x20006518 CHIP
+        options: 0x0, priority: -1 timeout: <span class="m">536896912</span>
+        state: pending
+        stack size <span class="m">8192</span>, unused <span class="m">7256</span>, usage <span class="m">936</span> / <span class="m">8192</span> <span class="o">(</span><span class="m">11</span> %<span class="o">)</span>
+
+ 0x20004ab0 SDC RX
+        options: 0x0, priority: -10 timeout: <span class="m">536890152</span>
+        state: pending
+        stack size <span class="m">1024</span>, unused <span class="m">848</span>, usage <span class="m">176</span> / <span class="m">1024</span> <span class="o">(</span><span class="m">17</span> %<span class="o">)</span>
+...
+</pre></div>
+</div>
+</section>
+<section id="listing-all-commands">
+<h2>Listing all commands<a class="headerlink" href="#listing-all-commands" title="Permalink to this headline">#</a></h2>
+<p>To list all available commands, use the Tab key, which is normally used for the
+command completion feature.</p>
+<p>Pressing the Tab key in an empty command line prints the list of available
+commands:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$
+  clear              date               device             flash
+  <span class="nb">help</span>               <span class="nb">history</span>            kernel             nrf_clock_control
+  ot                 resize             shell
+</pre></div>
+</div>
+<p>Pressing the Tab key with a command entered in the command line cycles through
+available options for the given command.</p>
+</section>
+<section id="using-openthread-commands">
+<h2>Using OpenThread commands<a class="headerlink" href="#using-openthread-commands" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://github.com/openthread/openthread/blob/master/src/cli/README.md">OpenThread commands</a>
+are also accessible from the shell. However, they must preceded by <code class="docutils literal notranslate"><span class="pre">ot</span></code>. For
+example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ ot masterkey
+00112233445566778899aabbccddeeff
+Done
+</pre></div>
+</div>
+</section>
+<section id="using-matter-specific-commands">
+<h2>Using Matter-specific commands<a class="headerlink" href="#using-matter-specific-commands" title="Permalink to this headline">#</a></h2>
+<p>The nRF Connect examples let you use several Matter-specific CLI commands.</p>
+<p>These commands are not available by default and to enable using them, set the
+<code class="docutils literal notranslate"><span class="pre">CONFIG_CHIP_LIB_SHELL=y</span></code> Kconfig option in the <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code> file of the given
+example.</p>
+<p>Every invoked command must be preceded by the <code class="docutils literal notranslate"><span class="pre">matter</span></code> prefix.</p>
+<p>See the following subsections for the description of each Matter-specific
+command.</p>
+<section id="device">
+<h3>device<a class="headerlink" href="#device" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to manage the device. You must use
+this command together with one of the additional subcommands listed below.</p>
+<section id="factoryreset">
+<h4>factoryreset<a class="headerlink" href="#factoryreset" title="Permalink to this headline">#</a></h4>
+<p>Performs device factory reset that is hardware reset preceded by erasing of the
+whole Matter settings stored in a non-volatile memory.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter device factoryreset
+Performing factory reset ...
+</pre></div>
+</div>
+</section>
+</section>
+<section id="onboardingcodes">
+<h3>onboardingcodes<a class="headerlink" href="#onboardingcodes" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to view information about device
+onboarding codes. The <code class="docutils literal notranslate"><span class="pre">onboardingcodes</span></code> command takes one required parameter for
+the rendezvous type, then an optional parameter for printing a specific type of
+onboarding code.</p>
+<p>The full format of the command is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">onboardingcodes</span> <span class="n">none</span><span class="o">|</span><span class="n">softap</span><span class="o">|</span><span class="n">ble</span><span class="o">|</span><span class="n">onnetwork</span> <span class="p">[</span><span class="n">qrcode</span><span class="o">|</span><span class="n">qrcodeurl</span><span class="o">|</span><span class="n">manualpairingcode</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To print all the onboardingcodes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none
+QRCode:             MT:W0GU2OTB00KA0648G00
+QRCodeUrl:          https://dhrishi.github.io/connectedhomeip/qrcode.html?data<span class="o">=</span>MT%3AW0GU2OTB00KA0648G00
+ManualPairingCode:  <span class="m">34970112332</span>
+</pre></div>
+</div>
+<p>To print a specific type of onboarding code:</p>
+<section id="qrcode">
+<h4>qrcode<a class="headerlink" href="#qrcode" title="Permalink to this headline">#</a></h4>
+<p>Prints the device
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md">onboarding QR code payload</a>.
+Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none qrcode
+MT:W0GU2OTB00KA0648G00
+</pre></div>
+</div>
+</section>
+<section id="qrcodeurl">
+<h4>qrcodeurl<a class="headerlink" href="#qrcodeurl" title="Permalink to this headline">#</a></h4>
+<p>Prints the URL to view the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md">device onboarding QR code</a>
+in a web browser. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none qrcodeurl
+https://dhrishi.github.io/connectedhomeip/qrcode.html?data<span class="o">=</span>MT%3AW0GU2OTB00KA0648G00
+</pre></div>
+</div>
+</section>
+<section id="manualpairingcode">
+<h4>manualpairingcode<a class="headerlink" href="#manualpairingcode" title="Permalink to this headline">#</a></h4>
+<p>Prints the pairing code for the manual onboarding of a device. Takes no
+arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none manualpairingcode
+<span class="m">34970112332</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="config">
+<h3>config<a class="headerlink" href="#config" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to view device configuration
+information. You can use this command without any subcommand to print all
+available configuration data or to add a specific subcommand.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>VendorId:        <span class="m">65521</span> <span class="o">(</span>0xFFF1<span class="o">)</span>
+ProductId:       <span class="m">32768</span> <span class="o">(</span>0x8000<span class="o">)</span>
+HardwareVersion: <span class="m">1</span> <span class="o">(</span>0x1<span class="o">)</span>
+FabricId:
+PinCode:         <span class="m">020202021</span>
+Discriminator:   f00
+DeviceId:
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">config</span></code> command can also take the subcommands listed below.</p>
+<section id="pincode">
+<h4>pincode<a class="headerlink" href="#pincode" title="Permalink to this headline">#</a></h4>
+<p>Prints the PIN code for device setup. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config pincode
+<span class="m">020202021</span>
+</pre></div>
+</div>
+</section>
+<section id="discriminator">
+<h4>discriminator<a class="headerlink" href="#discriminator" title="Permalink to this headline">#</a></h4>
+<p>Prints the device setup discriminator. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config discriminator
+f00
+</pre></div>
+</div>
+</section>
+<section id="vendorid">
+<h4>vendorid<a class="headerlink" href="#vendorid" title="Permalink to this headline">#</a></h4>
+<p>Prints the vendor ID of the device. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config vendorid
+<span class="m">65521</span> <span class="o">(</span>0xFFFF1<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="productid">
+<h4>productid<a class="headerlink" href="#productid" title="Permalink to this headline">#</a></h4>
+<p>Prints the product ID of the device. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config productid
+<span class="m">32768</span> <span class="o">(</span>0x8000<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="hardwarever">
+<h4>hardwarever<a class="headerlink" href="#hardwarever" title="Permalink to this headline">#</a></h4>
+<p>Prints the hardware version of the device. Takes no arguments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config hardwarever
+<span class="m">1</span> <span class="o">(</span>0x1<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="deviceid">
+<h4>deviceid<a class="headerlink" href="#deviceid" title="Permalink to this headline">#</a></h4>
+<p>Prints the device identifier. Takes no arguments.</p>
+</section>
+<section id="fabricid">
+<h4>fabricid<a class="headerlink" href="#fabricid" title="Permalink to this headline">#</a></h4>
+<p>Prints the fabric identifier. Takes no arguments.</p>
+</section>
+</section>
+<section id="ble">
+<h3>ble<a class="headerlink" href="#ble" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to control the device Bluetooth LE
+transport state. You must use this command together with one of the additional
+subcommands listed below.</p>
+<section id="help">
+<h4>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h4>
+<p>Prints help information about <code class="docutils literal notranslate"><span class="pre">ble</span></code> commands group.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble <span class="nb">help</span>
+  <span class="nb">help</span>            Usage: ble &lt;subcommand&gt;
+  adv             Enable or disable advertisement. Usage: ble adv &lt;start<span class="p">|</span>stop<span class="p">|</span>state&gt;
+</pre></div>
+</div>
+</section>
+<section id="adv-start">
+<h4>adv start<a class="headerlink" href="#adv-start" title="Permalink to this headline">#</a></h4>
+<p>Enables Bluetooth LE advertising.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv start
+Starting BLE advertising
+</pre></div>
+</div>
+</section>
+<section id="adv-stop">
+<h4>adv stop<a class="headerlink" href="#adv-stop" title="Permalink to this headline">#</a></h4>
+<p>Disables Bluetooth LE advertising.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv stop
+Stopping BLE advertising
+</pre></div>
+</div>
+</section>
+<section id="adv-status">
+<h4>adv status<a class="headerlink" href="#adv-status" title="Permalink to this headline">#</a></h4>
+<p>Prints the information about the current Bluetooth LE advertising status.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv state
+BLE advertising is disabled
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nfc">
+<h3>nfc<a class="headerlink" href="#nfc" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to control the device NFC tag
+emulation state. You must use this command together with one of the additional
+subcommands listed below.</p>
+<section id="start">
+<h4>start<a class="headerlink" href="#start" title="Permalink to this headline">#</a></h4>
+<p>Starts the NFC tag emulation.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc start
+NFC tag emulation started
+</pre></div>
+</div>
+</section>
+<section id="stop">
+<h4>stop<a class="headerlink" href="#stop" title="Permalink to this headline">#</a></h4>
+<p>Stops the NFC tag emulation.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc stop
+NFC tag emulation stopped
+</pre></div>
+</div>
+</section>
+<section id="state">
+<h4>state<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h4>
+<p>Prints the information about the NFC tag emulation status.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc state
+NFC tag emulation is disabled
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dns">
+<h3>dns<a class="headerlink" href="#dns" title="Permalink to this headline">#</a></h3>
+<p>Handles a group of commands that are used to trigger performing DNS queries. You
+must use this command together with one of the additional subcommands listed
+below.</p>
+<section id="browse">
+<h4>browse<a class="headerlink" href="#browse" title="Permalink to this headline">#</a></h4>
+<p>Browses for DNS services of <code class="docutils literal notranslate"><span class="pre">_matterc_udp</span></code> type and prints the received
+response. Takes no argument.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter dns browse
+Browsing ...
+DNS browse succeeded:
+   Hostname: 0E824F0CA6DE309C
+   Vendor ID: <span class="m">9050</span>
+   Product ID: <span class="m">20043</span>
+   Long discriminator: <span class="m">3840</span>
+   Device type: <span class="m">0</span>
+   Device name:
+   Commissioning mode: <span class="m">0</span>
+   IP addresses:
+      fd08:b65e:db8e:f9c7:2cc2:2043:1366:3b31
+</pre></div>
+</div>
+</section>
+<section id="resolve">
+<h4>resolve<a class="headerlink" href="#resolve" title="Permalink to this headline">#</a></h4>
+<p>Resolves the specified Matter node service given by the <fabric-id> and
+<node-id>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter dns resolve &lt;fabric-id&gt; &lt;node-id&gt;
+Resolving ...
+DNS resolve <span class="k">for</span> 000000014A77CBB3-0000000000BC5C01 succeeded:
+   IP address: fd08:b65e:db8e:f9c7:8052:1a8e:4dd4:e1f3
+   Port: <span class="m">5540</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="nrfconnect_android_commissioning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Commissioning nRF Connect Accessory using Android CHIPTool</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="nrfconnect_examples_configuration.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configuring nRF Connect examples</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

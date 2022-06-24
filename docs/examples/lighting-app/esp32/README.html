@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Matter ESP32 Lighting Example &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="CHIP Linux Lighting Example" href="../linux/README.html" />
+    <link rel="prev" title="CHIP EFR32 Lighting Example" href="../efr32/README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../guides/index.html">
+   Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
+   Examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../breathe.html">
+   Breathe (Doxygen)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/examples/lighting-app/esp32/README.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/examples/lighting-app/esp32/README.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Matter ESP32 Lighting Example
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supported-devices">
+     Supported Devices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-example-application">
+     Building the Example Application
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
+     Commissioning over BLE using chip-tool
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-control">
+     Cluster Control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steps-to-try-lighting-app-ota-requestor">
+   Steps to Try Lighting app OTA Requestor
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-for-an-ota-image">
+     Query for an OTA Image
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-update">
+     Apply update
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matter ESP32 Lighting Example</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Matter ESP32 Lighting Example
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supported-devices">
+     Supported Devices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-example-application">
+     Building the Example Application
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
+     Commissioning over BLE using chip-tool
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-control">
+     Cluster Control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steps-to-try-lighting-app-ota-requestor">
+   Steps to Try Lighting app OTA Requestor
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-for-an-ota-image">
+     Query for an OTA Image
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-update">
+     Apply update
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="matter-esp32-lighting-example">
+<h1>Matter ESP32 Lighting Example<a class="headerlink" href="#matter-esp32-lighting-example" title="Permalink to this headline">#</a></h1>
+<p>This example demonstrates the Matter Lighting application on ESP platforms.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference internal" href="#matter-esp32-lighting-example"><span class="std std-doc">Matter ESP32 Lighting Example</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#supported-devices"><span class="std std-doc">Supported Devices</span></a></p></li>
+<li><p><a class="reference internal" href="#building-the-example-application"><span class="std std-doc">Building the Example Application</span></a></p></li>
+<li><p><a class="reference internal" href="#commissioning-over-ble-using-chip-tool"><span class="std std-doc">Commissioning over BLE using chip-tool</span></a></p></li>
+<li><p><a class="reference internal" href="#cluster-control"><span class="std std-doc">Cluster Control</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#steps-to-try-lighting-app-ota-requestor"><span class="std std-doc">Steps to Try Lighting app OTA Requestor</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<section id="supported-devices">
+<h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">#</a></h2>
+<p>The demo application is intended to work on following categories of ESP32
+devices:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.espressif.com/en/products/hardware/esp32-devkitc/overview">ESP32-DevKitC</a></p></li>
+<li><p><a class="reference external" href="https://www.espressif.com/en/products/hardware/esp-wrover-kit/overview">ESP32-WROVER-KIT_V4.1</a></p></li>
+<li><p><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/hw-reference/esp32c3/user-guide-devkitm-1.html">ESP32C3-DevKitM</a></p></li>
+<li><p><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitm-1.html">ESP32S3-DevKitM</a></p></li>
+<li><p><a class="reference external" href="https://www.espressif.com/en/news/ESP32_H2">ESP32-H2</a>.</p></li>
+</ul>
+</section>
+<section id="building-the-example-application">
+<h2>Building the Example Application<a class="headerlink" href="#building-the-example-application" title="Permalink to this headline">#</a></h2>
+<p>Building the example application requires the use of the Espressif IoT
+Development Framework (<a class="reference external" href="https://github.com/espressif/esp-idf">ESP-IDF</a>).</p>
+<p>The VSCode devcontainer has these components pre-installed, so you can skip this
+step. To install these components manually, follow these steps:</p>
+<ul>
+<li><p>Clone the Espressif ESP-IDF and checkout
+<a class="reference external" href="https://github.com/espressif/esp-idf/releases/tag/v4.4.1">v4.4.1 release</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir ${HOME}/tools
+$ cd ${HOME}/tools
+$ git clone https://github.com/espressif/esp-idf.git
+$ cd esp-idf
+$ git checkout v4.4.1
+$ git submodule update --init
+$ ./install.sh
+</pre></div>
+</div>
+</li>
+<li><p>For ESP32H2, you can checkout commit id
+<a class="reference external" href="https://github.com/espressif/esp-idf/tree/10f3aba770">10f3aba770</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd esp-idf
+$ git checkout 10f3aba770
+$ git submodule update --init
+$ ./install.sh
+</pre></div>
+</div>
+</li>
+<li><p>Install ninja-build</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install ninja-build
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Currently building in VSCode <em>and</em> deploying from native is not supported, so
+make sure the IDF_PATH has been exported(See the manual setup steps above).</p>
+<ul>
+<li><p>Setting up the environment</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd ${HOME}/tools/esp-idf
+$ ./install.sh
+$ . ./export.sh
+$ cd {path-to-connectedhomeip}
+</pre></div>
+</div>
+<p>To download and install packages.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ source ./scripts/bootstrap.sh
+$ source ./scripts/activate.sh
+</pre></div>
+</div>
+<p>If packages are already installed then simply activate them.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ source ./scripts/activate.sh
+</pre></div>
+</div>
+</li>
+<li><p>Target Set</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py set-target esp32
+or
+$ idf.py set-target esp32c3
+or
+$ idf.py set-target esp32s3
+or
+$ idf.py --preview set-target esp32h2
+</pre></div>
+</div>
+</li>
+<li><p>Using ESP32 Factory Data Provider (Optional)</p>
+<p>By default this application uses test-mode CommissionableDataProvider and
+Example DeviceAttestationCredentialsProvider.</p>
+<p>Enable config option <code class="docutils literal notranslate"><span class="pre">CONFIG_ENABLE_ESP32_FACTORY_DATA_PROVIDER</span></code> to use
+ESP32 specific implementation of CommissionableDataProvider and
+DeviceAttestationCredentialsProvider.</p>
+<p>ESP32 implementation reads factory data from nvs partition, chip-factory
+data must be flashed into the configure nvs partition. Factory partition can
+be configured using <code class="docutils literal notranslate"><span class="pre">CONFIG_CHIP_FACTORY_NAMESPACE_PARTITION_LABEL</span></code> option,
+default is “nvs”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scripts/tools/generate_esp32_chip_factory_bin.py</span></code> script generates the
+chip-factory NVS image <code class="docutils literal notranslate"><span class="pre">partition.bin</span></code>.</p>
+<p>Script has dependency on
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/src/tools/spake2p">spake2p</a>
+for generating spake2p parameters.</p>
+<p>Build spake2p:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">connectedhomeip</span>
+<span class="n">gn</span> <span class="n">gen</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">out</span><span class="o">/</span><span class="n">host</span>
+<span class="n">cd</span> <span class="o">-</span>
+</pre></div>
+</div>
+<p>Add spake2p to $PATH environment variable</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:path/to/connectedhomeip/out/host
+</pre></div>
+</div>
+</li>
+<li><p>To erase flash of the chip.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART erase-flash
+</pre></div>
+</div>
+<p>Below mentioned command generates the nvs image with test DAC with
+VID:0xFFF2 and PID:8001</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">third_party</span><span class="o">/</span><span class="n">connectedhomeip</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">tools</span>
+
+<span class="o">./</span><span class="n">generate_esp32_chip_factory_bin</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">d</span> <span class="mi">3434</span> <span class="o">-</span><span class="n">p</span> <span class="mi">99663300</span> \
+                                    <span class="o">--</span><span class="n">dac</span><span class="o">-</span><span class="n">cert</span> <span class="o">../../</span><span class="n">credentials</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">attestation</span><span class="o">/</span><span class="n">Chip</span><span class="o">-</span><span class="n">Test</span><span class="o">-</span><span class="n">DAC</span><span class="o">-</span><span class="n">FFF2</span><span class="o">-</span><span class="mi">8001</span><span class="o">-</span><span class="mi">0008</span><span class="o">-</span><span class="n">Cert</span><span class="o">.</span><span class="n">der</span> \
+                                    <span class="o">--</span><span class="n">dac</span><span class="o">-</span><span class="n">key</span> <span class="o">../../</span><span class="n">credentials</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">attestation</span><span class="o">/</span><span class="n">Chip</span><span class="o">-</span><span class="n">Test</span><span class="o">-</span><span class="n">DAC</span><span class="o">-</span><span class="n">FFF2</span><span class="o">-</span><span class="mi">8001</span><span class="o">-</span><span class="mi">0008</span><span class="o">-</span><span class="n">Key</span><span class="o">.</span><span class="n">der</span> \
+                                    <span class="o">--</span><span class="n">pai</span><span class="o">-</span><span class="n">cert</span> <span class="o">../../</span><span class="n">credentials</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">attestation</span><span class="o">/</span><span class="n">Chip</span><span class="o">-</span><span class="n">Test</span><span class="o">-</span><span class="n">PAI</span><span class="o">-</span><span class="n">FFF2</span><span class="o">-</span><span class="mi">8001</span><span class="o">-</span><span class="n">Cert</span><span class="o">.</span><span class="n">der</span> \
+                                    <span class="o">--</span><span class="n">cd</span> <span class="o">../../</span><span class="n">credentials</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">certification</span><span class="o">-</span><span class="n">declaration</span><span class="o">/</span><span class="n">Chip</span><span class="o">-</span><span class="n">Test</span><span class="o">-</span><span class="n">CD</span><span class="o">-</span><span class="n">FFF2</span><span class="o">-</span><span class="mf">8001.</span><span class="n">der</span>
+<span class="n">cd</span> <span class="o">-</span>
+</pre></div>
+</div>
+<p>This project uses VID:0xFFF1 and PID:0x8000, if you are planning to use the
+above command as is please change the VID/PID using menuconfig options.</p>
+<p>Use the following command to flash the NVS image. <code class="docutils literal notranslate"><span class="pre">0x9000</span></code> is default
+address for <code class="docutils literal notranslate"><span class="pre">nvs</span></code> partition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span> <span class="n">write_flash</span> <span class="mh">0x9000</span> <span class="n">third_party</span><span class="o">/</span><span class="n">connectedhomeip</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">partition</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+</li>
+<li><p>To build the demo application.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py build
+</pre></div>
+</div>
+</li>
+<li><p>After building the application, to flash it outside of VSCode, connect your
+device via USB. Then run the following command to flash the demo application
+onto the device and then monitor its output. If necessary, replace
+<code class="docutils literal notranslate"><span class="pre">/dev/tty.SLAB_USBtoUART</span></code>(MacOS) with the correct USB device name for your
+system(like <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> on Linux). Note that sometimes you might have to
+press and hold the <code class="docutils literal notranslate"><span class="pre">boot</span></code> button on the device while it’s trying to connect
+before flashing.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART flash monitor
+</pre></div>
+</div>
+<p>Note: Some users might have to install the
+<a class="reference external" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">VCP driver</a>
+before the device shows up on <code class="docutils literal notranslate"><span class="pre">/dev/tty</span></code>.</p>
+</li>
+<li><p>Quit the monitor by hitting <code class="docutils literal notranslate"><span class="pre">Ctrl+]</span></code>.</p>
+<p>Note: You can see a menu of various monitor commands by hitting
+<code class="docutils literal notranslate"><span class="pre">Ctrl+t</span> <span class="pre">Ctrl+h</span></code> while the monitor is running.</p>
+</li>
+<li><p>If desired, the monitor can be run again like so:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART monitor
+</pre></div>
+</div>
+</li>
+<li><p>Commissioning over ble after flashing script, change the passcode, replace
+<code class="docutils literal notranslate"><span class="pre">20202021</span></code> with <code class="docutils literal notranslate"><span class="pre">99663300</span></code>.</p></li>
+</ul>
+</section>
+<section id="commissioning-over-ble-using-chip-tool">
+<h2>Commissioning over BLE using chip-tool<a class="headerlink" href="#commissioning-over-ble-using-chip-tool" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Please build the standalone chip-tool as described <a class="reference internal" href="../../chip-tool/README.html"><span class="doc std std-doc">here</span></a></p></li>
+<li><p>Commissioning the WiFi Lighting devices(ESP32, ESP32C3, ESP32S3)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool pairing ble-wifi 12345 &lt;ssid&gt; &lt;passphrase&gt; 20202021 3840
+</pre></div>
+</div>
+</li>
+<li><p>For ESP32-H2, firstly start OpenThread Border Router, you can either use
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/openthread_border_router_pi.md">Raspberry Pi OpenThread Border Router</a>
+OR
+<a class="reference external" href="https://github.com/espressif/esp-idf/tree/master/examples/openthread/ot_br">ESP32 OpenThread Border Router</a></p></li>
+<li><p>Get the active operational dataset.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ot-ctl&gt; dataset active -x
+</pre></div>
+</div>
+</li>
+<li><p>Commissioning the Thread Lighting device(ESP32H2)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> $ ./out/debug/chip-tool pairing ble-thread 12345 hex:&lt;operational-dataset&gt; 20202021 3840
+</pre></div>
+</div>
+<p>NOTE: If using ESP32 factory data provider then commission the device using
+discriminator and passcode provided while building the factory NVS binary.</p>
+</li>
+</ul>
+</section>
+<section id="cluster-control">
+<h2>Cluster Control<a class="headerlink" href="#cluster-control" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>After successful commissioning, use the OnOff cluster command to control the
+OnOff attribute. This allows you to toggle a parameter implemented by the
+device to be On or Off.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool onoff on 12345 1
+</pre></div>
+</div>
+</li>
+<li><p>On
+<a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/hw-reference/esp32c3/user-guide-devkitm-1.html">ESP32C3-DevKitM</a>
+or
+<a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitm-1.html">ESP32S3-DevKitM</a>
+board, there is an on-board RGB-LED. Use ColorControl cluster command to
+control the color attributes:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool colorcontrol move-to-hue-and-saturation 240 100 0 0 0 12345 1
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="steps-to-try-lighting-app-ota-requestor">
+<h1>Steps to Try Lighting app OTA Requestor<a class="headerlink" href="#steps-to-try-lighting-app-ota-requestor" title="Permalink to this headline">#</a></h1>
+<p>Before moving ahead, make sure your device is commissioned and running.</p>
+<ul class="simple">
+<li><p>Build the Linux OTA Provider</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scripts</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">gn_build_example</span><span class="o">.</span><span class="n">sh</span> <span class="n">examples</span><span class="o">/</span><span class="n">ota</span><span class="o">-</span><span class="n">provider</span><span class="o">-</span><span class="n">app</span><span class="o">/</span><span class="n">linux</span> <span class="n">out</span><span class="o">/</span><span class="n">debug</span> <span class="n">chip_config_network_layer_ble</span><span class="o">=</span><span class="n">false</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run the Linux OTA Provider with OTA image.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">ota</span><span class="o">-</span><span class="n">provider</span><span class="o">-</span><span class="n">app</span> <span class="o">-</span><span class="n">f</span> <span class="n">hello</span><span class="o">-</span><span class="n">world</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+<p>hello-world.bin can be obtained from compiling the hello-world ESP-IDF example.</p>
+<ul class="simple">
+<li><p>Commission the Linux OTA Provider using chip-tool</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">pairing</span> <span class="n">onnetwork</span> <span class="mi">12346</span> <span class="mi">20202021</span>
+</pre></div>
+</div>
+<section id="query-for-an-ota-image">
+<h2>Query for an OTA Image<a class="headerlink" href="#query-for-an-ota-image" title="Permalink to this headline">#</a></h2>
+<p>After commissioning is successful, press Enter in requestor device console and
+type below query.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">matter</span> <span class="n">ota</span> <span class="n">query</span> <span class="mi">1</span> <span class="mi">12346</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="apply-update">
+<h2>Apply update<a class="headerlink" href="#apply-update" title="Permalink to this headline">#</a></h2>
+<p>Once the transfer is complete, OTA requestor sends ApplyUpdateRequest command to
+OTA provider for applying the image. Device will restart on successful
+application of OTA image.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../efr32/README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">CHIP EFR32 Lighting Example</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../linux/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CHIP Linux Lighting Example</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
