@@ -1,0 +1,2022 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Configuring factory data for the nRF Connect examples &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nRF Connect platform overview" href="nrfconnect_platform_overview.html" />
+    <link rel="prev" title="Performing Device Firmware Upgrade in the nRF Connect examples" href="nrfconnect_examples_software_update.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Configuring factory data for the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/nrfconnect_factory_data_configuration.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/nrfconnect_factory_data_configuration.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factory-data-component-table">
+     Factory data component table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factory-data-format">
+     Factory data format
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enabling-factory-data-support">
+   Enabling factory data support
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-factory-data">
+   Generating factory data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-factory-data-json-file-with-the-first-script">
+     Creating factory data JSON file with the first script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verifying-using-the-json-schema-tool">
+     Verifying using the JSON Schema tool
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-using-the-php-json-schema-tool">
+       Option 1: Using the php-json-schema tool
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2-using-a-website-validator">
+       Option 2: Using a website validator
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3-using-the-nrf-connect-python-script">
+       Option 3: Using the nRF Connect Python script
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-factory-data-partition-on-a-device">
+     Preparing factory data partition on a device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-factory-data-partition-with-the-second-script">
+     Creating a factory data partition with the second script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-an-example-with-factory-data">
+   Building an example with factory data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#providing-factory-data-parameters-as-a-build-argument-list">
+     Providing factory data parameters as a build argument list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-factory-data-parameters-using-interactive-kconfig-interfaces">
+     Setting factory data parameters using interactive Kconfig interfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-factory-data">
+   Programming factory data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-own-factory-data-implementation">
+   Using own factory data implementation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Configuring factory data for the nRF Connect examples</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factory-data-component-table">
+     Factory data component table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factory-data-format">
+     Factory data format
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enabling-factory-data-support">
+   Enabling factory data support
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-factory-data">
+   Generating factory data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-factory-data-json-file-with-the-first-script">
+     Creating factory data JSON file with the first script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verifying-using-the-json-schema-tool">
+     Verifying using the JSON Schema tool
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-using-the-php-json-schema-tool">
+       Option 1: Using the php-json-schema tool
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2-using-a-website-validator">
+       Option 2: Using a website validator
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3-using-the-nrf-connect-python-script">
+       Option 3: Using the nRF Connect Python script
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-factory-data-partition-on-a-device">
+     Preparing factory data partition on a device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-factory-data-partition-with-the-second-script">
+     Creating a factory data partition with the second script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-an-example-with-factory-data">
+   Building an example with factory data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#providing-factory-data-parameters-as-a-build-argument-list">
+     Providing factory data parameters as a build argument list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-factory-data-parameters-using-interactive-kconfig-interfaces">
+     Setting factory data parameters using interactive Kconfig interfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-factory-data">
+   Programming factory data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-own-factory-data-implementation">
+   Using own factory data implementation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="configuring-factory-data-for-the-nrf-connect-examples">
+<h1>Configuring factory data for the nRF Connect examples<a class="headerlink" href="#configuring-factory-data-for-the-nrf-connect-examples" title="Permalink to this headline">#</a></h1>
+<p>Factory data is a set of device parameters written to the non-volatile memory
+during the manufacturing process. This guide describes the process of creating
+and programming factory data using Matter and the nRF Connect platform from
+Nordic Semiconductor.</p>
+<p>The factory data parameter set includes different types of information, for
+example about device certificates, cryptographic keys, device identifiers, and
+hardware. All those parameters are vendor-specific and must be inserted into a
+device’s persistent storage during the manufacturing process. The factory data
+parameters are read at the boot time of a device. Then, they can be used in the
+Matter stack and user application (for example during commissioning).</p>
+<p>All of the factory data parameters are protected against modifications by the
+software, and the firmware data parameter set must be kept unchanged during the
+lifetime of the device. When implementing your firmware, you must make sure that
+the factory data parameters are not re-written or overwritten during the Device
+Firmware Update (DFU) or factory resets, except in some vendor-defined cases.</p>
+<p>For the nRF Connect platform, the factory data is stored by default in a
+separate partition of the internal flash memory. This helps to keep the factory
+data secure by applying hardware write protection.</p>
+<img alt="Nordic Semiconductor logo" src="../_images/Logo_RGB_H-small.png" />
+<img alt="nRF52840 DK" src="../_images/nRF52840-DK-small.png" />
+<hr>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview"><span class="std std-doc">Overview</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#factory-data-component-table"><span class="std std-doc">Factory data components</span></a></p></li>
+<li><p><a class="reference internal" href="#factory-data-format"><span class="std std-doc">Factory data format</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#enabling-factory-data-support"><span class="std std-doc">Enabling factory data support</span></a></p></li>
+<li><p><a class="reference internal" href="#generating-factory-data"><span class="std std-doc">Generating factory data</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-factory-data-json-file-with-the-first-script"><span class="std std-doc">Creating factory data JSON file with the first script</span></a></p></li>
+<li><p><a class="reference internal" href="#verifying-using-the-json-schema-tool"><span class="std std-doc">Verifying using the JSON Schema tool</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#option-1-using-the-php-json-schema-tool"><span class="std std-doc">Option 1: Using the php-json-schema tool</span></a></p></li>
+<li><p><a class="reference internal" href="#option-2-using-a-website-validator"><span class="std std-doc">Option 2: Using a website validator</span></a></p></li>
+<li><p><a class="reference internal" href="#option-3-using-the-nrf-connect-python-script"><span class="std std-doc">Option 3: Using the nRF Connect Python script</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#preparing-factory-data-partition-on-a-device"><span class="std std-doc">Preparing factory data partition on a device</span></a></p></li>
+<li><p><a class="reference internal" href="#creating-a-factory-data-partition-with-the-second-script"><span class="std std-doc">Creating the factory data partition with the second script</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#building-an-example-with-factory-data"><span class="std std-doc">Building an example with factory data</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#providing-factory-data-parameters-as-a-build-argument-list"><span class="std std-doc">Providing factory data parameters as a build argument list</span></a></p></li>
+<li><p><a class="reference internal" href="#setting-factory-data-parameters-using-interactive-kconfig-interfaces"><span class="std std-doc">Setting factory data parameters using interactive Kconfig interfaces</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#programming-factory-data"><span class="std std-doc">Programming factory data</span></a></p></li>
+<li><p><a class="reference internal" href="#using-own-factory-data-implementation"><span class="std std-doc">Using own factory data implementation</span></a></p></li>
+</ul>
+<hr>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>You can implement the factory data set described in the
+<a class="reference internal" href="#factory-data-component-table"><span class="std std-doc">factory data component table</span></a> in various ways,
+as long as the final HEX file contains all mandatory components defined in the
+table. In this guide, the <a class="reference internal" href="#generating-factory-data"><span class="std std-doc">generating factory data</span></a>
+and the
+<a class="reference internal" href="#building-an-example-with-factory-data"><span class="std std-doc">building an example with factory data</span></a>
+sections describe one of the implementations of the factory data set created by
+the nRF Connect platform’s maintainers. At the end of the process, you get a HEX
+file that contains the factory data partition in the CBOR format.</p>
+<p>The factory data accessor is a component that reads and decodes factory data
+parameters from the device’s persistent storage and creates an interface to
+provide all of them to the Matter stack and to the user application.</p>
+<p>The default implementation of the factory data accessor assumes that the factory
+data stored in the device’s flash memory is provided in the CBOR format.
+However, it is possible to generate the factory data set without using the nRF
+Connect scripts and implement another parser and a factory data accessor. This
+is possible if the newly provided implementation is consistent with the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataProvider.h">Factory Data Provider</a>.
+For more information about preparing a factory data accessor, see the section
+about
+<a class="reference internal" href="#using-own-factory-data-implementation"><span class="std std-doc">using own factory data implementation</span></a>.</p>
+<blockquote>
+<div><p>Note: Encryption and security of the factory data partition is not provided
+yet for this feature.</p>
+</div></blockquote>
+<section id="factory-data-component-table">
+<h3>Factory data component table<a class="headerlink" href="#factory-data-component-table" title="Permalink to this headline">#</a></h3>
+<p>The following table lists the parameters of a factory data set:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Key name</p></th>
+<th class="text-center head"><p>Full name</p></th>
+<th class="text-center head"><p>Length</p></th>
+<th class="text-center head"><p>Format</p></th>
+<th class="text-center head"><p>Conformance</p></th>
+<th class="text-center head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
+<td class="text-center"><p>factory data version</p></td>
+<td class="text-center"><p>2 B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A version of the current factory data set. It cannot be changed by a user and it must be coherent with current version of the Factory Data Provider on device side.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td class="text-center"><p>serial number</p></td>
+<td class="text-center"><p>&lt;1, 32&gt; B</p></td>
+<td class="text-center"><p>ASCII string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A serial number parameter defines an unique number of manufactured device. The maximum length of the serial number is 32 characters.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">vendor_id</span></code></p></td>
+<td class="text-center"><p>vendor ID</p></td>
+<td class="text-center"><p>2 B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A CSA-assigned ID for the organization responsible for producing the device.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">product_id</span></code></p></td>
+<td class="text-center"><p>product ID</p></td>
+<td class="text-center"><p>2 B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A unique ID assigned by the device vendor to identify the product. It defaults to a CSA-assigned ID that designates a non-production or test product.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">vendor_name</span></code></p></td>
+<td class="text-center"><p>vendor name</p></td>
+<td class="text-center"><p>&lt;1, 32&gt; B</p></td>
+<td class="text-center"><p>ASCII string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A human-readable vendor name that provides a simple string containing identification of device’s vendor for the application and Matter stack purposes.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">product_name</span></code></p></td>
+<td class="text-center"><p>product name</p></td>
+<td class="text-center"><p>&lt;1, 32&gt; B</p></td>
+<td class="text-center"><p>ASCII string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A human-readable product name that provides a simple string containing identification of the product for the application and the Matter stack purposes.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td class="text-center"><p>manufacturing date</p></td>
+<td class="text-center"><p>&lt;8, 10&gt; B</p></td>
+<td class="text-center"><p>ISO 8601</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A manufacturing date specifies the date that the device was manufactured. The date format used is ISO 8601, for example <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">hw_ver</span></code></p></td>
+<td class="text-center"><p>hardware version</p></td>
+<td class="text-center"><p>2 B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A hardware version number that specifies the version number of the hardware of the device. The value meaning and the versioning scheme is defined by the vendor.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">hw_ver_str</span></code></p></td>
+<td class="text-center"><p>hardware version string</p></td>
+<td class="text-center"><p>&lt;1, 64&gt; B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A hardware version string parameter that specifies the version of the hardware of the device as a more user-friendly value than that presented by the hardware version integer value. The value meaning and the versioning scheme is defined by the vendor.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">rd_uid</span></code></p></td>
+<td class="text-center"><p>rotating device ID unique ID</p></td>
+<td class="text-center"><p>&lt;16, 32&gt; B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>The unique ID for rotating device ID, which consists of a randomly-generated 128-bit (or longer) octet string. This parameter should be protected against reading or writing over-the-air after initial introduction into the device, and stay fixed during the lifetime of the device.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dac_cert</span></code></p></td>
+<td class="text-center"><p>(DAC) Device Attestation Certificate</p></td>
+<td class="text-center"><p>&lt;1, 602&gt; B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>The Device Attestation Certificate (DAC) and the corresponding private key are unique to each Matter device. The DAC is used for the Device Attestation process and to perform commissioning into a fabric. The DAC is a DER-encoded X.509v3-compliant certificate, as defined in RFC 5280.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">dac_key</span></code></p></td>
+<td class="text-center"><p>DAC private key</p></td>
+<td class="text-center"><p>68 B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>The private key associated with the Device Attestation Certificate (DAC). This key should be encrypted and maximum security should be guaranteed while generating and providing it to factory data.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">pai_cert</span></code></p></td>
+<td class="text-center"><p>Product Attestation Intermediate</p></td>
+<td class="text-center"><p>&lt;1, 602&gt; B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>An intermediate certificate is an X.509 certificate, which has been signed by the root certificate. The last intermediate certificate in a chain is used to sign the leaf (the Matter device) certificate. The PAI is a DER-encoded X.509v3-compliant certificate as defined in RFC 5280.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">spake2_it</span></code></p></td>
+<td class="text-center"><p>SPAKE2+ iteration counter</p></td>
+<td class="text-center"><p>4 B</p></td>
+<td class="text-center"><p>uint32</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A SPAKE2+ iteration counter is the amount of PBKDF2 (a key derivation function) interactions in a cryptographic process used during SPAKE2+ Verifier generation.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">spake2_salt</span></code></p></td>
+<td class="text-center"><p>SPAKE2+ salt</p></td>
+<td class="text-center"><p>&lt;32, 64&gt; B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>The SPAKE2+ salt is a random piece of data, at least 32 byte long. It is used as an additional input to a one-way function that performs the cryptographic operations. A new salt should be randomly generated for each password.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">spake2_verifier</span></code></p></td>
+<td class="text-center"><p>SPAKE2+ verifier</p></td>
+<td class="text-center"><p>97 B</p></td>
+<td class="text-center"><p>byte string</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>The SPAKE2+ verifier generated using SPAKE2+ salt, iteration counter, and passcode.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">discriminator</span></code></p></td>
+<td class="text-center"><p>Discriminator</p></td>
+<td class="text-center"><p>2 B</p></td>
+<td class="text-center"><p>uint16</p></td>
+<td class="text-center"><p>mandatory</p></td>
+<td class="text-center"><p>A 12-bit value matching the field of the same name in the setup code. The discriminator is used during the discovery process.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">passcode</span></code></p></td>
+<td class="text-center"><p>SPAKE passcode</p></td>
+<td class="text-center"><p>4 B</p></td>
+<td class="text-center"><p>uint32</p></td>
+<td class="text-center"><p>optional</p></td>
+<td class="text-center"><p>A pairing passcode is a 27-bit unsigned integer which serves as a proof of possession during the commissioning. Its value must be restricted to the values from <code class="docutils literal notranslate"><span class="pre">0x0000001</span></code> to <code class="docutils literal notranslate"><span class="pre">0x5F5E0FE</span></code> (<code class="docutils literal notranslate"><span class="pre">00000001</span></code> to <code class="docutils literal notranslate"><span class="pre">99999998</span></code> in decimal), excluding the following invalid passcode values: <code class="docutils literal notranslate"><span class="pre">00000000</span></code>, <code class="docutils literal notranslate"><span class="pre">11111111</span></code>, <code class="docutils literal notranslate"><span class="pre">22222222</span></code>, <code class="docutils literal notranslate"><span class="pre">33333333</span></code>, <code class="docutils literal notranslate"><span class="pre">44444444</span></code>, <code class="docutils literal notranslate"><span class="pre">55555555</span></code>, <code class="docutils literal notranslate"><span class="pre">66666666</span></code>, <code class="docutils literal notranslate"><span class="pre">77777777</span></code>, <code class="docutils literal notranslate"><span class="pre">88888888</span></code>, <code class="docutils literal notranslate"><span class="pre">99999999</span></code>, <code class="docutils literal notranslate"><span class="pre">12345678</span></code>, <code class="docutils literal notranslate"><span class="pre">87654321</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">user</span></code></p></td>
+<td class="text-center"><p>User data</p></td>
+<td class="text-center"><p>variable</p></td>
+<td class="text-center"><p>JSON string</p></td>
+<td class="text-center"><p>max 1024 B</p></td>
+<td class="text-center"><p>The user data is provided in the JSON format. This parameter is optional and depends on user’s or manufacturer’s purpose (or both). It is provided as a string from persistent storage and should be parsed in the user application. This data is not used by the Matter stack.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="factory-data-format">
+<h3>Factory data format<a class="headerlink" href="#factory-data-format" title="Permalink to this headline">#</a></h3>
+<p>The factory data set must be saved into a HEX file that can be written to the
+flash memory of the Matter device.</p>
+<p>In the nRF Connect example, the factory data set is represented in the CBOR
+format and is stored in a HEX file. The file is then programmed to a device. The
+JSON format is used as an intermediate, human-readable representation of the
+data. The format is regulated by the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/nrfconnect_factory_data.schema">JSON Schema</a>
+file.</p>
+<p>All parameters of the factory data set are either mandatory or optional:</p>
+<ul class="simple">
+<li><p>Mandatory parameters must always be provided, as they are required for
+example to perform commissioning to the Matter network.</p></li>
+<li><p>Optional parameters can be used for development and testing purposes. For
+example, the <code class="docutils literal notranslate"><span class="pre">user</span></code> data parameter consists of all data that is needed by a
+specific manufacturer and that is not included in the mandatory parameters.</p></li>
+</ul>
+<p>In the factory data set, the following formats are used:</p>
+<ul class="simple">
+<li><p>uint16 and uint32 – These are the numeric formats representing,
+respectively, two-bytes length unsigned integer and four-bytes length
+unsigned integer. This value is stored in a HEX file in the big-endian
+order.</p></li>
+<li><p>Byte string - This parameter represents the sequence of integers between <code class="docutils literal notranslate"><span class="pre">0</span></code>
+and <code class="docutils literal notranslate"><span class="pre">255</span></code>(inclusive), without any encoding. Because the JSON format does not
+allow to use of byte strings, the <code class="docutils literal notranslate"><span class="pre">hex:</span></code> prefix is added to a parameter, and
+its representation is converted to a HEX string. For example, an ASCII
+string <em><code class="docutils literal notranslate"><span class="pre">abba</span></code></em> is represented as <em><code class="docutils literal notranslate"><span class="pre">hex:61626261</span></code></em> in the JSON file and then
+stored in the HEX file as <code class="docutils literal notranslate"><span class="pre">0x61626261</span></code>. The HEX string length in the JSON
+file is two times greater than the byte string plus the size of the prefix.</p></li>
+<li><p>ASCII string is a string representation in ASCII encoding without
+null-terminating.</p></li>
+<li><p>ISO 8601 format is a
+<a class="reference external" href="https://www.iso.org/iso-8601-date-and-time-format.html">date format</a> that
+represents a date provided in the <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> or <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code> format.</p></li>
+<li><p>All certificates stored in factory data are provided in the
+<a class="reference external" href="https://www.itu.int/rec/T-REC-X.509-201910-I/en">X.509</a> format.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="enabling-factory-data-support">
+<h2>Enabling factory data support<a class="headerlink" href="#enabling-factory-data-support" title="Permalink to this headline">#</a></h2>
+<p>By default, the factory data support is disabled in all nRF Connect examples and
+the nRF Connect device uses predefined parameters from the Matter core, which
+you should not change. To start using factory data stored in the flash memory
+and the <strong>Factory Data Provider</strong> from the nRF Connect platform, build an
+example with the following option (replace <em>&lt;build_target&gt;</em> with your board
+name, for example, <code class="docutils literal notranslate"><span class="pre">nrf52840dk_nrf52840</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -b &lt;build_target&gt; -- -DCONFIG_CHIP_FACTORY_DATA=y
+</pre></div>
+</div>
+</section>
+<section id="generating-factory-data">
+<h2>Generating factory data<a class="headerlink" href="#generating-factory-data" title="Permalink to this headline">#</a></h2>
+<p>This section describes generating factory data using the following nRF Connect
+Python scripts:</p>
+<ul class="simple">
+<li><p>The first script creates a JSON file that contains a user-friendly
+representation of the factory data.</p></li>
+<li><p>The second script uses the JSON file to create a factory data partition and
+save it to a HEX file.</p></li>
+</ul>
+<p>After these operations, you will program a HEX file containing factory data
+partition into the device’s flash memory.</p>
+<p>You can use the second script without invoking the first one by providing a JSON
+file written in another way. To make sure that the JSON file is correct and the
+device is able to read out parameters, verify the file using the
+<a class="reference internal" href="#verifying-using-the-json-schema-tool"><span class="std std-doc">JSON schema</span></a>.</p>
+<section id="creating-factory-data-json-file-with-the-first-script">
+<h3>Creating factory data JSON file with the first script<a class="headerlink" href="#creating-factory-data-json-file-with-the-first-script" title="Permalink to this headline">#</a></h3>
+<p>A Matter device needs a proper factory data partition stored in the flash memory
+to read out all required parameters during startup. To simplify the factory data
+generation, you can use the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/generate_nrfconnect_chip_factory_data.py">generate_nrfconnect_chip_factory_data.py</a>
+Python script to provide all required parameters and generate a human-readable
+JSON file.</p>
+<p>To use this script, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">connectedhomeip</span></code> root directory.</p></li>
+<li><p>Run the script with <code class="docutils literal notranslate"><span class="pre">-h</span></code> option to see all possible options:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python scripts/tools/nrfconnect/generate_nrfconnect_chip_factory_data.py -h
+</pre></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Prepare a list of arguments:</p>
+<p>a. Fill up all mandatory arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">sn</span> <span class="o">--</span><span class="n">vendor_id</span><span class="p">,</span> <span class="o">--</span><span class="n">product_id</span><span class="p">,</span> <span class="o">--</span><span class="n">vendor_name</span><span class="p">,</span> <span class="o">--</span><span class="n">product_name</span><span class="p">,</span> <span class="o">--</span><span class="n">date</span><span class="p">,</span> <span class="o">--</span><span class="n">hw_ver</span><span class="p">,</span> <span class="o">--</span><span class="n">hw_ver_str</span><span class="p">,</span> <span class="o">--</span><span class="n">spake2_it</span><span class="p">,</span> <span class="o">--</span><span class="n">spake2_salt</span><span class="p">,</span> <span class="o">--</span><span class="n">discriminator</span>
+</pre></div>
+</div>
+<p>b. Add output file path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">output_dir</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>c. Generate SPAKE2 verifier using one of the following methods:</p>
+<ul>
+<li><p>Automatic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">passcode</span> <span class="o">&lt;</span><span class="n">pass_code</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">spake2p_path</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">spake2p</span> <span class="n">executable</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Manual:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">spake2_verifier</span> <span class="o">&lt;</span><span class="n">verifier</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>d. Add paths to <code class="docutils literal notranslate"><span class="pre">.der</span></code> files that contain PAI and DAC certificates and the
+DAC private key (replace the respective variables with the file names):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">dac_cert</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">DAC</span> <span class="n">certificate</span><span class="o">&gt;.</span><span class="n">der</span> <span class="o">--</span><span class="n">dac_key</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">DAC</span> <span class="n">key</span><span class="o">&gt;.</span><span class="n">der</span> <span class="o">--</span><span class="n">pai_cert</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">PAI</span> <span class="n">certificate</span><span class="o">&gt;.</span><span class="n">der</span>
+</pre></div>
+</div>
+<p>e. (optional) Add the new unique ID for rotating device ID using one of the
+following options:</p>
+<ul>
+<li><p>Provide an existing ID:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">rd_uid</span> <span class="o">&lt;</span><span class="n">rotating</span> <span class="n">device</span> <span class="n">ID</span> <span class="n">unique</span> <span class="n">ID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Generate a new ID and provide it ():</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">generate_rd_uid</span>
+<span class="o">--</span><span class="n">rd_uid</span> <span class="o">&lt;</span><span class="n">rotating</span> <span class="n">device</span> <span class="n">ID</span> <span class="n">unique</span> <span class="n">ID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can find a newly generated unique ID in the console output.</p>
+</li>
+</ul>
+<p>f. (optional) Add the JSON schema to verify the JSON file (replace the
+respective variable with the file path):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">schema</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">JSON</span> <span class="n">Schema</span> <span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>g. (optional) Add a request to include a pairing passcode in the JSON file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">include_passcode</span>
+</pre></div>
+</div>
+<p>h. (optional) Add the request to overwrite existing the JSON file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">overwrite</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the script using the prepared list of arguments:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python generate_nrfconnect_chip_factory_data.py &lt;arguments&gt;
+</pre></div>
+</div>
+<p>For example, a final invocation of the Python script can look similar to the
+following one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python scripts/tools/nrfconnect/generate_nrfconnect_chip_factory_data.py \
+--sn &quot;11223344556677889900&quot; \
+--vendor_id 65521 \
+--product_id 32774 \
+--vendor_name &quot;Nordic Semiconductor ASA&quot; \
+--product_name &quot;not-specified&quot; \
+--date &quot;2022-02-02&quot; \
+--hw_ver 1 \
+--hw_ver_str &quot;prerelase&quot; \
+--dac_cert &quot;credentials/development/attestation/Matter-Development-DAC-8006-Cert.der&quot; \
+--dac_key &quot;credentials/development/attestation/Matter-Development-DAC-8006-Key.der&quot; \
+--pai_cert &quot;credentials/development/attestation/Matter-Development-PAI-noPID-Cert.der&quot; \
+--spake2_it 1000 \
+--spake2_salt &quot;U1BBS0UyUCBLZXkgU2FsdA==&quot; \
+--discriminator 0xF00 \
+--generate_rd_uid \
+--passcode 20202021 \
+--spake2p_path &quot;src/tools/spake2p/out/spake2p&quot; \
+--out &quot;build.json&quot; \
+--schema &quot;scripts/tools/nrfconnect/nrfconnect_factory_data.schema&quot;
+</pre></div>
+</div>
+<p>As the result of the above example, a unique ID for the rotating device ID is
+created, SPAKE2+ verifier is generated using the <code class="docutils literal notranslate"><span class="pre">spake2p</span></code> executable, and the
+JSON file is verified using the prepared JSON Schema.</p>
+<p>If the script finishes successfully, go to the location you provided with the
+<code class="docutils literal notranslate"><span class="pre">-o</span></code> argument. Use the JSON file you find there when
+<a class="reference internal" href="#generating-factory-data"><span class="std std-doc">generating the factory data partition</span></a>.</p>
+<blockquote>
+<div><p>Note: Generating the SPAKE2+ verifier is optional and requires providing a
+path to the <code class="docutils literal notranslate"><span class="pre">spake2p</span></code> executable. To get it, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">connectedhomeip</span></code> root directory.</p></li>
+<li><p>In a terminal, run the command:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">src/tools/spake2p</span> <span class="pre">&amp;&amp;</span> <span class="pre">gn</span> <span class="pre">gen</span> <span class="pre">out</span> <span class="pre">&amp;&amp;</span> <span class="pre">ninja</span> <span class="pre">-C</span> <span class="pre">out</span> <span class="pre">spake2p</span></code> to build the
+executable.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">connectedhomeip/src/tools/spake2p/out/spake2p</span></code> path as an
+argument of <code class="docutils literal notranslate"><span class="pre">--spake2p_path</span></code> for the Python script.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>Note: By default, overwriting the existing JSON file is disabled. This means
+that you cannot create a new JSON file with the same name in the exact
+location as an existing file. To allow overwriting, add the <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code>
+option to the argument list of the Python script.</p>
+</div></blockquote>
+</section>
+<section id="verifying-using-the-json-schema-tool">
+<h3>Verifying using the JSON Schema tool<a class="headerlink" href="#verifying-using-the-json-schema-tool" title="Permalink to this headline">#</a></h3>
+<p>The JSON file that contains factory data can be verified using the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/nrfconnect_factory_data.schema">JSON Schema file</a>.
+You can use one of three options to validate the structure and contents of the
+JSON data.</p>
+<section id="option-1-using-the-php-json-schema-tool">
+<h4>Option 1: Using the php-json-schema tool<a class="headerlink" href="#option-1-using-the-php-json-schema-tool" title="Permalink to this headline">#</a></h4>
+<p>To check the JSON file using a JSON Schema verification tool manually on a Linux
+machine, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">php-json-schema</span></code> package:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install php-json-schema
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Run the following command, with <em>&lt;path_to_JSON_file&gt;</em> and
+<em>&lt;path_to_schema_file&gt;</em> replaced with the paths to the JSON file and the
+Schema file, respectively:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ validate-json &lt;path_to_JSON_file&gt; &lt;path_to_schema_file&gt;
+</pre></div>
+</div>
+<p>The tool returns empty output in case of success.</p>
+</section>
+<section id="option-2-using-a-website-validator">
+<h4>Option 2: Using a website validator<a class="headerlink" href="#option-2-using-a-website-validator" title="Permalink to this headline">#</a></h4>
+<p>You can also use external websites instead of the <code class="docutils literal notranslate"><span class="pre">php-json-schema</span></code> tool to
+verify a factory data JSON file. For example, go to the
+<a class="reference external" href="https://www.jsonschemavalidator.net/">JSON Schema Validator website</a>,
+copy-paste the content of the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/nrfconnect_factory_data.schema">JSON Schema file</a>
+to the first window and a JSON file to the second one. A message under the
+window indicates the validation status.</p>
+</section>
+<section id="option-3-using-the-nrf-connect-python-script">
+<h4>Option 3: Using the nRF Connect Python script<a class="headerlink" href="#option-3-using-the-nrf-connect-python-script" title="Permalink to this headline">#</a></h4>
+<p>You can have the JSON file checked automatically by the Python script during the
+file generation. For this to happen, provide the path to the JSON schema file as
+an additional argument, which should replace the <em>&lt;path_to_schema&gt;</em> variable in
+the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python generate_nrfconnect_chip_factory_data.py --schema &lt;path_to_schema&gt;
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: To learn more about the JSON schema, visit
+<a class="reference external" href="https://json-schema.org/understanding-json-schema/">this unofficial JSON Schema tool usage website</a>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="preparing-factory-data-partition-on-a-device">
+<h3>Preparing factory data partition on a device<a class="headerlink" href="#preparing-factory-data-partition-on-a-device" title="Permalink to this headline">#</a></h3>
+<p>The factory data partition is an area in the device’s persistent storage where a
+factory data set is stored. This area is configured using the
+<a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/scripts/partition_manager/partition_manager.html">Partition Manager</a>,
+within which all partitions are declared in the <code class="docutils literal notranslate"><span class="pre">pm_static.yml</span></code> file.</p>
+<p>To prepare an example that supports factory data, add a partition called
+<code class="docutils literal notranslate"><span class="pre">factory_data</span></code> to the <code class="docutils literal notranslate"><span class="pre">pm_static.yml</span></code> file. The partition size should be a
+multiple of one flash page (for nRF52 and nRF53 SoCs, a single page size equals
+4 kB).</p>
+<p>See the following code snippet for an example of a factory data partition in the
+<code class="docutils literal notranslate"><span class="pre">pm_static.yml</span></code> file. The snippet is based on the <code class="docutils literal notranslate"><span class="pre">pm_static.yml</span></code> file from the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/examples/lock-app/nrfconnect/configuration/nrf52840dk_nrf52840/pm_static_dfu.yml">Lock application example</a>
+and uses the nRF52840 DK:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">mcuboot_primary_app</span><span class="p">:</span>
+    <span class="n">orig_span</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">id002</span>
+        <span class="o">-</span> <span class="n">app</span>
+    <span class="n">span</span><span class="p">:</span> <span class="o">*</span><span class="n">id002</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0x7200</span>
+    <span class="n">size</span><span class="p">:</span> <span class="mh">0xf3e00</span>
+
+<span class="n">factory_data</span><span class="p">:</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0xfb00</span>
+    <span class="n">size</span><span class="p">:</span> <span class="mh">0x1000</span>
+    <span class="n">region</span><span class="p">:</span> <span class="n">flash_primary</span>
+
+<span class="n">settings_storage</span><span class="p">:</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0xfc000</span>
+    <span class="n">size</span><span class="p">:</span> <span class="mh">0x4000</span>
+    <span class="n">region</span><span class="p">:</span> <span class="n">flash_primary</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>In this example, a <code class="docutils literal notranslate"><span class="pre">factory_data</span></code> partition has been placed between the
+application partition (<code class="docutils literal notranslate"><span class="pre">mcuboot_primary_app</span></code>) and the settings storage. Its size
+has been set to one flash page (4 kB).</p>
+<p>Use Partition Manager’s report tool to ensure you created a factory data
+partition correctly. To do that, navigate to the example directory and run the
+following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -t partition_manager_report
+</pre></div>
+</div>
+<p>The output will look similar to the following one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+  <span class="n">external_flash</span> <span class="p">(</span><span class="mh">0x800000</span> <span class="o">-</span> <span class="mi">8192</span><span class="n">kB</span><span class="p">):</span>
+<span class="o">+---------------------------------------------+</span>
+<span class="o">|</span> <span class="mh">0x0</span><span class="p">:</span> <span class="n">mcuboot_secondary</span> <span class="p">(</span><span class="mh">0xf4000</span> <span class="o">-</span> <span class="mi">976</span><span class="n">kB</span><span class="p">)</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="mh">0xf4000</span><span class="p">:</span> <span class="n">external_flash</span> <span class="p">(</span><span class="mh">0x70c000</span> <span class="o">-</span> <span class="mi">7216</span><span class="n">kB</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">+---------------------------------------------+</span>
+
+  <span class="n">flash_primary</span> <span class="p">(</span><span class="mh">0x100000</span> <span class="o">-</span> <span class="mi">1024</span><span class="n">kB</span><span class="p">):</span>
+<span class="o">+-------------------------------------------------+</span>
+<span class="o">|</span> <span class="mh">0x0</span><span class="p">:</span> <span class="n">mcuboot</span> <span class="p">(</span><span class="mh">0x7000</span> <span class="o">-</span> <span class="mi">28</span><span class="n">kB</span><span class="p">)</span>                    <span class="o">|</span>
+<span class="o">+---</span><span class="mh">0x7000</span><span class="p">:</span> <span class="n">mcuboot_primary</span> <span class="p">(</span><span class="mh">0xf4000</span> <span class="o">-</span> <span class="mi">976</span><span class="n">kB</span><span class="p">)</span><span class="o">-----+</span>
+<span class="o">|</span> <span class="mh">0x7000</span><span class="p">:</span> <span class="n">mcuboot_pad</span> <span class="p">(</span><span class="mh">0x200</span> <span class="o">-</span> <span class="mi">512</span><span class="n">B</span><span class="p">)</span>              <span class="o">|</span>
+<span class="o">+---</span><span class="mh">0x7200</span><span class="p">:</span> <span class="n">mcuboot_primary_app</span> <span class="p">(</span><span class="mh">0xf3e00</span> <span class="o">-</span> <span class="mi">975</span><span class="n">kB</span><span class="p">)</span><span class="o">-+</span>
+<span class="o">|</span> <span class="mh">0x7200</span><span class="p">:</span> <span class="n">app</span> <span class="p">(</span><span class="mh">0xf3e00</span> <span class="o">-</span> <span class="mi">975</span><span class="n">kB</span><span class="p">)</span>                   <span class="o">|</span>
+<span class="o">+-------------------------------------------------+</span>
+<span class="o">|</span> <span class="mh">0xfb000</span><span class="p">:</span> <span class="n">factory_data</span> <span class="p">(</span><span class="mh">0x1000</span> <span class="o">-</span> <span class="mi">4</span><span class="n">kB</span><span class="p">)</span>            <span class="o">|</span>
+<span class="o">|</span> <span class="mh">0xfc000</span><span class="p">:</span> <span class="n">settings_storage</span> <span class="p">(</span><span class="mh">0x4000</span> <span class="o">-</span> <span class="mi">16</span><span class="n">kB</span><span class="p">)</span>       <span class="o">|</span>
+<span class="o">+-------------------------------------------------+</span>
+
+  <span class="n">sram_primary</span> <span class="p">(</span><span class="mh">0x40000</span> <span class="o">-</span> <span class="mi">256</span><span class="n">kB</span><span class="p">):</span>
+<span class="o">+--------------------------------------------+</span>
+<span class="o">|</span> <span class="mh">0x20000000</span><span class="p">:</span> <span class="n">sram_primary</span> <span class="p">(</span><span class="mh">0x40000</span> <span class="o">-</span> <span class="mi">256</span><span class="n">kB</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">+--------------------------------------------+</span>
+
+</pre></div>
+</div>
+</section>
+<section id="creating-a-factory-data-partition-with-the-second-script">
+<h3>Creating a factory data partition with the second script<a class="headerlink" href="#creating-a-factory-data-partition-with-the-second-script" title="Permalink to this headline">#</a></h3>
+<p>To store the factory data set in the device’s persistent storage, convert the
+data from the JSON file to its binary representation in the CBOR format. To do
+this, use the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/nrfconnect_generate_partition.py">nrfconnect_generate_partition.py</a>
+to generate the factory data partition:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <em>connectedhomeip</em> root directory</p></li>
+<li><p>Run the following command pattern:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python scripts/tools/nrfconnect/nrfconnect_generate_partition.py -i &lt;path_to_JSON_file&gt; -o &lt;path_to_output&gt; --offset &lt;partition_address_in_memory&gt; --size &lt;partition_size&gt;
+</pre></div>
+</div>
+<p>In this command:</p>
+<ul class="simple">
+<li><p><em>&lt;path_to_JSON_file&gt;</em> is a path to the JSON file containing appropriate
+factory data.</p></li>
+<li><p><em>&lt;path_to_output&gt;</em> is a path to an output file without any prefix. For
+example, providing <code class="docutils literal notranslate"><span class="pre">/build/output</span></code> as an argument will result in creating
+<code class="docutils literal notranslate"><span class="pre">/build/output.hex</span></code> and <code class="docutils literal notranslate"><span class="pre">/build/output.bin</span></code>.</p></li>
+<li><p><em>&lt;partition_address_in_memory&gt;</em> is an address in the device’s persistent
+storage area where a partition data set is to be stored.</p></li>
+<li><p><em>&lt;partition_size&gt;</em> is a size of partition in the device’s persistent storage
+area. New data is checked according to this value of the JSON data to see if
+it fits the size.</p></li>
+</ul>
+<p>To see the optional arguments for the script, use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python scripts/tools/nrfconnect/nrfconnect_generate_partition.py -h
+</pre></div>
+</div>
+<p><strong>Example of the command for the nRF52840 DK:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python scripts/tools/nrfconnect/nrfconnect_generate_partition.py -i build/zephyr/factory_data.json -o build/zephyr/factory_data --offset 0xfb000 --size 0x1000
+</pre></div>
+</div>
+<p>As a result, <code class="docutils literal notranslate"><span class="pre">factory_data.hex</span></code> and <code class="docutils literal notranslate"><span class="pre">factory_data.bin</span></code> files are created in the
+<code class="docutils literal notranslate"><span class="pre">/build/zephyr/</span></code> directory. The first file contains the memory offset. For this
+reason, it can be programmed directly to the device using a programmer (for
+example, <code class="docutils literal notranslate"><span class="pre">nrfjprog</span></code>).</p>
+<hr>
+</section>
+</section>
+<section id="building-an-example-with-factory-data">
+<h2>Building an example with factory data<a class="headerlink" href="#building-an-example-with-factory-data" title="Permalink to this headline">#</a></h2>
+<p>You can manually generate the factory data set using the instructions described
+in the <a class="reference internal" href="#generating-factory-data"><span class="std std-doc">Generating factory data</span></a> section. Another way
+is to use the nRF Connect platform build system that creates factory data
+content automatically using Kconfig options and includes the content in the
+final firmware binary.</p>
+<p>To enable generating the factory data set automatically, go to the example’s
+directory and build the example with the following option (replace
+<code class="docutils literal notranslate"><span class="pre">nrf52840dk_nrf52840</span></code> with your board name):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y -DCONFIG_CHIP_FACTORY_DATA_BUILD=y
+</pre></div>
+</div>
+<p>Alternatively, you can also add <code class="docutils literal notranslate"><span class="pre">CONFIG_CHIP_FACTORY_DATA_BUILD=y</span></code> Kconfig
+setting to the example’s <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code> file.</p>
+<p>Each factory data parameter has a default value. These are described in the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/config/nrfconnect/chip-module/Kconfig">Kconfig file</a>. Setting a new value
+for the factory data parameter can be done either by providing it as a build
+argument list or by using interactive Kconfig interfaces.</p>
+<section id="providing-factory-data-parameters-as-a-build-argument-list">
+<h3>Providing factory data parameters as a build argument list<a class="headerlink" href="#providing-factory-data-parameters-as-a-build-argument-list" title="Permalink to this headline">#</a></h3>
+<p>This way for providing factory data can be used with third-party build script,
+as it uses only one command. All parameters can be edited manually by providing
+them as an additional option for the west command. For example (replace
+<code class="docutils literal notranslate"><span class="pre">nrf52840dk_nrf52840</span></code> with own board name):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y --DCONFIG_CHIP_FACTORY_DATA_BUILD=y --DCONFIG_CHIP_DEVICE_DISCRIMINATOR=0xF11
+</pre></div>
+</div>
+<p>Alternatively, you can add the relevant Kconfig option lines to the example’s
+<code class="docutils literal notranslate"><span class="pre">prj.conf</span></code> file.</p>
+</section>
+<section id="setting-factory-data-parameters-using-interactive-kconfig-interfaces">
+<h3>Setting factory data parameters using interactive Kconfig interfaces<a class="headerlink" href="#setting-factory-data-parameters-using-interactive-kconfig-interfaces" title="Permalink to this headline">#</a></h3>
+<p>You can edit all configuration options using the interactive Kconfig interface.</p>
+<p>See the
+<a class="reference internal" href="nrfconnect_examples_configuration.html"><span class="doc std std-doc">Configuring nRF Connect examples</span></a>
+page for information about how to configure Kconfig options.</p>
+<p>In the configuration window, expand the items
+<code class="docutils literal notranslate"><span class="pre">Modules</span> <span class="pre">-&gt;</span> <span class="pre">connectedhomeip</span> <span class="pre">(/home/arbl/matter/connectedhomeip/config/nrfconnect/chip-module)</span> <span class="pre">-&gt;</span> <span class="pre">Connected</span> <span class="pre">Home</span> <span class="pre">over</span> <span class="pre">IP</span> <span class="pre">protocol</span> <span class="pre">stack</span></code>.
+You will see all factory data configuration options, as in the following
+snippet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">65521</span><span class="p">)</span> <span class="n">Device</span> <span class="n">vendor</span> <span class="n">ID</span>
+<span class="p">(</span><span class="mi">32774</span><span class="p">)</span> <span class="n">Device</span> <span class="n">product</span> <span class="n">ID</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Enable</span> <span class="n">Factory</span> <span class="n">Data</span> <span class="n">build</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span>     <span class="n">Enable</span> <span class="n">merging</span> <span class="n">generated</span> <span class="n">factory</span> <span class="n">data</span> <span class="k">with</span> <span class="n">the</span> <span class="n">build</span> <span class="n">tar</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span>     <span class="n">Use</span> <span class="n">default</span> <span class="n">certificates</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">Matter</span> <span class="n">repository</span>
+<span class="p">[</span> <span class="p">]</span>     <span class="n">Enable</span> <span class="n">SPAKE2</span> <span class="n">verifier</span> <span class="n">generation</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span>     <span class="n">Enable</span> <span class="n">generation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">new</span> <span class="n">Rotating</span> <span class="n">device</span> <span class="nb">id</span> <span class="n">unique</span> <span class="nb">id</span>
+<span class="p">(</span><span class="mi">11223344556677889900</span><span class="p">)</span> <span class="n">Serial</span> <span class="n">number</span> <span class="n">of</span> <span class="n">device</span>
+<span class="p">(</span><span class="n">Nordic</span> <span class="n">Semiconductor</span> <span class="n">ASA</span><span class="p">)</span> <span class="n">Human</span><span class="o">-</span><span class="n">readable</span> <span class="n">vendor</span> <span class="n">name</span>
+<span class="p">(</span><span class="ow">not</span><span class="o">-</span><span class="n">specified</span><span class="p">)</span> <span class="n">Human</span><span class="o">-</span><span class="n">readable</span> <span class="n">product</span> <span class="n">name</span>
+<span class="p">(</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">)</span> <span class="n">Manufacturing</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">ISO</span> <span class="mi">8601</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">Integer</span> <span class="n">representation</span> <span class="n">of</span> <span class="n">hardware</span> <span class="n">version</span>
+<span class="p">(</span><span class="n">prerelease</span><span class="p">)</span> <span class="n">user</span><span class="o">-</span><span class="n">friendly</span> <span class="n">string</span> <span class="n">representation</span> <span class="n">of</span> <span class="n">hardware</span> <span class="n">ver</span>
+<span class="p">(</span><span class="mh">0xF00</span><span class="p">)</span> <span class="n">Device</span> <span class="n">pairing</span> <span class="n">discriminator</span>
+<span class="p">(</span><span class="mi">20202021</span><span class="p">)</span> <span class="n">SPAKE2</span><span class="o">+</span> <span class="n">passcode</span>
+<span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="n">SPAKE2</span><span class="o">+</span> <span class="n">iteration</span> <span class="n">count</span>
+<span class="p">(</span><span class="n">U1BBS0UyUCBLZXkgU2FsdA</span><span class="o">==</span><span class="p">)</span> <span class="n">SPAKE2</span><span class="o">+</span> <span class="n">salt</span> <span class="ow">in</span> <span class="n">string</span> <span class="nb">format</span>
+<span class="p">(</span><span class="n">uWFwqugDNGiEck</span><span class="o">/</span><span class="n">po7KHwwMwwqZgN10XuyBajPGuyzUEV</span><span class="o">/</span><span class="n">iree4lOrao5GuwnlQ</span>
+<span class="p">(</span><span class="mi">91</span><span class="n">a9c12a7c80700a31ddcfa7fce63e44</span><span class="p">)</span> <span class="n">A</span> <span class="n">rotating</span> <span class="n">device</span> <span class="nb">id</span> <span class="n">unique</span> <span class="n">i</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: To get more information about how to use the interactive Kconfig
+interfaces, read the
+<a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/build/kconfig/menuconfig.html">Kconfig docummentation</a>.</p>
+</div></blockquote>
+<hr>
+</section>
+</section>
+<section id="programming-factory-data">
+<h2>Programming factory data<a class="headerlink" href="#programming-factory-data" title="Permalink to this headline">#</a></h2>
+<p>The HEX file containing factory data can be programmed into the device’s flash
+memory using <code class="docutils literal notranslate"><span class="pre">nrfjprog</span></code> and the J-Link programmer. To do this, use the following
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nrfjprog --program factory_data.hex
+</pre></div>
+</div>
+<p>In this command, you can add the <code class="docutils literal notranslate"><span class="pre">--family</span></code> argument and provide the name of the
+DK: <code class="docutils literal notranslate"><span class="pre">NRF52</span></code> for the nRF52840 DK or <code class="docutils literal notranslate"><span class="pre">NRF53</span></code> for the nRF5340 DK. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nrfjprog --family NRF52 --program factory_data.hex
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: For more information about how to use the <code class="docutils literal notranslate"><span class="pre">nrfjprog</span></code> utility, visit
+<a class="reference external" href="https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf_cltools%2FUG%2Fcltools%2Fnrf_nrfjprogexe.html">Nordic Semiconductor’s Infocenter</a>.</p>
+</div></blockquote>
+<p>Another way to program the factory data to a device is to use the nRF Connect
+platform build system described in
+<a class="reference internal" href="#building-an-example-with-factory-data"><span class="std std-doc">Building an example with factory data</span></a>,
+and build an example with the additional option
+<code class="docutils literal notranslate"><span class="pre">-DCONFIG_CHIP_FACTORY_DATA_MERGE_WITH_FIRMWARE=y</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -b nrf52840dk_nrf52840 -- \
+-DCONFIG_CHIP_FACTORY_DATA=y \
+-DCONFIG_CHIP_FACTORY_DATA_BUILD=y \
+-DCONFIG_CHIP_FACTORY_DATA_MERGE_WITH_FIRMWARE=y
+</pre></div>
+</div>
+<p>After that, use the following command from the example’s directory to write
+firmware and newly generated factory data at the same time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west flash
+</pre></div>
+</div>
+<hr>
+</section>
+<section id="using-own-factory-data-implementation">
+<h2>Using own factory data implementation<a class="headerlink" href="#using-own-factory-data-implementation" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference internal" href="#generating-factory-data"><span class="std std-doc">factory data generation process</span></a> described above
+is only an example valid for the nRF Connect platform. You can well create a HEX
+file containing all <a class="reference internal" href="#factory-data-component-table"><span class="std std-doc">factory data components</span></a> in any
+format and then implement a parser to read out all parameters and pass them to a
+provider. Each manufacturer can implement a factory data set on its own by
+implementing a parser and a factory data accessor inside the Matter stack. Use
+the <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataProvider.h">nRF Connect Provider</a>
+and <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataParser.h">FactoryDataParser</a> as
+examples.</p>
+<p>You can read the factory data set from the device’s flash memory in different
+ways, depending on the purpose and the format. In the nRF Connect example, the
+factory data is stored in the CBOR format. The device uses the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataParser.h">Factory Data Parser</a> to read
+out raw data, decode it, and store it in the <code class="docutils literal notranslate"><span class="pre">FactoryData</span></code> structure. The
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataProvider.c">Factor Data Provider</a>
+implementation uses this parser to get all needed factory data parameters and
+provide them to the Matter core.</p>
+<p>In the nRF Connect example, the <code class="docutils literal notranslate"><span class="pre">FactoryDataProvider</span></code> is a template class that
+inherits from <code class="docutils literal notranslate"><span class="pre">DeviceAttestationCredentialsProvider</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CommissionableDataProvider</span></code>, and <code class="docutils literal notranslate"><span class="pre">DeviceInstanceInfoProvider</span></code> classes. Your
+custom implementation must also inherit from these classes and implement their
+functions to get all factory data parameters from the device’s flash memory.
+These classes are virtual and need to be overridden by the derived class. To
+override the inherited classes, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Override the following methods:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">//</span> <span class="o">=====</span> <span class="n">Members</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">DeviceAttestationCredentialsProvider</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetCertificationDeclaration</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetFirmwareInformation</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">out_firmware_info_buffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetDeviceAttestationCert</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetProductAttestationIntermediateCert</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">SignWithDeviceAttestationKey</span><span class="p">(</span><span class="n">const</span> <span class="n">ByteSpan</span> <span class="o">&amp;</span> <span class="n">digestToSign</span><span class="p">,</span> <span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outSignBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="o">=====</span> <span class="n">Members</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">CommissionableDataProvider</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSetupDiscriminator</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">setupDiscriminator</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">SetSetupDiscriminator</span><span class="p">(</span><span class="n">uint16_t</span> <span class="n">setupDiscriminator</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSpake2pIterationCount</span><span class="p">(</span><span class="n">uint32_t</span> <span class="o">&amp;</span> <span class="n">iterationCount</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSpake2pSalt</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">saltBuf</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSpake2pVerifier</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">verifierBuf</span><span class="p">,</span> <span class="n">size_t</span> <span class="o">&amp;</span> <span class="n">verifierLen</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSetupPasscode</span><span class="p">(</span><span class="n">uint32_t</span> <span class="o">&amp;</span> <span class="n">setupPasscode</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">SetSetupPasscode</span><span class="p">(</span><span class="n">uint32_t</span> <span class="n">setupPasscode</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="o">=====</span> <span class="n">Members</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">DeviceInstanceInfoProvider</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetVendorName</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">bufSize</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetVendorId</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">vendorId</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetProductName</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">bufSize</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetProductId</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">productId</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetSerialNumber</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">bufSize</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetManufacturingDate</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">year</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="o">&amp;</span> <span class="n">month</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="o">&amp;</span> <span class="n">day</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetHardwareVersion</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">hardwareVersion</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetHardwareVersionString</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">bufSize</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">GetRotatingDeviceIdUniqueId</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">uniqueIdSpan</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Move the newly created parser and provider files to your project directory.</p></li>
+<li><p>Add the files to the <code class="docutils literal notranslate"><span class="pre">CMakeList.txt</span></code> file.</p></li>
+<li><p>Disable building both the default and the nRF Connect implementations of
+factory data providers to start using your own implementation of factory data
+parser and provider. This can be done in one of the following ways:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">CONFIG_FACTORY_DATA_CUSTOM_BACKEND=y</span></code> Kconfig setting to <code class="docutils literal notranslate"><span class="pre">prj.conf</span></code>
+file.</p></li>
+<li><p>Build an example with following option (replace <em>&lt;build_target&gt;</em> with your
+board name, for example <code class="docutils literal notranslate"><span class="pre">nrf52840dk_nrf52840</span></code>):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ west build -b &lt;build_target&gt; -- -DCONFIG_FACTORY_DATA_CUSTOM_BACKEND=y
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="nrfconnect_examples_software_update.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Performing Device Firmware Upgrade in the nRF Connect examples</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="nrfconnect_platform_overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">nRF Connect platform overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2021, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
