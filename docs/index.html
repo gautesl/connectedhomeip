@@ -349,6 +349,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="examples/all-clusters-app/p6/README.html">
      CHIP P6 All Clusters Example
     </a>
@@ -531,6 +536,17 @@
    <li class="toctree-l2">
     <a class="reference internal" href="examples/lock-app/cc13x2x7_26x2x7/README.html">
      Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
     </a>
    </li>
    <li class="toctree-l2">
@@ -811,11 +827,6 @@
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="breathe.html">
-   Breathe (Doxygen)
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="BUG_REPORT.html">
    Reporting bugs
   </a>
@@ -943,12 +954,72 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Welcome to Matter’s documentation!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-matter">
+   What is Matter?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-overview">
+   Project Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#development-goals">
+     Development Goals
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#architecture-overview">
+     Architecture Overview
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#current-status-of-matter">
+   Current Status of Matter
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-contribute">
+   How to Contribute
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -960,6 +1031,55 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Welcome to Matter’s documentation!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-matter">
+   What is Matter?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-overview">
+   Project Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#development-goals">
+     Development Goals
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#architecture-overview">
+     Architecture Overview
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#current-status-of-matter">
+   Current Status of Matter
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-contribute">
+   How to Contribute
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -970,111 +1090,134 @@ title="Print to PDF"
   <section id="welcome-to-matter-s-documentation">
 <h1>Welcome to Matter’s documentation!<a class="headerlink" href="#welcome-to-matter-s-documentation" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="QUICK_START.html">Quick Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="QUICK_START.html#demo-overview">Demo Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QUICK_START.html#wi-fi-nodes">Wi-Fi Nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QUICK_START.html#thread-nodes">Thread Nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QUICK_START.html#controllers">Controllers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="PROJECT_FLOW.html">Matter Project Flow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT_FLOW.html#issues">Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT_FLOW.html#pull-requests">Pull requests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT_FLOW.html#milestones">Milestones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT_FLOW.html#projects">Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT_FLOW.html#branches-releases-and-general-development-flow">Branches, releases, and general development flow</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="VSCODE_DEVELOPMENT.html">Visual Studio Code Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#setup-steps">Setup Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#bootstrapping-your-source-tree-one-time">Bootstrapping your source tree (one time)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#building-the-source-tree">Building the Source Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#tasks">Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#launch-tasks">Launch Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#submitting-a-pull-request-practical-advice">Submitting a Pull Request - Practical Advice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#common-issues">Common Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#docker-faq">Docker FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#visual-studio-code-faq">Visual Studio Code FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VSCODE_DEVELOPMENT.html#visual-studio-code-recommended-settings">Visual Studio Code Recommended Settings</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/device_runner.html">CHIP on-device testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/device_runner_dispatch.html">CHIP on-device test dispatch</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="discussion/index.html">Discussion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="discussion/lwip_ipv6.html">LwIP changes for Matter</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="guides/index.html">Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/BUILDING.html">Building Matter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/access-control-guide.html">Access Control Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/android_building.html">Building Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/chip_tool_guide.html">Working with the CHIP Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/infineon_p6_software_update.html">Matter Software Update with Infineon P6 example applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/ip_commissioning.html">IP commissioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/matter-repl.html">Matter Python REPL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/mbedos_add_new_target.html">Mbed-OS add new hardware target</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/mbedos_commissioning.html">Matter Arm Mbed OS provisioning guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/mbedos_platform_overview.html">Mbed-OS platform overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nrfconnect_android_commissioning.html">Commissioning nRF Connect Accessory using Android CHIPTool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nrfconnect_examples_cli.html">Using CLI in nRF Connect examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nrfconnect_examples_configuration.html">Configuring nRF Connect examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nrfconnect_examples_software_update.html">Performing Device Firmware Upgrade in the nRF Connect examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nrfconnect_platform_overview.html">nRF Connect platform overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nxp_imx8m_linux_examples.html">Building and Running CHIP Linux Examples for i.MX 8M Mini EVK</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/nxp_k32w_android_commissioning.html">Commissioning NXP K32W using Android CHIPTool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/openthread_border_router_pi.html">Setup OpenThread Border Router on Raspberry Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/openthread_rcp_nrf_dongle.html">Configuring OpenThread Radio Co-processor on nRF52840 Dongle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/python_chip_controller_advanced_usage.html">Using Python CHIP Controller advanced features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/python_chip_controller_building.html">Working with Python CHIP Controller</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/silabs_efr32_building.html">Building Silicon Labs EFR32 examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/silabs_efr32_software_update.html">Matter Software Update with EFR32 example applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/simulated_device_linux.html">Simulated Device How-To (Linux)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/ti_platform_overview.html">Texas Instruments platform overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/troubleshooting_avahi.html">Troubleshooting Avahi</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="style/index.html">Style Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="style/STYLE_MAKEFILES.html">CHIP Makefile Style Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="style/style_guide.html">Matter Documentation Style Guide</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#all-clusters-example">All clusters example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#all-clusters-minimal-example">All clusters minimal example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#bridge-example">Bridge example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#chef-example">CHEF example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#chip-tool-example">CHIP Tool example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#chip-tool-darwin-example">CHIP Tool Darwin example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#lighting-example">Lighting example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#light-switch-example">Light switch example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#lock-example">Lock example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#log-source-example">Log source example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#minimal-mdns-example">Minimal MDNS example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#ota-provider-example">OTA Provider example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#ota-requestor-example">OTA Requestor example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#persistent-storage-example">Persistent storage example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#pigweed-example">Pigweed example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#pump-example">Pump example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#pump-controller-example">Pump controller example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#shell-example">Shell example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#temperature-measurement-example">Temperature measurement example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#tv-example">TV example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#tv-casting-example">TV casting example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#window-example">Window example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="breathe.html">Breathe (Doxygen)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BUG_REPORT.html">Reporting bugs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BUG_REPORT.html#writing-an-effective-bug-report">Writing an effective bug report</a></li>
-</ul>
-</li>
-</ul>
 </div>
+<p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/build.yaml"><img alt="Builds" src="https://github.com/project-chip/connectedhomeip/workflows/Builds/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-efr32.yaml"><img alt="Examples - EFR32" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20EFR32/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-esp32.yaml"><img alt="Examples - ESP32" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20ESP32/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-linux-imx.yaml"><img alt="Examples - i.MX Linux" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20i.MX%20Linux/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-k32w.yaml"><img alt="Examples - K32W with SE051" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20K32W%20with%20SE051/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-linux-standalone.yaml"><img alt="Examples - Linux Standalone" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20Linux%20Standalone/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-nrfconnect.yaml"><img alt="Examples - nRF Connect SDK" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20nRF%20Connect%20SDK/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-qpg.yaml"><img alt="Examples - QPG" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20QPG/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/examples-cc13x2x7_26x2x7.yaml"><img alt="Examples - TI CC26X2X7" src="https://github.com/project-chip/connectedhomeip/workflows/Build%20example%20-%20TI%20CC26X2X7/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/android.yaml"><img alt="Android" src="https://github.com/project-chip/connectedhomeip/workflows/Android/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/unit_integration_test.yaml"><img alt="Unit / Interation Tests" src="https://github.com/project-chip/connectedhomeip/workflows/Unit%20/%20Interation%20Tests/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/cirque.yaml"><img alt="Cirque" src="https://github.com/project-chip/connectedhomeip/workflows/Cirque/badge.svg" /></a>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/qemu.yaml"><img alt="QEMU" src="https://github.com/project-chip/connectedhomeip/workflows/QEMU/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/actions/workflows/zap_templates.yaml"><img alt="ZAP Templates" src="https://github.com/project-chip/connectedhomeip/workflows/ZAP/badge.svg" /></a></p>
+</section>
+<section id="what-is-matter">
+<h1>What is Matter?<a class="headerlink" href="#what-is-matter" title="Permalink to this headline">#</a></h1>
+<p>Matter (formerly Project Connected Home over IP, or Project CHIP) is a new
+Working Group within the Connectivity Standards Alliance (CSA, formerly Zigbee
+Alliance). This Working Group plans to develop and promote the adoption of a
+new, royalty-free connectivity standard to increase compatibility among smart
+home products, with security as a fundamental design tenet.</p>
+<p>The goal of the Matter project is to simplify development for manufacturers and
+increase compatibility for consumers. The project is built around a shared
+belief that smart home devices should be secure, reliable, and seamless to use.
+By building upon Internet Protocol (IP), the project aims to enable
+communication across smart home devices, mobile apps, and cloud services and to
+define a specific set of IP-based networking technologies for device
+certification.</p>
+<p>The CSA officially opened the Matter Working Group on January 17, 2020 and is in
+the process of drafting the specification.</p>
+<p>Visit <a class="reference external" href="https://buildwithmatter.com">buildwithmatter.com</a> to learn more and read
+the latest news and updates about the project.</p>
+</section>
+<section id="project-overview">
+<h1>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">#</a></h1>
+<section id="development-goals">
+<h2>Development Goals<a class="headerlink" href="#development-goals" title="Permalink to this headline">#</a></h2>
+<p>Matter is developed with the following goals and principles in mind:</p>
+<p><strong>Unifying:</strong> Matter will produce a new specification, building with and on top
+of market-tested, existing technologies.</p>
+<p><strong>Interoperable:</strong> The specification permits communication between any
+Matter-certified device, subject to users’ permission.</p>
+<p><strong>Secure:</strong> The specification leverages modern security practices and protocols.</p>
+<p><strong>User Control:</strong> The end user is in control of authorization for interaction
+with devices.</p>
+<p><strong>Federated:</strong> No single entity serves as a throttle or a
+single-point-of-failure for root of trust.</p>
+<p><strong>Robust:</strong> The set of protocols specify a complete lifecycle of a device —
+starting with the seamless out-of-box experience, through operational protocols,
+to device and system management specifications required for proper function in
+the presence of change.</p>
+<p><strong>Low Overhead:</strong> The protocols are practically implementable on low
+compute-resource devices, such as MCUs.</p>
+<p><strong>Pervasive:</strong> The protocols are broadly deployable and accessible, thanks to
+leveraging IP and being implementable on low-capability devices.</p>
+<p><strong>Ecosystem-Flexible:</strong> The protocol must be flexible enough to accommodate
+deployment in ecosystems with differing policies.</p>
+<p><strong>Easy to Use:</strong> The protocol should aim to provide smooth, cohesive, integrated
+provisioning and out-of-box experience.</p>
+<p><strong>Open:</strong> The Project’s design and technical processes should be open and
+transparent to the general public, including to non-members wherever possible.</p>
+</section>
+<section id="architecture-overview">
+<h2>Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permalink to this headline">#</a></h2>
+<p><img alt="Matter Architecture Overview" src="_images/CHIP_IP_pyramid.png" /></p>
+<p>The Project, as illustrated above, defines the application layer that will be
+deployed on devices and controllers as well as the supported IPv6-based networks
+to help achieve our interoperability architectural goal. Matter will initially
+support Wi-Fi and Thread for core, operational communications and Bluetooth Low
+Energy (BLE) to simplify device commissioning and setup.</p>
+<p>The Application Layer can be further broken down into seven main components:</p>
+<p><img alt="Matter Stack Architecture" src="_images/CHIP_Arch_Pyramid.png" /></p>
+<ol class="arabic simple">
+<li><p><strong>Application:</strong> High order business logic of a device. For example, an
+application that is focused on lighting might contain logic to handle turning
+on/off the bulb as well as its color characteristics.</p></li>
+<li><p><strong>Data Model:</strong> Data primitives that help describe the various
+functionalities of the devices. The Application operates on these data
+structures when there is intent to interact with the device.</p></li>
+<li><p><strong>Interaction Model:</strong> Represents a set of actions that can be performed on
+the devices to interact with it. For example, reading or writing attributes
+on a device would correspond to interactions with the devices. These actions
+operate on the structures defined by the data model.</p></li>
+<li><p><strong>Action Framing:</strong> Once an action is constructed using the Interaction
+Model, it is framed into a prescriptive packed binary format to enable being
+well represented on the “wire”.</p></li>
+<li><p><strong>Security:</strong> An encoded action frame is then sent down to the Security Layer
+to encrypt and sign the payload to ensure that data is secured and
+authenticated by both sender and receiver of a packet.</p></li>
+<li><p><strong>Message Framing &amp; Routing:</strong> With an interaction encrypted and signed, the
+Message Layer constructs the payload format with required and optional header
+fields; which specify properties of the message as well as some routing
+information.</p></li>
+<li><p><strong>IP Framing &amp; Transport Management:</strong> After the final payload has been
+constructed, it is sent to the underlying transport protocol for IP
+management of the data.</p></li>
+</ol>
+</section>
+</section>
+<section id="current-status-of-matter">
+<h1>Current Status of Matter<a class="headerlink" href="#current-status-of-matter" title="Permalink to this headline">#</a></h1>
+<p>Matter’s design and technical processes are intended to be open and transparent
+to the general public, including to Work Group non-members wherever possible.
+The availability of this GitHub repository and its source code under an Apache
+v2 license is an important and demonstrable step to achieving this commitment.</p>
+<p>Matter endeavors to bring together the best aspects of market-tested
+technologies and to redeploy them as a unified and cohesive whole-system
+solution. The overall goal of this approach is to bring the benefits of Matter
+to consumers and manufacturers as quickly as possible. As a result, what you
+observe in this repository is an implementation-first approach to the technical
+specification, vetting integrations in practice.</p>
+<p>The Matter repository is growing and evolving to implement the overall
+architecture. The repository currently contains the security foundations,
+message framing and dispatch, an implementation of the interaction model and
+data model. The code examples show simple interactions, and are supported on
+multiple transports – Wi-Fi and Thread – starting with resource-constrained
+(i.e., memory, processing) silicon platforms to help ensure Matter’s
+scalability.</p>
+</section>
+<section id="how-to-contribute">
+<h1>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">#</a></h1>
+<p>We welcome your contributions to Matter. Read our contribution guidelines
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/CONTRIBUTING.md">here</a>.</p>
+</section>
+<section id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 </section>
 
 

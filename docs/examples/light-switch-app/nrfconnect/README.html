@@ -350,6 +350,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../all-clusters-app/p6/README.html">
      CHIP P6 All Clusters Example
     </a>
@@ -532,6 +537,17 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../lock-app/cc13x2x7_26x2x7/README.html">
      Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
     </a>
    </li>
    <li class="toctree-l2">
@@ -812,11 +828,6 @@
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../breathe.html">
-   Breathe (Doxygen)
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../../../BUG_REPORT.html">
    Reporting bugs
   </a>
@@ -972,6 +983,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-1-light-switch-devices-overview">
+     Group 1 light switch devices overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generic-switch">
+     Generic Switch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-example-settings">
+     Common example settings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bluetooth-le-advertising">
      Bluetooth LE advertising
     </a>
@@ -1149,6 +1175,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-communication">
      Testing the communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-generic-switch">
+     Testing the Generic Switch
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1183,6 +1214,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-1-light-switch-devices-overview">
+     Group 1 light switch devices overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generic-switch">
+     Generic Switch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-example-settings">
+     Common example settings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bluetooth-le-advertising">
      Bluetooth LE advertising
     </a>
@@ -1360,6 +1406,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#testing-the-communication">
      Testing the communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-generic-switch">
+     Testing the Generic Switch
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1453,13 +1504,38 @@ Semiconductor’s
 and <a class="reference external" href="https://zephyrproject.org/">Zephyr RTOS</a>. Visit Matter’s
 <a class="reference internal" href="../../../guides/nrfconnect_platform_overview.html"><span class="doc std std-doc">nRF Connect platform overview</span></a>
 to read more about the platform structure and dependencies.</p>
+<p>In Matter, the following types of light switch devices are available:</p>
+<ul class="simple">
+<li><p>Group 1: On/Off Light Switch, Dimmer Switch, Color Dimmer Switch, Control
+Bridge</p></li>
+<li><p>Group 2: Generic Switch</p></li>
+</ul>
+<p>The first type (here referred to as Group 1) uses client application clusters
+(for example, Level Control) and bindings to send commands to the server
+clusters. This type of switch is on the endpoint 1 of this example.</p>
+<p>With the second type (Group 2), controllers can use event subscriptions to be
+informed about changes on the switch server cluster. This type of switch is on
+the endpoint 2 of this example.</p>
+<section id="group-1-light-switch-devices-overview">
+<h3>Group 1 light switch devices overview<a class="headerlink" href="#group-1-light-switch-devices-overview" title="Permalink to this headline">#</a></h3>
 <p>A light switch device is a simple embedded controller, which has the ability to
 control lighting devices, such as light bulbs or LEDs. After commissioning into
 a Matter network, the light switch device does not know what it can control. In
 other words, it has no information about another device being connected to the
 same network. You must provide this information to the light switch through the
 process called binding, which links clusters and endpoints on both devices, so
-that the devices can interact with each other.</p>
+that the devices can interact with each other. This functionality is on the
+endpoint 1 and triggered by <strong>Button 2</strong>.</p>
+</section>
+<section id="generic-switch">
+<h3>Generic Switch<a class="headerlink" href="#generic-switch" title="Permalink to this headline">#</a></h3>
+<p>The Generic Switch on the endpoint 2 offers the switch server cluster. It
+implements the Momentary Switch (<code class="docutils literal notranslate"><span class="pre">MS</span></code>) and Momentary Switch Release (<code class="docutils literal notranslate"><span class="pre">MSR</span></code>)
+features. For this reason, it sends event notifications <code class="docutils literal notranslate"><span class="pre">InitialPress</span></code> and
+<code class="docutils literal notranslate"><span class="pre">ShortRelease</span></code> if <strong>Button 3</strong> of the DK is pressed and released.</p>
+</section>
+<section id="common-example-settings">
+<h3>Common example settings<a class="headerlink" href="#common-example-settings" title="Permalink to this headline">#</a></h3>
 <p>The Matter device that runs the light switch application is controlled by the
 Matter controller device over the Thread protocol. By default, the Matter device
 has Thread disabled, and it should be paired with Matter controller and get
@@ -1471,6 +1547,7 @@ guarantee that the device will be able to communicate with the Matter controller
 and other devices.</p>
 <p>The example can be configured to use the secure bootloader and utilize it for
 performing over-the-air Device Firmware Upgrade using Bluetooth LE.</p>
+</section>
 <section id="bluetooth-le-advertising">
 <h3>Bluetooth LE advertising<a class="headerlink" href="#bluetooth-le-advertising" title="Permalink to this headline">#</a></h3>
 <p>In this example, to commission the device onto a Matter network, it must be
@@ -1649,6 +1726,11 @@ bound lighting bulb device (<a class="reference internal" href="../../lighting-a
 example) (dimmer functionality). The brightness is changing from 0% to 100%
 with 1% increments every 300 milliseconds as long as <strong>Button 2</strong> is
 pressed.</p></li>
+</ul>
+<p><strong>Button 3</strong> can be used for the following purposes:</p>
+<ul class="simple">
+<li><p><em>Pressed once</em> — Changes the value of the attribute <code class="docutils literal notranslate"><span class="pre">CurrentPosition</span></code>
+and (if subscribed) sends the event notifications to the controller.</p></li>
 </ul>
 <p><strong>Button 4</strong> can be used to start the NFC tag emulation and enable Bluetooth LE
 advertising for the predefined period of time (15 minutes by default).</p>
@@ -2078,6 +2160,26 @@ user-defined ID of the node being commissioned except <code class="docutils lite
 use <a class="reference internal" href="#buttons"><span class="std std-doc">light switch buttons</span></a> or
 <a class="reference internal" href="#matter-cli-commands"><span class="std std-doc">Matter CLI commands</span></a>, as described in the
 <a class="reference internal" href="#device-ui"><span class="std std-doc">Device UI</span></a> section.</p>
+</section>
+<section id="testing-the-generic-switch">
+<h3>Testing the Generic Switch<a class="headerlink" href="#testing-the-generic-switch" title="Permalink to this headline">#</a></h3>
+<p>To test the Generic Switch, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Enter the interactive mode of the CHIP Tool:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-tool interactive start
+</pre></div>
+</div>
+</li>
+<li><p>Subscribe to the <code class="docutils literal notranslate"><span class="pre">InitialPress</span></code> and <code class="docutils literal notranslate"><span class="pre">ShortRelease</span></code> event notifications:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>switch subscribe-event initial-press <span class="m">1</span> <span class="m">20</span> &lt;node_id&gt; <span class="m">2</span> --is-urgent <span class="nb">true</span>
+switch subscribe-event short-release <span class="m">1</span> <span class="m">20</span> &lt;node_id&gt; <span class="m">2</span> --is-urgent <span class="nb">true</span> --keepSubscriptions <span class="nb">true</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Press <strong>Button 3</strong> to test the new configuration. When pressing and
+releasing <strong>Button 3</strong>, both events should be sent to the controller.</p></li>
+</ol>
 </section>
 <section id="testing-device-firmware-upgrade">
 <h3>Testing Device Firmware Upgrade<a class="headerlink" href="#testing-device-firmware-upgrade" title="Permalink to this headline">#</a></h3>

@@ -8,7 +8,7 @@ found at [code-signing](https://developer.apple.com/support/code-signing/).
 ---
 
 -   [Building the Example Application](#building-the-example-application)
--   [Using the Client to Commision a Device](#using-the-client-to-commission-a-device)
+-   [Using the Client to Commission a Device](#using-the-client-to-commission-a-device)
 
 ---
 

@@ -350,6 +350,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../all-clusters-app/p6/README.html">
      CHIP P6 All Clusters Example
     </a>
@@ -532,6 +537,17 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../lock-app/cc13x2x7_26x2x7/README.html">
      Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
     </a>
    </li>
    <li class="toctree-l2">
@@ -810,11 +826,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../breathe.html">
-   Breathe (Doxygen)
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../BUG_REPORT.html">
@@ -1171,12 +1182,15 @@ Lighting device to allow access from Lighting-switch device and chip-tool.</p>
 </pre></div>
 </div>
 </li>
-<li><p>we use matter shell to bind and test.</p>
-<p>binding:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>matter switch binding unicast 1 12344321 1
+<li><p>After successful commissioning, use the chip-tool for binding in
+Lighting-switch.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool binding write binding &#39;[{&quot;fabricIndex&quot;: 1, &quot;node&quot;:20836, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]&#39; 12344320 1
 </pre></div>
 </div>
-<p>on:</p>
+</li>
+<li><p>Test toggle:</p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">boot</span></code> button to toggle LED.</p>
+<p>Using matter shell on:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>matter switch onoff on
 </pre></div>
 </div>
