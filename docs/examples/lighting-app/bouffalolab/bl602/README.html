@@ -838,6 +838,18 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://project-chip.github.io/connectedhomeip-doc/index.html">
+   API
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -988,13 +1000,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-the-image">
-   Build the image
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flash-the-board">
-   Flash the board
+  <a class="reference internal nav-link" href="#build-the-image-and-flash-the-board">
+   Build the image and flash the board
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1044,13 +1051,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-the-image">
-   Build the image
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flash-the-board">
-   Flash the board
+  <a class="reference internal nav-link" href="#build-the-image-and-flash-the-board">
+   Build the image and flash the board
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1115,27 +1117,8 @@ capabilities. The steps were verified on BL602 development board.</p>
 </li>
 </ul>
 </section>
-<section id="build-the-image">
-<h2>Build the image<a class="headerlink" href="#build-the-image" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>Build the example application:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>connectedhomeip$ ./scripts/build/build_examples.py --target bl602-light build
-</pre></div>
-</div>
-<p>Generated files</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">connectedhomeip</span><span class="o">/</span><span class="n">out</span><span class="o">/</span><span class="n">bl602</span><span class="o">-</span><span class="n">light</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">bl602</span><span class="o">-</span><span class="n">lighting</span><span class="o">-</span><span class="n">example</span><span class="o">.</span><span class="n">bin</span>
-</pre></div>
-</div>
-<p>To delete generated executable, libraries and object files use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">connectedhomeip</span><span class="o">/</span>
-<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">out</span><span class="o">/</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="flash-the-board">
-<h2>Flash the board<a class="headerlink" href="#flash-the-board" title="Permalink to this headline">#</a></h2>
+<section id="build-the-image-and-flash-the-board">
+<h2>Build the image and flash the board<a class="headerlink" href="#build-the-image-and-flash-the-board" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Build the
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app/bouffalolab/bl602">lighting-app</a></p>
@@ -1173,7 +1156,7 @@ commands:</p>
 <h2>Validate the example<a class="headerlink" href="#validate-the-example" title="Permalink to this headline">#</a></h2>
 <p>1.You can open the serial console. For example, if the device is at
 <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picocom</span> <span class="o">-</span><span class="n">b</span> <span class="mi">2000000</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">picocom</span> <span class="o">-</span><span class="n">b</span> <span class="mi">115200</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span>
 </pre></div>
 </div>
 <p>2.To reset the board, press the RESET button, and you will see the log in the
@@ -1189,14 +1172,16 @@ and choose the pairing mode.</p>
 remote device, as well as the network credentials to use.</p>
 <p>The command below uses the default values hard-coded into the debug versions of
 the BL602 lighting-app to commission it onto a Wi-Fi network:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ./chip-tool pairing ble-wifi 1 ${SSID} ${PASSWORD} 20202021 3840
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+$ sudo ./chip-tool pairing ble-wifi 1 ${SSID} ${PASSWORD} 20202021 3840
 
- Parameters:
- 1. Discriminator: 3840
- 2. Setup-pin-code: 20202021
- 3. Node ID: 1
- 4. SSID : Wi-Fi SSID
- 5. PASSWORD : Wi-Fi Password
+Parameters:
+1. Discriminator: 3840
+2. Setup-pin-code: 20202021
+3. Node ID: 1
+4. SSID : Wi-Fi SSID
+5. PASSWORD : Wi-Fi Password
+```
 </pre></div>
 </div>
 </section>
@@ -1251,7 +1236,7 @@ the device to be On or Off.</p>
   
     By Matter Contributors<br/>
   
-      &copy; Copyright 2021, Matter Contributors.<br/>
+      &copy; Copyright 2022, Matter Contributors.<br/>
 </p>
         </footer>
     </div>

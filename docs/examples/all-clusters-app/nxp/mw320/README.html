@@ -838,6 +838,18 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://project-chip.github.io/connectedhomeip-doc/index.html">
+   API
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -1081,6 +1093,12 @@ order to download MW320 SDK for Matter.</p></li>
 <li><p>“source third_party/connectedhomeip/scripts/activate.sh” can be omitted if
 your environment is already setup without issues.</p></li>
 </ol>
+<p>Tinycrypt ECC operations:</p>
+<p>Note: This solution is temporary.</p>
+<p>In order to use the tinycrypt ecc operations, use the following build arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gn gen out/debug --args=&#39;treat_warnings_as_errors=false mbedtls_repo=&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls&quot; mbedtls_use_tinycrypt=true&#39;
+</pre></div>
+</div>
 </section>
 <section id="flashing">
 <h2>Flashing<a class="headerlink" href="#flashing" title="Permalink to this headline">#</a></h2>
@@ -1140,7 +1158,7 @@ $ sudo python2 flashprog.py -l Matter/layout-4m.txt --boot2 Matter/boot2.bin --w
   
     By Matter Contributors<br/>
   
-      &copy; Copyright 2021, Matter Contributors.<br/>
+      &copy; Copyright 2022, Matter Contributors.<br/>
 </p>
         </footer>
     </div>

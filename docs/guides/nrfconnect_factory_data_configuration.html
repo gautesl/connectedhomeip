@@ -838,6 +838,18 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://project-chip.github.io/connectedhomeip-doc/index.html">
+   API
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -1930,7 +1942,7 @@ override the inherited classes, complete the following steps:</p>
     <span class="n">CHIP_ERROR</span> <span class="n">GetFirmwareInformation</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">out_firmware_info_buffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
     <span class="n">CHIP_ERROR</span> <span class="n">GetDeviceAttestationCert</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
     <span class="n">CHIP_ERROR</span> <span class="n">GetProductAttestationIntermediateCert</span><span class="p">(</span><span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
-    <span class="n">CHIP_ERROR</span> <span class="n">SignWithDeviceAttestationKey</span><span class="p">(</span><span class="n">const</span> <span class="n">ByteSpan</span> <span class="o">&amp;</span> <span class="n">digestToSign</span><span class="p">,</span> <span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outSignBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
+    <span class="n">CHIP_ERROR</span> <span class="n">SignWithDeviceAttestationKey</span><span class="p">(</span><span class="n">const</span> <span class="n">ByteSpan</span> <span class="o">&amp;</span> <span class="n">messageToSign</span><span class="p">,</span> <span class="n">MutableByteSpan</span> <span class="o">&amp;</span> <span class="n">outSignBuffer</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
 
     <span class="o">//</span> <span class="o">=====</span> <span class="n">Members</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">CommissionableDataProvider</span>
     <span class="n">CHIP_ERROR</span> <span class="n">GetSetupDiscriminator</span><span class="p">(</span><span class="n">uint16_t</span> <span class="o">&amp;</span> <span class="n">setupDiscriminator</span><span class="p">)</span> <span class="n">override</span><span class="p">;</span>
@@ -2003,7 +2015,7 @@ board name, for example <code class="docutils literal notranslate"><span class="
   
     By Matter Contributors<br/>
   
-      &copy; Copyright 2021, Matter Contributors.<br/>
+      &copy; Copyright 2022, Matter Contributors.<br/>
 </p>
         </footer>
     </div>
