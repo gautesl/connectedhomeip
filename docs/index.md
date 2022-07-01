@@ -16,8 +16,15 @@ examples/index
 BUG_REPORT
 ```
 
+```{toctree}
+:caption: Reference
+:hidden:
+
+API <https://project-chip.github.io/connectedhomeip-doc/index.html>
+```
+
 ```{include} README.md
-:start-line: 21
+:start-after: What is Matter?
 :end-before: Building and Developing in Matter
 ```
 
