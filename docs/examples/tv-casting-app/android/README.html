@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -798,6 +813,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../temperature-measurement-app/esp32/README.html">
      CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1087,6 +1107,8 @@ commissioned. Then it allows the user to send Matter ContentLauncher commands to
 the TV.</p>
 <hr>
 <ul class="simple">
+<li><p><a class="reference internal" href="#matter-tv-casting-android-app-example"><span class="std std-doc">Matter TV Casting Android App Example</span></a></p>
+<ul>
 <li><p><a class="reference internal" href="#requirements-for-building"><span class="std std-doc">Requirements for building</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#abis-and-target-cpu"><span class="std std-doc">ABIs and TARGET_CPU</span></a></p></li>
@@ -1095,6 +1117,8 @@ the TV.</p>
 </li>
 <li><p><a class="reference internal" href="#preparing-for-build"><span class="std std-doc">Preparing for build</span></a></p></li>
 <li><p><a class="reference internal" href="#building-installing-the-app"><span class="std std-doc">Building &amp; Installing the app</span></a></p></li>
+</ul>
+</li>
 </ul>
 <hr>
 <section id="requirements-for-building">
@@ -1157,14 +1181,14 @@ JDK version on MacOS for Apple Silicon is ‘openjdk 17.0.1’ or above.</p>
 <h2>Building &amp; Installing the app<a class="headerlink" href="#building-installing-the-app" title="Permalink to this headline">#</a></h2>
 <p>This is the simplest option. In the command line, run the following command from
 the top Matter directory:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./scripts/build/build_examples.py --target android-arm64-chip-tv-casting-app build
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./scripts/build/build_examples.py --target android-arm64-tv-casting-app build
 </pre></div>
 </div>
 <p>See the table above for other values of <code class="docutils literal notranslate"><span class="pre">TARGET_CPU</span></code>.</p>
 <p>The debug Android package <code class="docutils literal notranslate"><span class="pre">app-debug.apk</span></code> will be generated at
-<code class="docutils literal notranslate"><span class="pre">out/android-$TARGET_CPU-chip-tv-casting-app/outputs/apk/debug/</span></code>, and can be
+<code class="docutils literal notranslate"><span class="pre">out/android-$TARGET_CPU-tv-casting-app/outputs/apk/debug/</span></code>, and can be
 installed with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb install out/android-<span class="nv">$TARGET_CPU</span>-chip-tv-casting-app/outputs/apk/debug/app-debug.apk
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb install out/android-<span class="nv">$TARGET_CPU</span>-tv-casting-app/outputs/apk/debug/app-debug.apk
 </pre></div>
 </div>
 <p>You can use Android Studio to edit the Android app itself and run it after

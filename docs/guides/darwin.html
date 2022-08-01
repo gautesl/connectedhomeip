@@ -1,0 +1,1596 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Testing with Apple Devices &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matter Software Update with Infineon P6 example applications" href="infineon_p6_software_update.html" />
+    <link rel="prev" title="Working with the CHIP Tool" href="chip_tool_guide.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Testing with Apple Devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="infineon_p6_software_update.html">
+     Matter Software Update with Infineon P6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_factory_data_configuration.html">
+     Configuring factory data for the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_chip_controller_building.html">
+     Working with Python CHIP Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
+     CHIP P6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/efr32/README.html">
+     CHIP EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
+     CHIP P6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/telink/README.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/efr32/README.html">
+     CHIP EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/esp32/README.html">
+     CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/p6/README.html">
+     Matter P6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
+     CHIP P6 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
+     CHIP P6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
+     CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/efr32/README.html">
+     CHIP EFR32 Window Covering Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://project-chip.github.io/connectedhomeip-doc/index.html">
+   API
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/guides/darwin.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/guides/darwin.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matter-is-the-foundation-for-connected-things">
+   Matter is the foundation for connected things.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-requirements">
+   Setup Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-requires-for-testing-with-apple-devices">
+     Current requires for testing with Apple Devices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-matter-functionality-is-currently-a-developer-preview">
+       Note: Matter functionality is currently a Developer Preview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-compatibility">
+   Source Compatibility
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profile-installation">
+   Profile Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-iphone-or-ipad">
+     Install the Matter Profile on your iPhone or iPad
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-make-sure-to-head-back-to-system-preferences-and-you-ll-see-an-option-to-verify-and-install-the-profile-near-the-top">
+       Note: Make sure to head back to system preferences, and you’ll see an option to verify and install the profile near the top
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-homepod">
+     Install the Matter Profile on your HomePod
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-apple-tv">
+     Install the Matter Profile on your Apple TV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
+     Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples-of-how-to-setup-devices">
+       Examples of how to setup devices
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#case-study-1-configuring-a-development-m5stack-as-a-multi-device-to-work-with-ios-ipados-tvos">
+         Case study 1: Configuring a development M5Stack, as a multi-device to work with iOS/iPadOS/tvOS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#case-study-2-a-development-nordic-board-nrf52840-working-as-a-light-to-work-with-ios-ipados-tvos">
+         Case study 2: a development Nordic board (nRF52840), working as a light to work with iOS/iPadOS/tvOS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#general-platform-guides">
+       General Platform Guides
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#getting-the-sdk-ready">
+         Getting the SDK Ready
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#guides">
+         Guides
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#release-notes-known-issues">
+     Release Notes &amp; Known Issues
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Testing with Apple Devices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matter-is-the-foundation-for-connected-things">
+   Matter is the foundation for connected things.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-requirements">
+   Setup Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-requires-for-testing-with-apple-devices">
+     Current requires for testing with Apple Devices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-matter-functionality-is-currently-a-developer-preview">
+       Note: Matter functionality is currently a Developer Preview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-compatibility">
+   Source Compatibility
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profile-installation">
+   Profile Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-iphone-or-ipad">
+     Install the Matter Profile on your iPhone or iPad
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-make-sure-to-head-back-to-system-preferences-and-you-ll-see-an-option-to-verify-and-install-the-profile-near-the-top">
+       Note: Make sure to head back to system preferences, and you’ll see an option to verify and install the profile near the top
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-homepod">
+     Install the Matter Profile on your HomePod
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-matter-profile-on-your-apple-tv">
+     Install the Matter Profile on your Apple TV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
+     Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#examples-of-how-to-setup-devices">
+       Examples of how to setup devices
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#case-study-1-configuring-a-development-m5stack-as-a-multi-device-to-work-with-ios-ipados-tvos">
+         Case study 1: Configuring a development M5Stack, as a multi-device to work with iOS/iPadOS/tvOS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#case-study-2-a-development-nordic-board-nrf52840-working-as-a-light-to-work-with-ios-ipados-tvos">
+         Case study 2: a development Nordic board (nRF52840), working as a light to work with iOS/iPadOS/tvOS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#general-platform-guides">
+       General Platform Guides
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#getting-the-sdk-ready">
+         Getting the SDK Ready
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#guides">
+         Guides
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#release-notes-known-issues">
+     Release Notes &amp; Known Issues
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="testing-with-apple-devices">
+<h1>Testing with Apple Devices<a class="headerlink" href="#testing-with-apple-devices" title="Permalink to this headline">#</a></h1>
+<section id="matter-is-the-foundation-for-connected-things">
+<h2>Matter is the foundation for connected things.<a class="headerlink" href="#matter-is-the-foundation-for-connected-things" title="Permalink to this headline">#</a></h2>
+<p>Learn more about Matter <a class="reference external" href="https://buildwithmatter.com/">here</a></p>
+</section>
+<section id="setup-requirements">
+<h2>Setup Requirements<a class="headerlink" href="#setup-requirements" title="Permalink to this headline">#</a></h2>
+<p>Note: These steps are supported on:</p>
+<ul class="simple">
+<li><p>iPhone <em>(iOS)</em></p></li>
+<li><p>iPad <em>(iPadOS)</em></p></li>
+<li><p>mac <em>(macOS)</em></p></li>
+<li><p>AppleTV <em>(tvOS)</em></p></li>
+<li><p>HomePod <em>(tvOS)</em></p></li>
+<li><p>Apple Watch <em>(watchOS)</em></p></li>
+</ul>
+<section id="current-requires-for-testing-with-apple-devices">
+<h3>Current requires for testing with Apple Devices<a class="headerlink" href="#current-requires-for-testing-with-apple-devices" title="Permalink to this headline">#</a></h3>
+<section id="note-matter-functionality-is-currently-a-developer-preview">
+<h4>Note: Matter functionality is currently a Developer Preview<a class="headerlink" href="#note-matter-functionality-is-currently-a-developer-preview" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Devices must support BLE pairing, and have it enabled</p></li>
+<li><p>An iPhone or iPad running iOS/iPadOS at least 15.6. You will need to install
+a <a class="reference internal" href="#profile-installation"><span class="std std-doc">profile</span></a> on it.</p></li>
+<li><p>An Apple TV or HomePod running at least tvOS 15.6. You will need to install
+a <a class="reference internal" href="#profile-installation"><span class="std std-doc">profile</span></a> on it. If you have multiple Apple TVs
+and/or HomePods, you will need to install the
+<a class="reference internal" href="#profile-installation"><span class="std std-doc">profile</span></a> on all of them.</p></li>
+<li><p>The iPhone or iPad with the Matter <a class="reference internal" href="#profile-installation"><span class="std std-doc">profile</span></a> must
+belong to the same iCloud account as the Apple TV or HomePod with the Matter
+<a class="reference internal" href="#profile-installation"><span class="std std-doc">profile</span></a>.</p></li>
+<li><p>A test iCloud account is highly recommended for Matter development to avoid
+interference with existing homes.</p></li>
+<li><p>To pair and control Matter Thread devices, you’ll need to have a HomePod
+Mini or Apple TV 4K</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="source-compatibility">
+<h2>Source Compatibility<a class="headerlink" href="#source-compatibility" title="Permalink to this headline">#</a></h2>
+<p>Each developer preview release is compatible with a certain SHA from this
+repository.</p>
+<ul class="simple">
+<li><p>iOS/iPadOS/tvOS 15.6 Developer Preview:
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/commits/cfc35951be66a664a6efdadea56d1b8ea6e63e96"><code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></a></p></li>
+<li><p>iOS/iPadOS/tvOS 16.0 Developer Preview:
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/commits/cfc35951be66a664a6efdadea56d1b8ea6e63e96"><code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></a></p></li>
+</ul>
+</section>
+<section id="profile-installation">
+<h2>Profile Installation<a class="headerlink" href="#profile-installation" title="Permalink to this headline">#</a></h2>
+<section id="install-the-matter-profile-on-your-iphone-or-ipad">
+<h3>Install the Matter Profile on your iPhone or iPad<a class="headerlink" href="#install-the-matter-profile-on-your-iphone-or-ipad" title="Permalink to this headline">#</a></h3>
+<p>Note: The profile will expire automatically after some time</p>
+<ol class="arabic simple">
+<li><p>Download the
+<a class="reference external" href="https://developer.apple.com/services-account/download?path=/iOS/iOS_Logs/EnableMatter.mobileconfig">profile</a></p></li>
+<li><p>Email the profile to an account that is configured on your device running
+iOS/iPadOS 15.6 (or greater)</p></li>
+<li><p>Selecting the profile in Mail on your iOS/iPadOS 15.6 (or greater) device
+will present an option to install the profile</p></li>
+<li><p>Restart the device</p></li>
+</ol>
+<section id="note-make-sure-to-head-back-to-system-preferences-and-you-ll-see-an-option-to-verify-and-install-the-profile-near-the-top">
+<h4>Note: Make sure to head back to system preferences, and you’ll see an option to verify and install the profile near the top<a class="headerlink" href="#note-make-sure-to-head-back-to-system-preferences-and-you-ll-see-an-option-to-verify-and-install-the-profile-near-the-top" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="install-the-matter-profile-on-your-homepod">
+<h3>Install the Matter Profile on your HomePod<a class="headerlink" href="#install-the-matter-profile-on-your-homepod" title="Permalink to this headline">#</a></h3>
+<p>Note: The profile will expire automatically after some time</p>
+<ol class="arabic simple">
+<li><p>Download the
+<a class="reference external" href="https://developer.apple.com/services-account/download?path=/iOS/iOS_Logs/EnableMatter.mobileconfig">profile</a></p></li>
+<li><p>Email the profile to an account that is configured on your device running
+iOS/iPadOS 15.6 (or greater)</p></li>
+<li><p>Selecting the profile in Mail on your iOS/iPadOS 15.6 (or greater) device
+will present an option to install the profile on the HomePod</p></li>
+<li><p>Restart the device</p></li>
+</ol>
+</section>
+<section id="install-the-matter-profile-on-your-apple-tv">
+<h3>Install the Matter Profile on your Apple TV<a class="headerlink" href="#install-the-matter-profile-on-your-apple-tv" title="Permalink to this headline">#</a></h3>
+<p>Note: The profile will expire automatically after some time</p>
+<ol class="arabic simple">
+<li><p>Download the
+<a class="reference external" href="https://developer.apple.com/services-account/download?path=/iOS/iOS_Logs/EnableMatter.mobileconfig">profile</a></p></li>
+<li><p>Use
+<a class="reference external" href="https://apps.apple.com/us/app/apple-configurator/id1037126344?mt=12">Apple Configurator</a>
+to transfer the profile to the Apple TV</p></li>
+<li><p>Restart the device</p></li>
+</ol>
+</section>
+<section id="ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
+<h3>Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS<a class="headerlink" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Clone the <a class="reference external" href="https://github.com/project-chip/connectedhomeip.git">Matter repo</a></p></li>
+<li><p>Checkout the specific commit hash (from <a class="reference internal" href="#source-compatibility"><span class="std std-doc">above</span></a>) for
+maximum compatibility with your installed release:</p>
+<ul class="simple">
+<li><p>Example command for SHA <code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code>:
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>In order to work with iOS/iPadOS/tvOS 15.6 or greater, device types as defined
+in the Matter Device Library spec are used to determine accessory categories.
+Ensure the right device type is set for each endpoint.</p>
+<ul class="simple">
+<li><p>For the <code class="docutils literal notranslate"><span class="pre">all-clusters-app</span></code> as an example, this can be set in
+<code class="docutils literal notranslate"><span class="pre">FIXED_DEVICE_TYPES</span></code>, <code class="docutils literal notranslate"><span class="pre">FIXED_DEVICE_TYPE_OFFSETS</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">FIXED_DEVICE_TYPE_LENGTHS</span></code> in <code class="docutils literal notranslate"><span class="pre">endpoint_config.h</span></code></p></li>
+<li><p>Here’s an example from <code class="docutils literal notranslate"><span class="pre">all-clusters-app</span></code> (feel free to search for more in
+the tree by looking for the above keys)</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Array</span> <span class="n">of</span> <span class="n">device</span> <span class="n">types</span>
+<span class="c1">#define FIXED_DEVICE_TYPES</span>
+    <span class="p">{</span>
+        <span class="p">{</span> <span class="mh">0x0016</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="mh">0x0100</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="mh">0x0100</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="mh">0xF002</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Array</span> <span class="n">of</span> <span class="n">device</span> <span class="nb">type</span> <span class="n">offsets</span>
+<span class="c1">#define FIXED_DEVICE_TYPE_OFFSETS</span>
+    <span class="p">{</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+    <span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Array</span> <span class="n">of</span> <span class="n">device</span> <span class="nb">type</span> <span class="n">lengths</span>
+<span class="c1">#define FIXED_DEVICE_TYPE_LENGTHS</span>
+    <span class="p">{</span>
+        <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Supported device types are (not exhaustive):</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Decimal</p></th>
+<th class="head"><p>HEX</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lightbulb</p></td>
+<td><p>256</p></td>
+<td><p>0100</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lightbulb + Dimmer</p></td>
+<td><p>257</p></td>
+<td><p>0101</p></td>
+</tr>
+<tr class="row-even"><td><p>Switch</p></td>
+<td><p>259</p></td>
+<td><p>0103</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contact Sensor</p></td>
+<td><p>21</p></td>
+<td><p>0015</p></td>
+</tr>
+<tr class="row-even"><td><p>Door Lock</p></td>
+<td><p>10</p></td>
+<td><p>000A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Light Sensor</p></td>
+<td><p>262</p></td>
+<td><p>0106</p></td>
+</tr>
+<tr class="row-even"><td><p>Occupancy Sensor</p></td>
+<td><p>263</p></td>
+<td><p>0107</p></td>
+</tr>
+<tr class="row-odd"><td><p>Outlet</p></td>
+<td><p>266</p></td>
+<td><p>010A</p></td>
+</tr>
+<tr class="row-even"><td><p>Color Bulb</p></td>
+<td><p>268</p></td>
+<td><p>010C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Window Covering</p></td>
+<td><p>514</p></td>
+<td><p>0202</p></td>
+</tr>
+<tr class="row-even"><td><p>Thermostat</p></td>
+<td><p>769</p></td>
+<td><p>0301</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature Sensor</p></td>
+<td><p>770</p></td>
+<td><p>0302</p></td>
+</tr>
+<tr class="row-even"><td><p>Flow Sensor</p></td>
+<td><p>774</p></td>
+<td><p>0306</p></td>
+</tr>
+</tbody>
+</table>
+<section id="examples-of-how-to-setup-devices">
+<h4>Examples of how to setup devices<a class="headerlink" href="#examples-of-how-to-setup-devices" title="Permalink to this headline">#</a></h4>
+<section id="case-study-1-configuring-a-development-m5stack-as-a-multi-device-to-work-with-ios-ipados-tvos">
+<h5>Case study 1: Configuring a development M5Stack, as a multi-device to work with iOS/iPadOS/tvOS<a class="headerlink" href="#case-study-1-configuring-a-development-m5stack-as-a-multi-device-to-work-with-ios-ipados-tvos" title="Permalink to this headline">#</a></h5>
+<p>Note: These instructions are specific to getting started with the
+(Matter-provided) <code class="docutils literal notranslate"><span class="pre">all-clusters-app</span></code> on an ESP32-based M5Stack, however can be
+generalised to work on most platforms (<a class="reference internal" href="#guides"><span class="std std-doc">more listed below</span></a>)</p>
+<ol class="arabic simple">
+<li><p>Checkout and setup
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip.git">Matter repo</a> as per the
+instructions
+<a class="reference internal" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos"><span class="std std-doc">above</span></a></p></li>
+<li><p>Follow
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/all-clusters-app/esp32">these</a>
+instructions to initialize your development environment, compile the firmware
+and flash your hardware.</p></li>
+</ol>
+</section>
+<section id="case-study-2-a-development-nordic-board-nrf52840-working-as-a-light-to-work-with-ios-ipados-tvos">
+<h5>Case study 2: a development Nordic board (nRF52840), working as a light to work with iOS/iPadOS/tvOS<a class="headerlink" href="#case-study-2-a-development-nordic-board-nrf52840-working-as-a-light-to-work-with-ios-ipados-tvos" title="Permalink to this headline">#</a></h5>
+<p>Note: These instructions are specific to getting started with the
+(Matter-provided) “lighting-app” on an Nordic-based NRF52840, however can be
+generalised to work on most platforms (more listed below)</p>
+<ol class="arabic simple">
+<li><p>Checkout and setup
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip.git">Matter repo</a> as per the
+instructions
+<a class="reference internal" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos"><span class="std std-doc">above</span></a></p></li>
+<li><p>Follow
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app/nrfconnect#readme">these instructions</a>
+initialize your development environment, compile the firmware and flash your
+hardware.</p></li>
+</ol>
+</section>
+</section>
+<section id="general-platform-guides">
+<h4>General Platform Guides<a class="headerlink" href="#general-platform-guides" title="Permalink to this headline">#</a></h4>
+<section id="getting-the-sdk-ready">
+<h5>Getting the SDK Ready<a class="headerlink" href="#getting-the-sdk-ready" title="Permalink to this headline">#</a></h5>
+<p>Note: Most platforms have very similar, if not the same configuration
+requirements</p>
+<ol class="arabic simple">
+<li><p>Checkout and setup
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip.git">Matter repo</a> as per the
+instructions
+<a class="reference internal" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos"><span class="std std-doc">above</span></a></p></li>
+<li><p>Find and edit one of the platform
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples">examples</a>
+to support the fixed device types
+<a class="reference internal" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos"><span class="std std-doc">above</span></a></p></li>
+<li><p>Read the <a class="reference internal" href="README.html"><span class="doc std std-doc">platform guides</span></a> on how set up the hardware</p></li>
+</ol>
+</section>
+<section id="guides">
+<h5>Guides<a class="headerlink" href="#guides" title="Permalink to this headline">#</a></h5>
+<ul class="simple">
+<li><p><a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html"><span class="doc std std-doc">Bouffalo Lab</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/window-app/efr32/README.html"><span class="doc std std-doc">EFR32 Window Covering</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/esp32/README.html"><span class="doc std std-doc">ESP32 All Clusters</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/lighting-app/esp32/README.html"><span class="doc std std-doc">ESP32 Lighting</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html"><span class="doc std std-doc">ESP32 Temperature Sensor</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/mbed/README.html"><span class="doc std std-doc">mbedOS</span></a></p></li>
+<li><p><a class="reference internal" href="nrfconnect_examples_configuration.html"><span class="doc std std-doc">nRF Connect All Clusters</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/pump-app/nrfconnect/README.html"><span class="doc std std-doc">nRF Connect Pump</span></a></p></li>
+<li><p><a class="reference internal" href="nxp_imx8m_linux_examples.html"><span class="doc std std-doc">NXP Examples</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/nxp/mw320/README.html"><span class="doc std std-doc">NXP</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/p6/README.html"><span class="doc std std-doc">P6</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/lighting-app/qpg/README.html"><span class="doc std std-doc">Qorvo</span></a></p></li>
+<li><p><a class="reference internal" href="silabs_efr32_building.html"><span class="doc std std-doc">SiliconLabs</span></a></p></li>
+<li><p><a class="reference internal" href="simulated_device_linux.html"><span class="doc std std-doc">Simulated Linux</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/lighting-app/telink/README.html"><span class="doc std std-doc">Telink</span></a></p></li>
+<li><p><a class="reference internal" href="ti_platform_overview.html"><span class="doc std std-doc">TI Platform</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/cc13x2x7_26x2x7/README.html"><span class="doc std std-doc">TI All Clusters</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/lighting-app/tizen/README.html"><span class="doc std std-doc">Tizen</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="release-notes-known-issues">
+<h3>Release Notes &amp; Known Issues<a class="headerlink" href="#release-notes-known-issues" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Please refer to the iOS/iPadOS 15.6
+<a class="reference external" href="https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-15_6-release-notes">Release Notes</a>
+for currently known issues.</p></li>
+<li><p>Please refer to the iOS/iPadOS 16.0
+<a class="reference external" href="https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16-release-notes">Release Notes</a>
+for currently known issues.</p></li>
+<li><p>Further issues should be reported
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/issues">here</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chip_tool_guide.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Working with the CHIP Tool</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="infineon_p6_software_update.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matter Software Update with Infineon P6 example applications</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2022, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

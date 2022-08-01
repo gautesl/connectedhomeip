@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -995,11 +1015,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-sample-application">
-   Building a Sample Application
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-your-first-sample">
    Building your first sample
   </a>
@@ -1010,8 +1025,30 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#folder-structure-and-guidelines">
+   Folder Structure and Guidelines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ci">
    CI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-platform">
+     Adding a platform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cd">
+   CD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-new-devices">
+   Adding new devices
   </a>
  </li>
 </ul>
@@ -1034,11 +1071,6 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-sample-application">
-   Building a Sample Application
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-your-first-sample">
    Building your first sample
   </a>
@@ -1049,8 +1081,30 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#folder-structure-and-guidelines">
+   Folder Structure and Guidelines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ci">
    CI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-platform">
+     Adding a platform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cd">
+   CD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-new-devices">
+   Adding new devices
   </a>
  </li>
 </ul>
@@ -1065,23 +1119,22 @@ title="Print to PDF"
                 
   <section id="matter-chef-app">
 <h1>MATTER CHEF APP<a class="headerlink" href="#matter-chef-app" title="Permalink to this headline">#</a></h1>
-<p>The purpose of the chef app is to to increase the coverage of device types in
-Matter.</p>
-<p>It uses the shell app a starting point, adding the processing of ZAP files and
-the support of a few targets under a unified build script: <code class="docutils literal notranslate"><span class="pre">chef.py</span></code>.</p>
-<p>As it incorporates the processing of ZAP files as part of the build process, it
-does not use <code class="docutils literal notranslate"><span class="pre">zzz_generated</span></code>, but rather places the auto-generated zap artifacts
-under its <code class="docutils literal notranslate"><span class="pre">zap-generated</span></code> temporary folder.</p>
-<p>All device types available (DM/IM .zap files) are found inside the <code class="docutils literal notranslate"><span class="pre">devices</span></code>
-folder.</p>
-<section id="building-a-sample-application">
-<h2>Building a Sample Application<a class="headerlink" href="#building-a-sample-application" title="Permalink to this headline">#</a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">chef.py</span> <span class="pre">-h</span></code> to see the available commands</p>
-</section>
+<p>The purpose of the chef app is to to:</p>
+<ol class="arabic simple">
+<li><p>Increase the coverage of device types in Matter</p></li>
+<li><p>Provide a sample application that may have its data model easily configured.</p></li>
+</ol>
+<p>Chef uses the shell app a starting point, but processes the data model defined
+on ZAP files during build time. This procedure is handled by its unified build
+script: <code class="docutils literal notranslate"><span class="pre">chef.py</span></code>.</p>
+<p>When processing ZAP files as part of the build process, Chef places the
+auto-generated zap artifacts under its <code class="docutils literal notranslate"><span class="pre">out</span></code> temporary folder. Chef uses
+artifacts from <code class="docutils literal notranslate"><span class="pre">zzz_generated</span></code> for CI/CD.</p>
+<p>All device types available (.zap files) are found inside the <code class="docutils literal notranslate"><span class="pre">devices</span></code> folder.</p>
 <section id="building-your-first-sample">
 <h2>Building your first sample<a class="headerlink" href="#building-your-first-sample" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p>Make sure you have the toolchain installed for your desired target</p></li>
+<li><p>Make sure you have the toolchain installed for your desired target.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">chef.py</span></code> the first time to create a <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> configuration file. If
 you already have SDK environment variables such as IDF_PATH (esp32) and
 ZEPHYR_BASE (nrfconnect) it will use those values as default.</p></li>
@@ -1106,11 +1159,12 @@ platform to enumerate its device as a serial port. Typical values are:</p></li>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">chef.py</span> <span class="pre">-u</span></code> to update zap and the toolchain (on selected platforms)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">chef.py</span> <span class="pre">-u</span></code> to update zap and the toolchain (on selected platforms).</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">chef.py</span> <span class="pre">-gzbf</span> <span class="pre">-t</span> <span class="pre">&lt;platform&gt;</span> <span class="pre">-d</span> <span class="pre">lighting</span></code>. This command will run the
 ZAP GUI opening the <code class="docutils literal notranslate"><span class="pre">devices/lighting.zap</span></code> file and will allow editing. It
 will then generate the zap artifacts, place them on the <code class="docutils literal notranslate"><span class="pre">zap-generated</span></code>
-folder, run a build and flash the binary in your target</p></li>
+folder, run a build and flash the binary in your target.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">chef.py</span> <span class="pre">-h</span></code> to see all available commands.</p></li>
 </ol>
 </section>
 <section id="creating-a-new-device-type-in-your-device-library">
@@ -1124,14 +1178,158 @@ into the <code class="docutils literal notranslate"><span class="pre">devices</s
 <code class="docutils literal notranslate"><span class="pre">chef.py</span> <span class="pre">-h</span></code> for a list of devices available.</p></li>
 </ol>
 </section>
+<section id="folder-structure-and-guidelines">
+<h2>Folder Structure and Guidelines<a class="headerlink" href="#folder-structure-and-guidelines" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;platform&gt;</span></code>: build system and <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> file for every supported platform.
+When porting a new platform, please minimize the source code in this folder,
+favoring the <code class="docutils literal notranslate"><span class="pre">common</span></code> folder for code that is not platform related.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">common</span></code>: contains code shared between different platforms. It may contain
+source code that enables specific features such as <code class="docutils literal notranslate"><span class="pre">LightingManager</span></code> class
+or <code class="docutils literal notranslate"><span class="pre">LockManager</span></code>, as long as the application dynamically identify the
+presence of the relevant cluster configurations and it doesn’t break the use
+cases where chef is built without these clusters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">devices</span></code>: contains the data models that may be used with chef. As of Matter
+1.0 the data models are defined using .zap files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">out</span></code>: temporary folder used for placing ZAP generated artifacts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample_app_util</span></code>: guidelines and scripts for generating file names for new
+device types committed to the <code class="docutils literal notranslate"><span class="pre">devices</span></code> folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>: contains general configuration for the <code class="docutils literal notranslate"><span class="pre">chef.py</span></code> script. As
+of Matter 1.0 this is used exclusively for toolchain and TTY interface
+paths.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chef.py</span></code>: main script for generating samples. More info on its help
+<code class="docutils literal notranslate"><span class="pre">chef.py</span> <span class="pre">-h</span></code>.</p></li>
+</ul>
+</section>
 <section id="ci">
 <h2>CI<a class="headerlink" href="#ci" title="Permalink to this headline">#</a></h2>
 <p>All CI jobs for chef can be found in <code class="docutils literal notranslate"><span class="pre">.github/workflows/chef.yaml</span></code>.</p>
-<p>These jobs use a platform-specific image with base <code class="docutils literal notranslate"><span class="pre">chip-build</span></code>.</p>
-<p>CI jobs call chef with the options <code class="docutils literal notranslate"><span class="pre">--ci</span> <span class="pre">-t</span> <span class="pre">&lt;PLATFORM&gt;</span></code>. The <code class="docutils literal notranslate"><span class="pre">--ci</span></code> option will
-execute builds for all devices specified in <code class="docutils literal notranslate"><span class="pre">cicd_config[&quot;ci_allow_list&quot;]</span></code>
-defined in <code class="docutils literal notranslate"><span class="pre">chef.py</span></code> (so long as these devices are also in <code class="docutils literal notranslate"><span class="pre">/devices</span></code>) on the
+<p>These jobs use a platform-specific image with base <code class="docutils literal notranslate"><span class="pre">chip-build</span></code>. Such images
+contain the toolchain for the respective platform under <code class="docutils literal notranslate"><span class="pre">/opt</span></code>.</p>
+<p>CI jobs call chef with the options <code class="docutils literal notranslate"><span class="pre">--ci</span> <span class="pre">-t</span> <span class="pre">$PLATFORM</span></code>. The <code class="docutils literal notranslate"><span class="pre">--ci</span></code> option will
+execute builds for all devices specified in <code class="docutils literal notranslate"><span class="pre">ci_allow_list</span></code> defined in
+<code class="docutils literal notranslate"><span class="pre">cicd_config.json</span></code> (so long as these devices are also in <code class="docutils literal notranslate"><span class="pre">/devices</span></code>) on the
 specified platform.</p>
+<p>CI jobs also call the function <code class="docutils literal notranslate"><span class="pre">bundle_$PLATFORM</span></code> at the end of each example
+build. This function should copy or move build output files from the build
+output location into <code class="docutils literal notranslate"><span class="pre">_CD_STAGING_DIR</span></code>. Typically, the set of files touched is
+the minimal set of files needed to flash a device. See the function
+<code class="docutils literal notranslate"><span class="pre">bundle_esp32</span></code> for reference.</p>
+<section id="adding-a-platform">
+<h3>Adding a platform<a class="headerlink" href="#adding-a-platform" title="Permalink to this headline">#</a></h3>
+<p>First, implement a <code class="docutils literal notranslate"><span class="pre">bundle_$PLATFORM</span></code> function.</p>
+<p>Next, ensure that the examples in <code class="docutils literal notranslate"><span class="pre">ci_allow_list</span></code> build in a container using the
+relevant platform image. You can simulate the workflow locally by mounting your
+CHIP repo into a container and executing the CI command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run -it --mount <span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span> connectedhomeip/chip-build-<span class="nv">$PLATFORM</span>:<span class="nv">$VERSION</span>
+</pre></div>
+</div>
+<p>In the container:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown -R <span class="k">$(</span>whoami<span class="k">)</span> /workspace
+<span class="nb">cd</span> /workspace
+<span class="nb">source</span> ./scripts/bootstrap.sh
+<span class="nb">source</span> ./scripts/activate.sh
+./examples/chef/chef.py --ci -t <span class="nv">$PLATFORM</span>
+</pre></div>
+</div>
+<p>Once you are confident the CI examples build and bundle in a container, add a
+new job to the chef workflow.</p>
+<p>Replace all instances of <code class="docutils literal notranslate"><span class="pre">$PLATFORM</span></code> with the new platform. Replace <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code>
+with the image version used in the rest of the workflows, or update the image
+version for all images in the workflow as needed.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">chef_$PLATFORM</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chef - $PLATFORM CI Examples</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.actor != &#39;restyled-io[bot]&#39;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">container</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">connectedhomeip/chip-build-$PLATFORM:$VERSION</span><span class="w"></span>
+<span class="w">        </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--user root</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wandalen/wretry.action@v1.0.15</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
+<span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+<span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">                  </span><span class="no">token: ${{ github.token }}</span><span class="w"></span>
+<span class="w">              </span><span class="nt">attempt_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="w">              </span><span class="nt">attempt_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span><span class="w"></span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/checkout_submodules.py --shallow --platform $PLATFORM</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bootstrap</span><span class="w"></span>
+<span class="w">          </span><span class="nt">timeout-minutes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/build/gn_bootstrap.sh</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI Examples $PLATFORM</span><span class="w"></span>
+<span class="w">          </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span><span class="w"></span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">              </span><span class="no">./scripts/run_in_build_env.sh &quot;./examples/chef/chef.py --ci -t $PLATFORM&quot;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="cd">
+<h2>CD<a class="headerlink" href="#cd" title="Permalink to this headline">#</a></h2>
+<p>Once CI is enabled for a platform, the platform may also be integrated into
+<code class="docutils literal notranslate"><span class="pre">integrations/cloudbuild/</span></code>, where chef builds are defined in <code class="docutils literal notranslate"><span class="pre">chef.yaml</span></code>. See
+the <code class="docutils literal notranslate"><span class="pre">README</span></code> in this path for more information.</p>
+<p>Note that the image used in <code class="docutils literal notranslate"><span class="pre">chef.yaml</span></code> is <code class="docutils literal notranslate"><span class="pre">chip-build-vscode</span></code>. See
+<code class="docutils literal notranslate"><span class="pre">docker/images/chip-build-vscode/Dockerfile</span></code> for the source of this image. This
+image is a combination of the individual toolchain images. Therefore, before a
+platform is integrated into chef CD, the toolchain should be copied into
+<code class="docutils literal notranslate"><span class="pre">chip-build-vscode</span></code> and <code class="docutils literal notranslate"><span class="pre">chef.yaml</span></code> should be updated to use the new image
+version.</p>
+<p>Finally, add the new platform to <code class="docutils literal notranslate"><span class="pre">cd_platforms</span></code> in <code class="docutils literal notranslate"><span class="pre">cicd_config.json</span></code>. The
+configuration should follow the following schema:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;$PLATFORM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;output_archive_prefix_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;option_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;option_2&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;output_archive_prefix_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Take note of the configuration for <code class="docutils literal notranslate"><span class="pre">linux</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;linux&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;linux_x86&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;x64&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;linux_arm64_ipv6only&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arm64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--ipv6only&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This will produce output archives prefixed <code class="docutils literal notranslate"><span class="pre">linux_x86</span></code> and
+<code class="docutils literal notranslate"><span class="pre">linux_arm_64_ipv6only</span></code> and will append the respective options to each build
+command for these targets.</p>
+<p>To test your configuration locally, you may employ a similar strategy as in CI:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run -it --mount <span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span> connectedhomeip/chip-build-vscode:<span class="nv">$VERSION</span>
+</pre></div>
+</div>
+<p>In the container:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown -R <span class="k">$(</span>whoami<span class="k">)</span> /workspace
+<span class="nb">cd</span> /workspace
+<span class="nb">source</span> ./scripts/bootstrap.sh
+<span class="nb">source</span> ./scripts/activate.sh
+./examples/chef/chef.py --build_all --keep_going
+</pre></div>
+</div>
+<p>You may also use the Google Cloud Build local builder as detailed in the
+<code class="docutils literal notranslate"><span class="pre">README</span></code> of <code class="docutils literal notranslate"><span class="pre">integrations/cloudbuild/</span></code>.</p>
+</section>
+<section id="adding-new-devices">
+<h2>Adding new devices<a class="headerlink" href="#adding-new-devices" title="Permalink to this headline">#</a></h2>
+<p>To add new devices for chef:</p>
+<ul class="simple">
+<li><p>Execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">sample_app_util.py</span> <span class="pre">zap</span> <span class="pre">&lt;zap_file&gt;</span> <span class="pre">--rename-file</span></code> to rename
+the example and place the new file in <code class="docutils literal notranslate"><span class="pre">examples/chef/devices</span></code>.</p>
+<ul>
+<li><p>See the <code class="docutils literal notranslate"><span class="pre">README</span></code> in <code class="docutils literal notranslate"><span class="pre">examples/chef/sample_app_util/</span></code> for more info.</p></li>
+</ul>
+</li>
+<li><p>Execute <code class="docutils literal notranslate"><span class="pre">scripts/tools/zap_regen_all.py</span></code>, commit <code class="docutils literal notranslate"><span class="pre">zzz_generated</span></code> and
+<code class="docutils literal notranslate"><span class="pre">examples/chef/devices</span></code>.</p>
+<ul>
+<li><p>This is gated by the workflow in <code class="docutils literal notranslate"><span class="pre">.github/workflows/zap_templates.yaml</span></code>.</p></li>
+</ul>
+</li>
+<li><p>All devices added to the repository are built in CD.</p></li>
+</ul>
 </section>
 </section>
 

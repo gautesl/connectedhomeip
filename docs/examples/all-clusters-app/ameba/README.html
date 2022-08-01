@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -1005,11 +1025,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-and-cluster-control">
-   Commissioning and Cluster Control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#commissioning">
    Commissioning
   </a>
@@ -1034,6 +1049,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-rpc-console">
    Running RPC Console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-matter-shell">
+   Running Matter Shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binding-and-controlling-a-lighting-device">
+   Binding and Controlling a Lighting Device
   </a>
  </li>
 </ul>
@@ -1066,11 +1091,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-and-cluster-control">
-   Commissioning and Cluster Control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#commissioning">
    Commissioning
   </a>
@@ -1097,6 +1117,16 @@ title="Print to PDF"
    Running RPC Console
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-matter-shell">
+   Running Matter Shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binding-and-controlling-a-lighting-device">
+   Binding and Controlling a Lighting Device
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1117,8 +1147,6 @@ control.</p>
 <ul>
 <li><p><a class="reference internal" href="#supported-device"><span class="std std-doc">Supported Device</span></a></p></li>
 <li><p><a class="reference internal" href="#building-the-example-application"><span class="std std-doc">Building the Example Application</span></a></p></li>
-<li><p><a class="reference internal" href="#commissioning-and-cluster-control"><span class="std std-doc">Commissioning and cluster control</span></a></p>
-<ul>
 <li><p><a class="reference internal" href="#commissioning"><span class="std std-doc">Commissioning</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#ble-mode"><span class="std std-doc">BLE mode</span></a></p></li>
@@ -1126,9 +1154,9 @@ control.</p>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#cluster-control"><span class="std std-doc">Cluster control</span></a></p></li>
-</ul>
-</li>
 <li><p><a class="reference internal" href="#running-rpc-console"><span class="std std-doc">Running RPC Console</span></a></p></li>
+<li><p><a class="reference internal" href="#running-matter-shell"><span class="std std-doc">Running Matter Shell</span></a></p></li>
+<li><p><a class="reference internal" href="#binding-and-controlling-a-lighting-device"><span class="std std-doc">Binding and Controlling a Lighting Device</span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -1142,30 +1170,22 @@ control.</p>
 <h2>Building the Example Application<a class="headerlink" href="#building-the-example-application" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Pull docker image:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
-  $ docker pull connectedhomeip/chip-build-ameba:latest
-  ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ docker pull connectedhomeip/chip-build-ameba:latest
 </pre></div>
 </div>
 </li>
 <li><p>Run docker container:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
-  $ docker run -it -v ${CHIP_DIR}:/root/chip connectedhomeip/chip-build-ameba:latest
-  ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ docker run -it -v ${CHIP_DIR}:/root/chip connectedhomeip/chip-build-ameba:latest
 </pre></div>
 </div>
 </li>
 <li><p>Setup build environment:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
-  $ source ./scripts/bootstrap.sh
-  ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ source ./scripts/bootstrap.sh
 </pre></div>
 </div>
 </li>
 <li><p>To build the demo application:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
-  $ ./scripts/build/build_examples.py --target ameba-amebad-all-clusters build
-  ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./scripts/build/build_examples.py --target ameba-amebad-all-clusters build
 </pre></div>
 </div>
 <p>The output image files are stored in
@@ -1184,25 +1204,12 @@ the correct locations</p></li>
 <li><p>Click <strong>Download</strong> button.</p></li>
 </ol>
 </section>
-<section id="commissioning-and-cluster-control">
-<h2>Commissioning and Cluster Control<a class="headerlink" href="#commissioning-and-cluster-control" title="Permalink to this headline">#</a></h2>
-</section>
 <section id="commissioning">
 <h2>Commissioning<a class="headerlink" href="#commissioning" title="Permalink to this headline">#</a></h2>
 <p>There are two commissioning modes supported by Ameba platform:</p>
 <section id="ble-mode">
 <h3>BLE mode<a class="headerlink" href="#ble-mode" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>In “connectedhomeip/config/ameba/args.gni”</p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">chip_config_network_layer_ble</span> <span class="pre">=</span> <span class="pre">true</span></code></p></li>
-</ul>
-</li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">connectedhomeip/src/platform/Ameba/CHIPDevicePlatformConfig.h</span></code></p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">CHIP_DEVICE_CONFIG_ENABLE_CHIPOBLE</span> <span class="pre">1</span></code></p></li>
-</ul>
-</li>
 <li><p>Build and Flash</p></li>
 <li><p>The all-clusters example will run automatically after booting the Ameba
 board.</p></li>
@@ -1213,16 +1220,6 @@ board.</p></li>
 <section id="ip-mode">
 <h3>IP mode<a class="headerlink" href="#ip-mode" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>In <code class="docutils literal notranslate"><span class="pre">connectedhomeip/config/ameba/args.gni</span></code></p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">chip_config_network_layer_ble</span> <span class="pre">=</span> <span class="pre">false</span></code></p></li>
-</ul>
-</li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">connectedhomeip/src/platform/Ameba/CHIPDevicePlatformConfig.h</span></code></p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">CHIP_DEVICE_CONFIG_ENABLE_CHIPOBLE</span> <span class="pre">0</span></code></p></li>
-</ul>
-</li>
 <li><p>Build and Flash</p></li>
 <li><p>The all-clusters example will run automatically after booting the Ameba
 board.</p></li>
@@ -1240,10 +1237,8 @@ to be On or Off.</p>
 <ul>
 <li><p>Via
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/chip-tool#using-the-client-to-send-matter-commands">Chip-Tool</a></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ```
-  $ ./chip-tool onoff on ${NODE_ID_TO_ASSIGN} 1
-  $ ./chip-tool onoff off ${NODE_ID_TO_ASSIGN} 1
-  ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./chip-tool onoff on &lt;nodeID&gt; 1
+  $ ./chip-tool onoff off &lt;nodeID&gt; 1
 </pre></div>
 </div>
 </li>
@@ -1252,40 +1247,85 @@ to be On or Off.</p>
 <section id="running-rpc-console">
 <h2>Running RPC Console<a class="headerlink" href="#running-rpc-console" title="Permalink to this headline">#</a></h2>
 <ul>
-<li><p>Connect a USB-TTL Adapter as shown below</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ```
-    Ameba         USB-TTL
+<li><p>Connect a USB-TTL adapter as shown below</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Ameba         USB-TTL
     A19           TX
     A18           RX
     GND           GND
-    ```
 </pre></div>
 </div>
 </li>
+</ul>
+<ul>
 <li><p>Build the
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/common/pigweed/rpc_console">chip-rpc console</a></p></li>
 <li><p>As part of building the example with RPCs enabled the chip_rpc python
 interactive console is installed into your venv. The python wheel files are
 also created in the output folder: out/debug/chip_rpc_console_wheels. To
 install the wheel files without rebuilding:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ```
-    $ pip3 install out/debug/chip_rpc_console_wheels/*.whl
-    ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ pip3 install out/debug/chip_rpc_console_wheels/*.whl
 </pre></div>
 </div>
 </li>
+</ul>
+<ul>
 <li><p>Launch the chip-rpc console after resetting Ameba board</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ```
-    $ chip-console --device /dev/tty&lt;port connected to USB-TTL adapter&gt; -b 115200
-    ```
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ chip-console --device /dev/tty&lt;port connected to USB-TTL adapter&gt; -b 115200
 </pre></div>
 </div>
 </li>
+</ul>
+<ul>
 <li><p>Get and Set lighting directly using the RPC console</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ```python
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    python
     rpcs.chip.rpc.Lighting.Get()
     rpcs.chip.rpc.Lighting.Set(on=True, level=128, color=protos.chip.rpc.LightingColor(hue=5, saturation=5))
-    ```
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="running-matter-shell">
+<h2>Running Matter Shell<a class="headerlink" href="#running-matter-shell" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Matter Shell is enabled whenever RPC is disabled.</p></li>
+<li><p>RPC console and Matter Shell cannot be enabled at the same time as they use
+the same UART port.</p></li>
+<li><p>Connect Ameba to the USB-TTL adapter as shown in the RPC section.</p></li>
+<li><p>Open the USB-TTL serial port and type <code class="docutils literal notranslate"><span class="pre">help</span></code> to view the available commands</p></li>
+</ul>
+</section>
+<section id="binding-and-controlling-a-lighting-device">
+<h2>Binding and Controlling a Lighting Device<a class="headerlink" href="#binding-and-controlling-a-lighting-device" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>This example shows how to bind a Switch Device to a Lighting Device and
+control it through the Matter Shell. One binding client (Switch Device) and
+one binding server (Lighting Device) is required.</p></li>
+<li><p>Commission the switch (nodeID 1) and lighting device (nodeID 2) using
+chip-tool.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      $ ./chip-tool pairing ble-wifi 1 &lt;SSID&gt; &lt;PASSWORD&gt; 20202021 3840
+      $ ./chip-tool pairing ble-wifi 2 &lt;SSID&gt; &lt;PASSWORD&gt; 20202021 3840
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p>After successful commissioning, configure the ACL in the lighting device to
+allow access from switch device and chip-tool.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      $ ./chip-tool accesscontrol write acl &#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null },{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [1], &quot;targets&quot;: null }]&#39; 2 0
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p>Bind the lighting device to the switch device.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      $ ./chip-tool binding write binding &#39;[{&quot;fabricIndex&quot;: 1, &quot;node&quot;:2, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]&#39; 1 1
+</pre></div>
+</div>
+</li>
+<li><p>Control the lighting device through the switch device’s Matter Shell</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      &gt; switch onoff on
+      &gt; switch onoff off
 </pre></div>
 </div>
 </li>

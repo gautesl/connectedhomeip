@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../examples/light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../examples/light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -798,6 +813,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/temperature-measurement-app/esp32/README.html">
      CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1229,6 +1249,13 @@ Firmware Update (DFU) or factory resets, except in some vendor-defined cases.</p
 <p>For the nRF Connect platform, the factory data is stored by default in a
 separate partition of the internal flash memory. This helps to keep the factory
 data secure by applying hardware write protection.</p>
+<blockquote>
+<div><p>Note: Due to hardware limitations, in the nRF Connect platform, protection
+against writing can be applied only to the internal memory partition. The
+<a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/libraries/others/fprotect.html">Fprotect</a>
+is the hardware flash protection driver, and we used it to ensure write
+protection of the factory data partition in internal flash memory.</p>
+</div></blockquote>
 <img alt="Nordic Semiconductor logo" src="../_images/Logo_RGB_H-small.png" />
 <img alt="nRF52840 DK" src="../_images/nRF52840-DK-small.png" />
 <hr>
@@ -1544,6 +1571,12 @@ JSON file.</p>
 </pre></div>
 </div>
 </li>
+</ul>
+<blockquote>
+<div><p>Note: To generate new SPAKE2+ verifier you need <code class="docutils literal notranslate"><span class="pre">spake2p</span></code> executable. See
+the note at the end of this section to learn how to get it.</p>
+</div></blockquote>
+<ul>
 <li><p>Manual:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">spake2_verifier</span> <span class="o">&lt;</span><span class="n">verifier</span><span class="o">&gt;</span>
 </pre></div>
@@ -1551,7 +1584,21 @@ JSON file.</p>
 </li>
 </ul>
 <p>d. Add paths to <code class="docutils literal notranslate"><span class="pre">.der</span></code> files that contain PAI and DAC certificates and the
-DAC private key (replace the respective variables with the file names):</p>
+DAC private key (replace the respective variables with the file names) using
+one of the following methods:</p>
+<ul class="simple">
+<li><p>Automatic:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">chip_cert_path</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">chip</span><span class="o">-</span><span class="n">cert</span> <span class="n">executable</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: To generate new certificates, you need the <code class="docutils literal notranslate"><span class="pre">chip-cert</span></code> executable.
+See the note at the end of this section to learn how to get it.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Manual:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">dac_cert</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">DAC</span> <span class="n">certificate</span><span class="o">&gt;.</span><span class="n">der</span> <span class="o">--</span><span class="n">dac_key</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">DAC</span> <span class="n">key</span><span class="o">&gt;.</span><span class="n">der</span> <span class="o">--</span><span class="n">pai_cert</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">PAI</span> <span class="n">certificate</span><span class="o">&gt;.</span><span class="n">der</span>
 </pre></div>
 </div>
@@ -1630,6 +1677,19 @@ path to the <code class="docutils literal notranslate"><span class="pre">spake2p
 executable.</p></li>
 <li><p>Add the <code class="docutils literal notranslate"><span class="pre">connectedhomeip/src/tools/spake2p/out/spake2p</span></code> path as an
 argument of <code class="docutils literal notranslate"><span class="pre">--spake2p_path</span></code> for the Python script.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>Note: Generating new certificates is optional if default vendor and product
+IDs are used and requires providing a path to the <code class="docutils literal notranslate"><span class="pre">chip-cert</span></code> executable. To
+get it, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">connectedhomeip</span></code> root directory.</p></li>
+<li><p>In a terminal, run the command:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">src/tools/chip-cert</span> <span class="pre">&amp;&amp;</span> <span class="pre">gn</span> <span class="pre">gen</span> <span class="pre">out</span> <span class="pre">&amp;&amp;</span> <span class="pre">ninja</span> <span class="pre">-C</span> <span class="pre">out</span> <span class="pre">chip-cert</span></code> to build
+the executable.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">connectedhomeip/src/tools/chip-cert/out/chip-cert</span></code> path as an
+argument of <code class="docutils literal notranslate"><span class="pre">--chip_cert_path</span></code> for the Python script.</p></li>
 </ol>
 </div></blockquote>
 <blockquote>
@@ -1901,6 +1961,26 @@ and build an example with the additional option
 -DCONFIG_CHIP_FACTORY_DATA_MERGE_WITH_FIRMWARE=y
 </pre></div>
 </div>
+<p>You can also build an example with auto-generation of new CD, DAC and PAI
+certificates. The newly generated certificates will be added to factory data set
+automatically. To generate new certificates disable using default certificates
+by building an example with the additional option
+<code class="docutils literal notranslate"><span class="pre">-DCHIP_FACTORY_DATA_USE_DEFAULT_CERTS=n</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west build -b nrf52840dk_nrf52840 -- \
+-DCONFIG_CHIP_FACTORY_DATA=y \
+-DCONFIG_CHIP_FACTORY_DATA_BUILD=y \
+-DCONFIG_CHIP_FACTORY_DATA_MERGE_WITH_FIRMWARE=y \
+-DCONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS=n
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: To generate new certificates using the nRF Connect platform build
+system, you need the <code class="docutils literal notranslate"><span class="pre">chip-cert</span></code> executable in your system variable PATH. To
+learn how to get <code class="docutils literal notranslate"><span class="pre">chip-cert</span></code>, go to the note at the end of
+<a class="reference internal" href="#creating-a-factory-data-partition-with-the-second-script"><span class="std std-doc">creating the factory data partition with the second script</span></a>
+section, and then add the newly built executable to the system variable PATH.
+The Cmake build system will find this executable automatically.</p>
+</div></blockquote>
 <p>After that, use the following command from the example’s directory to write
 firmware and newly generated factory data at the same time:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ west flash

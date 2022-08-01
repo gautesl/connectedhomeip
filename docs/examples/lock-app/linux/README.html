@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -994,10 +1014,46 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building">
-   Building
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lock Application for Linux
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building">
+     Building
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#named-pipe-interface">
+   Named Pipe Interface
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-format">
+     Command Format
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-commands">
+     Available commands
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-door-state">
+       Set Door State
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#send-door-lock-alarm">
+       Send Door Lock Alarm
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1018,10 +1074,46 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building">
-   Building
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lock Application for Linux
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building">
+     Building
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#named-pipe-interface">
+   Named Pipe Interface
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-format">
+     Command Format
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-commands">
+     Available commands
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-door-state">
+       Set Door State
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#send-door-lock-alarm">
+       Send Door Lock Alarm
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1035,18 +1127,96 @@ title="Print to PDF"
                 
   <section id="lock-application-for-linux">
 <h1>Lock Application for Linux<a class="headerlink" href="#lock-application-for-linux" title="Permalink to this headline">#</a></h1>
-<p>This application is quite different from regular lock-app. The app showcases the
-current implementation of the Door Lock cluster and doesn’t rely on the On/Off
-cluster to do the job.</p>
-<p>For now it is not possible to change lock parameters from the app, the
-functionality should be probably presented either as CLI or something that could
-be controlled from tests (like RPC in lighting-app).</p>
+<p>Application that showcases abilities of the Door Lock Cluster.</p>
 <section id="building">
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">#</a></h2>
 <p>The application could be build in the same manner as <code class="docutils literal notranslate"><span class="pre">all-clusters-app</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>? scripts/examples/gn_build_example.sh examples/lock-app/linux out/lock-app chip_config_network_layer_ble=false
 </pre></div>
 </div>
+</section>
+</section>
+<section id="named-pipe-interface">
+<h1>Named Pipe Interface<a class="headerlink" href="#named-pipe-interface" title="Permalink to this headline">#</a></h1>
+<p>This application accepts commands over named pipe. Pipe is located in
+<code class="docutils literal notranslate"><span class="pre">/tmp/chip_lock_app_fifo-&lt;PID&gt;</span></code>.</p>
+<section id="command-format">
+<h2>Command Format<a class="headerlink" href="#command-format" title="Permalink to this headline">#</a></h2>
+<p>Commands interface accepts commands formatted as a JSON object. Structure of the
+object:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value Description</p></th>
+<th class="head"><p>Optional</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Cmd</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Contains name of the command to execute</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Params</span></code></p></td>
+<td><p>Object</p></td>
+<td><p>Contains parameters for the command. Could be omitted if the command does not accept parameters</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;Cmd&quot;:</span> <span class="pre">&quot;SetDoorState&quot;,</span> <span class="pre">&quot;Params&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;EndpointId&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;DoorState&quot;:</span> <span class="pre">2</span> <span class="pre">}</span> <span class="pre">}</span></code> -
+command to set the Door Jammed door state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;Cmd&quot;:</span> <span class="pre">&quot;SendDoorLockAlarm&quot;,</span> <span class="pre">&quot;Params&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;AlarmCode&quot;:</span> <span class="pre">0</span> <span class="pre">}</span> <span class="pre">}</span></code> - command to
+send the Door Lock Alarm event with Lock Jammed alarm code.</p></li>
+</ul>
+</section>
+<section id="available-commands">
+<h2>Available commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">#</a></h2>
+<section id="set-door-state">
+<h3>Set Door State<a class="headerlink" href="#set-door-state" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Name: <code class="docutils literal notranslate"><span class="pre">SetDoorState</span></code></p></li>
+<li><p>Parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EndpointId</span></code> (Uint, Optional): ID of the endpoint where command should
+be executed. Could be omitted, in that case the default endpoint with ID
+1 is targeted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DoorState</span></code> (DoorState enum): new door state.</p></li>
+</ul>
+</li>
+<li><p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">echo</span> <span class="s1">&#39;{&quot;Cmd&quot;: &quot;SetDoorState&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;DoorState&quot;: 1 } }&#39;</span> &gt; /tmp/chip_lock_app_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<p>This command will set the door state to “Closed” resulting in Door State
+Change event.</p>
+</li>
+</ul>
+</section>
+<section id="send-door-lock-alarm">
+<h3>Send Door Lock Alarm<a class="headerlink" href="#send-door-lock-alarm" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Name: <code class="docutils literal notranslate"><span class="pre">SetDoorState</span></code></p></li>
+<li><p>Parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EndpointId</span></code> (Uint, Optional): ID of the endpoint where command should
+be executed. Could be omitted, in that case the default endpoint with ID
+1 is targeted</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AlarmCode</span></code> (AlarmCode enum): code of the Lock Door Alarm to send.</p></li>
+</ul>
+</li>
+<li><p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">echo</span> <span class="s1">&#39;{&quot;Cmd&quot;: &quot;SendDoorLockAlarm&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;AlarmCode&quot;: 0 } }&#39;</span> &gt; /tmp/chip_lock_app_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<p>This command will send the Door Lock Alarm event with “Lock Jammed” alarm
+code.</p>
+</li>
+</ul>
+</section>
 </section>
 </section>
 

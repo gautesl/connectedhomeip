@@ -21,7 +21,7 @@
     href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -798,6 +813,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../temperature-measurement-app/esp32/README.html">
      CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1421,11 +1441,11 @@ will be initiated.</p>
 <p>In order to build the Project CHIP example, we recommend using a Linux
 distribution (the demo-application was compiled on Ubuntu 20.04).</p>
 <ul class="simple">
-<li><p>Download <a class="reference external" href="https://mcuxpresso.nxp.com/">K32W061 SDK 2.6.4 for Project CHIP</a>.
+<li><p>Download <a class="reference external" href="https://mcuxpresso.nxp.com/">K32W0 SDK 2.6.6 for Project CHIP</a>.
 Creating an nxp.com account is required before being able to download the
 SDK. Once the account is created, login and follow the steps for downloading
-SDK_2_6_4_K32W061DK6. The SDK Builder UI selection should be similar with
-the one from the image below.
+SDK_2_6_6_K32W061DK6 (required for K32W061 flavor). The SDK Builder UI
+selection should be similar with the one from the image below.
 <img alt="MCUXpresso SDK Download" src="../../../../../_images/mcux-sdk-download.JPG" /></p></li>
 <li><p>Start building the application either with Secure Element or without</p>
 <ul>
@@ -1433,13 +1453,12 @@ the one from the image below.
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W061_SDK_ROOT=/home/user/Desktop/SDK_2_6_4_K32W061DK6/
-user@ubuntu:~/Desktop/git/connectedhomeip$ ./third_party/nxp/k32w0_sdk/sdk_fixes/patch_k32w_sdk.sh
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W0_SDK_ROOT=/home/user/Desktop/SDK_2_6_6_K32W061DK6/
 user@ubuntu:~/Desktop/git/connectedhomeip$ source ./scripts/activate.sh
 user@ubuntu:~/Desktop/git/connectedhomeip$ cd examples/lighting-app/nxp/k32w/k32w0
-user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ gn gen out/debug --args=&quot;k32w0_sdk_root=\&quot;${NXP_K32W061_SDK_ROOT}\&quot; chip_with_OM15082=1 chip_with_ot_cli=0 is_debug=false chip_crypto=\&quot;mbedtls\&quot; chip_with_se05x=0 mbedtls_use_tinycrypt=true chip_pw_tokenizer_logging=true mbedtls_repo=\&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\&quot;&quot;
+user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ gn gen out/debug --args=&quot;k32w0_sdk_root=\&quot;${NXP_K32W0_SDK_ROOT}\&quot; chip_with_OM15082=1 chip_with_ot_cli=0 is_debug=false chip_crypto=\&quot;tinycrypt\&quot; chip_with_se05x=0 chip_pw_tokenizer_logging=true mbedtls_repo=\&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\&quot;&quot;
 user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ ninja -C out/debug
-user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ $NXP_K32W061_SDK_ROOT/tools/imagetool/sign_images.sh out/debug/
+user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ $NXP_K32W0_SDK_ROOT/tools/imagetool/sign_images.sh out/debug/
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-   with Secure element
@@ -1449,8 +1468,11 @@ user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ 
 </div>
 <p>Note that option chip_enable_ota_requestor=false are required for building with
 Secure Element. These can be changed if building without Secure Element</p>
-<p>Note that “patch_k32w_sdk.sh” script must be run for patching the K32W061 SDK
-2.6.4.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-   for K32W041AM flavor:
+    Exactly the same steps as above but set build_for_k32w041am=1 in the gn command.
+    Also, select the K32W041AM SDK from the SDK Builder.
+</pre></div>
+</div>
 <p>Also, in case the OM15082 Expansion Board is not attached to the DK6 board, the
 build argument (chip_with_OM15082) inside the gn build instruction should be set
 to zero. The argument chip_with_OM15082 is set to zero by default.</p>
@@ -1468,15 +1490,15 @@ pycrypto               2.6.1
 pycryptodome           3.9.8
 </pre></div>
 </div>
-<p>The resulting output file can be found in out/debug/chip-k32w061-light-example.</p>
+<p>The resulting output file can be found in out/debug/chip-k32w0x-light-example.</p>
 </section>
 <section id="flashing-and-debugging">
 <h2>Flashing and debugging<a class="headerlink" href="#flashing-and-debugging" title="Permalink to this headline">#</a></h2>
 <p>Program the firmware using the official
 <a class="reference external" href="https://github.com/openthread/ot-nxp/tree/main/src/k32w0/k32w061#flash-binaries">OpenThread Flash Instructions</a>.</p>
 <p>All you have to do is to replace the Openthread binaries from the above
-documentation with <em>out/debug/chip-k32w061-light-example.bin</em> if DK6Programmer
-is used or with <em>out/debug/chip-k32w061-light-example</em> if MCUXpresso is used.</p>
+documentation with <em>out/debug/chip-k32w0x-light-example.bin</em> if DK6Programmer is
+used or with <em>out/debug/chip-k32w0x-light-example</em> if MCUXpresso is used.</p>
 </section>
 <section id="pigweed-tokenizer">
 <h2>Pigweed tokenizer<a class="headerlink" href="#pigweed-tokenizer" title="Permalink to this headline">#</a></h2>
@@ -1487,8 +1509,9 @@ needed for parsing the hashed scripts.</p>
 <section id="detokenizer-script">
 <h3>Detokenizer script<a class="headerlink" href="#detokenizer-script" title="Permalink to this headline">#</a></h3>
 <p>The python3 script detokenizer.py is a script that decodes the tokenized logs
-either from a file or from a serial port. The script can be used in the
-following ways:</p>
+either from a file or from a serial port. It is located in the following path
+<code class="docutils literal notranslate"><span class="pre">examples/platform/nxp/k32w/k32w0/scripts/detokenizer.py</span></code>.</p>
+<p>The script can be used in the following ways:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">serial</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">d</span> <span class="n">DATABASE</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span>
 <span class="n">usage</span><span class="p">:</span> <span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">d</span> <span class="n">DATABASE</span> <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span>
 </pre></div>
@@ -1499,7 +1522,7 @@ from a file or from a serial port.</p>
 the serial to decode from.</p>
 <p>The third parameter is <em>-d DATABASE</em> and represents the path to the token
 database to be used for decoding. The default path is
-<em>out/debug/chip-k32w061-light-example-database.bin</em> after a successful build.</p>
+<em>out/debug/chip-k32w0x-light-example-database.bin</em> after a successful build.</p>
 <p>The forth parameter is <em>-o OUTPUT</em> and it represents the path to the output file
 where the decoded logs will be stored. This parameter is required for file usage
 and optional for serial usage. If not provided when used with serial port, it
@@ -1511,7 +1534,11 @@ will show the decoded log only at the stdout and not save it to file.</p>
 argument <em>chip_pw_tokenizer_logging=true</em> was used.</p>
 <p>The detokenizer script must be run inside the example’s folder after a
 successful run of the <em>scripts/activate.sh</em> script. The pw_tokenizer module used
-by the script is loaded by the environment.</p>
+by the script is loaded by the environment. An example of running the
+detokenizer script to see logs of a lighting app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">../../../../../</span><span class="n">examples</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">nxp</span><span class="o">/</span><span class="n">k32w</span><span class="o">/</span><span class="n">k32w0</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">serial</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span> <span class="o">-</span><span class="n">d</span> <span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">k32w0x</span><span class="o">-</span><span class="n">light</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">database</span><span class="o">.</span><span class="n">bin</span> <span class="o">-</span><span class="n">o</span> <span class="n">device</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </section>
 <section id="known-issues">
 <h3>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h3>
@@ -1537,11 +1564,12 @@ unplug and plug the board and then rerun the script.</p>
 <p>In order to use the tinycrypt ecc operations, use the following build arguments:</p>
 <ul class="simple">
 <li><p>Build without Secure element (<em>chip_with_se05x=0</em>), with tinycrypt enabled
-(<em>mbedtls_use_tinycrypt=true</em>) and with the <code class="docutils literal notranslate"><span class="pre">NXPmicro/mbedtls</span></code> library
+(<em>chip_crypto=”tinycrypt”</em>) and with the <code class="docutils literal notranslate"><span class="pre">NXPmicro/mbedtls</span></code> library
 (<em>mbedtls_repo=<code class="docutils literal notranslate"><span class="pre">\&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\&quot;</span></code></em>).</p></li>
 </ul>
-<p>To disable tinycrypt ecc operations, simply build without
-<em>mbedtls_use_tinycrypt=true</em> and without <em>mbedtls_repo</em>.</p>
+<p>To disable tinycrypt ecc operations, simply build with <em>chip_crypto=”mbedtls”</em>
+and with or without <em>mbedtls_repo</em>. If used with <em>mbedtls_repo</em> the mbedtls
+implementation from <code class="docutils literal notranslate"><span class="pre">NXPmicro/mbedtls</span></code> library will be used.</p>
 </section>
 </section>
 <section id="ota">
@@ -1599,7 +1627,7 @@ SDK example(s)</em> -&gt; select <em>wireless-&gt;framework-&gt;ssbl</em> applic
 <section id="writing-the-application">
 <h3>Writing the application<a class="headerlink" href="#writing-the-application" title="Permalink to this headline">#</a></h3>
 <p>DK6Programmer can be used for flashing the application:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DK6Programmer</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">V2</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">COM_PORT</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">P</span> <span class="mi">1000000</span> <span class="o">-</span><span class="n">Y</span> <span class="o">-</span><span class="n">p</span> <span class="n">FLASH</span><span class="o">@</span><span class="mh">0x4000</span><span class="o">=</span><span class="s2">&quot;chip-k32w061-light-example.bin&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DK6Programmer</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">V2</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">COM_PORT</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">P</span> <span class="mi">1000000</span> <span class="o">-</span><span class="n">Y</span> <span class="o">-</span><span class="n">p</span> <span class="n">FLASH</span><span class="o">@</span><span class="mh">0x4000</span><span class="o">=</span><span class="s2">&quot;chip-k32w0x-light-example.bin&quot;</span>
 </pre></div>
 </div>
 <p>If debugging is needed, MCUXpresso can be used then for flashing the
@@ -1644,9 +1672,9 @@ used for connecting the RPis to WiFi.</p>
 </pre></div>
 </div>
 <p>Build OTA image and start the OTA Provider Application:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>doru@computer1:~/connectedhomeip$ : ./src/app/ota_image_tool.py create -v 0xDEAD -p 0xBEEF -vn 1 -vs &quot;1.0&quot; -da sha256 chip-k32w061-light-example.bin chip-k32w061-light-example.ota
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>doru@computer1:~/connectedhomeip$ : ./src/app/ota_image_tool.py create -v 0xDEAD -p 0xBEEF -vn 1 -vs &quot;1.0&quot; -da sha256 chip-k32w0x-light-example.bin chip-k32w0x-light-example.ota
 doru@computer1:~/connectedhomeip$ : rm -rf /tmp/chip_*
-doru@computer1:~/connectedhomeip$ : ./out/ota-provider-app/chip-ota-provider-app -f chip-k32w061-light-example.ota
+doru@computer1:~/connectedhomeip$ : ./out/ota-provider-app/chip-ota-provider-app -f chip-k32w0x-light-example.ota
 </pre></div>
 </div>
 <p>Build Linux chip-tool:</p>

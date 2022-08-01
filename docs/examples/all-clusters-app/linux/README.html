@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -995,58 +1015,10 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fuzzing-integration">
-   Fuzzing integration
+  <a class="reference internal nav-link" href="#compiling-all-clusters-app-for-testing-on-linux-and-mac">
+   Compiling all-clusters-app for testing on Linux and Mac
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiling-with-fuzzing-enabled">
-     Compiling with fuzzing enabled
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-libfuzzer-enabled-binaries">
-     Running libfuzzer-enabled binaries
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#initial-run">
-       Initial run
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-with-a-fixed-input">
-       Run with a fixed input
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#additional-execution-options">
-       Additional execution options.
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Matter Linux/Mac All Clusters Example</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fuzzing-integration">
    Fuzzing integration
@@ -1079,6 +1051,132 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trigger-event-using-all-cluster-app-event-named-pipe">
+     Trigger event using all-cluster-app event named pipe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-softwarefault-events">
+       Trigger
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SoftwareFault
+        </span>
+       </code>
+       events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-hardwarefault-events">
+       Trigger
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         HardwareFault
+        </span>
+       </code>
+       events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-switch-events">
+       Trigger Switch events
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matter Linux/Mac All Clusters Example</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiling-all-clusters-app-for-testing-on-linux-and-mac">
+   Compiling all-clusters-app for testing on Linux and Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fuzzing-integration">
+   Fuzzing integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiling-with-fuzzing-enabled">
+     Compiling with fuzzing enabled
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-libfuzzer-enabled-binaries">
+     Running libfuzzer-enabled binaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#initial-run">
+       Initial run
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-with-a-fixed-input">
+       Run with a fixed input
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#additional-execution-options">
+       Additional execution options.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trigger-event-using-all-cluster-app-event-named-pipe">
+     Trigger event using all-cluster-app event named pipe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-softwarefault-events">
+       Trigger
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SoftwareFault
+        </span>
+       </code>
+       events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-hardwarefault-events">
+       Trigger
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         HardwareFault
+        </span>
+       </code>
+       events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trigger-switch-events">
+       Trigger Switch events
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1093,9 +1191,30 @@ title="Print to PDF"
                 
   <section id="matter-linux-mac-all-clusters-example">
 <h1>Matter Linux/Mac All Clusters Example<a class="headerlink" href="#matter-linux-mac-all-clusters-example" title="Permalink to this headline">#</a></h1>
+<section id="compiling-all-clusters-app-for-testing-on-linux-and-mac">
+<h2>Compiling all-clusters-app for testing on Linux and Mac<a class="headerlink" href="#compiling-all-clusters-app-for-testing-on-linux-and-mac" title="Permalink to this headline">#</a></h2>
+<p>To compile all-clusters-app on Intel Mac, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scripts/run_in_build_env.sh &quot;./scripts/build/build_examples.py --target darwin-x64-all-clusters-no-ble-asan-clang build&quot;
+</pre></div>
+</div>
+<p>at the top level of the Matter tree.</p>
+<p>To compile on an Arm Mac, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scripts/run_in_build_env.sh &quot;./scripts/build/build_examples.py --target darwin-arm64-all-clusters-no-ble-asan-clang build&quot;
+</pre></div>
+</div>
+<p>Similarly, to compile on Linux x86-64 run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scripts/run_in_build_env.sh &quot;./scripts/build/build_examples.py --target linux-x64-all-clusters-no-ble-asan-clang build&quot;
+</pre></div>
+</div>
+<p>And to compile on Linux ARM run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./scripts/run_in_build_env.sh &quot;./scripts/build/build_examples.py --target linux-arm64-all-clusters-no-ble-asan-clang build&quot;
+</pre></div>
+</div>
+</section>
 <section id="fuzzing-integration">
 <h2>Fuzzing integration<a class="headerlink" href="#fuzzing-integration" title="Permalink to this headline">#</a></h2>
-<p>This example supports compilation with libfuzzer enabled.</p>
+<p>This example also supports compilation with libfuzzer enabled. This should be
+used when trying to fuzz-test the Matter SDK.</p>
 <section id="compiling-with-fuzzing-enabled">
 <h3>Compiling with fuzzing enabled<a class="headerlink" href="#compiling-with-fuzzing-enabled" title="Permalink to this headline">#</a></h3>
 <p>To compile with libfuzzer enabled on Mac, run:</p>
@@ -1148,6 +1267,117 @@ of that file, then run:</p>
 <p>The binary can be run with <code class="docutils literal notranslate"><span class="pre">-help=1</span></code> to see more available options.</p>
 <p>Running with <code class="docutils literal notranslate"><span class="pre">ASAN_OPTIONS=&quot;handle_abort=2&quot;</span></code> set in the environment may produce
 nicer stack traces.</p>
+</section>
+</section>
+<section id="trigger-event-using-all-cluster-app-event-named-pipe">
+<h3>Trigger event using all-cluster-app event named pipe<a class="headerlink" href="#trigger-event-using-all-cluster-app-event-named-pipe" title="Permalink to this headline">#</a></h3>
+<p>You can send a command to all-cluster-app to trigger specific event via
+all-cluster-app event named pipe /tmp/chip_all_clusters_fifo-<PID>.</p>
+<section id="trigger-softwarefault-events">
+<h4>Trigger <code class="docutils literal notranslate"><span class="pre">SoftwareFault</span></code> events<a class="headerlink" href="#trigger-softwarefault-events" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">SoftwareFault</span></code> when a software fault takes place on the Node.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;SoftwareFault&quot;}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+</section>
+<section id="trigger-hardwarefault-events">
+<h4>Trigger <code class="docutils literal notranslate"><span class="pre">HardwareFault</span></code> events<a class="headerlink" href="#trigger-hardwarefault-events" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">HardwareFaultChange</span></code> to indicate a change in the set of
+hardware faults currently detected by the Node.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;HardwareFaultChange&quot;}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">RadioFaultChange</span></code> to indicate a change in the set of radio
+faults currently detected by the Node.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;RadioFaultChange&quot;}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">NetworkFaultChange</span></code> to indicate a change in the set of
+network faults currently detected by the Node.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;NetworkFaultChange&quot;}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">BootReason</span></code> to indicate the reason that caused the device to
+start-up, from the following set of <code class="docutils literal notranslate"><span class="pre">BootReasons</span></code>.</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PowerOnReboot</span></code> The Node has booted as the result of physical interaction
+with the device resulting in a reboot.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BrownOutReset</span></code> The Node has rebooted as the result of a brown-out of the
+Node’s power supply.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SoftwareWatchdogReset</span></code> The Node has rebooted as the result of a software
+watchdog timer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HardwareWatchdogReset</span></code> The Node has rebooted as the result of a hardware
+watchdog timer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SoftwareUpdateCompleted</span></code> The Node has rebooted as the result of a completed
+software update.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SoftwareReset</span></code> The Node has rebooted as the result of a software initiated
+reboot.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;&lt;BootReason&gt;&quot;}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+</section>
+<section id="trigger-switch-events">
+<h4>Trigger Switch events<a class="headerlink" href="#trigger-switch-events" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">SwitchLatched</span></code>, when the latching switch is moved to a new
+position.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;SwitchLatched&quot;,&quot;NewPosition&quot;:3}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">InitialPress</span></code>, when the momentary switch starts to be
+pressed.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;InitialPress&quot;,&quot;NewPosition&quot;:3}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">LongPress</span></code>, when the momentary switch has been pressed for a
+“long” time.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;LongPress&quot;,&quot;NewPosition&quot;:3}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">ShortRelease</span></code>, when the momentary switch has been released.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;ShortRelease&quot;,&quot;PreviousPosition&quot;:3}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">LongRelease</span></code> when the momentary switch has been released and
+after having been pressed for a long time.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;LongRelease&quot;,&quot;PreviousPosition&quot;:3}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">MultiPressOngoing</span></code> to indicate how many times the momentary
+switch has been pressed in a multi-press sequence, during that sequence.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;MultiPressOngoing&quot;,&quot;NewPosition&quot;:3,&quot;CurrentNumberOfPressesCounted&quot;:4}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Generate event <code class="docutils literal notranslate"><span class="pre">MultiPressComplete</span></code> to indicate how many times the momentary
+switch has been pressed in a multi-press sequence, after it has been detected
+that the sequence has ended.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &#39;{&quot;Name&quot;:&quot;MultiPressComplete&quot;,&quot;PreviousPosition&quot;:3,&quot;TotalNumberOfPressesCounted&quot;:2}&#39; &gt; /tmp/chip_all_clusters_fifo-&lt;PID&gt;
+</pre></div>
+</div>
 </section>
 </section>
 </section>

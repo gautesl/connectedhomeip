@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -1005,11 +1025,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-and-cluster-control">
-   Commissioning and Cluster Control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#commissioning">
    Commissioning
   </a>
@@ -1061,11 +1076,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-and-cluster-control">
-   Commissioning and Cluster Control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#commissioning">
    Commissioning
   </a>
@@ -1106,8 +1116,6 @@ title="Print to PDF"
 <ul>
 <li><p><a class="reference internal" href="#supported-device"><span class="std std-doc">Supported Device</span></a></p></li>
 <li><p><a class="reference internal" href="#building-the-example-application"><span class="std std-doc">Building the Example Application</span></a></p></li>
-<li><p><a class="reference internal" href="#commissioning-and-cluster-control"><span class="std std-doc">Commissioning and cluster control</span></a></p>
-<ul>
 <li><p><a class="reference internal" href="#commissioning"><span class="std std-doc">Commissioning</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#ble-mode"><span class="std std-doc">BLE mode</span></a></p></li>
@@ -1115,8 +1123,6 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p><a class="reference internal" href="#cluster-control"><span class="std std-doc">Cluster control</span></a></p></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -1164,25 +1170,12 @@ the correct locations</p></li>
 <li><p>Click <strong>Download</strong> button.</p></li>
 </ol>
 </section>
-<section id="commissioning-and-cluster-control">
-<h2>Commissioning and Cluster Control<a class="headerlink" href="#commissioning-and-cluster-control" title="Permalink to this headline">#</a></h2>
-</section>
 <section id="commissioning">
 <h2>Commissioning<a class="headerlink" href="#commissioning" title="Permalink to this headline">#</a></h2>
 <p>There are two commissioning modes supported by Ameba platform:</p>
 <section id="ble-mode">
 <h3>BLE mode<a class="headerlink" href="#ble-mode" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>In “connectedhomeip/config/ameba/args.gni”</p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">chip_config_network_layer_ble</span> <span class="pre">=</span> <span class="pre">true</span></code></p></li>
-</ul>
-</li>
-<li><p>In “connectedhomeip/src/platform/Ameba/CHIPDevicePlatformConfig.h”</p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">CHIP_DEVICE_CONFIG_ENABLE_CHIPOBLE</span> <span class="pre">1</span></code></p></li>
-</ul>
-</li>
 <li><p>Build and Flash</p></li>
 <li><p>The example will run automatically after booting the Ameba board.</p></li>
 <li><p>Test with
@@ -1192,16 +1185,6 @@ the correct locations</p></li>
 <section id="ip-mode">
 <h3>IP mode<a class="headerlink" href="#ip-mode" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>In “connectedhomeip/config/ameba/args.gni”</p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">chip_config_network_layer_ble</span> <span class="pre">=</span> <span class="pre">false</span></code></p></li>
-</ul>
-</li>
-<li><p>In “connectedhomeip/src/platform/Ameba/CHIPDevicePlatformConfig.h”</p>
-<ul class="simple">
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">CHIP_DEVICE_CONFIG_ENABLE_CHIPOBLE</span> <span class="pre">0</span></code></p></li>
-</ul>
-</li>
 <li><p>Build and Flash</p></li>
 <li><p>The example will run automatically after booting the Ameba board.</p></li>
 <li><p>Connect to AP using <code class="docutils literal notranslate"><span class="pre">ATW0,</span> <span class="pre">ATW1,</span> <span class="pre">ATWC</span></code> commands</p></li>

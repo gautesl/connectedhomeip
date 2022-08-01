@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -798,6 +813,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../temperature-measurement-app/esp32/README.html">
      CHIP ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1086,29 +1106,47 @@ the correct locations</p></li>
 </section>
 <section id="testing-the-example-application">
 <h2>Testing the Example Application<a class="headerlink" href="#testing-the-example-application" title="Permalink to this headline">#</a></h2>
-<p>Launch the linux <a class="reference internal" href="../../ota-provider-app/linux/README.html"><span class="doc std std-doc">ota-provider-app</span></a> and provide
-the SW_IMAGE_FILE</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./chip-ota-provider-app -f ${SW_IMAGE_FILE}
+<ol class="arabic">
+<li><p>Commission Ameba (ota-requestor-app) using chip-tool</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./chip-tool pairing ble-wifi 1 &lt;SSID&gt; &lt;PASSWORD&gt; 20202021 3840
 </pre></div>
 </div>
-<p>Commission the ota-provider-app using
+</li>
+<li><p>Launch the linux <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/examples/ota-provider-app/linux">ota-provider-app</a> and
+provide the SW_IMAGE_FILE</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      $ ./chip-ota-provider-app -f ${SW_IMAGE_FILE}
+</pre></div>
+</div>
+</li>
+<li><p>Commission the ota-provider-app using
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/tree/master/examples/chip-tool">chip-tool</a></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing onnetwork 1 20202021
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      $ ./chip-tool pairing onnetwork 2 20202021
 </pre></div>
 </div>
-<p>Input <code class="docutils literal notranslate"><span class="pre">ATS$</span></code> command to start the CHIP ota-requestor task, then use chip-tool to
-commission it</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing ble-wifi 2 &lt;SSID&gt; &lt;PASSWORD&gt; 20202021 3840
+</li>
+<li><p>Write the Default OTA providers into Ameba</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./chip-tool otasoftwareupdaterequestor write default-ota-providers &#39;[{&quot;fabricIndex&quot;: 1, &quot;providerNodeID&quot;: 2, &quot;endpoint&quot;: 0}]&#39; 1 0
 </pre></div>
 </div>
-<p>After commissioning the ota-requestor, use the chip-tool to announce the
-ota-provider-app to start the OTA process</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
+</li>
+<li><p>Configure the ACL of the ota-provider-app to allow access for Ameba</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./chip-tool accesscontrol write acl &#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: null, &quot;targets&quot;: [{&quot;cluster&quot;: 41, &quot;endpoint&quot;: null, &quot;deviceType&quot;: null}]}]&#39; 1235 0
 </pre></div>
 </div>
-<p>The OTA process should include downloading the image, verification of image
+</li>
+<li><p>Use the chip-tool to announce the ota-provider-app to start the OTA process</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $ ./chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
+</pre></div>
+</div>
+</li>
+<li><p>The OTA process should include downloading the image, verification of image
 header, erasing upgraded flash partition, writing to flash and checksum
-verification</p>
+verification.</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Once OTA signature is updated, Ameba will reboot into the new image after 10
+seconds countdown.</p></li>
+</ol>
 </section>
 </section>
 

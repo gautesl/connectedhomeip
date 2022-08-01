@@ -21,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -1038,6 +1058,42 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flash-encryption">
+   Flash encryption
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enable-flash-encryption-and-some-factory-settings-using-idf-py-menuconfig">
+     Enable flash encryption and some factory settings using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       idf.py
+      </span>
+      <span class="pre">
+       menuconfig
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-the-factory-partition-using-generate-esp32-chip-factory-bin-py-script">
+     Generate the factory partition using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       generate_esp32_chip_factory_bin.py
+      </span>
+     </code>
+     script
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flashing-the-application-factory-partition-and-nvs-keys">
+     Flashing the application, factory partition, and nvs keys
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -1101,6 +1157,42 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flash-encryption">
+   Flash encryption
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enable-flash-encryption-and-some-factory-settings-using-idf-py-menuconfig">
+     Enable flash encryption and some factory settings using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       idf.py
+      </span>
+      <span class="pre">
+       menuconfig
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-the-factory-partition-using-generate-esp32-chip-factory-bin-py-script">
+     Generate the factory partition using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       generate_esp32_chip_factory_bin.py
+      </span>
+     </code>
+     script
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flashing-the-application-factory-partition-and-nvs-keys">
+     Flashing the application, factory partition, and nvs keys
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -1125,6 +1217,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p><a class="reference internal" href="#steps-to-try-lighting-app-ota-requestor"><span class="std std-doc">Steps to Try Lighting app OTA Requestor</span></a></p></li>
+<li><p><a class="reference internal" href="#flash-encryption"><span class="std std-doc">Flash Encryption</span></a></p></li>
 </ul>
 <hr class="docutils" />
 <section id="supported-devices">
@@ -1190,6 +1283,12 @@ $ source ./scripts/activate.sh
 </div>
 <p>If packages are already installed then simply activate them.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ source ./scripts/activate.sh
+</pre></div>
+</div>
+</li>
+<li><p>Enable Ccache for faster IDF builds</p>
+<p>It is recommended to have Ccache installed for faster builds</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export IDF_CCACHE_ENABLE=1
 </pre></div>
 </div>
 </li>
@@ -1372,6 +1471,57 @@ type below query.</p>
 <p>Once the transfer is complete, OTA requestor sends ApplyUpdateRequest command to
 OTA provider for applying the image. Device will restart on successful
 application of OTA image.</p>
+</section>
+</section>
+<section id="flash-encryption">
+<h1>Flash encryption<a class="headerlink" href="#flash-encryption" title="Permalink to this headline">#</a></h1>
+<p>Below is the quick start guide for encrypting the application and factory
+partition but before proceeding further please READ THE DOCS FIRST.
+Documentation References:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/flash-encryption.html">Flash Encryption</a></p></li>
+<li><p><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/nvs_flash.html#nvs-encryption">NVS Encryption</a></p></li>
+</ul>
+<section id="enable-flash-encryption-and-some-factory-settings-using-idf-py-menuconfig">
+<h2>Enable flash encryption and some factory settings using <code class="docutils literal notranslate"><span class="pre">idf.py</span> <span class="pre">menuconfig</span></code><a class="headerlink" href="#enable-flash-encryption-and-some-factory-settings-using-idf-py-menuconfig" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Enable the Flash encryption [Security features → Enable flash encryption on
+boot]</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">partitions_encrypted.csv</span></code> partition table [Partition Table → Custom
+partition CSV file]</p></li>
+<li><p>Enable ESP32 Factory Data Provider [Component config → CHIP Device Layer →
+Commissioning options → Use ESP32 Factory Data Provider]</p></li>
+<li><p>Enable ESP32 Device Instance Info Provider [Component config → CHIP Device
+Layer → Commissioning options → Use ESP32 Device Instance Info Provider]</p></li>
+</ul>
+</section>
+<section id="generate-the-factory-partition-using-generate-esp32-chip-factory-bin-py-script">
+<h2>Generate the factory partition using <code class="docutils literal notranslate"><span class="pre">generate_esp32_chip_factory_bin.py</span></code> script<a class="headerlink" href="#generate-the-factory-partition-using-generate-esp32-chip-factory-bin-py-script" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Please provide <code class="docutils literal notranslate"><span class="pre">-e</span></code> option along with other options to generate the
+encrypted factory partition</p></li>
+<li><p>Two partition binaries will be generated <code class="docutils literal notranslate"><span class="pre">factory_partition.bin</span></code> and
+<code class="docutils literal notranslate"><span class="pre">keys/nvs_key_partition.bin</span></code></p></li>
+</ul>
+</section>
+<section id="flashing-the-application-factory-partition-and-nvs-keys">
+<h2>Flashing the application, factory partition, and nvs keys<a class="headerlink" href="#flashing-the-application-factory-partition-and-nvs-keys" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Flash the application using <code class="docutils literal notranslate"><span class="pre">idf.py</span> <span class="pre">flash</span></code>, NOTE: If not flashing for the
+first time you will have to use <code class="docutils literal notranslate"><span class="pre">idf.py</span> <span class="pre">encrypted-flash</span></code></p></li>
+<li><p>Flash the factory partition, this SHALL be non encrypted write as NVS
+encryption works differently</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="p">(</span><span class="n">PORT</span><span class="p">)</span> <span class="n">write_flash</span> <span class="mh">0x9000</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">factory_partition</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Encrypted flash the nvs keys partition</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esptool</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="p">(</span><span class="n">PORT</span><span class="p">)</span> <span class="n">write_flash</span> <span class="o">--</span><span class="n">encrypt</span> <span class="mh">0x317000</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">nvs_key_partition</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
+<p>NOTE: Above command uses the default addressed printed in the boot logs</p>
 </section>
 </section>
 

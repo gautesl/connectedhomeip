@@ -21,7 +21,7 @@
     href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -161,6 +161,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../../guides/access-control-guide.html">
      Access Control Guide
     </a>
@@ -173,6 +178,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../../guides/chip_tool_guide.html">
      Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../../guides/darwin.html">
+     Testing with Apple Devices
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,6 +530,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../light-switch-app/efr32/README.html">
      CHIP EFR32 Light Switch Example
     </a>
@@ -801,6 +816,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../thermostat/efr32/README.html">
+     CHIP EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../tv-app/linux/README.html">
      CHIP TV Example
     </a>
@@ -1063,6 +1083,40 @@ title="Print to PDF"
    Video demo
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pigweed-tokenizer">
+   Pigweed tokenizer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detokenizer-script">
+     Detokenizer script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Known issues
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tinycrypt-ecc-operations">
+   Tinycrypt ECC operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-steps">
+     Building steps
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -1151,6 +1205,40 @@ title="Print to PDF"
    Video demo
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pigweed-tokenizer">
+   Pigweed tokenizer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detokenizer-script">
+     Detokenizer script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes">
+     Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Known issues
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tinycrypt-ecc-operations">
+   Tinycrypt ECC operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-steps">
+     Building steps
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -1175,10 +1263,10 @@ low-power, 802.15.4 Thread network.</p>
 paired into an existing Project CHIP network and can be controlled by this
 network.</p>
 <hr>
-<ul class="simple">
+<ul>
 <li><p><a class="reference internal" href="#chip-k32w061-lock-example-application"><span class="std std-doc">CHIP K32W0 Lock Example Application</span></a> -</p></li>
 <li><p><a class="reference internal" href="#introduction"><span class="std std-doc">Introduction</span></a></p>
-<ul>
+<ul class="simple">
 <li><p><a class="reference internal" href="#bluetooth-le-advertising"><span class="std std-doc">Bluetooth LE Advertising</span></a></p></li>
 <li><p><a class="reference internal" href="#bluetooth-le-rendezvous"><span class="std std-doc">Bluetooth LE Rendezvous</span></a></p></li>
 </ul>
@@ -1188,8 +1276,20 @@ network.</p>
 <li><p><a class="reference internal" href="#flashing-and-debugging"><span class="std std-doc">Flashing and debugging</span></a></p></li>
 <li><p><a class="reference internal" href="#known-issues"><span class="std std-doc">Known Issues</span></a></p></li>
 <li><p><a class="reference internal" href="#testing-the-example"><span class="std std-doc">Testing the example</span></a></p></li>
+<li><p><a class="reference internal" href="#pigweed-tokenizer"><span class="std std-doc">Pigweed Tokenizer</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#detokenizer-script"><span class="std std-doc">Detokenizer script</span></a></p></li>
+<li><p><a class="reference internal" href="#notes"><span class="std std-doc">Notes</span></a></p></li>
+<li><p><a class="reference internal" href="#id1"><span class="std std-doc">Known issues</span></a></p></li>
 </ul>
-<hr>
+</li>
+<li><p><a class="reference internal" href="#tinycrypt-ecc-operations"><span class="std std-doc">Tinycrypt ECC operations</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#building-steps"><span class="std std-doc">Building steps</span></a></p></li>
+</ul>
+</hr>
+</li>
+</ul>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p><img alt="K32W061 DK6" src="../../../../../_images/k32w-dk6.jpg" /></p>
@@ -1312,10 +1412,10 @@ will be initiated.</p>
 <p>In order to build the Project CHIP example, we recommend using a Linux
 distribution (the demo-application was compiled on Ubuntu 20.04).</p>
 <ul class="simple">
-<li><p>Download <a class="reference external" href="https://mcuxpresso.nxp.com/">K32W061 SDK 2.6.4 for Project CHIP</a>.
+<li><p>Download <a class="reference external" href="https://mcuxpresso.nxp.com/">K32W061 SDK 2.6.6 for Project CHIP</a>.
 Creating an nxp.com account is required before being able to download the
 SDK. Once the account is created, login and follow the steps for downloading
-SDK_2_6_4_K32W061DK6. The SDK Builder UI selection should be similar with
+SDK_2_6_6_K32W061DK6. The SDK Builder UI selection should be similar with
 the one from the image below.
 <img alt="MCUXpresso SDK Download" src="../../../../../_images/mcux-sdk-download.JPG" /></p></li>
 <li><p>Start building the application either with Secure Element or without</p>
@@ -1324,25 +1424,18 @@ the one from the image below.
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W061_SDK_ROOT=/home/user/Desktop/SDK_2_6_4_K32W061DK6/
-user@ubuntu:~/Desktop/git/connectedhomeip$ ./third_party/nxp/k32w0_sdk/sdk_fixes/patch_k32w_sdk.sh
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W0_SDK_ROOT=/home/user/Desktop/SDK_2_6_6_K32W061DK6/
 user@ubuntu:~/Desktop/git/connectedhomeip$ source ./scripts/activate.sh
 user@ubuntu:~/Desktop/git/connectedhomeip$ cd examples/lock-app/nxp/k32w/k32w0/
-user@ubuntu:~/Desktop/git/connectedhomeip/examples/lock-app/nxp/k32w/k32w0$ gn gen out/debug --args=&quot;k32w0_sdk_root=\&quot;${NXP_K32W061_SDK_ROOT}\&quot; chip_with_OM15082=1 chip_with_ot_cli=0 is_debug=false chip_crypto=\&quot;mbedtls\&quot; chip_with_se05x=0&quot;
+user@ubuntu:~/Desktop/git/connectedhomeip/examples/lock-app/nxp/k32w/k32w0$ gn gen out/debug --args=&quot;k32w0_sdk_root=\&quot;${NXP_K32W0_SDK_ROOT}\&quot; chip_with_OM15082=1 chip_with_ot_cli=0 is_debug=false chip_crypto=\&quot;tinycrypt\&quot; chip_with_se05x=0 chip_pw_tokenizer_logging=true mbedtls_repo=\&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\&quot;&quot;
 user@ubuntu:~/Desktop/git/connectedhomeip/examples/lock-app/nxp/k32w/k32w0$ ninja -C out/debug
-user@ubuntu:~/Desktop/git/connectedhomeip/examples/lock-app/nxp/k32w/k32w0$ $NXP_K32W061_SDK_ROOT/tools/imagetool/sign_images.sh out/debug/
+user@ubuntu:~/Desktop/git/connectedhomeip/examples/lock-app/nxp/k32w/k32w0$ $NXP_K32W0_SDK_ROOT/tools/imagetool/sign_images.sh out/debug/
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-   with Secure element
-    Exactly the same steps as above but set chip_with_se05x=1 in the gn command
-    and add arguments chip_pw_tokenizer_logging=true chip_enable_ota_requestor=false
+    Exactly the same steps as above but set chip_with_se05x=1 in the gn command.
 </pre></div>
 </div>
-<p>Note that options chip_pw_tokenizer_logging=true and
-chip_enable_ota_requestor=false are required for building with Secure Element.
-These can be changed if building without Secure Element</p>
-<p>Note that “patch_k32w_sdk.sh” script must be run for patching the K32W061 SDK
-2.6.4.</p>
 <p>Also, in case the OM15082 Expansion Board is not attached to the DK6 board, the
 build argument (chip_with_OM15082) inside the gn build instruction should be set
 to zero. The argument chip_with_OM15082 is set to zero by default.</p>
@@ -1360,15 +1453,15 @@ pycrypto               2.6.1
 pycryptodome           3.9.8
 </pre></div>
 </div>
-<p>The resulting output file can be found in out/debug/chip-k32w061-lock-example.</p>
+<p>The resulting output file can be found in out/debug/chip-k32w0x-lock-example.</p>
 </section>
 <section id="flashing-and-debugging">
 <h2>Flashing and debugging<a class="headerlink" href="#flashing-and-debugging" title="Permalink to this headline">#</a></h2>
 <p>Program the firmware using the official
 <a class="reference external" href="https://github.com/openthread/ot-nxp/tree/main/src/k32w0/k32w061#flash-binaries">OpenThread Flash Instructions</a>.</p>
 <p>All you have to do is to replace the Openthread binaries from the above
-documentation with <em>out/debug/chip-k32w061-lock-example.bin</em> if DK6Programmer is
-used or with <em>out/debug/chip-k32w061-lock-example</em> if MCUXpresso is used.</p>
+documentation with <em>out/debug/chip-k32w0x-lock-example.bin</em> if DK6Programmer is
+used or with <em>out/debug/chip-k32w0x-lock-example</em> if MCUXpresso is used.</p>
 </section>
 <section id="low-power">
 <h2>Low power<a class="headerlink" href="#low-power" title="Permalink to this headline">#</a></h2>
@@ -1414,6 +1507,78 @@ for step-by-step instructions.</p>
 <p>See
 <a class="reference external" href="https://www.nxp.com/design/training/unlocking-the-future-of-project-chip:TIP-EEE-UNLOCKING-THE-FUTURE-OF-PROJECT-CHIP">Unlocking the Future of Project CHIP Webinar</a>
 for an in-depth analysis of NXP capabilities for Project CHIP.</p>
+</section>
+<section id="pigweed-tokenizer">
+<h2>Pigweed tokenizer<a class="headerlink" href="#pigweed-tokenizer" title="Permalink to this headline">#</a></h2>
+<p>The tokenizer is a pigweed module that allows hashing the strings. This greatly
+reduces the flash needed for logs. The module can be enabled by building with
+the gn argument <em>chip_pw_tokenizer_logging=true</em>. The detokenizer script is
+needed for parsing the hashed scripts.</p>
+<section id="detokenizer-script">
+<h3>Detokenizer script<a class="headerlink" href="#detokenizer-script" title="Permalink to this headline">#</a></h3>
+<p>The python3 script detokenizer.py is a script that decodes the tokenized logs
+either from a file or from a serial port. It is located in the following path
+<code class="docutils literal notranslate"><span class="pre">examples/platform/nxp/k32w/k32w0/scripts/detokenizer.py</span></code>.</p>
+<p>The script can be used in the following ways:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">serial</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">d</span> <span class="n">DATABASE</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">d</span> <span class="n">DATABASE</span> <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span>
+</pre></div>
+</div>
+<p>The first parameter is either <em>serial</em> or <em>file</em> and it selects between decoding
+from a file or from a serial port.</p>
+<p>The second parameter is <em>-i INPUT</em> and it must se set to the path of the file or
+the serial to decode from.</p>
+<p>The third parameter is <em>-d DATABASE</em> and represents the path to the token
+database to be used for decoding. The default path is
+<em>out/debug/chip-k32w0x-lock-example-database.bin</em> after a successful build.</p>
+<p>The forth parameter is <em>-o OUTPUT</em> and it represents the path to the output file
+where the decoded logs will be stored. This parameter is required for file usage
+and optional for serial usage. If not provided when used with serial port, it
+will show the decoded log only at the stdout and not save it to file.</p>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h3>
+<p>The token database is created automatically after building the binary if the
+argument <em>chip_pw_tokenizer_logging=true</em> was used.</p>
+<p>The detokenizer script must be run inside the example’s folder after a
+successful run of the <em>scripts/activate.sh</em> script. The pw_tokenizer module used
+by the script is loaded by the environment. An example of running the
+detokenizer script to see logs of a lock app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">../../../../../</span><span class="n">examples</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">nxp</span><span class="o">/</span><span class="n">k32w</span><span class="o">/</span><span class="n">k32w0</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">detokenizer</span><span class="o">.</span><span class="n">py</span> <span class="n">serial</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span> <span class="o">-</span><span class="n">d</span> <span class="n">out</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">chip</span><span class="o">-</span><span class="n">k32w0x</span><span class="o">-</span><span class="n">lock</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">database</span><span class="o">.</span><span class="n">bin</span> <span class="o">-</span><span class="n">o</span> <span class="n">device</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Known issues<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>The building process will not update the token database if it already exists. In
+case that new strings are added and the database already exists in the output
+folder, it must be deleted so that it will be recreated at the next build.</p>
+<p>Not all tokens will be decoded. This is due to a gcc/pw_tokenizer issue. The
+pw_tokenizer creates special elf sections using attributes where the tokens and
+strings will be stored. This sections will be used by the database creation
+script. For template C++ functions, gcc ignores these attributes and places all
+the strings by default in the .rodata section. As a result the database creation
+script won’t find them in the special-created sections.</p>
+<p>If run, closed and rerun with the serial option on the same serial port, the
+detokenization script will get stuck and not show any logs. The solution is to
+unplug and plug the board and then rerun the script.</p>
+</section>
+</section>
+<section id="tinycrypt-ecc-operations">
+<h2>Tinycrypt ECC operations<a class="headerlink" href="#tinycrypt-ecc-operations" title="Permalink to this headline">#</a></h2>
+<section id="building-steps">
+<h3>Building steps<a class="headerlink" href="#building-steps" title="Permalink to this headline">#</a></h3>
+<p>Note: This solution is temporary.</p>
+<p>In order to use the tinycrypt ecc operations, use the following build arguments:</p>
+<ul class="simple">
+<li><p>Build without Secure element (<em>chip_with_se05x=0</em>), with tinycrypt enabled
+(<em>chip_crypto=”tinycrypt”</em>) and with the <code class="docutils literal notranslate"><span class="pre">NXPmicro/mbedtls</span></code> library
+(<em>mbedtls_repo=<code class="docutils literal notranslate"><span class="pre">\&quot;//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\&quot;</span></code></em>).</p></li>
+</ul>
+<p>To disable tinycrypt ecc operations, simply build with <em>chip_crypto=”mbedtls”</em>
+and with or without <em>mbedtls_repo</em>. If used with <em>mbedtls_repo</em> the mbedtls
+implementation from <code class="docutils literal notranslate"><span class="pre">NXPmicro/mbedtls</span></code> library will be used.</p>
+</section>
 </section>
 </section>
 
