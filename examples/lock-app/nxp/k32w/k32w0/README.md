@@ -247,8 +247,6 @@ reduces the flash needed for logs. The module can be enabled by building with
 the gn argument _chip_pw_tokenizer_logging=true_. The detokenizer script is
 needed for parsing the hashed scripts.
 
-<a name="detokenizer"></a>
-
 ### Detokenizer script
 
 The python3 script detokenizer.py is a script that decodes the tokenized logs
@@ -277,8 +275,6 @@ where the decoded logs will be stored. This parameter is required for file usage
 and optional for serial usage. If not provided when used with serial port, it
 will show the decoded log only at the stdout and not save it to file.
 
-<a name="detokenizer-notes"></a>
-
 ### Notes
 
 The token database is created automatically after building the binary if the
@@ -292,8 +288,6 @@ detokenizer script to see logs of a lock app:
 ```
 python3 ../../../../../examples/platform/nxp/k32w/k32w0/scripts/detokenizer.py serial -i /dev/ttyACM0 -d out/debug/chip-k32w0x-lock-example-database.bin -o device.txt
 ```
-
-<a name="detokenizer-known-issues"></a>
 
 ### Known issues
 
@@ -312,11 +306,7 @@ If run, closed and rerun with the serial option on the same serial port, the
 detokenization script will get stuck and not show any logs. The solution is to
 unplug and plug the board and then rerun the script.
 
-<a name="tinycrypt"></a>
-
 ## Tinycrypt ECC operations
-
-<a name="tinycrypt-building-steps"></a>
 
 ### Building steps
 
