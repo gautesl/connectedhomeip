@@ -4,7 +4,8 @@
 
 -   [Android - Building](../../../guides/android_building.md)
 -   [Apple - Testing with iPhone, iPad, macOS, Apple TV, HomePod, Watch, etc](../../../guides/darwin.md)
--   [Infineon - Software Update](../../../guides/infineon_p6_software_update.md)
+-   [Espressif (ESP32) - Getting Started Guide](../../../guides/esp32/README.md)
+-   [Infineon PSoC6 - Software Update](../../../guides/infineon_psoc6_software_update.md)
 -   [Linux - Simulated Devices](../../../guides/simulated_device_linux.md)
 -   [mbedOS - Adding a new target](../../../guides/mbedos_add_new_target.md)
 -   [mbedOS - Commissioning](../../../guides/mbedos_commissioning.md)

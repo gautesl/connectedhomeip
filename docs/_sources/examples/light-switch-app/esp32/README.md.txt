@@ -5,67 +5,12 @@ This example demonstrates the Matter Light-switch application on ESP platforms.
 ---
 
 -   [Matter ESP32 Light-switch Example](#matter-esp32-light-switch-example)
-    -   [Supported Devices](#supported-devices)
-    -   [Building the Example Application](#building-the-example-application)
     -   [Commissioning over BLE using chip-tool](#commissioning-over-ble-using-chip-tool)
     -   [Testing the example](#testing-the-example)
 
 ---
 
-## Supported Devices
-
-The demo application is intended to work on following categories of ESP32
-devices:
-
--   [ESP32-DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview)
--   [ESP32-WROVER-KIT_V4.1](https://www.espressif.com/en/products/hardware/esp-wrover-kit/overview)
--   [ESP32C3-DevKitM](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/hw-reference/esp32c3/user-guide-devkitm-1.html).
--   [ESP32S3-DevKitM](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitm-1.html).
--   [ESP32-H2](https://www.espressif.com/en/news/ESP32_H2).
-
-## Building the Example Application
-
-Building the example application requires the use of the Espressif IoT
-Development Framework ([ESP-IDF](https://github.com/espressif/esp-idf)).
-
-The VSCode devcontainer has these components pre-installed, so you can skip this
-step. To install these components manually, follow these steps:
-
--   Clone the Espressif ESP-IDF and checkout
-    [v4.4 release](https://github.com/espressif/esp-idf/releases/tag/v4.4)
-
-        $ mkdir ${HOME}/tools
-        $ cd ${HOME}/tools
-        $ git clone https://github.com/espressif/esp-idf.git
-        $ cd esp-idf
-        $ git checkout v4.4
-        $ git submodule update --init
-        $ ./install.sh
-
--   Install ninja-build
-
-        $ sudo apt-get install ninja-build
-
-Currently building in VSCode _and_ deploying from native is not supported, so
-make sure the IDF_PATH has been exported(See the manual setup steps above).
-
--   Setting up the environment
-
-        $ cd ${HOME}/tools/esp-idf
-        $ ./install.sh
-        $ . ./export.sh
-        $ cd {path-to-connectedhomeip}
-
-    To download and install packages.
-
-        $ source ./scripts/bootstrap.sh
-        $ source ./scripts/activate.sh
-
-    If packages are already installed then simply activate them.
-
-        $ source ./scripts/activate.sh
-
--   Enable Ccache for faster IDF builds
+-   [Testing the example](#testing-the-example)
 
     It is recommended to have Ccache installed for faster builds
 
@@ -124,12 +69,12 @@ make sure the IDF_PATH has been exported(See the manual setup steps above).
 -   After successful commissioning, use the chip-tool to write the ACL in
     Lighting device to allow access from Lighting-switch device and chip-tool.
 
-        $ ./out/debug/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null },{"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [12344320], "targets": null }]' 12344321 0
+        $ ./out/debug/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null },{"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [<LIGHT SWITCH NODE ID>], "targets": null }]' <LIGHTING APP NODE ID> 0
 
 -   After successful commissioning, use the chip-tool for binding in
     Lighting-switch.
 
-        $ ./out/debug/chip-tool binding write binding '[{"fabricIndex": 1, "node":20836, "endpoint":1, "cluster":6}]' 12344320 1
+        $ ./out/debug/chip-tool binding write binding '[{"fabricIndex": 1, "node":<LIGHTING APP NODE ID>, "endpoint":1, "cluster":6}]' <LIGHT SWITCH NODE ID> 1
 
 -   Test toggle:
 

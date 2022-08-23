@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Matter Software Update with Infineon P6 example applications" href="infineon_p6_software_update.html" />
+    <link rel="next" title="Matter Software Update with Infineon PSoC6 example applications" href="infineon_psoc6_software_update.html" />
     <link rel="prev" title="Working with the CHIP Tool" href="chip_tool_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -186,8 +186,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="infineon_p6_software_update.html">
-     Matter Software Update with Infineon P6 example applications
+    <a class="reference internal" href="infineon_psoc6_software_update.html">
+     Matter Software Update with Infineon PSoC6 example applications
     </a>
    </li>
    <li class="toctree-l2">
@@ -300,14 +300,56 @@
      Troubleshooting Avahi
     </a>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="esp32/README.html">
+     Espressif (ESP32) Getting Started Guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/build_app_and_commission.html">
+       ESP32 Application Usage Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/factory_data.html">
+       Using ESP32 Factory Data Provider
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/flash_nvs_encryption.html">
+       Flash and NVS encryption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/ota.html">
+       Matter OTA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/rpc_console.html">
+       RPC Console and Device Tracing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="esp32/setup_idf_chip.html">
+       Setup ESP-IDF and CHIP Environment
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../style/index.html">
    Style Guides
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +370,8 @@
   <a class="reference internal" href="../examples/index.html">
    Examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -347,6 +389,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/all-clusters-app/esp32/README.html">
      CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -370,11 +417,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/all-clusters-app/p6/README.html">
-     CHIP P6 All Clusters Example
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../examples/all-clusters-minimal-app/ameba/README.html">
      CHIP Ameba All Clusters Example
     </a>
@@ -390,6 +432,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../examples/all-clusters-minimal-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../examples/all-clusters-minimal-app/mbed/README.html">
      Matter Arm Mbed OS All Clusters Example Application
     </a>
@@ -397,11 +444,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/all-clusters-minimal-app/nrfconnect/README.html">
      Matter nRF Connect All Clusters Example Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../examples/all-clusters-minimal-app/p6/README.html">
-     CHIP P6 All Clusters Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -460,13 +502,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
-     BL602
+    <a class="reference internal" href="../examples/lighting-app/beken/README.html">
+     Matter BEKEN Lighting Example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/lighting-app/cyw30739/README.html">
-     Matter CYW30739 Lighting Example
+    <a class="reference internal" href="../examples/lighting-app/bouffalolab/bl602/README.html">
+     BL602
     </a>
    </li>
    <li class="toctree-l2">
@@ -477,6 +519,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/lighting-app/esp32/README.html">
      Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/infineon/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lighting-app/infineon/psoc6/README.html">
+     CHIP PSoC6 Lighting Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -497,11 +549,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/lighting-app/nxp/k32w/k32w0/README.html">
      CHIP K32W061 Lighting Example Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../examples/lighting-app/p6/README.html">
-     CHIP P6 Lighting Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -571,11 +618,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/lock-app/cyw30739/README.html">
-     Matter CYW30739 Lock Example
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../examples/lock-app/efr32/README.html">
      CHIP EFR32 Lock Example
     </a>
@@ -583,6 +625,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/lock-app/esp32/README.html">
      CHIP ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/infineon/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/lock-app/infineon/psoc6/README.html">
+     Matter PSoC6 Lock Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -603,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/lock-app/nxp/k32w/k32w0/README.html">
      CHIP K32W061 Lock Example Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../examples/lock-app/p6/README.html">
-     Matter P6 Lock Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -646,13 +693,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/ota-requestor-app/cyw30739/README.html">
-     Matter CYW30739 OTA Requestor Example
+    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/ota-requestor-app/esp32/README.html">
-     CHIP ESP32 OTA Requestor Example
+    <a class="reference internal" href="../examples/ota-requestor-app/infineon/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -663,11 +710,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/ota-requestor-app/mbed/README.html">
      Matter Arm Mbed OS Lock Example Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../examples/ota-requestor-app/p6/README.html">
-     CHIP P6 OTA Requestor Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -686,13 +728,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
-     CHIP Linux Persistent Storage Example
+    <a class="reference internal" href="../examples/persistent-storage/infineon/psoc6/README.html">
+     CHIP PSoC6 Persistent Storage Example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../examples/persistent-storage/p6/README.html">
-     CHIP P6 Persistent Storage Example
+    <a class="reference internal" href="../examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -855,18 +897,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../BUG_REPORT.html">
    Reporting bugs
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Reference
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://project-chip.github.io/connectedhomeip-doc/index.html">
-   API
   </a>
  </li>
 </ul>
@@ -1071,6 +1101,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enable-developer-mode-on-your-apple-device">
+     Enable Developer Mode on your Apple Device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
      Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS
     </a>
@@ -1194,6 +1229,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enable-developer-mode-on-your-apple-device">
+     Enable Developer Mode on your Apple Device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
      Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS
     </a>
@@ -1287,6 +1327,10 @@ belong to the same iCloud account as the Apple TV or HomePod with the Matter
 interference with existing homes.</p></li>
 <li><p>To pair and control Matter Thread devices, you’ll need to have a HomePod
 Mini or Apple TV 4K</p></li>
+<li><p>To pair to devices via BLE, you must either use the Matter Pairing API
+documented
+<a class="reference external" href="https://developer.apple.com/documentation/homekit/hmmatterhome">here</a>, or
+enable <a class="reference internal" href="#enable-developer-mode-on-your-apple-device"><span class="std std-doc">Developer mode</span></a>.</p></li>
 </ul>
 </section>
 </section>
@@ -1296,10 +1340,8 @@ Mini or Apple TV 4K</p></li>
 <p>Each developer preview release is compatible with a certain SHA from this
 repository.</p>
 <ul class="simple">
-<li><p>iOS/iPadOS/tvOS 15.6 Developer Preview:
-<a class="reference external" href="https://github.com/project-chip/connectedhomeip/commits/cfc35951be66a664a6efdadea56d1b8ea6e63e96"><code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></a></p></li>
 <li><p>iOS/iPadOS/tvOS 16.0 Developer Preview:
-<a class="reference external" href="https://github.com/project-chip/connectedhomeip/commits/cfc35951be66a664a6efdadea56d1b8ea6e63e96"><code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></a></p></li>
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/commits/aa9457e6b94b735076dff6297176183bf9780177"><code class="docutils literal notranslate"><span class="pre">aa9457e6b94b735076dff6297176183bf9780177</span></code></a></p></li>
 </ul>
 </section>
 <section id="profile-installation">
@@ -1345,6 +1387,13 @@ to transfer the profile to the Apple TV</p></li>
 <li><p>Restart the device</p></li>
 </ol>
 </section>
+<section id="enable-developer-mode-on-your-apple-device">
+<h3>Enable Developer Mode on your Apple Device<a class="headerlink" href="#enable-developer-mode-on-your-apple-device" title="Permalink to this headline">#</a></h3>
+<p>Note: Developer mode is a great way to get logs from your device as well as
+enables other useful developer tools</p>
+<p>To enable developer mode, please follow the instructions
+<a class="reference external" href="https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device">here</a></p>
+</section>
 <section id="ensuring-your-matter-accessory-works-with-ios-ipados-tvos">
 <h3>Ensuring Your Matter Accessory Works with iOS/iPadOS/tvOS<a class="headerlink" href="#ensuring-your-matter-accessory-works-with-ios-ipados-tvos" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
@@ -1352,8 +1401,8 @@ to transfer the profile to the Apple TV</p></li>
 <li><p>Checkout the specific commit hash (from <a class="reference internal" href="#source-compatibility"><span class="std std-doc">above</span></a>) for
 maximum compatibility with your installed release:</p>
 <ul class="simple">
-<li><p>Example command for SHA <code class="docutils literal notranslate"><span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code>:
-<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">cfc35951be66a664a6efdadea56d1b8ea6e63e96</span></code></p></li>
+<li><p>Example command for SHA <code class="docutils literal notranslate"><span class="pre">aa9457e6b94b735076dff6297176183bf9780177</span></code>:
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">aa9457e6b94b735076dff6297176183bf9780177</span></code></p></li>
 </ul>
 </li>
 </ol>
@@ -1518,7 +1567,8 @@ to support the fixed device types
 <li><p><a class="reference internal" href="../examples/pump-app/nrfconnect/README.html"><span class="doc std std-doc">nRF Connect Pump</span></a></p></li>
 <li><p><a class="reference internal" href="nxp_imx8m_linux_examples.html"><span class="doc std std-doc">NXP Examples</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/all-clusters-app/nxp/mw320/README.html"><span class="doc std std-doc">NXP</span></a></p></li>
-<li><p><a class="reference internal" href="../examples/all-clusters-app/p6/README.html"><span class="doc std std-doc">P6</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/lighting-app/infineon/cyw30739/README.html"><span class="doc std std-doc">Infineon CYW30739 Lighting</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/all-clusters-app/infineon/psoc6/README.html"><span class="doc std std-doc">Infineon PSoC6</span></a></p></li>
 <li><p><a class="reference internal" href="../examples/lighting-app/qpg/README.html"><span class="doc std std-doc">Qorvo</span></a></p></li>
 <li><p><a class="reference internal" href="silabs_efr32_building.html"><span class="doc std std-doc">SiliconLabs</span></a></p></li>
 <li><p><a class="reference internal" href="simulated_device_linux.html"><span class="doc std std-doc">Simulated Linux</span></a></p></li>
@@ -1561,10 +1611,10 @@ for currently known issues.</p></li>
             <p class="prev-next-title">Working with the CHIP Tool</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="infineon_p6_software_update.html" title="next page">
+    <a class='right-next' id="next-link" href="infineon_psoc6_software_update.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Matter Software Update with Infineon P6 example applications</p>
+        <p class="prev-next-title">Matter Software Update with Infineon PSoC6 example applications</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
