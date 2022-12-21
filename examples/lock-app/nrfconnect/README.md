@@ -188,8 +188,6 @@ for Matter:
     `nrf5340dk_nrf5340_cpuapp`.
 -   Matter over Wi-Fi is supported for `nrf7002dk_nrf5340_cpuapp`.
 
-<a name="device-ui"></a>
-
 ## Device UI
 
 This section lists the User Interface elements that you can use to control and

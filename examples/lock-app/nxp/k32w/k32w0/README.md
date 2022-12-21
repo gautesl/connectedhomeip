@@ -213,21 +213,15 @@ pycryptodome           3.9.8
 
 The resulting output file can be found in out/debug/chip-k32w0x-lock-example.
 
-<a name="building-issues"></a>
-
 ## Known issues
 
 -   When using Secure element and cross-compiling on Linux, log messages from
     the Plug&Trust middleware stack may not echo to the console.
 
-<a name="manufacturing"></a>
-
 ## Manufacturing data
 
 See
 [Guide for writing manufacturing data on NXP devices](../../../../platform/nxp/doc/manufacturing_flow.md).
-
-<a name="flashdebug"></a>
 
 ## Flashing and debugging
 
@@ -237,8 +231,6 @@ Program the firmware using the official
 All you have to do is to replace the Openthread binaries from the above
 documentation with _out/debug/chip-k32w0x-lock-example.bin_ if DK6Programmer is
 used or with _out/debug/chip-k32w0x-lock-example_ if MCUXpresso is used.
-
-<a name="tokenizer"></a>
 
 ## Pigweed tokenizer
 
@@ -322,8 +314,6 @@ To disable tinycrypt ecc operations, simply build with _chip_crypto=\"mbedtls\"_
 and with or without _mbedtls_repo_. If used with _mbedtls_repo_ the mbedtls
 implementation from `NXPmicro/mbedtls` library will be used.
 
-<a name="low-power"></a>
-
 ## Low power
 
 The example also offers the possibility to run in low power mode. This means
@@ -354,8 +344,6 @@ below:
 
 Please note that that the Power Measurement Tool is not very accurate and
 professional tools must be used if exact power consumption needs to be known.
-
-<a name="low-power-issues"></a>
 
 ## Known issues
 

@@ -15,8 +15,6 @@ Raspberry Pi Desktop 20.10 (aarch64)**
 
 <hr>
 
-<a name="operation"></a>
-
 ## Theory of Operation
 
 ### Dynamic Endpoints
@@ -106,8 +104,6 @@ the `Bridged Device Basic` cluster, the `reachable` attribute is simulated. In
 the `Fixed Label` cluster, the `LabelList` attribute is simulated with the
 value/label pair `"room"`/`[light name]`.
 
-<a name="building"></a>
-
 ## Building
 
 -   Install tool chain
@@ -132,8 +128,6 @@ value/label pair `"room"`/`[light name]`.
           $ cd ~/connectedhomeip/examples/dynamic-bridge-app/linux
           $ rm -rf out/
           ```
-
-<a name="running-complete-example"></a>
 
 ## Running the Complete Example on Raspberry Pi 4
 

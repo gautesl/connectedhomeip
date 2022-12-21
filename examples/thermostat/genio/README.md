@@ -13,8 +13,6 @@ An example showing the use of Matter on the MediaTek `Genio` MT793X.
 
 <hr>
 
-<a name="intro"></a>
-
 ## Introduction
 
 The `Genio` (MT793X) thermostat example provides a baseline demonstration of a
@@ -29,8 +27,6 @@ device which will then join the network.
 The thermostat example is intended to serve both as a means to explore the
 workings of Matter as well as a template for creating real products based on the
 MediaTek platform.
-
-<a name="building"></a>
 
 ## Building
 

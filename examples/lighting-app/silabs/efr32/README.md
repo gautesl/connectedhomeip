@@ -30,8 +30,6 @@ An example showing the use of CHIP on the Silicon Labs EFR32 MG12 and MG24.
 > release with added tools and documentation.
 > [Silabs Matter Github](https://github.com/SiliconLabs/matter/releases)
 
-<a name="intro"></a>
-
 ## Introduction
 
 The EFR32 lighting example provides a baseline demonstration of a Light control
@@ -50,8 +48,6 @@ Rendez-vous procedure.
 The lighting example is intended to serve both as a means to explore the
 workings of Matter as well as a template for creating real products based on the
 Silicon Labs platform.
-
-<a name="building"></a>
 
 ## Building
 
@@ -178,8 +174,6 @@ arguments
 
          ./scripts/examples/gn_efr32_example.sh
 
-<a name="flashing"></a>
-
 ## Flashing the Application
 
 -   On the command line:
@@ -188,8 +182,6 @@ arguments
           $ python3 out/debug/chip-efr32-lighting-example.flash.py
 
 -   Or with the Ozone debugger, just load the .out file.
-
-<a name="view-logging"></a>
 
 ## Viewing Logging Output
 
@@ -238,8 +230,6 @@ combination with JLinkRTTClient as follows:
 -   In a second terminal, run the JLinkRTTClient to view logs:
 
           $ JLinkRTTClient
-
-<a name="running-complete-example"></a>
 
 ## Running the Complete Example
 
@@ -325,8 +315,6 @@ combination with JLinkRTTClient as follows:
 
     -   Add Ipv6 route on PC(Linux)
         `sudo ip route add <Thread global ipv6 prefix>/64 via 2002::2`
-
-<a name="running-pigweed-rpc-console"></a>
 
 ## Running RPC console
 

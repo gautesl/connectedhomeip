@@ -184,8 +184,6 @@ effects:
 -   _Finish effect_ &mdash; complete current effect sequence and terminate
 -   _Stop effect_ &mdash; terminate as soon as possible
 
-<a name="building"></a>
-
 ## Building
 
 In order to build the Project CHIP example, we recommend using a Linux
@@ -241,21 +239,15 @@ pycryptodome           3.9.8
 
 The resulting output file can be found in out/debug/chip-k32w0x-light-example.
 
-<a name="building-issues"></a>
-
 ## Known issues
 
 -   When using Secure element and cross-compiling on Linux, log messages from
     the Plug&Trust middleware stack may not echo to the console.
 
-<a name="manufacturing"></a>
-
 ## Manufacturing data
 
 See
 [Guide for writing manufacturing data on NXP devices](../../../../platform/nxp/doc/manufacturing_flow.md).
-
-<a name="flashdebug"></a>
 
 ## Flashing and debugging
 
