@@ -1188,16 +1188,9 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
-   Commissioning over BLE using chip-tool
+  <a class="reference internal nav-link" href="#cluster-control">
+   Cluster Control
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cluster-control">
-     Cluster Control
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1219,16 +1212,9 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
-   Commissioning over BLE using chip-tool
+  <a class="reference internal nav-link" href="#cluster-control">
+   Cluster Control
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cluster-control">
-     Cluster Control
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1249,63 +1235,12 @@ and refer
 <a class="reference internal" href="../../../guides/esp32/build_app_and_commission.html"><span class="doc std std-doc">building and commissioning</span></a>
 guides to get started.</p>
 <hr class="docutils" />
-<ul>
+<ul class="simple">
 <li><p><a class="reference internal" href="#cluster-control"><span class="std std-doc">Cluster Control</span></a></p></li>
 <li><p><a class="reference internal" href="../../../guides/esp32/ota.html"><span class="doc std std-doc">Matter OTA guide</span></a></p></li>
-<li><p>After building the application, to flash it outside of VSCode, connect your
-device via USB. Then run the following command to flash the demo application
-onto the device and then monitor its output. If necessary, replace
-<code class="docutils literal notranslate"><span class="pre">/dev/tty.SLAB_USBtoUART</span></code>(MacOS) with the correct USB device name for your
-system(like <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> on Linux). Note that sometimes you might have to
-press and hold the <code class="docutils literal notranslate"><span class="pre">boot</span></code> button on the device while it’s trying to connect
-before flashing.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART flash monitor
-</pre></div>
-</div>
-<p>Note: Some users might have to install the
-<a class="reference external" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">VCP driver</a>
-before the device shows up on <code class="docutils literal notranslate"><span class="pre">/dev/tty</span></code>.</p>
-</li>
-<li><p>Quit the monitor by hitting <code class="docutils literal notranslate"><span class="pre">Ctrl+]</span></code>.</p>
-<p>Note: You can see a menu of various monitor commands by hitting
-<code class="docutils literal notranslate"><span class="pre">Ctrl+t</span> <span class="pre">Ctrl+h</span></code> while the monitor is running.</p>
-</li>
-<li><p>If desired, the monitor can be run again like so:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART monitor
-</pre></div>
-</div>
-</li>
-<li><p>Commissioning over ble after flashing script, change the passcode, replace
-<code class="docutils literal notranslate"><span class="pre">20202021</span></code> with <code class="docutils literal notranslate"><span class="pre">99663300</span></code>.</p></li>
-</ul>
-<section id="commissioning-over-ble-using-chip-tool">
-<h2>Commissioning over BLE using chip-tool<a class="headerlink" href="#commissioning-over-ble-using-chip-tool" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>Please build the standalone chip-tool as described <a class="reference internal" href="../../chip-tool/README.html"><span class="doc std std-doc">here</span></a></p></li>
-<li><p>Commissioning the WiFi Lighting devices(ESP32, ESP32C3, ESP32S3)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool pairing ble-wifi 12345 &lt;ssid&gt; &lt;passphrase&gt; 20202021 3840
-</pre></div>
-</div>
-</li>
-<li><p>For ESP32-H2, firstly start OpenThread Border Router, you can either use
-<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/openthread_border_router_pi.md">Raspberry Pi OpenThread Border Router</a>
-OR
-<a class="reference external" href="https://github.com/espressif/esp-idf/tree/master/examples/openthread/ot_br">ESP32 OpenThread Border Router</a></p></li>
-<li><p>Get the active operational dataset.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ot-ctl&gt; dataset active -x
-</pre></div>
-</div>
-</li>
-<li><p>Commissioning the Thread Lighting device(ESP32H2)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> $ ./out/debug/chip-tool pairing ble-thread 12345 hex:&lt;operational-dataset&gt; 20202021 3840
-</pre></div>
-</div>
-<p>NOTE: If using ESP32 factory data provider then commission the device using
-discriminator and passcode provided while building the factory NVS binary.</p>
-</li>
 </ul>
 <section id="cluster-control">
-<h3>Cluster Control<a class="headerlink" href="#cluster-control" title="Permalink to this headline">#</a></h3>
+<h2>Cluster Control<a class="headerlink" href="#cluster-control" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>After successful commissioning, use the OnOff cluster command to control the
 OnOff attribute. This allows you to toggle a parameter implemented by the
@@ -1325,7 +1260,6 @@ control the color attributes:</p>
 </div>
 </li>
 </ul>
-</section>
 </section>
 </section>
 
