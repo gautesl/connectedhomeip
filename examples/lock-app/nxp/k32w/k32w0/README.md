@@ -16,24 +16,24 @@ network.
 
 <hr>
 
--   [CHIP K32W0 Lock Example Application](#chip-k32w061-lock-example-application) -
+-   [CHIP K32W0 Lock Example Application](#chip-k32w061-lock-example-application)
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
 -   [Device UI](#device-ui)
 -   [Building](#building)
-    -   [Known issues](#building-issues)
--   [Manufacturing data](#manufacturing)
--   [Flashing and debugging](#flashdebug)
--   [Pigweed Tokenizer](#tokenizer)
-    -   [Detokenizer script](#detokenizer)
-    -   [Notes](#detokenizer-notes)
-    -   [Known issues](#detokenizer-known-issues)
--   [Tinycrypt ECC operations](#tinycrypt)
-    -   [Building steps](#tinycrypt-building-steps)
+    -   [Known issues](#known-issues)
+-   [Manufacturing data](#manufacturing-data)
+-   [Flashing and debugging](#flashing-and-debugging)
+-   [Pigweed Tokenizer](#pigweed-tokenizer)
+    -   [Detokenizer script](#detokenizer-script)
+    -   [Notes](#notes)
+    -   [Known issues](#known-issues-1)
+-   [Tinycrypt ECC operations](#tinycrypt-ecc-operations)
+    -   [Building steps](#building-steps)
 -   [Low power](#low-power)
 
-    -   [Known issues](#low-power-issues)
+    -   [Known issues](#known-issues-2)
 
     </hr>
 

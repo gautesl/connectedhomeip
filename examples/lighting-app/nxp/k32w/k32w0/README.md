@@ -16,27 +16,27 @@ network.
 
 <hr>
 
--   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application) -
+-   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application)
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
 -   [Device UI](#device-ui)
 -   [Building](#building)
-    -   [Known issues](#building-issues)
--   [Manufacturing data](#manufacturing)
--   [Flashing and debugging](#flashdebug)
--   [Pigweed Tokenizer](#tokenizer)
-    -   [Detokenizer script](#detokenizer)
-    -   [Notes](#detokenizer-notes)
-    -   [Known issues](#detokenizer-known-issues)
--   [Tinycrypt ECC operations](#tinycrypt)
-    -   [Building steps](#tinycrypt-building-steps)
+    -   [Known issues](#known-issues)
+-   [Manufacturing data](#manufacturing-data)
+-   [Flashing and debugging](#flashing-and-debugging)
+-   [Pigweed Tokenizer](#pigweed-tokenizer)
+    -   [Detokenizer script](#detokenizer-script)
+    -   [Notes](#notes)
+    -   [Known issues](#known-issues-1)
+-   [Tinycrypt ECC operations](#tinycrypt-ecc-operations)
+    -   [Building steps](#building-steps)
 -   [OTA](#ota)
     - [Writing the SSBL](#writing-the-ssbl)
     - [Writing the PSECT](#writing-the-psect)
     - [Writing the application](#writing-the-application)
     - [OTA Testing](#ota-testing) 
-    - [Known issues](#known-issues-1)
+    - [Known issues](#known-issues-2)
     </hr>
 
 ## Introduction

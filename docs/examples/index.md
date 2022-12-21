@@ -9,6 +9,7 @@ The Matter SDK provides examples of Matter devices for different development pla
 :maxdepth: 1
 
 all-clusters-app/**/README
+all-clusters-app/**/Readme
 ```
 
 ## All clusters minimal example
@@ -18,6 +19,7 @@ all-clusters-app/**/README
 :maxdepth: 1
 
 all-clusters-minimal-app/**/README
+all-clusters-minimal-app/**/Readme
 ```
 
 ## Bridge example
@@ -27,6 +29,15 @@ all-clusters-minimal-app/**/README
 :maxdepth: 1
 
 bridge-app/**/README
+```
+
+## Contact Sensor Example
+
+```{toctree}
+:glob:
+:maxdepth: 1
+
+contact-sensor-app/**/README
 ```
 
 ## CHEF example
@@ -55,6 +66,24 @@ chip-tool/README
 :maxdepth: 1
 
 darwin-framework-tool/README
+```
+
+## Dynamic bridge example
+
+```{toctree}
+:glob:
+:maxdepth: 1
+
+dynamic-bridge-app/**/README
+```
+
+## Java matter controller example
+
+```{toctree}
+:glob:
+:maxdepth: 1
+
+java-matter-controller/README
 ```
 
 ## Lighting example
@@ -104,6 +133,15 @@ log-source-app/**/README
 minimal-mdns/README
 ```
 
+## Open IoT SDK examples
+
+```{toctree}
+:glob:
+:maxdepth: 1
+
+openiotsdk_examples
+```
+
 ## OTA Provider example
 
 ```{toctree}
@@ -120,6 +158,7 @@ ota-provider-app/**/README
 :maxdepth: 1
 
 ota-requestor-app/**/README
+ota-requestor-app/**/Readme
 ```
 
 ## Persistent storage example
@@ -187,6 +226,7 @@ temperature-measurement-app/**/README
 :maxdepth: 1
 
 thermostat/**/README
+thermostat/**/Readme
 ```
 
 ## TV example

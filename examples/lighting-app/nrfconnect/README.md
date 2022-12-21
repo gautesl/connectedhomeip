@@ -27,7 +27,7 @@ platform, so only one protocol can be supported for a specific light device.
     -   [Bluetooth LE rendezvous](#bluetooth-le-rendezvous)
     -   [Device Firmware Upgrade](#device-firmware-upgrade)
 -   [Requirements](#requirements)
-    -   [Supported devices](#supported_devices)
+    -   [Supported devices](#supported-devices)
     -   [IPv6 network support](#ipv6-network-support)
 -   [Device UI](#device-ui)
 -   [Setting up the environment](#setting-up-the-environment)

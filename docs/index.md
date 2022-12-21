@@ -14,16 +14,18 @@ guides/index
 style/index
 examples/index
 BUG_REPORT
+code_generation
+ERROR_CODES
 ```
 
 ```{include} README.md
-:start-after: What is Matter?
+:start-after: About
 :end-before: Building and Developing in Matter
 ```
 
 # Matter build status
 
 ```{include} README.md
-:start-line: 2
-:end-before: What is Matter?
+:start-after: Matter
+:end-before: About
 ```

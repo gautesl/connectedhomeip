@@ -9,9 +9,9 @@ Raspberry Pi Desktop 20.10 (aarch64)**
 <hr>
 
 -   [CHIP Linux Bridge Example](#chip-linux-bridge-example)
-    -   [Theory of Operation](#operation)
+    -   [Theory of Operation](#theory-of-operation)
     -   [Building](#building)
-    -   [Running the Complete Example on Raspberry Pi 4](#running-complete-example)
+    -   [Running the Complete Example on Raspberry Pi 4](#running-the-complete-example-on-raspberry-pi-4)
 
 <hr>
 

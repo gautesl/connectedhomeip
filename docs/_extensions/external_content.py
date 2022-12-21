@@ -126,7 +126,7 @@ def adjust_includes(
         # Find links that lead to a non-presentable filetype and transform
         # it into an external link.
         (
-            r"\[([^\[\]]*)\]\s*\((?:\.\./)*((?:[^()]+?/)*[^.()]+?(\.[^)/]+))\)",
+            r"\[([^\[\]]*)\]\s*\((?:\.\./)*((?:[^()]+?/)*[^.()]+?(\.[^)/#]+))(?:#[^)]+)?\)",
             _adjust_filetype,
         ),
 

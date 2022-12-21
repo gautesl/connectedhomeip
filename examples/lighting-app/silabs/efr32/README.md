@@ -171,7 +171,7 @@ Silicon Labs platform.
           $ gn gen out/debug --args='import("//with_pw_rpc.gni")'
           $ ninja -C out/debug
 
-    [Running Pigweed RPC console](#running-pigweed-rpc-console)
+    [Running Pigweed RPC console](#running-rpc-console)
 
 For more build options, help is provided when running the build script without
 arguments
@@ -379,13 +379,13 @@ tracking code inside the `trackAlloc` and `trackFree` function
 
 For the description of Software Update process with EFR32 example applications
 see
-[EFR32 OTA Software Update](../../../docs/guides/silabs_efr32_software_update.md)
+[EFR32 OTA Software Update](../../../../docs/guides/silabs_efr32_software_update.md)
 
 ## Group Communication (Multicast)
 
 With this lighting example you can also use group communication to send Lighting
 commands to multiples devices at once. Please refer to the
-[chip-tool documentation](../../chip-tool/README.md) _Configuring the server
+[chip-tool documentation](../../../chip-tool/README.md) _Configuring the server
 side for Group Commands_ and _Using the Client to Send Group (Multicast) Matter
 Commands_
 

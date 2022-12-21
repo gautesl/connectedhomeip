@@ -31,7 +31,7 @@ device.
     -   [Bluetooth LE rendezvous](#bluetooth-le-rendezvous)
     -   [Device Firmware Upgrade](#device-firmware-upgrade)
 -   [Requirements](#requirements)
-    -   [Supported devices](#supported_devices)
+    -   [Supported devices](#supported-devices)
     -   [IPv6 network support](#ipv6-network-support)
 -   [Device UI](#device-ui)
     -   [LEDs](#leds)
@@ -319,11 +319,11 @@ platform image.
 
     -   If pressed for less than 0.5 seconds, it changes the light state to the
         opposite one on the bound lighting device
-        ([lighting-app](../../lighting-app/nrfconnect/))
+        ([lighting-app](../../lighting-app/nrfconnect/README.md))
 
     -   If pressed for more than 0.5 seconds, it changes the brightness of the
         light on the bound lighting bulb device
-        ([lighting-app](../../lighting-app/nrfconnect/)). The brightness is
+        ([lighting-app](../../lighting-app/nrfconnect/README.md)). The brightness is
         changing from 0% to 100% with 1% increments every 300 milliseconds as
         long as **Button 2** is pressed.
 

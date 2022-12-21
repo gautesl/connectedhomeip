@@ -24,10 +24,13 @@ extensions = [
 ]
 exclude_patterns = [
     "_build",
+    "examples/android/*",
     "**/nxp/linux-imx/imx8m/README.md",
     "examples/ota-requestor-app/efr32/README.md",
     "**/android/App/app/libs*",
     "examples/providers/README.md",
+    "examples/platform/nxp/doc/manufacturing_flow.md",
+    "examples/thermostat/nxp/linux-se05x/README.md",
 ]
 
 
@@ -49,7 +52,7 @@ html_theme_options = {
 # -- Options for MyST --------------------------------------------------------
 
 myst_heading_anchors = 6
-suppress_warnings = ["myst.header"]
+suppress_warnings = ["myst.header", "myst.anchor"]
 myst_enable_extensions = ["html_image"]
 
 
@@ -63,5 +66,12 @@ external_content_contents = [
     (MATTER_BASE, "examples/**/*.jpg"),
     (MATTER_BASE, "examples/**/*.JPG"),
 ]
-external_content_link_prefixes = ["src/", r"\.vscode/", "CONTRIBUTING"]
+external_content_link_prefixes = [
+    "src/",
+    r"\.vscode/",
+    "CONTRIBUTING",
+    "scripts/",
+    "examples/android/",
+    "examples/platform/",
+]
 external_content_link_extensions = [".md", ".png", ".jpg", ".svg"]

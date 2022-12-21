@@ -866,7 +866,7 @@ In this command:
 Multi-admin feature allows you to join Matter device to several Matter fabrics
 and administer it by several different Matter administrators. First you need to
 commission the Matter device to first fabric following the
-[Using CHIP Tool for Matter device testing](#using) section.
+[Using CHIP Tool for Matter device testing](#using-chip-tool-for-matter-device-testing) section.
 
 Before it is possible to commission a Matter device to a new fabric, the
 administrator from first fabric must open the commissioning window for a new

@@ -25,7 +25,7 @@ platform, so only one protocol can be supported for a specific device.
     -   [Bluetooth LE advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE rendezvous](#bluetooth-le-rendezvous)
 -   [Requirements](#requirements)
-    -   [Supported devices](#supported_devices)
+    -   [Supported devices](#supported-devices)
     -   [IPv6 network support](#ipv6-network-support)
 -   [Device UI](#device-ui)
 -   [Setting up the environment](#setting-up-the-environment)

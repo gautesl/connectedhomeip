@@ -1,15 +1,13 @@
-#Matter `Genio` Lighting Example
+# Matter `Genio` Lighting Example
 
 An example showing the use of Matter on the MediaTek `Genio` MT793X.
 
 <hr>
 
--   [Matter Genio Lighting Example](#chip-genio-lighting-example)
+-   [Matter Genio Lighting Example](#matter-genio-lighting-example)
     -   [Introduction](#introduction)
     -   [Building](#building)
-        -   [Note](#note)
     -   [Flashing the Application](#flashing-the-application)
-    -   [Viewing Logging Output](#viewing-logging-output)
     -   [Running the Complete Example](#running-the-complete-example)
         -   [Notes](#notes)
 
