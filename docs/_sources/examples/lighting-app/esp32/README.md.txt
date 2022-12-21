@@ -13,6 +13,8 @@ guides to get started.
 -   [Cluster Control](#cluster-control)
 -   [Matter OTA guide](../../../../../guides/esp32/ota.md)
 
+---
+
 ### Cluster Control
 
 -   After successful commissioning, use the OnOff cluster command to control the

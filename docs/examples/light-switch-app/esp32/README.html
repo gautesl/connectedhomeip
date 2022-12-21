@@ -1188,11 +1188,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
-   Commissioning over BLE using chip-tool
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing-the-example">
    Testing the example
   </a>
@@ -1217,11 +1212,6 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commissioning-over-ble-using-chip-tool">
-   Commissioning over BLE using chip-tool
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing-the-example">
    Testing the example
   </a>
@@ -1239,77 +1229,16 @@ title="Print to PDF"
   <section id="matter-esp32-light-switch-example">
 <h1>Matter ESP32 Light-switch Example<a class="headerlink" href="#matter-esp32-light-switch-example" title="Permalink to this headline">#</a></h1>
 <p>This example demonstrates the Matter Light-switch application on ESP platforms.</p>
+<p>Please
+<a class="reference internal" href="../../../guides/esp32/setup_idf_chip.html"><span class="doc std std-doc">setup ESP-IDF and CHIP Environment</span></a>
+and refer
+<a class="reference internal" href="../../../guides/esp32/build_app_and_commission.html"><span class="doc std std-doc">building and commissioning</span></a>
+guides to get started.</p>
 <hr class="docutils" />
 <ul class="simple">
-<li><p><a class="reference internal" href="#matter-esp32-light-switch-example"><span class="std std-doc">Matter ESP32 Light-switch Example</span></a></p>
-<ul>
-<li><p><a class="reference internal" href="#commissioning-over-ble-using-chip-tool"><span class="std std-doc">Commissioning over BLE using chip-tool</span></a></p></li>
 <li><p><a class="reference internal" href="#testing-the-example"><span class="std std-doc">Testing the example</span></a></p></li>
 </ul>
-</li>
-</ul>
 <hr class="docutils" />
-<ul>
-<li><p><a class="reference internal" href="#testing-the-example"><span class="std std-doc">Testing the example</span></a></p>
-<p>It is recommended to have Ccache installed for faster builds</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export IDF_CCACHE_ENABLE=1
-</pre></div>
-</div>
-</li>
-<li><p>Target Set</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py set-target esp32
-or
-$ idf.py set-target esp32c3
-or
-$ idf.py set-target esp32s3
-</pre></div>
-</div>
-</li>
-<li><p>To build the demo application.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py build
-</pre></div>
-</div>
-</li>
-<li><p>After building the application, to flash it outside of VSCode, connect your
-device via USB. Then run the following command to flash the demo application
-onto the device and then monitor its output. If necessary, replace
-<code class="docutils literal notranslate"><span class="pre">/dev/tty.SLAB_USBtoUART</span></code>(MacOS) with the correct USB device name for your
-system(like <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> on Linux). Note that sometimes you might have to
-press and hold the <code class="docutils literal notranslate"><span class="pre">boot</span></code> button on the device while it’s trying to connect
-before flashing.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART flash monitor
-</pre></div>
-</div>
-<p>Note: Some users might have to install the
-<a class="reference external" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">VCP driver</a>
-before the device shows up on <code class="docutils literal notranslate"><span class="pre">/dev/tty</span></code>.</p>
-</li>
-<li><p>Quit the monitor by hitting <code class="docutils literal notranslate"><span class="pre">Ctrl+]</span></code>.</p>
-<p>Note: You can see a menu of various monitor commands by hitting
-<code class="docutils literal notranslate"><span class="pre">Ctrl+t</span> <span class="pre">Ctrl+h</span></code> while the monitor is running.</p>
-</li>
-<li><p>If desired, the monitor can be run again like so:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ idf.py -p /dev/tty.SLAB_USBtoUART monitor
-</pre></div>
-</div>
-</li>
-</ul>
-<section id="commissioning-over-ble-using-chip-tool">
-<h2>Commissioning over BLE using chip-tool<a class="headerlink" href="#commissioning-over-ble-using-chip-tool" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>Please build the standalone chip-tool as described <a class="reference internal" href="../../chip-tool/README.html"><span class="doc std std-doc">here</span></a></p></li>
-<li><p>Commissioning the Lighting device</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./out/debug/chip-tool pairing ble-wifi 12344321 &lt;ssid&gt; &lt;passphrase&gt; 20202021 3840
-</pre></div>
-</div>
-</li>
-<li><p>Commissioning the Lighting-switch device</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> $ ./out/debug/chip-tool pairing ble-wifi 12344320 &lt;ssid&gt; &lt;passphrase&gt; 20202021 3840
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
 <section id="testing-the-example">
 <h2>Testing the example<a class="headerlink" href="#testing-the-example" title="Permalink to this headline">#</a></h2>
 <ul>
