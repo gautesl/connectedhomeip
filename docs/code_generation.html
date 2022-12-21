@@ -1,0 +1,1629 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Code generation &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Matter SDK CHIP_ERROR enums values" href="ERROR_CODES.html" />
+    <link rel="prev" title="Reporting bugs" href="BUG_REPORT.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="guides/index.html">
+   Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/darwin.html">
+     Testing with Apple Devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/infineon_psoc6_software_update.html">
+     Matter Software Update with Infineon PSoC6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_factory_data_configuration.html">
+     Configuring factory data for the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/openiotsdk_commissioning.html">
+     Commissioning Open IoT SDK devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/openiotsdk_platform_overview.html">
+     Open IoT SDK platform port
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/python_chip_controller_building.html">
+     Deprecation notice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="guides/esp32/README.html">
+     Espressif (ESP32) Getting Started Guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/build_app_and_commission.html">
+       ESP32 Application Usage Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/factory_data.html">
+       Using ESP32 Factory Data Provider
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/flash_nvs_encryption.html">
+       Flash and NVS encryption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/ota.html">
+       Matter OTA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/rpc_console.html">
+       RPC Console and Device Tracing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="guides/esp32/setup_idf_chip.html">
+       Setup ESP-IDF and Matter Environment
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-app/telink/Readme.html">
+     Matter Telink All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/all-clusters-minimal-app/telink/Readme.html">
+     Matter Telink All Clusters Minimal Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/contact-sensor-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Contact Sensor Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/dynamic-bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/java-matter-controller/README.html">
+     Matter Controller Java App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/beken/README.html">
+     Matter BEKEN Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/bouffalolab/README.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Bouffalo
+      </span>
+      <span class="pre">
+       Lab
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/infineon/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/infineon/psoc6/README.html">
+     CHIP PSoC6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/silabs/SiWx917/README.html">
+     Matter EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/silabs/efr32/README.html">
+     Matter EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/telink/README.html">
+     Matter Telink Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lighting-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/silabs/efr32/README.html">
+     Matter EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/light-switch-app/telink/README.html">
+     Matter Telink Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/esp32/README.html">
+     Matter ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/infineon/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/infineon/psoc6/README.html">
+     Matter PSoC6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/openiotsdk/README.html">
+     Matter Open IoT SDK Lock-App Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/silabs/efr32/README.html">
+     Matter EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/openiotsdk_examples.html">
+     Matter Open IoT SDK Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/infineon/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/ota-requestor-app/telink/Readme.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/infineon/psoc6/README.html">
+     CHIP PSoC6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/shell/openiotsdk/README.html">
+     Matter Open IoT SDK Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/temperature-measurement-app/esp32/README.html">
+     Matter ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/thermostat/efr32/README.html">
+     Matter EFR32 Thermostat Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/thermostat/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Thermostat Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/thermostat/telink/Readme.html">
+     Matter Telink Thermostat Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/window-app/silabs/efr32/README.html">
+     Matter EFR32 Window Covering Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Code generation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ERROR_CODES.html">
+   Matter SDK
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CHIP_ERROR
+    </span>
+   </code>
+   enums values
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/code_generation.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/code_generation.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-generation-inputs-zap-files">
+   Code generation inputs (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *.zap
+    </span>
+   </code>
+   files)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-zap-and-environment-variables">
+     Installing zap and environment variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-ui-to-edit-zap-files">
+     Using a UI to edit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .zap
+      </span>
+     </code>
+     files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#human-readable-code-generation-inputs-matter">
+     Human-readable code generation inputs (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matter-parsing-and-codegen">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     parsing and codegen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-generation-outputs-and-templates">
+   Code generation outputs and templates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-codegen">
+   Running codegen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zap-file-generation">
+     ZAP file generation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matter-code-generation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     code generation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-generation">
+   Pre-generation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Code generation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-generation-inputs-zap-files">
+   Code generation inputs (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *.zap
+    </span>
+   </code>
+   files)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-zap-and-environment-variables">
+     Installing zap and environment variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-ui-to-edit-zap-files">
+     Using a UI to edit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .zap
+      </span>
+     </code>
+     files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#human-readable-code-generation-inputs-matter">
+     Human-readable code generation inputs (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matter-parsing-and-codegen">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     parsing and codegen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-generation-outputs-and-templates">
+   Code generation outputs and templates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-codegen">
+   Running codegen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zap-file-generation">
+     ZAP file generation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matter-code-generation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *.matter
+      </span>
+     </code>
+     code generation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-generation">
+   Pre-generation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="code-generation">
+<h1>Code generation<a class="headerlink" href="#code-generation" title="Permalink to this headline">#</a></h1>
+<section id="code-generation-inputs-zap-files">
+<h2>Code generation inputs (<code class="docutils literal notranslate"><span class="pre">*.zap</span></code> files)<a class="headerlink" href="#code-generation-inputs-zap-files" title="Permalink to this headline">#</a></h2>
+<p>Matter code relies on code generation for cluster-specific data types and
+callbacks. Generally this is split into:</p>
+<ul class="simple">
+<li><p>Data serialization for structures/lists/commands. This applies to both
+client-side and server-side structures and objects</p></li>
+<li><p>Callback setup using the Ember-based framework. This generally applies to
+server-side processing and the code generation defines what processing needs
+to be done when a specific command is received or an attribute is read and
+what memory should be allocated for storing cluster attributes</p></li>
+</ul>
+<p>Code generation depends on the clusters that are needed by an application. Every
+application configures the specific set of endpoints and clusters it needs based
+on the device type it supports. The selection of the supported clusters and
+attributes (as optional attributes may be omitted to save memory) is generally
+stored in <code class="docutils literal notranslate"><span class="pre">*.zap</span></code> files.</p>
+<p>The selection of enabled clusters and files is done using
+<a class="reference external" href="https://github.com/project-chip/zap">ZAP</a>. You can download a recent release of
+zap from its <a class="reference external" href="https://github.com/project-chip/zap/releases">releases page</a>. It
+is recommended to download a release that is in sync with the currently in use
+version by the SDK (see <code class="docutils literal notranslate"><span class="pre">integrations/docker/images/chip-build/Dockerfile</span></code> and
+check the <code class="docutils literal notranslate"><span class="pre">ZAP_VERSION</span></code> setting).</p>
+<p>Beyond basic zap file selection, there are also <code class="docutils literal notranslate"><span class="pre">.json</span></code> zap settings that define
+additional cluster info: source XML files, sdk-access methods and data types.
+There are only two such files currently in use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src/app/zap-templates/zcl/zcl.json</span></code> is the <strong>default</strong> one</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/app/zap-templates/zcl/zcl-with-test-extensions.json</span></code> is used by
+<code class="docutils literal notranslate"><span class="pre">all-clusters-app</span></code> to show how a cluster extension may be configured with
+minimal changes from <code class="docutils literal notranslate"><span class="pre">zcl.json</span></code> (but it is different)</p></li>
+</ul>
+<section id="installing-zap-and-environment-variables">
+<h3>Installing zap and environment variables<a class="headerlink" href="#installing-zap-and-environment-variables" title="Permalink to this headline">#</a></h3>
+<p>Matter scripts may need to invoke <code class="docutils literal notranslate"><span class="pre">zap-cli</span></code> (for code generation) or <code class="docutils literal notranslate"><span class="pre">zap</span></code> (to
+start the UI tool). For this, scrips need to know where to find the commands. In
+the following order, the scripts process these environment variables:</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">$ZAP_DEVELOPMENT_PATH</span></code> is set, code assumes you are running zap from
+source. Use this if you develop zap. Zap has to be bootstrapped (generally
+<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">ci</span></code> but check zap documentation for this. Some scripts have a
+<code class="docutils literal notranslate"><span class="pre">--run-bootstrap</span></code> command line argument to do this for you)</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">$ZAP_INSTALL_PATH</span></code> is set, code assumes that <code class="docutils literal notranslate"><span class="pre">zap</span></code> or <code class="docutils literal notranslate"><span class="pre">zap-cli</span></code> is
+available in the given path. This is generally an unpacked release.</p></li>
+<li><p>otherwise, scripts will assume <code class="docutils literal notranslate"><span class="pre">zap</span></code>/<code class="docutils literal notranslate"><span class="pre">zap-cli</span></code> is in <code class="docutils literal notranslate"><span class="pre">$PATH</span></code></p></li>
+</ul>
+</section>
+<section id="using-a-ui-to-edit-zap-files">
+<h3>Using a UI to edit <code class="docutils literal notranslate"><span class="pre">.zap</span></code> files<a class="headerlink" href="#using-a-ui-to-edit-zap-files" title="Permalink to this headline">#</a></h3>
+<p>Generally you need to invoke zap with appropriate zcl and generate arguments.
+Most of code generation is app specific, so you generally want something of the
+form
+<code class="docutils literal notranslate"><span class="pre">--gen</span> <span class="pre">src/app/zap-templates/app-templates.json</span> <span class="pre">--zcl</span> <span class="pre">$ZCL_JSON_FILE</span> <span class="pre">$ZAP_FILE_TO_EDIT</span></code></p>
+<p>Since this is tedious to type, the SDK provides a
+<code class="docutils literal notranslate"><span class="pre">scripts/tools/zap/run_zaptool.sh</span></code> script to automate this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure zap is in $PATH or set $ZAP_INSTALL_PATH or $ZAP_DEVELOPMENT_PATH</span>
+./scripts/tools/zap/run_zaptool.sh examples/lighting-app/lighting-common/lighting-app.zap
+</pre></div>
+</div>
+</section>
+<section id="human-readable-code-generation-inputs-matter">
+<h3>Human-readable code generation inputs (<code class="docutils literal notranslate"><span class="pre">*.matter</span></code>)<a class="headerlink" href="#human-readable-code-generation-inputs-matter" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.zap</span></code> files are large json files that are generally not human readable. As a
+result, the Matter SDK also keeps an equivalent <code class="docutils literal notranslate"><span class="pre">*.matter</span></code> file along side
+<code class="docutils literal notranslate"><span class="pre">.zap</span></code> files that contain the same data as <code class="docutils literal notranslate"><span class="pre">.zap</span></code> files, targeted specifically
+for matter:</p>
+<ul class="simple">
+<li><p>They are designed to be human readable, looking like a IDL (think protobuf
+or android <code class="docutils literal notranslate"><span class="pre">aidl</span></code>, thrift idl etc.)</p></li>
+<li><p>We strive to make them contain only Matter-specific data (<code class="docutils literal notranslate"><span class="pre">.zap</span></code> files
+contain more generic data and is designed to be ZigBee backwards compatible)</p></li>
+</ul>
+<p>Currently <code class="docutils literal notranslate"><span class="pre">.matter</span></code> files are generated from <code class="docutils literal notranslate"><span class="pre">.zap</span></code> files during the application
+specific codegen.</p>
+</section>
+<section id="matter-parsing-and-codegen">
+<h3><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> parsing and codegen<a class="headerlink" href="#matter-parsing-and-codegen" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> files are both human and machine readable. Code that can process
+these files is available at <code class="docutils literal notranslate"><span class="pre">scripts/idl</span></code> and <code class="docutils literal notranslate"><span class="pre">scripts/codegen.py</span></code>. You can read
+the <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/idl/README.md">scripts/idl/README.md</a> for details of how things
+work.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scripts/codegen.py</span></code> can generate various outputs based on an input <code class="docutils literal notranslate"><span class="pre">*.matter</span></code>
+file.</p>
+<p>The split between <code class="docutils literal notranslate"><span class="pre">.zap</span></code> and <code class="docutils literal notranslate"><span class="pre">.matter</span></code> currently exists as an experiment of code
+generation technologies. Currently <code class="docutils literal notranslate"><span class="pre">.matter</span></code>-based Python code generation:</p>
+<ul class="simple">
+<li><p>has fewer third party dependencies than <code class="docutils literal notranslate"><span class="pre">zap</span></code>, which installs a significant
+number of <code class="docutils literal notranslate"><span class="pre">npm</span></code> packages.</p></li>
+<li><p>runs significantly faster than zap</p></li>
+<li><p>offers more flexible code generation (can generate multiple files per
+cluster for example, without which some compiles would run out of RAM on
+large compilations)</p></li>
+<li><p>has a more flexible templating language</p></li>
+<li><p>has human readable (and potentially editable) input</p></li>
+<li><p>is more easily provable deterministic (<code class="docutils literal notranslate"><span class="pre">zap</span></code> uses an underlying sqlite
+database and some legacy assumptions from zigbee have historically caused
+non-determinism)</p></li>
+<li><p>uses a synchronous processing model which is potentially easier to develop
+for</p></li>
+<li><p>has lower complexity, is unit tested and uses typing extensively</p></li>
+</ul>
+<p>Ideally, the project would be to have a single code generation method in the
+long term that has all the benefits and none of the drawbacks. We are not there
+yet, however we likely want:</p>
+<ul class="simple">
+<li><p>Flexible codegen (we will need to split output by clusters or other rules)</p></li>
+<li><p>Human-readable inputs that enable code reviews and audits</p></li>
+<li><p>Rules that a script can validate based on CSA data model (ensure mandatory
+attribute settings are followed, ensure proper device type adherence, ensure
+correct cluster and data type definitions)</p></li>
+<li><p>Easy to maintain and develop for chosen languages/templates/codegen in
+general</p></li>
+</ul>
+</section>
+</section>
+<section id="code-generation-outputs-and-templates">
+<h2>Code generation outputs and templates<a class="headerlink" href="#code-generation-outputs-and-templates" title="Permalink to this headline">#</a></h2>
+<p>Code that is generated:</p>
+<ul>
+<li><p><strong>Application-specific</strong>:</p>
+<ul class="simple">
+<li><p>ZAP generation is based on <code class="docutils literal notranslate"><span class="pre">.zap</span></code> files in <code class="docutils literal notranslate"><span class="pre">examples/</span></code> and generates
+server-side processing data: what cluster callbacks to set up, what RAM
+to reserve for attribute storage etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Codegen.py</span></code> will also generate a subset of application-specific files</p></li>
+</ul>
+</li>
+<li><p><strong>Automated tests</strong>: embedded client-side tools (<code class="docutils literal notranslate"><span class="pre">chip-tool</span></code> and
+<code class="docutils literal notranslate"><span class="pre">darwin-framework-tool</span></code>) generate test-definition data. Each use their own
+<code class="docutils literal notranslate"><span class="pre">examples/${TOOL}/templates/tests/templates.json</span></code> to drive what gets
+generated.</p></li>
+<li><p><strong>Controller clusters</strong> target: the file
+<code class="docutils literal notranslate"><span class="pre">src/controller/data_model/controller-clusters.zap</span></code> contains a set of
+cluster selections to which all applications would potentially have access.
+These are generally used as <code class="docutils literal notranslate"><span class="pre">all</span> <span class="pre">clusters</span> <span class="pre">selection</span></code> and the intent is to
+allow any application to access any cluster as a <code class="docutils literal notranslate"><span class="pre">client</span> <span class="pre">side</span></code>.</p>
+<p>Client/controllers will codegen based on this, like <strong>tools</strong>, <strong>tests</strong>,
+<strong>java</strong>, <strong>python</strong> etc.</p>
+</li>
+</ul>
+</section>
+<section id="running-codegen">
+<h2>Running codegen<a class="headerlink" href="#running-codegen" title="Permalink to this headline">#</a></h2>
+<section id="zap-file-generation">
+<h3>ZAP file generation<a class="headerlink" href="#zap-file-generation" title="Permalink to this headline">#</a></h3>
+<p>Generating all possible code (all categories above) using zap tool can be done
+via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/tools/zap_regen_all.py
+</pre></div>
+</div>
+<p>This can be slow (several minutes). The regen tool allows selection of only
+tests so that yaml test development goes faster.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/tools/zap_regen_all.py --type tests
+./scripts/tools/zap_regen_all.py --type tests --tests chip-tool
+</pre></div>
+</div>
+<p>Additionally, individual code regeneration can be done using
+<code class="docutils literal notranslate"><span class="pre">./scripts/tools/zap/generate.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/scripts/tools/zap/generate.py                       <span class="se">\</span>
+    examples/bridge-app/bridge-common/bridge-app.zap <span class="se">\</span>
+    -o zzz_generated/bridge-app/zap-generated
+</pre></div>
+</div>
+</section>
+<section id="matter-code-generation">
+<h3><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> code generation<a class="headerlink" href="#matter-code-generation" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> code generation can be done either at compile time or it can use
+pre-generated output.</p>
+<p>Rules for how <code class="docutils literal notranslate"><span class="pre">codegen.py</span></code> is invoked and how includes/sources are set are
+defined at:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src/app/chip_data_model.cmake</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/app/chip_data_model.gni</span></code></p></li>
+</ul>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">build/chip/esp32/esp32_codegen.cmake</span></code> adds processing support for
+the 2-pass cmake builds used by the Espressif <code class="docutils literal notranslate"><span class="pre">idf.py</span></code> build system.</p>
+</section>
+</section>
+<section id="pre-generation">
+<h2>Pre-generation<a class="headerlink" href="#pre-generation" title="Permalink to this headline">#</a></h2>
+<p>Code pre-generation can be used:</p>
+<ul class="simple">
+<li><p>when compile-time code generation is not desirable. This may be for
+importing into build systems that do not have the pre-requisites to run code
+generation at build time or to save the code generation time at the expense
+of running code generation for every possible zap/generation type</p></li>
+<li><p>To check changes in generated code across versions, beyond the comparisons
+of golden image tests in <code class="docutils literal notranslate"><span class="pre">scripts/idl/tests</span></code></p></li>
+</ul>
+<p>The script to trigger code pre-generation is <code class="docutils literal notranslate"><span class="pre">scripts/code_pregenerate.py</span></code> and
+requires the pre-generation output directory as an argument</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/code_pregenerate.py <span class="si">${</span><span class="nv">OUTPUT_DIRECTORY</span><span class="k">:-</span><span class="p">./zzz_pregenerated/</span><span class="si">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="BUG_REPORT.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Reporting bugs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ERROR_CODES.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matter SDK <code class="docutils literal notranslate"><span class="pre">CHIP_ERROR</span></code> enums values</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2022, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

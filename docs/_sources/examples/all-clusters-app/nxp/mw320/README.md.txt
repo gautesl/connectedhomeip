@@ -16,7 +16,7 @@ to demonstrates device commissioning and cluster control over a low-power, WiFi
 
 ## Introduction
 
-![MW320](../../../../../../../examples/platform/nxp/mw320/doc/images/mw320.jpg)
+![MW320](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/mw320/doc/images/mw320.jpg)
 
 The example targets the
 [NXP MW320 WiFi Micro controller Soc](https://www.nxp.com/products/wireless/wi-fi-plus-bluetooth/88mw32x-802-11n-wi-fi-microcontroller-soc:88MW32X)
@@ -28,6 +28,7 @@ Building the example application is quite straightforward. It can be done via
 following commands:
 
 ```
+$ cd examples/all-clusters-app/nxp/mw320/
 $ git submodule update --init
 $ source third_party/connectedhomeip/scripts/activate.sh
 $ gn gen out/debug
@@ -51,7 +52,7 @@ Note: This solution is temporary.
 In order to use the tinycrypt ecc operations, use the following build arguments:
 
 ```
-$ gn gen out/debug --args='treat_warnings_as_errors=false mbedtls_repo="//third_party/connectedhomeip/third_party/nxp/libs/mbedtls" mbedtls_use_tinycrypt=true'
+$ gn gen out/debug --args='treat_warnings_as_errors=false mbedtls_repo="//third_party/connectedhomeip/third_party/nxp/libs/mbedtls" chip_crypto="tinycrypt"'
 ```
 
 ## Flashing
@@ -86,4 +87,4 @@ $ sudo python2 flashprog.py -l Matter/layout-4m.txt --boot2 Matter/boot2.bin --w
 
 After MW320 is reset, console will allow you to enter commands:
 
-![MW320_CONSOLE](../../../../../../../examples/platform/nxp/mw320/doc/images/mw320_console.jpg)
+![MW320_CONSOLE](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/mw320/doc/images/mw320_console.jpg)

@@ -16,17 +16,19 @@ network.
 
 <hr>
 
--   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application) -
+-   [CHIP K32W061 Lighting Example Application](#chip-k32w061-lighting-example-application)
 -   [Introduction](#introduction)
     -   [Bluetooth LE Advertising](#bluetooth-le-advertising)
     -   [Bluetooth LE Rendezvous](#bluetooth-le-rendezvous)
 -   [Device UI](#device-ui)
 -   [Building](#building)
+    -   [Known issues](#known-issues)
+-   [Manufacturing data](#manufacturing-data)
 -   [Flashing and debugging](#flashing-and-debugging)
 -   [Pigweed Tokenizer](#pigweed-tokenizer)
     -   [Detokenizer script](#detokenizer-script)
     -   [Notes](#notes)
-    -   [Known issues](#known-issues)
+    -   [Known issues](#known-issues-1)
 -   [Tinycrypt ECC operations](#tinycrypt-ecc-operations)
     -   [Building steps](#building-steps)
 -   [OTA](#ota)
@@ -34,12 +36,12 @@ network.
     - [Writing the PSECT](#writing-the-psect)
     - [Writing the application](#writing-the-application)
     - [OTA Testing](#ota-testing) 
-    - [Known issues](#known-issues-1)
+    - [Known issues](#known-issues-2)
     </hr>
 
 ## Introduction
 
-![K32W061 DK6](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
+![K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
 
 The K32W061 lighting example application provides a working demonstration of a
 light bulb device, built using the Project CHIP codebase and the NXP K32W061
@@ -69,7 +71,7 @@ Deployment of this firmware configuration requires the K32W061 board setups
 using the K32W061 module board, SE051 Expansion board and Generic Expansion
 board as shown below:
 
-![SE051H  + K32W061 DK6](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
+![SE051H  + K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
 
 The SE051H Secure Element extension may be used for best in class security and
 offloading some of the Project CHIP cryptographic operations. Depending on your
@@ -163,23 +165,39 @@ DS3, which can be found on the DK6 board.
 Also, by long pressing the **USERINTERFACE** button, the factory reset action
 will be initiated.
 
+### Identify cluster LED state
+
+The Identify cluster server supports two identification commands: **Identify**
+and **TriggerEffect**. These commands allow a user to identify a particular
+device. For these commands, the **LED D3** is used.
+
+The **Identify command** will use the **LED D3** to flash with a period of 0.5
+seconds.
+
+The **TriggerEffect command** will use the **LED D3** with the following
+effects:
+
+-   _Blink_ &mdash; flash with a 1 second period for 2 seconds
+-   _Breathe_ &mdash; flash with a 1 second period for 15 seconds
+-   _Okay_ &mdash; flash with a 1 second period for 4 seconds
+-   _Channel change_ &mdash; same as Blink
+-   _Finish effect_ &mdash; complete current effect sequence and terminate
+-   _Stop effect_ &mdash; terminate as soon as possible
+
 ## Building
 
 In order to build the Project CHIP example, we recommend using a Linux
 distribution (the demo-application was compiled on Ubuntu 20.04).
 
--   Download [K32W0 SDK 2.6.6 for Project CHIP](https://mcuxpresso.nxp.com/).
-    Creating an nxp.com account is required before being able to download the
-    SDK. Once the account is created, login and follow the steps for downloading
-    SDK_2_6_6_K32W061DK6 (required for K32W061 flavor). The SDK Builder UI
-    selection should be similar with the one from the image below.
-    ![MCUXpresso SDK Download](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/mcux-sdk-download.JPG)
+-   Download
+    [K32W0 SDK 2.6.7](https://cache.nxp.com/lgfiles/bsps/SDK_2_6_7_K32W061DK6.zip).
 
 -   Start building the application either with Secure Element or without
     -   without Secure Element
 
 ```
-user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W0_SDK_ROOT=/home/user/Desktop/SDK_2_6_6_K32W061DK6/
+user@ubuntu:~/Desktop/git/connectedhomeip$ export NXP_K32W0_SDK_ROOT=/home/user/Desktop/SDK_2_6_7_K32W061DK6/
+user@ubuntu:~/Desktop/git/connectedhomeip$ ./third_party/nxp/k32w0_sdk/sdk_fixes/patch_k32w_sdk.sh
 user@ubuntu:~/Desktop/git/connectedhomeip$ source ./scripts/activate.sh
 user@ubuntu:~/Desktop/git/connectedhomeip$ cd examples/lighting-app/nxp/k32w/k32w0
 user@ubuntu:~/Desktop/git/connectedhomeip/examples/lighting-app/nxp/k32w/k32w0$ gn gen out/debug --args="k32w0_sdk_root=\"${NXP_K32W0_SDK_ROOT}\" chip_with_OM15082=1 chip_with_ot_cli=0 is_debug=false chip_crypto=\"tinycrypt\" chip_with_se05x=0 chip_pw_tokenizer_logging=true mbedtls_repo=\"//third_party/connectedhomeip/third_party/nxp/libs/mbedtls\""
@@ -220,6 +238,16 @@ pycryptodome           3.9.8
 ```
 
 The resulting output file can be found in out/debug/chip-k32w0x-light-example.
+
+## Known issues
+
+-   When using Secure element and cross-compiling on Linux, log messages from
+    the Plug&Trust middleware stack may not echo to the console.
+
+## Manufacturing data
+
+See
+[Guide for writing manufacturing data on NXP devices](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/doc/manufacturing_flow.md).
 
 ## Flashing and debugging
 
@@ -327,15 +355,15 @@ example needs to be compiled inside MCUXpresso with the define _PDM_EXT_FLASH_.
 The SSBL demo application can be imported from the _Quickstart panel_: _Import
 SDK example(s)_ -> select _wireless->framework->ssbl_ application.
 
-![SSBL Application Select](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/ssbl_select.JPG)
+![SSBL Application Select](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/ssbl_select.JPG)
 
 The SSBL project must be compiled using the PDM_EXT_FLASH define.
 
-![PDM_EXT_FLASH](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/pdm_ext_flash.JPG)
+![PDM_EXT_FLASH](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/pdm_ext_flash.JPG)
 
 Once compiled, the required ssbl file is called k32w061dk6_ssbl.bin
 
-![SSBL_BIN](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/ssbl_bin.JPG)
+![SSBL_BIN](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/ssbl_bin.JPG)
 
 Before writing the SSBL, it it recommanded to fully erase the internal flash:
 
@@ -369,14 +397,14 @@ Here is the interpretation of the fields:
 Second, image directory 1 must be written:
 
 ```
-DK6Programmer.exe -V5 -s <COM port> -P 1000000 -w image_dir_1=00400000CD040101
+DK6Programmer.exe -V5 -s <COM port> -P 1000000 -w image_dir_1=00400000C9040101
 ```
 
 Here is the interpretation of the fields:
 
 ```
 00400000 -> start address 0x00004000
-CD04     -> 0x4CD pages of 512-bytes (= 614,5kB)
+CD04     -> 0x4C9 pages of 512-bytes (= 612,5kB)
 01       -> bootable flag
 01       -> image type for the application
 ```
@@ -392,14 +420,14 @@ DK6Programmer.exe -V2 -s <COM_PORT> -P 1000000 -Y -p FLASH@0x4000="chip-k32w0x-l
 If debugging is needed, MCUXpresso can be used then for flashing the
 application. Please make sure that the application is written at address 0x4000:
 
-![FLASH_LOCATION](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
+![FLASH_LOCATION](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
 
 ### OTA Testing
 
 The OTA topology used for OTA testing is illustrated in the figure below.
 Topology is similar with the one used for Matter Test Events.
 
-![OTA_TOPOLOGY](../../../../../../../../examples/platform/nxp/k32w/k32w0/doc/images/ota_topology.JPG)
+![OTA_TOPOLOGY](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/ota_topology.JPG)
 
 The concept for OTA is the next one:
 
@@ -433,42 +461,42 @@ used for connecting the RPis to WiFi.
 Build the Linux OTA provider application:
 
 ```
-doru@computer1:~/connectedhomeip$ : ./scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out/ota-provider-app chip_config_network_layer_ble=false
+user@computer1:~/connectedhomeip$ : ./scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out/ota-provider-app chip_config_network_layer_ble=false
 ```
 
 Build OTA image and start the OTA Provider Application:
 
 ```
-doru@computer1:~/connectedhomeip$ : ./src/app/ota_image_tool.py create -v 0xDEAD -p 0xBEEF -vn 1 -vs "1.0" -da sha256 chip-k32w0x-light-example.bin chip-k32w0x-light-example.ota
-doru@computer1:~/connectedhomeip$ : rm -rf /tmp/chip_*
-doru@computer1:~/connectedhomeip$ : ./out/ota-provider-app/chip-ota-provider-app -f chip-k32w0x-light-example.ota
+user@computer1:~/connectedhomeip$ : ./src/app/ota_image_tool.py create -v 0xDEAD -p 0xBEEF -vn 1 -vs "1.0" -da sha256 chip-k32w0x-light-example.bin chip-k32w0x-light-example.ota
+user@computer1:~/connectedhomeip$ : rm -rf /tmp/chip_*
+user@computer1:~/connectedhomeip$ : ./out/ota-provider-app/chip-ota-provider-app -f chip-k32w0x-light-example.ota
 ```
 
 Build Linux chip-tool:
 
 ```
-doru@computer1:~/connectedhomeip$ : ./scripts/examples/gn_build_example.sh examples/chip-tool out/chip-tool-app
+user@computer1:~/connectedhomeip$ : ./scripts/examples/gn_build_example.sh examples/chip-tool out/chip-tool-app
 ```
 
 Provision the OTA provider application and assign node id _1_. Also, grant ACL
 entries to allow OTA requestors:
 
 ```
-doru@computer1:~/connectedhomeip$ : rm -rf /tmp/chip_*
-doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool pairing onnetwork 1 20202021
-doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
+user@computer1:~/connectedhomeip$ : rm -rf /tmp/chip_*
+user@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool pairing onnetwork 1 20202021
+user@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
 ```
 
 Provision the device and assign node id _2_:
 
 ```
-doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool pairing ble-thread 2 hex:<operationalDataset> 20202021   3840
+user@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool pairing ble-thread 2 hex:<operationalDataset> 20202021   3840
 ```
 
 Start the OTA process:
 
 ```
-doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
+user@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
 ```
 
 ## Known issues
@@ -486,7 +514,7 @@ doru@computer1:~/connectedhomeip$ : ./out/chip-tool-app/chip-tool otasoftwareupd
     command:
 
 ```
-doru@computer1:~/connectedhomeip$ : sudo docker kill $container_id
+user@computer1:~/connectedhomeip$ : sudo docker kill $container_id
 ```
 
 -   In order to avoid MDNS issues, only one interface should be active at one
@@ -494,8 +522,8 @@ doru@computer1:~/connectedhomeip$ : sudo docker kill $container_id
     disable multicast on that interface:
 
 ```
-doru@computer1:~/connectedhomeip$ sudo ip link set dev eth0 down
-doru@computer1:~/connectedhomeip$ sudo ifconfig eth0 -multicast
+user@computer1:~/connectedhomeip$ sudo ip link set dev eth0 down
+user@computer1:~/connectedhomeip$ sudo ifconfig eth0 -multicast
 ```
 
 -   If OTBR Docker image is used, then the "-B" parameter should point to the

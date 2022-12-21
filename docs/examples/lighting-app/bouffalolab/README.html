@@ -1,0 +1,1807 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bouffalo Lab &#8212; Matter  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Matter ESP32 Lighting Example" href="../esp32/README.html" />
+    <link rel="prev" title="Matter BEKEN Lighting Example" href="../beken/README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../QUICK_START.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../PROJECT_FLOW.html">
+   Matter Project Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../VSCODE_DEVELOPMENT.html">
+   Visual Studio Code Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api/index.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/device_runner.html">
+     CHIP on-device testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/device_runner_dispatch.html">
+     CHIP on-device test dispatch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../discussion/index.html">
+   Discussion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../discussion/lwip_ipv6.html">
+     LwIP changes for Matter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../guides/index.html">
+   Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/BUILDING.html">
+     Building Matter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/README.html">
+     Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/access-control-guide.html">
+     Access Control Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/android_building.html">
+     Building Android
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/chip_tool_guide.html">
+     Working with the CHIP Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/darwin.html">
+     Testing with Apple Devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/infineon_psoc6_software_update.html">
+     Matter Software Update with Infineon PSoC6 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/ip_commissioning.html">
+     IP commissioning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/matter-repl.html">
+     Matter Python REPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_add_new_target.html">
+     Mbed-OS add new hardware target
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_commissioning.html">
+     Matter Arm Mbed OS provisioning guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/mbedos_platform_overview.html">
+     Mbed-OS platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_android_commissioning.html">
+     Commissioning nRF Connect Accessory using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_cli.html">
+     Using CLI in nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_configuration.html">
+     Configuring nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_examples_software_update.html">
+     Performing Device Firmware Upgrade in the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_factory_data_configuration.html">
+     Configuring factory data for the nRF Connect examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nrfconnect_platform_overview.html">
+     nRF Connect platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nxp_imx8m_linux_examples.html">
+     Building and Running CHIP Linux Examples for i.MX 8M Mini EVK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/nxp_k32w_android_commissioning.html">
+     Commissioning NXP K32W using Android CHIPTool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openiotsdk_commissioning.html">
+     Commissioning Open IoT SDK devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openiotsdk_platform_overview.html">
+     Open IoT SDK platform port
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openthread_border_router_pi.html">
+     Setup OpenThread Border Router on Raspberry Pi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/openthread_rcp_nrf_dongle.html">
+     Configuring OpenThread Radio Co-processor on nRF52840 Dongle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/python_chip_controller_advanced_usage.html">
+     Using Python CHIP Controller advanced features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/python_chip_controller_building.html">
+     Deprecation notice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/silabs_efr32_building.html">
+     Building Silicon Labs EFR32 examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/silabs_efr32_software_update.html">
+     Matter Software Update with EFR32 example applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/simulated_device_linux.html">
+     Simulated Device How-To (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/ti_platform_overview.html">
+     Texas Instruments platform overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../guides/troubleshooting_avahi.html">
+     Troubleshooting Avahi
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../guides/esp32/README.html">
+     Espressif (ESP32) Getting Started Guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/build_app_and_commission.html">
+       ESP32 Application Usage Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/factory_data.html">
+       Using ESP32 Factory Data Provider
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/flash_nvs_encryption.html">
+       Flash and NVS encryption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/ota.html">
+       Matter OTA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/rpc_console.html">
+       RPC Console and Device Tracing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/esp32/setup_idf_chip.html">
+       Setup ESP-IDF and Matter Environment
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../style/index.html">
+   Style Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../style/STYLE_MAKEFILES.html">
+     CHIP Makefile Style Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../style/style_guide.html">
+     Matter Documentation Style Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
+   Examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/linux/README.html">
+     Matter Linux/Mac All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/nxp/mw320/README.html">
+     Matter MW320 All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-app/telink/Readme.html">
+     Matter Telink All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/ameba/README.html">
+     CHIP Ameba All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 All-clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/esp32/README.html">
+     CHIP ESP32 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/infineon/psoc6/README.html">
+     CHIP PSoC6 All Clusters Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/mbed/README.html">
+     Matter Arm Mbed OS All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/nrfconnect/README.html">
+     Matter nRF Connect All Clusters Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../all-clusters-minimal-app/telink/Readme.html">
+     Matter Telink All Clusters Minimal Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../bridge-app/esp32/README.html">
+     CHIP ESP32 Bridge App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../contact-sensor-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Contact Sensor Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README.html">
+     MATTER CHEF APP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/README_SHELL.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/nrfconnect/README.html">
+     CHIP nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chef/sample_app_util/README.html">
+     Chef Build Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../chip-tool/README.html">
+     Matter Client Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../darwin-framework-tool/README.html">
+     Matter darwin-framework-tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dynamic-bridge-app/linux/README.html">
+     CHIP Linux Bridge Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../java-matter-controller/README.html">
+     Matter Controller Java App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ameba/README.html">
+     CHIP Ameba Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../beken/README.html">
+     Matter BEKEN Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Bouffalo
+      </span>
+      <span class="pre">
+       Lab
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../esp32/README.html">
+     Matter ESP32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../infineon/cyw30739/README.html">
+     Matter CYW30739 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../infineon/psoc6/README.html">
+     CHIP PSoC6 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linux/README.html">
+     CHIP Linux Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mbed/README.html">
+     Matter Arm Mbed OS Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nrfconnect/README.html">
+     Matter nRF Connect Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/README.html">
+     Python-based lighting example (bridge) device to DALI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../silabs/SiWx917/README.html">
+     Matter EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../silabs/efr32/README.html">
+     Matter EFR32 Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../telink/README.html">
+     Matter Telink Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tizen/README.html">
+     CHIP Tizen Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../qpg/APPLICATION.html">
+     Matter QPG6105 Lighting Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/ameba/README.html">
+     CHIP Ameba Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/esp32/README.html">
+     Matter ESP32 Light-switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/nrfconnect/README.html">
+     Matter nRF Connect Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/silabs/efr32/README.html">
+     Matter EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../light-switch-app/telink/README.html">
+     Matter Telink Light Switch Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/cc32xx/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CC32XXSF
+      </span>
+     </code>
+     Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/esp32/README.html">
+     Matter ESP32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/infineon/cyw30739/README.html">
+     Matter CYW30739 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/infineon/psoc6/README.html">
+     Matter PSoC6 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/linux/README.html">
+     Lock Application for Linux
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/nrfconnect/README.html">
+     Matter nRF Connect Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/nxp/k32w/k32w0/README.html">
+     CHIP K32W061 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/openiotsdk/README.html">
+     Matter Open IoT SDK Lock-App Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/silabs/efr32/README.html">
+     Matter EFR32 Lock Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lock-app/qpg/APPLICATION.html">
+     Matter QPG6105 Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../log-source-app/linux/README.html">
+     log-source-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../minimal-mdns/README.html">
+     Minimal mDNS example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../openiotsdk_examples.html">
+     Matter Open IoT SDK Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-provider-app/esp32/README.html">
+     CHIP ESP32 OTA Provider Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-provider-app/linux/README.html">
+     ota-provider-app
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/ameba/README.html">
+     CHIP Ameba OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/esp32/README.html">
+     CHIP ESP32 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Lighting Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/infineon/cyw30739/README.html">
+     Matter CYW30739 OTA Requestor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/linux/README.html">
+     ota-requestor-app (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/mbed/README.html">
+     Matter Arm Mbed OS Lock Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ota-requestor-app/telink/Readme.html">
+     Build and flash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Persistent Storage Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/efr32/README.html">
+     CHIP EFR32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/esp32/README.html">
+     CHIP ESP32 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/infineon/psoc6/README.html">
+     CHIP PSoC6 Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/linux/README.html">
+     CHIP Linux Persistent Storage Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/qpg/README.html">
+     Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../persistent-storage/qpg/APPLICATION.html">
+     CHIP QPG6105 Persistent Storage Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/ameba/README.html">
+     CHIP Ameba Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/efr32/README.html">
+     CHIP EFR32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/esp32/README.html">
+     CHIP ESP32 Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/mbed/README.html">
+     Matter Arm Mbed OS Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pigweed-app/nrfconnect/README.html">
+     Matter nRF Connect Pigweed Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Pump Controller Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/nrfconnect/README.html">
+     Matter nRF Connect Pump Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/doc/programming-ccs.html">
+     Programming and Debugging with CCS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pump-controller-app/cc13x2x7_26x2x7/doc/programming-uniflash.html">
+     Programming with UniFlash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README.html">
+     Matter Shell Reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_DEVICE.html">
+     Matter Shell - Device Layer module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_OTCLI.html">
+     Matter Shell - OpenThread CLI pass-through
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/README_SERVER.html">
+     Matter Shell - App Server module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/cc13x2x7_26x2x7/README.html">
+     Matter CC1352 CC2652 Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/mbed/README.html">
+     Matter Arm Mbed OS Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/nrfconnect/README.html">
+     Matter nRF Connect SDK Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/nxp/k32w/k32w0/README.html">
+     CHIP NXP K32W Shell Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../shell/openiotsdk/README.html">
+     Matter Open IoT SDK Shell Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../temperature-measurement-app/esp32/README.html">
+     Matter ESP32 Temperature Sensor Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/efr32/README.html">
+     Matter EFR32 Thermostat Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/genio/README.html">
+     Matter
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Genio
+      </span>
+     </code>
+     Thermostat Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/telink/Readme.html">
+     Matter Telink Thermostat Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-app/linux/README.html">
+     CHIP TV Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/android/README.html">
+     Matter TV Casting Android App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/darwin/TvCasting/README.html">
+     Matter TV Casting iOS App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tv-casting-app/linux/README.html">
+     CHIP TV Casting App Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../window-app/nrfconnect/README.html">
+     Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../window-app/silabs/efr32/README.html">
+     Matter EFR32 Window Covering Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BUG_REPORT.html">
+   Reporting bugs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../code_generation.html">
+   Code generation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../ERROR_CODES.html">
+   Matter SDK
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CHIP_ERROR
+    </span>
+   </code>
+   enums values
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/project-chip/connectedhomeip/edit/master/docs/examples/lighting-app/bouffalolab/README.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/examples/lighting-app/bouffalolab/README.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bl602">
+   BL602
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bl602-iot-matter-v1">
+     BL602-IoT-Matter-V1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bl706">
+   BL706
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xt-zb6-devkit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       XT-ZB6-DevKit
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-setup">
+   Initial setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-chip-lighting-app-example">
+   Build CHIP Lighting App example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-image">
+   Download image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-example">
+   Run the example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-commission-and-control-with-chip-tool">
+   Test Commission and Control with chip-tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisite-for-thread-protocol">
+     Prerequisite for Thread Protocol
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commissioning-over-ble">
+     Commissioning over BLE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-control">
+     Cluster control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-ota-software-upgrade-with-ota-provider-app">
+   Test OTA software upgrade with ota-provider-app
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-matter-ota-with-bouffalolab-ota-bin-fw-ota-bin-xz-hash">
+     Create the Matter OTA with Bouffalolab OTA bin
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FW_OTA.bin.xz.hash
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-ota-provider-app">
+     Start ota-provider-app
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-ota-software-upgrade">
+     Start ota software upgrade
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-rpc-console">
+   Run RPC Console
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Bouffalo Lab</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bl602">
+   BL602
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bl602-iot-matter-v1">
+     BL602-IoT-Matter-V1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bl706">
+   BL706
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xt-zb6-devkit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       XT-ZB6-DevKit
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-setup">
+   Initial setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-chip-lighting-app-example">
+   Build CHIP Lighting App example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-image">
+   Download image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-example">
+   Run the example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-commission-and-control-with-chip-tool">
+   Test Commission and Control with chip-tool
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisite-for-thread-protocol">
+     Prerequisite for Thread Protocol
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commissioning-over-ble">
+     Commissioning over BLE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-control">
+     Cluster control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-ota-software-upgrade-with-ota-provider-app">
+   Test OTA software upgrade with ota-provider-app
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-matter-ota-with-bouffalolab-ota-bin-fw-ota-bin-xz-hash">
+     Create the Matter OTA with Bouffalolab OTA bin
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FW_OTA.bin.xz.hash
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-ota-provider-app">
+     Start ota-provider-app
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-ota-software-upgrade">
+     Start ota software upgrade
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-rpc-console">
+   Run RPC Console
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="bouffalo-lab">
+<h1><code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code><a class="headerlink" href="#bouffalo-lab" title="Permalink to this headline">#</a></h1>
+<p>This example functions as a light bulb device type, with on/off and level
+capabilities and uses a test Vendor ID (VID) and a Product ID (PID)
+of <strong>0x8005</strong>.</p>
+<p>The steps were verified on <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> BL602 and BL706 development board.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BL602-IoT-Matter-V1</span></code>, <a class="reference external" href="https://www.amazon.com/dp/B0B9ZVGXD8">here</a> to
+purchase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BL602-NIGHT-LIGHT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XT-ZB6-DevKit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BL706-NIGHT-LIGHT</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>Warning: Changing the PID may cause compilation problems, we recommend leaving
+it as the default while using this example.</p>
+</div></blockquote>
+<section id="bl602">
+<h2>BL602<a class="headerlink" href="#bl602" title="Permalink to this headline">#</a></h2>
+<p>BL602/BL604 is combo chip-set for Wi-Fi 802.11b/g/n and BLE 5.0 base-band/MAC.</p>
+<section id="bl602-iot-matter-v1">
+<h3>BL602-IoT-Matter-V1<a class="headerlink" href="#bl602-iot-matter-v1" title="Permalink to this headline">#</a></h3>
+<img alt="../../../_images/BL602-IoT-Matter_V1.png" src="../../../_images/BL602-IoT-Matter_V1.png" />
+</section>
+</section>
+<section id="bl706">
+<h2>BL706<a class="headerlink" href="#bl706" title="Permalink to this headline">#</a></h2>
+<p>BL702/BL706 is combo chip-set for BLE and IEEE 802.15.4/ZigBee/Thread. In some
+cases, e.g. in SDK, we use BL702 as a general name for BL702/BL706 family.</p>
+<section id="xt-zb6-devkit">
+<h3><code class="docutils literal notranslate"><span class="pre">XT-ZB6-DevKit</span></code><a class="headerlink" href="#xt-zb6-devkit" title="Permalink to this headline">#</a></h3>
+<img alt="../../../_images/bl706_dev_board.jpg" src="../../../_images/bl706_dev_board.jpg" />
+</section>
+</section>
+<section id="initial-setup">
+<h2>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">#</a></h2>
+<p>The following steps in this document were validated on Ubuntu 18.04/20.04 and
+Mac OS.</p>
+<ul>
+<li><p>Install dependencies as specified in the <strong>connectedhomeip</strong> repository:
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md">Building Matter</a>.</p></li>
+<li><p>Clone and initialize the <strong>connectedhomeip</strong> repo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">project</span><span class="o">-</span><span class="n">chip</span><span class="o">/</span><span class="n">connectedhomeip</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">connectedhomeip</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span>
+<span class="n">source</span> <span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>After environment setup Bouffalolab flash tool, <code class="docutils literal notranslate"><span class="pre">bflb-iot-tool</span></code>, imports
+under this environment. If not, please try <code class="docutils literal notranslate"><span class="pre">scripts/bootstrap.sh</span></code> for
+matter environment update.</p>
+</div></blockquote>
+</li>
+<li><p>Setup build environment for <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> SoC</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> to install <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> SDK to /opt/bouffalolab_sdk</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">third_party</span><span class="o">/</span><span class="n">bouffalolab</span><span class="o">/</span><span class="n">repo</span>
+<span class="n">sudo</span> <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Please execute following command to export <code class="docutils literal notranslate"><span class="pre">BOUFFALOLAB_SDK_ROOT</span></code> before
+building.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">BOUFFALOLAB_SDK_ROOT</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">bouffalolab_sdk</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="build-chip-lighting-app-example">
+<h2>Build CHIP Lighting App example<a class="headerlink" href="#build-chip-lighting-app-example" title="Permalink to this headline">#</a></h2>
+<p>The following steps take examples for BL602 develop board <code class="docutils literal notranslate"><span class="pre">BL602-IoT-Matter-V1</span></code>
+and BL706 develop board <code class="docutils literal notranslate"><span class="pre">XT-ZB6-DevKit</span></code>.</p>
+<ul>
+<li><p>Build lighting app with UART baudrate 2000000</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">bl602</span><span class="o">-</span><span class="n">iot</span><span class="o">-</span><span class="n">matter</span><span class="o">-</span><span class="n">v1</span><span class="o">-</span><span class="n">light</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">xt</span><span class="o">-</span><span class="n">zb6</span><span class="o">-</span><span class="n">devkit</span><span class="o">-</span><span class="n">light</span> <span class="n">build</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build lighting app with UART baudrate 115200</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">bl602</span><span class="o">-</span><span class="n">iot</span><span class="o">-</span><span class="n">matter</span><span class="o">-</span><span class="n">v1</span><span class="o">-</span><span class="n">light</span><span class="o">-</span><span class="mi">115200</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">xt</span><span class="o">-</span><span class="n">zb6</span><span class="o">-</span><span class="n">devkit</span><span class="o">-</span><span class="n">light</span><span class="o">-</span><span class="mi">115200</span> <span class="n">build</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build lighting app with RPC enabled and UART baudrate 115200.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">bl602</span><span class="o">-</span><span class="n">iot</span><span class="o">-</span><span class="n">matter</span><span class="o">-</span><span class="n">v1</span><span class="o">-</span><span class="n">light</span><span class="o">-</span><span class="n">rpc</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">build_examples</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="n">bouffalolab</span><span class="o">-</span><span class="n">xt</span><span class="o">-</span><span class="n">zb6</span><span class="o">-</span><span class="n">devkit</span><span class="o">-</span><span class="n">light</span><span class="o">-</span><span class="n">rpc</span> <span class="n">build</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="download-image">
+<h2>Download image<a class="headerlink" href="#download-image" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Using script <code class="docutils literal notranslate"><span class="pre">*.flash.py</span></code>.</p>
+<p>After building gets done, python script
+<code class="docutils literal notranslate"><span class="pre">chip-bl602-lighting-example.flash.py</span></code> or
+<code class="docutils literal notranslate"><span class="pre">chip-bl702-lighting-example.flash.py</span></code> will generate under build output
+folder for BL602 or BL702 building.</p>
+<blockquote>
+<div><p>Note 1, <code class="docutils literal notranslate"><span class="pre">*.flash.py</span></code> should be ran under Matter build environment; if
+python module <code class="docutils literal notranslate"><span class="pre">bflb_iot_tool</span></code> is not found, please try to do
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">scripts/bootstrap.sh</span></code> or install as
+<code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">bflb-iot-tool</span></code>.<br> Note 2, different build options will
+generate different output folder.</p>
+</div></blockquote>
+<p>Download operation steps as below, please check <code class="docutils literal notranslate"><span class="pre">help</span></code> option of script for
+more detail.</p>
+<ul>
+<li><p>Connect the board to your build machine</p></li>
+<li><p>Put the board to the download mode:</p>
+<ul class="simple">
+<li><p>Press and hold the <strong>BOOT</strong> button.</p></li>
+<li><p>Click the <strong>RESET</strong> or <strong>EN</strong> button.</p></li>
+<li><p>Release the <strong>BOOT</strong> button.</p></li>
+</ul>
+</li>
+<li><p>Type following command for image download. Please set serial port
+accordingly, here we use /dev/ttyACM0 as a serial port example.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bl602-iot-matter-v1</span></code> without additional build options</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py --port /dev/ttyACM0
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xt-zb6-devkit</span></code> with 115200 baudrate setting</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py --port /dev/ttyACM0
+</pre></div>
+</div>
+</li>
+<li><p>To wipe out flash and download image, please append <code class="docutils literal notranslate"><span class="pre">--erase</span></code> to the
+above command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py --port /dev/ttyACM0 --erase
+./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py --port /dev/ttyACM0 --erase
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note, better to append –erase option to download image for BL602
+develop board at first time.</p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> GUI flash tool <code class="docutils literal notranslate"><span class="pre">BLDevCube</span></code>, please download on
+<a class="reference external" href="https://dev.bouffalolab.com/download">this page</a>.</p>
+<ul class="simple">
+<li><p>Hold BOOT pin and reset chip, put the board in download mode.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">DTS</span></code> file;</p></li>
+<li><p>Select Partition Table under
+<code class="docutils literal notranslate"><span class="pre">examples/platform/bouffalolab/bl602/flash_config</span></code> or
+<code class="docutils literal notranslate"><span class="pre">examples/platform/bouffalolab/bl702/flash_config</span></code></p></li>
+<li><p>Select Firmware Bin;</p></li>
+<li><p>Select Chip Erase if need;</p></li>
+<li><p>Choose Target COM port.</p></li>
+<li><p>Then click Create &amp; Download.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="run-the-example">
+<h2>Run the example<a class="headerlink" href="#run-the-example" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>You can open the serial console. For example, if the device is at
+<code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code> with UART baudrate 2000000 built:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```shell
+picocom -b 2000000 /dev/ttyACM0
+```
+</pre></div>
+</div>
+</li>
+<li><p>To reset the board, Click the <strong>RESET</strong> or <strong>EN</strong> button.</p></li>
+<li><p>To toggle the light bulb’s on/off state by clicking BOOT button, which also
+toggles the LED.</p></li>
+<li><p>To do factory reset, press BOOT button over 4 seconds, release BOOT button
+after led blink stopped.</p></li>
+</ul>
+</section>
+<section id="test-commission-and-control-with-chip-tool">
+<h2>Test Commission and Control with chip-tool<a class="headerlink" href="#test-commission-and-control-with-chip-tool" title="Permalink to this headline">#</a></h2>
+<p>Please follow <a class="reference internal" href="../../../guides/chip_tool_guide.html"><span class="doc std std-doc">chip_tool_guide</span></a> and
+<a class="reference internal" href="../../chip-tool/README.html"><span class="doc std std-doc">guide</span></a> to build and use chip-tool for test.</p>
+<section id="prerequisite-for-thread-protocol">
+<h3>Prerequisite for Thread Protocol<a class="headerlink" href="#prerequisite-for-thread-protocol" title="Permalink to this headline">#</a></h3>
+<p>Thread wireless protocol runs on BL706, which needs a Thread border router to
+connect Thread network to Wi-Fi/Ethernet network. Please follow this
+<a class="reference internal" href="../../../guides/openthread_border_router_pi.html"><span class="doc std std-doc">guide</span></a> to setup a
+raspberry Pi border router.</p>
+<p>After Thread border router setup, please type following command on Thread border
+router to get Thread network credential.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo ot-ctl dataset active -x
+</pre></div>
+</div>
+</section>
+<section id="commissioning-over-ble">
+<h3>Commissioning over BLE<a class="headerlink" href="#commissioning-over-ble" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Reset the board or factory reset the board</p></li>
+<li><p>Enter build out folder of chip-tool and running the following command to do
+BLE commission</p>
+<ul>
+<li><p>BL602</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool pairing ble-wifi &lt;node_id&gt; &lt;wifi_ssid&gt; &lt;wifi_passwd&gt; <span class="m">20202021</span> <span class="m">3840</span>
+</pre></div>
+</div>
+</li>
+<li><p>BL706</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool pairing ble-thread &lt;node_id&gt; hex:&lt;thread_operational_dataset&gt; <span class="m">20202021</span> <span class="m">3840</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">&lt;node_id&gt;</span></code>, which is node ID assigned to device within chip-tool
+fabric<br> <code class="docutils literal notranslate"><span class="pre">&lt;wifi_ssid&gt;</span></code>, Wi-Fi network SSID<br> <code class="docutils literal notranslate"><span class="pre">&lt;wifi_passwd&gt;</span></code>, Wi-FI
+network password<br> <code class="docutils literal notranslate"><span class="pre">&lt;thread_operational_dataset&gt;</span></code>, Thread network
+credential which running <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">ot-ctl</span> <span class="pre">dataset</span> <span class="pre">active</span> <span class="pre">-x</span></code> command on border
+router to get.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="cluster-control">
+<h3>Cluster control<a class="headerlink" href="#cluster-control" title="Permalink to this headline">#</a></h3>
+<p>After successful commissioning, cluster commands available to control the board.</p>
+<ul>
+<li><p>OnOff cluster</p>
+<p>The following command shows to toggle the LED on the board</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool onoff toggle &lt;node_id&gt; 1
+</pre></div>
+</div>
+</li>
+<li><p>Level cluster</p>
+<p>The following command shows to move level to 128.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool levelcontrol move-to-level 128 10 0 0 &lt;node_id&gt; 1
+</pre></div>
+</div>
+</li>
+<li><p>Color cluster</p>
+<p>The following command shows to change hue and saturation to 240 and 100</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool colorcontrol move-to-hue-and-saturation 240 100 0 0 0 &lt;node_id&gt; 1
+</pre></div>
+</div>
+</li>
+<li><p>Identify Light</p>
+<p>The following command shows to identify the board 10 seconds</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool identify identify <span class="m">10</span> &lt;node_id&gt; <span class="m">1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="test-ota-software-upgrade-with-ota-provider-app">
+<h2>Test OTA software upgrade with ota-provider-app<a class="headerlink" href="#test-ota-software-upgrade-with-ota-provider-app" title="Permalink to this headline">#</a></h2>
+<p>Please take <a class="reference internal" href="../../ota-provider-app/linux/README.html"><span class="doc std std-doc">guide</span></a> for more detail on
+ota-provider-app build and usage.</p>
+<section id="create-the-matter-ota-with-bouffalolab-ota-bin-fw-ota-bin-xz-hash">
+<h3>Create the Matter OTA with Bouffalolab OTA bin <code class="docutils literal notranslate"><span class="pre">FW_OTA.bin.xz.hash</span></code><a class="headerlink" href="#create-the-matter-ota-with-bouffalolab-ota-bin-fw-ota-bin-xz-hash" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Build <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> OTA image as following execution using python script
+<code class="docutils literal notranslate"><span class="pre">*.flash.py</span></code> under firmware build out folder,</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./&lt;output_firmware_name&gt;.flash.py --build
+</pre></div>
+</div>
+<p>After script executed, a folder <code class="docutils literal notranslate"><span class="pre">ota_images</span></code> and an image
+<code class="docutils literal notranslate"><span class="pre">FW_OTA.bin.xz.hash</span></code> will be generated. <code class="docutils literal notranslate"><span class="pre">FW_OTA.bin.xz.hash</span></code> is compressed
+with hash verification for build out firmware.</p>
+</li>
+</ul>
+<ul>
+<li><p>Build Matter <code class="docutils literal notranslate"><span class="pre">*.ota</span></code> OTA image with <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> OTA image under
+<strong>connectedhomeip</strong> repo folder</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn <span class="m">10</span> -vs <span class="s2">&quot;1.0&quot;</span> -da sha256 &lt;FW_OTA.bin.xz.hash&gt; lighting-app.ota
+</pre></div>
+</div>
+<blockquote>
+<div><p>lighting-app.ota should have greater software version which is defined by
+macro <code class="docutils literal notranslate"><span class="pre">CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION</span></code> in CHIPProjectConfig.h</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="start-ota-provider-app">
+<h3>Start ota-provider-app<a class="headerlink" href="#start-ota-provider-app" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Start ota-provider-app for lighting-app.ota</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ rm -r /tmp/chip_*
+$ ./chip-ota-provider-app -f &lt;path_to_ota_bin&gt;/lighting-app.ota
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;path_to_ota_bin&gt;</span></code> is the folder for lighting-app.ota.</p>
+</li>
+<li><p>Provision ota-provider-app with assigned node id to 1</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing onnetwork <span class="m">1</span> <span class="m">20202021</span>
+$ ./chip-tool accesscontrol write acl <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: null, &quot;targets&quot;: null}]&#39;</span> <span class="m">1</span> <span class="m">0</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="start-ota-software-upgrade">
+<h3>Start ota software upgrade<a class="headerlink" href="#start-ota-software-upgrade" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>BLE commission BL602/BL702 lighting if not commissioned.</p></li>
+<li><p>Start OTA software upgrade process</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool otasoftwareupdaterequestor announce-ota-provider <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> &lt;node_id_to_lighting_app&gt; <span class="m">0</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;node_id_to_lighting_app&gt;</span></code> is node id of BL602/BL702 lighting app.</p>
+</li>
+<li><p>After OTA software upgrade gets done, BL602/BL702 will get reboot
+automatically.</p></li>
+</ul>
+</section>
+</section>
+<section id="run-rpc-console">
+<h2>Run RPC Console<a class="headerlink" href="#run-rpc-console" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Build chip-console following this
+<a class="reference internal" href="../../common/pigweed/rpc_console/README.html"><span class="doc std std-doc">guide</span></a></p></li>
+<li><p>Start the console</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chip-console --device /dev/ttyUSB0 -b 2000000
+</pre></div>
+</div>
+</li>
+<li><p>Get or Set the light state</p>
+<p><code class="docutils literal notranslate"><span class="pre">rpcs.chip.rpc.Lighting.Get()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">rpcs.chip.rpc.Lighting.Set(on=True,</span> <span class="pre">level=128)</span></code></p>
+</li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../beken/README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Matter BEKEN Lighting Example</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../esp32/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matter ESP32 Lighting Example</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matter Contributors<br/>
+  
+      &copy; Copyright 2022, Matter Contributors.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

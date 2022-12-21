@@ -4,7 +4,7 @@ An example application showing the use of key value storage API on the Qorvo
 QPG6105.
 
 More detailed information to be included in
-[SDK Documentation](../../../../../../examples/platform/qpg/README.md).
+[SDK Documentation](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/qpg/README.md).
 
 ## Persistent-storage-app
 
@@ -25,7 +25,7 @@ This application does not have any LED output.
 
 ## Logging Output
 
--   See [View Logging Output](../../../../../../examples/platform/qpg/README.md)
+-   See [View Logging Output](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/qpg/README.md)
 -   At startup you will see:
 
 ```
