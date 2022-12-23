@@ -211,10 +211,10 @@ fully provisioned, BLE advertising will stop.
 #### Bluetooth LE Rendezvous
 
 Pairing this application with `ble-thread` can be done with any of the enabled
-[CHIP Controller](https://github.com/project-chip/connectedhomeip/blob/master/src/controller/README.md)
-applications. Use the information printed on the console to aide in pairing the
-device. The controller application can also be used to control the example app
-with the cluster commands.
+[CHIP Controller](https://github.com/project-chip/connectedhomeip/blob/master/src/controller/README.md) applications. Use the
+information printed on the console to aide in pairing the device. The controller
+application can also be used to control the example app with the cluster
+commands.
 
 ## TI Support
 

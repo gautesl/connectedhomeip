@@ -80,7 +80,7 @@ following must be performed:
 
 1. Modify `CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION` to a value greater than
    the current running version
-2. [Build](https://github.com/project-chip/connectedhomeip/blob/master/examples/ota-requestor-app/linux/README.md)
+2. [Build](https://github.com/project-chip/connectedhomeip/blob/master/examples/ota-requestor-app/linux/README.md#build)
    an OTA Requestor application with the new version
 3. Using the executable created in step 2, generate an image with a software
    image

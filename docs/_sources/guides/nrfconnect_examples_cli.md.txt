@@ -136,7 +136,7 @@ To print a specific type of onboarding code:
 #### qrcode
 
 Prints the device
-[onboarding QR code payload](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md).
+[onboarding QR code payload](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md#preparing-accessory-device).
 Takes no arguments.
 
 ```shell
@@ -147,7 +147,7 @@ MT:W0GU2OTB00KA0648G00
 #### qrcodeurl
 
 Prints the URL to view the
-[device onboarding QR code](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md)
+[device onboarding QR code](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md#preparing-accessory-device)
 in a web browser. Takes no arguments.
 
 ```shell

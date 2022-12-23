@@ -54,8 +54,8 @@ step.
 
 ### Install Prerequisites
 
--   [Linux](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md)
--   [macOS](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md)
+-   [Linux](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md#installing-prerequisites-on-linux)
+-   [macOS](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md#installing-prerequisites-on-macos)
 
 ### Prepare for building
 
