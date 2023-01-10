@@ -1357,7 +1357,7 @@ found at <a class="reference external" href="https://developer.apple.com/support
 <hr class="docutils" />
 <section id="building-the-example-application">
 <h2>Building the Example Application<a class="headerlink" href="#building-the-example-application" title="Permalink to this headline">#</a></h2>
-<p>See <a class="reference internal" href="../../guides/BUILDING.html"><span class="doc std std-doc">the build guide</span></a> for general
+<p>See <a class="reference internal" href="../../guides/BUILDING.html#prerequisites"><span class="std std-doc">the build guide</span></a> for general
 background on build prerequisites.</p>
 <p>Building the example application is quite straightforward.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scripts</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">gn_build_example</span><span class="o">.</span><span class="n">sh</span> <span class="n">examples</span><span class="o">/</span><span class="n">darwin</span><span class="o">-</span><span class="n">framework</span><span class="o">-</span><span class="n">tool</span> <span class="n">SOME</span><span class="o">-</span><span class="n">PATH</span><span class="o">/</span>
@@ -1412,24 +1412,24 @@ arguments.</p>
 </div>
 <p>Example output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./darwin-framework-tool cluster_name command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./darwin-framework-tool<span class="w"> </span>cluster_name<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Clusters:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * basic                                                                             <span class="p">|</span>
-  <span class="p">|</span> * colorcontrol                                                                      <span class="p">|</span>
-  <span class="p">|</span> * doorlock                                                                          <span class="p">|</span>
-  <span class="p">|</span> * groups                                                                            <span class="p">|</span>
-  <span class="p">|</span> * iaszone                                                                           <span class="p">|</span>
-  <span class="p">|</span> * identify                                                                          <span class="p">|</span>
-  <span class="p">|</span> * levelcontrol                                                                      <span class="p">|</span>
-  <span class="p">|</span> * onoff                                                                             <span class="p">|</span>
-  <span class="p">|</span> * pairing                                                                           <span class="p">|</span>
-  <span class="p">|</span> * payload                                                                           <span class="p">|</span>
-  <span class="p">|</span> * scenes                                                                            <span class="p">|</span>
-  <span class="p">|</span> * temperaturemeasurement                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Clusters:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>basic<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>colorcontrol<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>doorlock<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>groups<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>iaszone<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>identify<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>levelcontrol<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>onoff<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>pairing<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>payload<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>scenes<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>temperaturemeasurement<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
@@ -1476,21 +1476,21 @@ interactive will display available commands.</p>
 </div>
 <p>The following json is an example of a list of candidates to set in interactive
 mode with <code class="docutils literal notranslate"><span class="pre">otasoftwareupdateapp</span> <span class="pre">candidate-file-path</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;deviceSoftwareVersionModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;vendorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65521</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32769</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;softwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;softwareVersionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;cDVersionNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;softwareVersionValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;minApplicableSoftwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;maxApplicableSoftwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;otaURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/josh/Desktop/OTACandidates/ota_v10.bin&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;deviceSoftwareVersionModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;vendorId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65521</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32769</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;softwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;softwareVersionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cDVersionNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;softwareVersionValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;minApplicableSoftwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;maxApplicableSoftwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;otaURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/josh/Desktop/OTACandidates/ota_v10.bin&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>darwin-framework-tool allows to set the consent status on the Provider side with

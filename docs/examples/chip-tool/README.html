@@ -1699,7 +1699,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="building-the-example-application">
 <h2>Building the Example Application<a class="headerlink" href="#building-the-example-application" title="Permalink to this headline">#</a></h2>
-<p>See <a class="reference internal" href="../../guides/BUILDING.html"><span class="doc std std-doc">the build guide</span></a> for general
+<p>See <a class="reference internal" href="../../guides/BUILDING.html#prerequisites"><span class="std std-doc">the build guide</span></a> for general
 background on build prerequisites.</p>
 <p>Building the example application is quite straightforward. It can either be done
 as part of an overall “build everything” build:</p>
@@ -1879,7 +1879,7 @@ the target cluster name, the target command name, the Group Id in Node Id form
 (<code class="docutils literal notranslate"><span class="pre">0xffffffffffffXXXX</span></code>) and an used endpoint Id. Take note that Only commands and
 attributes write can be send with Group Id. Also note that a group ACL needs to
 be installed before a command sent to the group will be accepted. See
-<a class="reference internal" href="../../guides/access-control-guide.html"><span class="doc std std-doc">the access control guide</span></a></p>
+<a class="reference internal" href="../../guides/access-control-guide.html#installing-a-group-acl"><span class="std std-doc">the access control guide</span></a></p>
 <p>E.G. sending to group Id 0x4141</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chip</span><span class="o">-</span><span class="n">tool</span> <span class="n">onoff</span> <span class="n">on</span> <span class="mh">0xffffffffffff4141</span> <span class="mi">1</span>
 </pre></div>
@@ -1894,25 +1894,25 @@ arguments.</p>
 </div>
 <p>Example output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool cluster_name command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>cluster_name<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Clusters:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * barriercontrol                                                                    <span class="p">|</span>
-  <span class="p">|</span> * basic                                                                             <span class="p">|</span>
-  <span class="p">|</span> * colorcontrol                                                                      <span class="p">|</span>
-  <span class="p">|</span> * doorlock                                                                          <span class="p">|</span>
-  <span class="p">|</span> * groups                                                                            <span class="p">|</span>
-  <span class="p">|</span> * iaszone                                                                           <span class="p">|</span>
-  <span class="p">|</span> * identify                                                                          <span class="p">|</span>
-  <span class="p">|</span> * levelcontrol                                                                      <span class="p">|</span>
-  <span class="p">|</span> * onoff                                                                             <span class="p">|</span>
-  <span class="p">|</span> * pairing                                                                           <span class="p">|</span>
-  <span class="p">|</span> * payload                                                                           <span class="p">|</span>
-  <span class="p">|</span> * scenes                                                                            <span class="p">|</span>
-  <span class="p">|</span> * temperaturemeasurement                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Clusters:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>barriercontrol<span class="w">                                                                    </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>basic<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>colorcontrol<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>doorlock<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>groups<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>iaszone<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>identify<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>levelcontrol<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>onoff<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>pairing<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>payload<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>scenes<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>temperaturemeasurement<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
@@ -2010,190 +2010,190 @@ cluster name and the <code class="docutils literal notranslate"><span class="pre
 <section id="barriercontrol">
 <h3>barriercontrol<a class="headerlink" href="#barriercontrol" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool barriercontrol command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>barriercontrol<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * barrier-control-go-to-percent                                                     <span class="p">|</span>
-  <span class="p">|</span> * barrier-control-stop                                                              <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>barrier-control-go-to-percent<span class="w">                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>barrier-control-stop<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="basic">
 <h3>basic<a class="headerlink" href="#basic" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool basic command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>basic<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * reset-to-factory-defaults                                                         <span class="p">|</span>
-  <span class="p">|</span> * ping                                                                              <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>reset-to-factory-defaults<span class="w">                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>ping<span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="colorcontrol">
 <h3>colorcontrol<a class="headerlink" href="#colorcontrol" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool colorcontrol command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>colorcontrol<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * move-color                                                                        <span class="p">|</span>
-  <span class="p">|</span> * move-color-temperature                                                            <span class="p">|</span>
-  <span class="p">|</span> * move-hue                                                                          <span class="p">|</span>
-  <span class="p">|</span> * move-saturation                                                                   <span class="p">|</span>
-  <span class="p">|</span> * move-to-color                                                                     <span class="p">|</span>
-  <span class="p">|</span> * move-to-color-temperature                                                         <span class="p">|</span>
-  <span class="p">|</span> * move-to-hue                                                                       <span class="p">|</span>
-  <span class="p">|</span> * move-to-hue-and-saturation                                                        <span class="p">|</span>
-  <span class="p">|</span> * move-to-saturation                                                                <span class="p">|</span>
-  <span class="p">|</span> * step-color                                                                        <span class="p">|</span>
-  <span class="p">|</span> * step-color-temperature                                                            <span class="p">|</span>
-  <span class="p">|</span> * step-hue                                                                          <span class="p">|</span>
-  <span class="p">|</span> * step-saturation                                                                   <span class="p">|</span>
-  <span class="p">|</span> * stop-move-step                                                                    <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * report                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-color<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-color-temperature<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-hue<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-saturation<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-color<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-color-temperature<span class="w">                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-hue<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-hue-and-saturation<span class="w">                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-saturation<span class="w">                                                                </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step-color<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step-color-temperature<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step-hue<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step-saturation<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>stop-move-step<span class="w">                                                                    </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>report<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="doorlock">
 <h3>doorlock<a class="headerlink" href="#doorlock" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool doorlock command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>doorlock<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * clear-all-pins                                                                    <span class="p">|</span>
-  <span class="p">|</span> * clear-all-rfids                                                                   <span class="p">|</span>
-  <span class="p">|</span> * clear-holiday-schedule                                                            <span class="p">|</span>
-  <span class="p">|</span> * clear-pin                                                                         <span class="p">|</span>
-  <span class="p">|</span> * clear-rfid                                                                        <span class="p">|</span>
-  <span class="p">|</span> * clear-weekday-schedule                                                            <span class="p">|</span>
-  <span class="p">|</span> * clear-yearday-schedule                                                            <span class="p">|</span>
-  <span class="p">|</span> * get-holiday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * get-pin                                                                           <span class="p">|</span>
-  <span class="p">|</span> * get-rfid                                                                          <span class="p">|</span>
-  <span class="p">|</span> * get-user-type                                                                     <span class="p">|</span>
-  <span class="p">|</span> * get-weekday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * get-yearday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * lock-door                                                                         <span class="p">|</span>
-  <span class="p">|</span> * set-holiday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * set-pin                                                                           <span class="p">|</span>
-  <span class="p">|</span> * set-rfid                                                                          <span class="p">|</span>
-  <span class="p">|</span> * set-user-type                                                                     <span class="p">|</span>
-  <span class="p">|</span> * set-weekday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * set-yearday-schedule                                                              <span class="p">|</span>
-  <span class="p">|</span> * unlock-door                                                                       <span class="p">|</span>
-  <span class="p">|</span> * unlock-with-timeout                                                               <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * report                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-all-pins<span class="w">                                                                    </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-all-rfids<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-holiday-schedule<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-pin<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-rfid<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-weekday-schedule<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>clear-yearday-schedule<span class="w">                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-holiday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-pin<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-rfid<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-user-type<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-weekday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-yearday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>lock-door<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-holiday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-pin<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-rfid<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-user-type<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-weekday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>set-yearday-schedule<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>unlock-door<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>unlock-with-timeout<span class="w">                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>report<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="groups">
 <h3>groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool groups command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>groups<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * add-group                                                                         <span class="p">|</span>
-  <span class="p">|</span> * add-group-if-identifying                                                          <span class="p">|</span>
-  <span class="p">|</span> * get-group-membership                                                              <span class="p">|</span>
-  <span class="p">|</span> * remove-all-groups                                                                 <span class="p">|</span>
-  <span class="p">|</span> * remove-group                                                                      <span class="p">|</span>
-  <span class="p">|</span> * view-group                                                                        <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>add-group<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>add-group-if-identifying<span class="w">                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-group-membership<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>remove-all-groups<span class="w">                                                                 </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>remove-group<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>view-group<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="iaszone">
 <h3>iaszone<a class="headerlink" href="#iaszone" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool iaszone command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>iaszone<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * write                                                                             <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>write<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="identify">
 <h3>identify<a class="headerlink" href="#identify" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool identify command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>identify<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * identify                                                                          <span class="p">|</span>
-  <span class="p">|</span> * identify-query                                                                    <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>identify<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>identify-query<span class="w">                                                                    </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="levelcontrol">
 <h3>levelcontrol<a class="headerlink" href="#levelcontrol" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool levelcontrol command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>levelcontrol<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * move                                                                              <span class="p">|</span>
-  <span class="p">|</span> * move-to-level                                                                     <span class="p">|</span>
-  <span class="p">|</span> * move-to-level-with-on-off                                                         <span class="p">|</span>
-  <span class="p">|</span> * move-with-on-off                                                                  <span class="p">|</span>
-  <span class="p">|</span> * step                                                                              <span class="p">|</span>
-  <span class="p">|</span> * step-with-on-off                                                                  <span class="p">|</span>
-  <span class="p">|</span> * stop                                                                              <span class="p">|</span>
-  <span class="p">|</span> * stop-with-on-off                                                                  <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * report                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move<span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-level<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-to-level-with-on-off<span class="w">                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>move-with-on-off<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step<span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>step-with-on-off<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>stop<span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>stop-with-on-off<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>report<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="onoff">
 <h3>onoff<a class="headerlink" href="#onoff" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool onoff command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>onoff<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * off                                                                               <span class="p">|</span>
-  <span class="p">|</span> * on                                                                                <span class="p">|</span>
-  <span class="p">|</span> * toggle                                                                            <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * report                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>off<span class="w">                                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on<span class="w">                                                                                </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>toggle<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>report<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
@@ -2216,65 +2216,65 @@ cluster name and the <code class="docutils literal notranslate"><span class="pre
 <section id="pairing">
 <h3>pairing<a class="headerlink" href="#pairing" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool pairing command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>pairing<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * unpair                                                                            <span class="p">|</span>
-  <span class="p">|</span> * ble                                                                               <span class="p">|</span>
-  <span class="p">|</span> * softap                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>unpair<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>ble<span class="w">                                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>softap<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="payload">
 <h3>payload<a class="headerlink" href="#payload" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool payload command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>payload<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * parse-setup-payload                                                               <span class="p">|</span>
-  <span class="p">|</span> * parse-additional-data-payload                                                     <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>parse-setup-payload<span class="w">                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>parse-additional-data-payload<span class="w">                                                     </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="scenes">
 <h3>scenes<a class="headerlink" href="#scenes" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool scenes command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>scenes<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * add-scene                                                                         <span class="p">|</span>
-  <span class="p">|</span> * get-scene-membership                                                              <span class="p">|</span>
-  <span class="p">|</span> * recall-scene                                                                      <span class="p">|</span>
-  <span class="p">|</span> * remove-all-scenes                                                                 <span class="p">|</span>
-  <span class="p">|</span> * remove-scene                                                                      <span class="p">|</span>
-  <span class="p">|</span> * store-scene                                                                       <span class="p">|</span>
-  <span class="p">|</span> * view-scene                                                                        <span class="p">|</span>
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>add-scene<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>get-scene-membership<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>recall-scene<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>remove-all-scenes<span class="w">                                                                 </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>remove-scene<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>store-scene<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>view-scene<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 </section>
 <section id="temperaturemeasurement">
 <h3>temperaturemeasurement<a class="headerlink" href="#temperaturemeasurement" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:
-  ./chip-tool temperaturemeasurement command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>temperaturemeasurement<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * discover                                                                          <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * report                                                                            <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>discover<span class="w">                                                                          </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>report<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
 </pre></div>
 </div>
 <p>To learn more about the tool, how to build it, use its commands and advanced

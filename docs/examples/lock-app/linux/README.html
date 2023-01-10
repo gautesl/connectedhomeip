@@ -1361,7 +1361,7 @@ be executed. Could be omitted, in that case the default endpoint with ID
 </ul>
 </li>
 <li><p>Usage:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">echo</span> <span class="s1">&#39;{&quot;Cmd&quot;: &quot;SetDoorState&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;DoorState&quot;: 1 } }&#39;</span> &gt; /tmp/chip_lock_app_fifo-&lt;PID&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;Cmd&quot;: &quot;SetDoorState&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;DoorState&quot;: 1 } }&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/chip_lock_app_fifo-&lt;PID&gt;
 </pre></div>
 </div>
 <p>This command will set the door state to “Closed” resulting in Door State
@@ -1382,7 +1382,7 @@ be executed. Could be omitted, in that case the default endpoint with ID
 </ul>
 </li>
 <li><p>Usage:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">echo</span> <span class="s1">&#39;{&quot;Cmd&quot;: &quot;SendDoorLockAlarm&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;AlarmCode&quot;: 0 } }&#39;</span> &gt; /tmp/chip_lock_app_fifo-&lt;PID&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;Cmd&quot;: &quot;SendDoorLockAlarm&quot;, &quot;Params&quot;: { &quot;EndpointId&quot;: 1, &quot;AlarmCode&quot;: 0 } }&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/chip_lock_app_fifo-&lt;PID&gt;
 </pre></div>
 </div>
 <p>This command will send the Door Lock Alarm event with “Lock Jammed” alarm

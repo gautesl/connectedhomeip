@@ -39,7 +39,7 @@ network.
 
 ## Introduction
 
-![K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
+![K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
 
 The K32W061 lock example application provides a working demonstration of a
 connected door lock device, built using the Project CHIP codebase and the NXP
@@ -69,7 +69,7 @@ Deployment of this firmware configuration requires the K32W061 board setups
 using the K32W061 module board, SE051 Expansion board and Generic Expansion
 board as shown below:
 
-![SE051H  + K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
+![SE051H  + K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
 
 The SE051H Secure Element extension may be used for best in class security and
 offloading some of the Project CHIP cryptographic operations. Depending on your
@@ -221,7 +221,7 @@ The resulting output file can be found in out/debug/chip-k32w0x-lock-example.
 ## Manufacturing data
 
 See
-[Guide for writing manufacturing data on NXP devices](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/doc/manufacturing_flow.md).
+[Guide for writing manufacturing data on NXP devices](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/doc/manufacturing_flow.md).
 
 ## Flashing and debugging
 
@@ -334,13 +334,13 @@ Power Measurement Tool can be used inside MCUXpresso for checking the power
 consumption pattern: Window -> Show View -> Other -> Power Measurement Tool. The
 configuration for this tool is the next one:
 
-![POWER_CONF](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/power_conf.JPG)
+![POWER_CONF](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/power_conf.JPG)
 
 Also, please make sure that the J14 jumper is set to the _ENABLED_ position and
 no expansion board is attached to the DK6. A view from this tool is illustrated
 below:
 
-![POWER_VIEW](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/k32w/k32w0/doc/images/power_view.JPG)
+![POWER_VIEW](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/power_view.JPG)
 
 Please note that that the Power Measurement Tool is not very accurate and
 professional tools must be used if exact power consumption needs to be known.

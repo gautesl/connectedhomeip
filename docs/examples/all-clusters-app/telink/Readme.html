@@ -1300,24 +1300,24 @@ creating your own application.</p>
 <h2>Build and flash<a class="headerlink" href="#build-and-flash" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>Pull docker image from repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker pull connectedhomeip/chip-build-telink:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>connectedhomeip/chip-build-telink:latest
 </pre></div>
 </div>
 </li>
 <li><p>Run docker container:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -it --rm -v <span class="si">${</span><span class="nv">CHIP_BASE</span><span class="si">}</span>:/root/chip -v /dev/bus/usb:/dev/bus/usb --device-cgroup-rule <span class="s2">&quot;c 189:* rmw&quot;</span> connectedhomeip/chip-build-telink:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">CHIP_BASE</span><span class="si">}</span>:/root/chip<span class="w"> </span>-v<span class="w"> </span>/dev/bus/usb:/dev/bus/usb<span class="w"> </span>--device-cgroup-rule<span class="w"> </span><span class="s2">&quot;c 189:* rmw&quot;</span><span class="w"> </span>connectedhomeip/chip-build-telink:latest
 </pre></div>
 </div>
 <p>here <code class="docutils literal notranslate"><span class="pre">${CHIP_BASE}</span></code> is directory which contains CHIP repo files <strong>!!!Pay
 attention that OUTPUT_DIR should contains ABSOLUTE path to output dir</strong></p>
 </li>
 <li><p>Activate the build environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ./scripts/activate.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./scripts/activate.sh
 </pre></div>
 </div>
 </li>
 <li><p>In the example dir run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ west build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>west<span class="w"> </span>build
 </pre></div>
 </div>
 </li>

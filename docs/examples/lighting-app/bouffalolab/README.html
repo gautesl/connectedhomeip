@@ -1543,19 +1543,19 @@ more detail.</p>
 accordingly, here we use /dev/ttyACM0 as a serial port example.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">bl602-iot-matter-v1</span></code> without additional build options</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py --port /dev/ttyACM0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyACM0
 </pre></div>
 </div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xt-zb6-devkit</span></code> with 115200 baudrate setting</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py --port /dev/ttyACM0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyACM0
 </pre></div>
 </div>
 </li>
 <li><p>To wipe out flash and download image, please append <code class="docutils literal notranslate"><span class="pre">--erase</span></code> to the
 above command.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py --port /dev/ttyACM0 --erase
-./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py --port /dev/ttyACM0 --erase
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./out/bouffalolab-bl602-iot-matter-v1-light/chip-bl602-lighting-example.flash.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyACM0<span class="w"> </span>--erase
+./out/bouffalolab-xt-zb6-devkit-light-115200/chip-bl702-lighting-example.flash.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyACM0<span class="w"> </span>--erase
 </pre></div>
 </div>
 <blockquote>
@@ -1613,7 +1613,7 @@ connect Thread network to Wi-Fi/Ethernet network. Please follow this
 raspberry Pi border router.</p>
 <p>After Thread border router setup, please type following command on Thread border
 router to get Thread network credential.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo ot-ctl dataset active -x
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ot-ctl<span class="w"> </span>dataset<span class="w"> </span>active<span class="w"> </span>-x
 </pre></div>
 </div>
 </section>
@@ -1625,12 +1625,12 @@ router to get Thread network credential.</p>
 BLE commission</p>
 <ul>
 <li><p>BL602</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool pairing ble-wifi &lt;node_id&gt; &lt;wifi_ssid&gt; &lt;wifi_passwd&gt; <span class="m">20202021</span> <span class="m">3840</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool<span class="w"> </span>pairing<span class="w"> </span>ble-wifi<span class="w"> </span>&lt;node_id&gt;<span class="w"> </span>&lt;wifi_ssid&gt;<span class="w"> </span>&lt;wifi_passwd&gt;<span class="w"> </span><span class="m">20202021</span><span class="w"> </span><span class="m">3840</span>
 </pre></div>
 </div>
 </li>
 <li><p>BL706</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool pairing ble-thread &lt;node_id&gt; hex:&lt;thread_operational_dataset&gt; <span class="m">20202021</span> <span class="m">3840</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool<span class="w"> </span>pairing<span class="w"> </span>ble-thread<span class="w"> </span>&lt;node_id&gt;<span class="w"> </span>hex:&lt;thread_operational_dataset&gt;<span class="w"> </span><span class="m">20202021</span><span class="w"> </span><span class="m">3840</span>
 </pre></div>
 </div>
 </li>
@@ -1669,7 +1669,7 @@ router to get.</p>
 </li>
 <li><p>Identify Light</p>
 <p>The following command shows to identify the board 10 seconds</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool identify identify <span class="m">10</span> &lt;node_id&gt; <span class="m">1</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool<span class="w"> </span>identify<span class="w"> </span>identify<span class="w"> </span><span class="m">10</span><span class="w"> </span>&lt;node_id&gt;<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </li>
@@ -1685,7 +1685,7 @@ ota-provider-app build and usage.</p>
 <ul>
 <li><p>Build <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> OTA image as following execution using python script
 <code class="docutils literal notranslate"><span class="pre">*.flash.py</span></code> under firmware build out folder,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./&lt;output_firmware_name&gt;.flash.py --build
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./&lt;output_firmware_name&gt;.flash.py<span class="w"> </span>--build
 </pre></div>
 </div>
 <p>After script executed, a folder <code class="docutils literal notranslate"><span class="pre">ota_images</span></code> and an image
@@ -1696,7 +1696,7 @@ with hash verification for build out firmware.</p>
 <ul>
 <li><p>Build Matter <code class="docutils literal notranslate"><span class="pre">*.ota</span></code> OTA image with <code class="docutils literal notranslate"><span class="pre">Bouffalo</span> <span class="pre">Lab</span></code> OTA image under
 <strong>connectedhomeip</strong> repo folder</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn <span class="m">10</span> -vs <span class="s2">&quot;1.0&quot;</span> -da sha256 &lt;FW_OTA.bin.xz.hash&gt; lighting-app.ota
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./src/app/ota_image_tool.py<span class="w"> </span>create<span class="w"> </span>-v<span class="w"> </span>0xFFF1<span class="w"> </span>-p<span class="w"> </span>0x8005<span class="w"> </span>-vn<span class="w"> </span><span class="m">10</span><span class="w"> </span>-vs<span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span>-da<span class="w"> </span>sha256<span class="w"> </span>&lt;FW_OTA.bin.xz.hash&gt;<span class="w"> </span>lighting-app.ota
 </pre></div>
 </div>
 <blockquote>
@@ -1710,15 +1710,15 @@ macro <code class="docutils literal notranslate"><span class="pre">CHIP_DEVICE_C
 <h3>Start ota-provider-app<a class="headerlink" href="#start-ota-provider-app" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Start ota-provider-app for lighting-app.ota</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ rm -r /tmp/chip_*
-$ ./chip-ota-provider-app -f &lt;path_to_ota_bin&gt;/lighting-app.ota
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/tmp/chip_*
+$<span class="w"> </span>./chip-ota-provider-app<span class="w"> </span>-f<span class="w"> </span>&lt;path_to_ota_bin&gt;/lighting-app.ota
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">&lt;path_to_ota_bin&gt;</span></code> is the folder for lighting-app.ota.</p>
 </li>
 <li><p>Provision ota-provider-app with assigned node id to 1</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing onnetwork <span class="m">1</span> <span class="m">20202021</span>
-$ ./chip-tool accesscontrol write acl <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: null, &quot;targets&quot;: null}]&#39;</span> <span class="m">1</span> <span class="m">0</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>pairing<span class="w"> </span>onnetwork<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">20202021</span>
+$<span class="w"> </span>./chip-tool<span class="w"> </span>accesscontrol<span class="w"> </span>write<span class="w"> </span>acl<span class="w"> </span><span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: null, &quot;targets&quot;: null}]&#39;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </li>
@@ -1729,7 +1729,7 @@ $ ./chip-tool accesscontrol write acl <span class="s1">&#39;[{&quot;fabricIndex&
 <ul>
 <li><p>BLE commission BL602/BL702 lighting if not commissioned.</p></li>
 <li><p>Start OTA software upgrade process</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool otasoftwareupdaterequestor announce-ota-provider <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> &lt;node_id_to_lighting_app&gt; <span class="m">0</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./chip-tool<span class="w"> </span>otasoftwareupdaterequestor<span class="w"> </span>announce-ota-provider<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&lt;node_id_to_lighting_app&gt;<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">&lt;node_id_to_lighting_app&gt;</span></code> is node id of BL602/BL702 lighting app.</p>

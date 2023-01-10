@@ -1332,7 +1332,7 @@ architecture:</p>
 (https://docs.gradle.org/current/userguide/compatibility.html) while the default
 JDK version on MacOS for Apple Silicon is ‘openjdk 17.0.1’ or above.</p>
 <p>Using JDK bundled with Android Studio will help with that.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/Applications/Android<span class="se">\ </span>Studio.app/Contents/jre/Contents/Home/
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/Applications/Android<span class="se">\ </span>Studio.app/Contents/jre/Contents/Home/
 </pre></div>
 </div>
 <hr>
@@ -1344,7 +1344,7 @@ JDK version on MacOS for Apple Silicon is ‘openjdk 17.0.1’ or above.</p>
 <ol class="arabic">
 <li><p>Check out the Matter repository.</p></li>
 <li><p>Run bootstrap (<strong>only required first time</strong>)</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> scripts/bootstrap.sh
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>scripts/bootstrap.sh
 </pre></div>
 </div>
 </li>
@@ -1354,14 +1354,14 @@ JDK version on MacOS for Apple Silicon is ‘openjdk 17.0.1’ or above.</p>
 <h2>Building &amp; Installing the app<a class="headerlink" href="#building-installing-the-app" title="Permalink to this headline">#</a></h2>
 <p>This is the simplest option. In the command line, run the following command from
 the top Matter directory:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./scripts/build/build_examples.py --target android-arm64-tv-casting-app build
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./scripts/build/build_examples.py<span class="w"> </span>--target<span class="w"> </span>android-arm64-tv-casting-app<span class="w"> </span>build
 </pre></div>
 </div>
 <p>See the table above for other values of <code class="docutils literal notranslate"><span class="pre">TARGET_CPU</span></code>.</p>
 <p>The debug Android package <code class="docutils literal notranslate"><span class="pre">app-debug.apk</span></code> will be generated at
 <code class="docutils literal notranslate"><span class="pre">out/android-$TARGET_CPU-tv-casting-app/outputs/apk/debug/</span></code>, and can be
 installed with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb install out/android-<span class="nv">$TARGET_CPU</span>-tv-casting-app/outputs/apk/debug/app-debug.apk
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>install<span class="w"> </span>out/android-<span class="nv">$TARGET_CPU</span>-tv-casting-app/outputs/apk/debug/app-debug.apk
 </pre></div>
 </div>
 <p>You can use Android Studio to edit the Android app itself and run it after

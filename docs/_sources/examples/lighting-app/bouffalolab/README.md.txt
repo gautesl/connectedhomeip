@@ -21,7 +21,7 @@ BL602/BL604 is combo chip-set for Wi-Fi 802.11b/g/n and BLE 5.0 base-band/MAC.
 
 ### BL602-IoT-Matter-V1
 
-<img src="../../../../../../examples/platform/bouffalolab/doc/chart/BL602-IoT-Matter_V1.png" style="zoom:25%;" />
+<img src="../../platform/bouffalolab/doc/chart/BL602-IoT-Matter_V1.png" style="zoom:25%;" />
 
 ## BL706
 
@@ -30,7 +30,7 @@ cases, e.g. in SDK, we use BL702 as a general name for BL702/BL706 family.
 
 ### `XT-ZB6-DevKit`
 
-<img src="../../../../../../examples/platform/bouffalolab/doc/chart/bl706_dev_board.jpg" style="zoom:23%;" />
+<img src="../../platform/bouffalolab/doc/chart/bl706_dev_board.jpg" style="zoom:23%;" />
 
 ## Initial setup
 
@@ -178,14 +178,14 @@ and BL706 develop board `XT-ZB6-DevKit`.
 
 ## Test Commission and Control with chip-tool
 
-Please follow [chip_tool_guide](../../../../../guides/chip_tool_guide.md) and
-[guide](../../../../../../examples/chip-tool/README.md) to build and use chip-tool for test.
+Please follow [chip_tool_guide](../../../guides/chip_tool_guide.md) and
+[guide](../../chip-tool/README.md) to build and use chip-tool for test.
 
 ### Prerequisite for Thread Protocol
 
 Thread wireless protocol runs on BL706, which needs a Thread border router to
 connect Thread network to Wi-Fi/Ethernet network. Please follow this
-[guide](../../../../../guides/openthread_border_router_pi.md) to setup a
+[guide](../../../guides/openthread_border_router_pi.md) to setup a
 raspberry Pi border router.
 
 After Thread border router setup, please type following command on Thread border
@@ -258,7 +258,7 @@ After successful commissioning, cluster commands available to control the board.
 
 ## Test OTA software upgrade with ota-provider-app
 
-Please take [guide](../../../../../../examples/ota-provider-app/linux/README.md) for more detail on
+Please take [guide](../../ota-provider-app/linux/README.md) for more detail on
 ota-provider-app build and usage.
 
 ### Create the Matter OTA with Bouffalolab OTA bin `FW_OTA.bin.xz.hash`
@@ -314,7 +314,7 @@ ota-provider-app build and usage.
 ## Run RPC Console
 
 -   Build chip-console following this
-    [guide](../../../../../../examples/common/pigweed/rpc_console/README.md)
+    [guide](../../common/pigweed/rpc_console/README.md)
 
 -   Start the console
 

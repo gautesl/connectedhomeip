@@ -3,9 +3,9 @@
 An example testing and demonstrating the key value storage API.
 
 Please
-[setup ESP-IDF and CHIP Environment](../../../../../guides/esp32/setup_idf_chip.md)
+[setup ESP-IDF and CHIP Environment](../../../guides/esp32/setup_idf_chip.md)
 and refer
-[building and commissioning](../../../../../guides/esp32/build_app_and_commission.md)
+[building and commissioning](../../../guides/esp32/build_app_and_commission.md)
 guides to get started.
 
 ---

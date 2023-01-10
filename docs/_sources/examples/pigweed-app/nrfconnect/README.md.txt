@@ -3,8 +3,8 @@
 The nRF Connect Pigweed Example demonstrates the usage of Pigweed module
 functionalities in an application.
 
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
+<img src="../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
+<img src="../../platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
 
 The example is based on
 [Matter](https://github.com/project-chip/connectedhomeip), the
@@ -46,7 +46,7 @@ the following features are available:
 This example is running on the nRF Connect platform, which is based on the
 [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 and [Zephyr RTOS](https://zephyrproject.org/). Visit Matter's
-[nRF Connect platform overview](../../../../../guides/nrfconnect_platform_overview.md)
+[nRF Connect platform overview](../../../guides/nrfconnect_platform_overview.md)
 to read more about the platform structure and dependencies.
 
 Pigweed libraries are built and organized in a way that enables faster and more
@@ -69,8 +69,8 @@ The example supports building and running on the following devices:
 
 | Hardware platform                                                                                 | Build target              | Platform image                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [nRF52840 Dongle](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-Dongle) | `nrf52840dongle_nrf52840` | <details><summary>nRF52840 Dongle</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840_Dongle-medium.jpg" alt="nRF52840 Dongle"/></details> |
-| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)         | `nrf52840dk_nrf52840`     | <details><summary>nRF52840 DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details>        |
+| [nRF52840 Dongle](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-Dongle) | `nrf52840dongle_nrf52840` | <details><summary>nRF52840 Dongle</summary><img src="../../platform/nrfconnect/doc/images/nRF52840_Dongle-medium.jpg" alt="nRF52840 Dongle"/></details> |
+| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)         | `nrf52840dk_nrf52840`     | <details><summary>nRF52840 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details>        |
 
 <hr>
 
@@ -266,7 +266,7 @@ Changes done with menuconfig will be lost if the `build` directory is deleted.
 To make them persistent, save the configuration options in the `prj.conf` file.
 
 For more information, see the
-[Configuring nRF Connect SDK examples](../../../../../guides/nrfconnect_examples_configuration.md)
+[Configuring nRF Connect SDK examples](../../../guides/nrfconnect_examples_configuration.md)
 page.
 
 <hr>

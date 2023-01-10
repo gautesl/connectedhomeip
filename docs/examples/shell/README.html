@@ -1335,10 +1335,10 @@ different arguments, together with tab (<code class="docutils literal notranslat
 backslash character (<code class="docutils literal notranslate"><span class="pre">'\'</span></code>) can be used to escape separators or the backslash
 itself.</p>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; networkname Test<span class="se">\ </span>Network
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>networkname<span class="w"> </span>Test<span class="se">\ </span>Network
 Done
-&gt; networkname
-Test Network
+&gt;<span class="w"> </span>networkname
+Test<span class="w"> </span>Network
 Done
 &gt;
 </pre></div>
@@ -1363,17 +1363,17 @@ Done
 <section id="help">
 <h3>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
 <p>Display a list of all top-level commands supported and a brief description.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">help</span>
-  <span class="nb">echo</span>            Echo back provided inputs
-  log             Logging utilities
-  rand            Random number utilities
-  base64          Base64 encode / decode utilities
-  device          Device Layer commands
-  otcli           Dispatch OpenThread CLI <span class="nb">command</span>
-  ping            Using Echo Protocol to measure packet loss across network paths
-  <span class="nb">exit</span>            Exit the shell application
-  <span class="nb">help</span>            List out all top level commands
-  version         Output the software version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span><span class="nb">help</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w">            </span>Echo<span class="w"> </span>back<span class="w"> </span>provided<span class="w"> </span>inputs
+<span class="w">  </span>log<span class="w">             </span>Logging<span class="w"> </span>utilities
+<span class="w">  </span>rand<span class="w">            </span>Random<span class="w"> </span>number<span class="w"> </span>utilities
+<span class="w">  </span>base64<span class="w">          </span>Base64<span class="w"> </span>encode<span class="w"> </span>/<span class="w"> </span>decode<span class="w"> </span>utilities
+<span class="w">  </span>device<span class="w">          </span>Device<span class="w"> </span>Layer<span class="w"> </span>commands
+<span class="w">  </span>otcli<span class="w">           </span>Dispatch<span class="w"> </span>OpenThread<span class="w"> </span>CLI<span class="w"> </span><span class="nb">command</span>
+<span class="w">  </span>ping<span class="w">            </span>Using<span class="w"> </span>Echo<span class="w"> </span>Protocol<span class="w"> </span>to<span class="w"> </span>measure<span class="w"> </span>packet<span class="w"> </span>loss<span class="w"> </span>across<span class="w"> </span>network<span class="w"> </span>paths
+<span class="w">  </span><span class="nb">exit</span><span class="w">            </span>Exit<span class="w"> </span>the<span class="w"> </span>shell<span class="w"> </span>application
+<span class="w">  </span><span class="nb">help</span><span class="w">            </span>List<span class="w"> </span>out<span class="w"> </span>all<span class="w"> </span>top<span class="w"> </span>level<span class="w"> </span>commands
+<span class="w">  </span>version<span class="w">         </span>Output<span class="w"> </span>the<span class="w"> </span>software<span class="w"> </span>version
 Done
 </pre></div>
 </div>
@@ -1381,7 +1381,7 @@ Done
 <section id="base64-decode-b64-string">
 <h3>base64 decode &lt;b64_string&gt;<a class="headerlink" href="#base64-decode-b64-string" title="Permalink to this headline">#</a></h3>
 <p>Decode the given base64 string into hex.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; base64 decode <span class="nv">EjQ</span><span class="o">=</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>base64<span class="w"> </span>decode<span class="w"> </span><span class="nv">EjQ</span><span class="o">=</span>
 <span class="m">1234</span>
 Done
 </pre></div>
@@ -1390,7 +1390,7 @@ Done
 <section id="base64-encode-hex-string">
 <h3>base64 encode &lt;hex_string&gt;<a class="headerlink" href="#base64-encode-hex-string" title="Permalink to this headline">#</a></h3>
 <p>Decode the given hex string into base64.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; base64 encode <span class="m">1234</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>base64<span class="w"> </span>encode<span class="w"> </span><span class="m">1234</span>
 <span class="nv">EjQ</span><span class="o">=</span>
 Done
 </pre></div>
@@ -1399,7 +1399,7 @@ Done
 <section id="echo-string">
 <h3>echo &lt;string&gt;<a class="headerlink" href="#echo-string" title="Permalink to this headline">#</a></h3>
 <p>Echo back the provided string to the terminal.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">echo</span> hello
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello
 hello
 Done
 </pre></div>
@@ -1409,7 +1409,7 @@ Done
 <h3>exit<a class="headerlink" href="#exit" title="Permalink to this headline">#</a></h3>
 <p>Exit the shell terminal. On an embedded system this may trigger a watchdog
 reset.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">exit</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span><span class="nb">exit</span>
 Goodbye
 </pre></div>
 </div>
@@ -1417,7 +1417,7 @@ Goodbye
 <section id="rand">
 <h3>rand<a class="headerlink" href="#rand" title="Permalink to this headline">#</a></h3>
 <p>Output a single byte random number.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; rand
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>rand
 <span class="m">103</span>
 Done
 </pre></div>
@@ -1426,8 +1426,8 @@ Done
 <section id="version">
 <h3>version<a class="headerlink" href="#version" title="Permalink to this headline">#</a></h3>
 <p>Output the version of the Matter stack.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; version
-CHIP <span class="m">0</span>.0.g54591338-dirty
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>version
+CHIP<span class="w"> </span><span class="m">0</span>.0.g54591338-dirty
 Done
 </pre></div>
 </div>

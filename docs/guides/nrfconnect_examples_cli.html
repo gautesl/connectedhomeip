@@ -1564,30 +1564,30 @@ minicom -D /dev/ttyACM0 -b 115200
 <p>When you reboot the kit, you will see the boot logs in the console, similar to
 the following messages:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$
-I: nRF5 <span class="m">802154</span> radio initialized
-I: <span class="m">8</span> Sectors of <span class="m">4096</span> bytes
-I: alloc wra: <span class="m">0</span>, ff0
-I: data wra: <span class="m">0</span>, <span class="m">0</span>
-*** Booting Zephyr OS build v2.4.0-ncs1  ***
-I: Init CHIP stack
+I:<span class="w"> </span>nRF5<span class="w"> </span><span class="m">802154</span><span class="w"> </span>radio<span class="w"> </span>initialized
+I:<span class="w"> </span><span class="m">8</span><span class="w"> </span>Sectors<span class="w"> </span>of<span class="w"> </span><span class="m">4096</span><span class="w"> </span>bytes
+I:<span class="w"> </span>alloc<span class="w"> </span>wra:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ff0
+I:<span class="w"> </span>data<span class="w"> </span>wra:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>
+***<span class="w"> </span>Booting<span class="w"> </span>Zephyr<span class="w"> </span>OS<span class="w"> </span>build<span class="w"> </span>v2.4.0-ncs1<span class="w">  </span>***
+I:<span class="w"> </span>Init<span class="w"> </span>CHIP<span class="w"> </span>stack
 ...
 </pre></div>
 </div>
 <p>This means that the console is working correctly and you can start using shell
 commands. For example, issuing the <code class="docutils literal notranslate"><span class="pre">kernel</span> <span class="pre">threads</span></code> command will print
 information about all running threads:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ kernel threads
-Scheduler: <span class="m">277</span> since last call
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>kernel<span class="w"> </span>threads
+Scheduler:<span class="w"> </span><span class="m">277</span><span class="w"> </span>since<span class="w"> </span>last<span class="w"> </span>call
 Threads:
- 0x20006518 CHIP
-        options: 0x0, priority: -1 timeout: <span class="m">536896912</span>
-        state: pending
-        stack size <span class="m">8192</span>, unused <span class="m">7256</span>, usage <span class="m">936</span> / <span class="m">8192</span> <span class="o">(</span><span class="m">11</span> %<span class="o">)</span>
+<span class="w"> </span>0x20006518<span class="w"> </span>CHIP
+<span class="w">        </span>options:<span class="w"> </span>0x0,<span class="w"> </span>priority:<span class="w"> </span>-1<span class="w"> </span>timeout:<span class="w"> </span><span class="m">536896912</span>
+<span class="w">        </span>state:<span class="w"> </span>pending
+<span class="w">        </span>stack<span class="w"> </span>size<span class="w"> </span><span class="m">8192</span>,<span class="w"> </span>unused<span class="w"> </span><span class="m">7256</span>,<span class="w"> </span>usage<span class="w"> </span><span class="m">936</span><span class="w"> </span>/<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="o">(</span><span class="m">11</span><span class="w"> </span>%<span class="o">)</span>
 
- 0x20004ab0 SDC RX
-        options: 0x0, priority: -10 timeout: <span class="m">536890152</span>
-        state: pending
-        stack size <span class="m">1024</span>, unused <span class="m">848</span>, usage <span class="m">176</span> / <span class="m">1024</span> <span class="o">(</span><span class="m">17</span> %<span class="o">)</span>
+<span class="w"> </span>0x20004ab0<span class="w"> </span>SDC<span class="w"> </span>RX
+<span class="w">        </span>options:<span class="w"> </span>0x0,<span class="w"> </span>priority:<span class="w"> </span>-10<span class="w"> </span>timeout:<span class="w"> </span><span class="m">536890152</span>
+<span class="w">        </span>state:<span class="w"> </span>pending
+<span class="w">        </span>stack<span class="w"> </span>size<span class="w"> </span><span class="m">1024</span>,<span class="w"> </span>unused<span class="w"> </span><span class="m">848</span>,<span class="w"> </span>usage<span class="w"> </span><span class="m">176</span><span class="w"> </span>/<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">(</span><span class="m">17</span><span class="w"> </span>%<span class="o">)</span>
 ...
 </pre></div>
 </div>
@@ -1599,9 +1599,9 @@ command completion feature.</p>
 <p>Pressing the Tab key in an empty command line prints the list of available
 commands:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$
-  clear              date               device             flash
-  <span class="nb">help</span>               <span class="nb">history</span>            kernel             nrf_clock_control
-  ot                 resize             shell
+<span class="w">  </span>clear<span class="w">              </span>date<span class="w">               </span>device<span class="w">             </span>flash
+<span class="w">  </span><span class="nb">help</span><span class="w">               </span><span class="nb">history</span><span class="w">            </span>kernel<span class="w">             </span>nrf_clock_control
+<span class="w">  </span>ot<span class="w">                 </span>resize<span class="w">             </span>shell
 </pre></div>
 </div>
 <p>Pressing the Tab key with a command entered in the command line cycles through
@@ -1612,7 +1612,7 @@ available options for the given command.</p>
 <p><a class="reference external" href="https://github.com/openthread/openthread/blob/master/src/cli/README.md">OpenThread commands</a>
 are also accessible from the shell. However, they must preceded by <code class="docutils literal notranslate"><span class="pre">ot</span></code>. For
 example:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ ot masterkey
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>ot<span class="w"> </span>masterkey
 00112233445566778899aabbccddeeff
 Done
 </pre></div>
@@ -1635,8 +1635,8 @@ this command together with one of the additional subcommands listed below.</p>
 <h4>factoryreset<a class="headerlink" href="#factoryreset" title="Permalink to this headline">#</a></h4>
 <p>Performs device factory reset that is hardware reset preceded by erasing of the
 whole Matter settings stored in a non-volatile memory.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter device factoryreset
-Performing factory reset ...
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>device<span class="w"> </span>factoryreset
+Performing<span class="w"> </span>factory<span class="w"> </span>reset<span class="w"> </span>...
 </pre></div>
 </div>
 </section>
@@ -1652,10 +1652,10 @@ onboarding code.</p>
 </pre></div>
 </div>
 <p>To print all the onboardingcodes:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none
-QRCode:             MT:W0GU2OTB00KA0648G00
-QRCodeUrl:          https://project-chip.github.io/connectedhomeip/qrcode.html?data<span class="o">=</span>MT%3AW0GU2OTB00KA0648G00
-ManualPairingCode:  <span class="m">34970112332</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>onboardingcodes<span class="w"> </span>none
+QRCode:<span class="w">             </span>MT:W0GU2OTB00KA0648G00
+QRCodeUrl:<span class="w">          </span>https://project-chip.github.io/connectedhomeip/qrcode.html?data<span class="o">=</span>MT%3AW0GU2OTB00KA0648G00
+ManualPairingCode:<span class="w">  </span><span class="m">34970112332</span>
 </pre></div>
 </div>
 <p>To print a specific type of onboarding code:</p>
@@ -1664,7 +1664,7 @@ ManualPairingCode:  <span class="m">34970112332</span>
 <p>Prints the device
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md#preparing-accessory-device">onboarding QR code payload</a>.
 Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none qrcode
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>onboardingcodes<span class="w"> </span>none<span class="w"> </span>qrcode
 MT:W0GU2OTB00KA0648G00
 </pre></div>
 </div>
@@ -1674,7 +1674,7 @@ MT:W0GU2OTB00KA0648G00
 <p>Prints the URL to view the
 <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nrfconnect_android_commissioning.md#preparing-accessory-device">device onboarding QR code</a>
 in a web browser. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none qrcodeurl
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>onboardingcodes<span class="w"> </span>none<span class="w"> </span>qrcodeurl
 https://project-chip.github.io/connectedhomeip/qrcode.html?data<span class="o">=</span>MT%3AW0GU2OTB00KA0648G00
 </pre></div>
 </div>
@@ -1683,7 +1683,7 @@ https://project-chip.github.io/connectedhomeip/qrcode.html?data<span class="o">=
 <h4>manualpairingcode<a class="headerlink" href="#manualpairingcode" title="Permalink to this headline">#</a></h4>
 <p>Prints the pairing code for the manual onboarding of a device. Takes no
 arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter onboardingcodes none manualpairingcode
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>onboardingcodes<span class="w"> </span>none<span class="w"> </span>manualpairingcode
 <span class="m">34970112332</span>
 </pre></div>
 </div>
@@ -1694,12 +1694,12 @@ arguments.</p>
 <p>Handles a group of commands that are used to view device configuration
 information. You can use this command without any subcommand to print all
 available configuration data or to add a specific subcommand.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>VendorId:        <span class="m">65521</span> <span class="o">(</span>0xFFF1<span class="o">)</span>
-ProductId:       <span class="m">32768</span> <span class="o">(</span>0x8000<span class="o">)</span>
-HardwareVersion: <span class="m">1</span> <span class="o">(</span>0x1<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>VendorId:<span class="w">        </span><span class="m">65521</span><span class="w"> </span><span class="o">(</span>0xFFF1<span class="o">)</span>
+ProductId:<span class="w">       </span><span class="m">32768</span><span class="w"> </span><span class="o">(</span>0x8000<span class="o">)</span>
+HardwareVersion:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
 FabricId:
-PinCode:         <span class="m">020202021</span>
-Discriminator:   f00
+PinCode:<span class="w">         </span><span class="m">020202021</span>
+Discriminator:<span class="w">   </span>f00
 DeviceId:
 </pre></div>
 </div>
@@ -1707,7 +1707,7 @@ DeviceId:
 <section id="pincode">
 <h4>pincode<a class="headerlink" href="#pincode" title="Permalink to this headline">#</a></h4>
 <p>Prints the PIN code for device setup. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config pincode
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>config<span class="w"> </span>pincode
 <span class="m">020202021</span>
 </pre></div>
 </div>
@@ -1715,7 +1715,7 @@ DeviceId:
 <section id="discriminator">
 <h4>discriminator<a class="headerlink" href="#discriminator" title="Permalink to this headline">#</a></h4>
 <p>Prints the device setup discriminator. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config discriminator
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>config<span class="w"> </span>discriminator
 f00
 </pre></div>
 </div>
@@ -1723,24 +1723,24 @@ f00
 <section id="vendorid">
 <h4>vendorid<a class="headerlink" href="#vendorid" title="Permalink to this headline">#</a></h4>
 <p>Prints the vendor ID of the device. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config vendorid
-<span class="m">65521</span> <span class="o">(</span>0xFFFF1<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>config<span class="w"> </span>vendorid
+<span class="m">65521</span><span class="w"> </span><span class="o">(</span>0xFFFF1<span class="o">)</span>
 </pre></div>
 </div>
 </section>
 <section id="productid">
 <h4>productid<a class="headerlink" href="#productid" title="Permalink to this headline">#</a></h4>
 <p>Prints the product ID of the device. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config productid
-<span class="m">32768</span> <span class="o">(</span>0x8000<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>config<span class="w"> </span>productid
+<span class="m">32768</span><span class="w"> </span><span class="o">(</span>0x8000<span class="o">)</span>
 </pre></div>
 </div>
 </section>
 <section id="hardwarever">
 <h4>hardwarever<a class="headerlink" href="#hardwarever" title="Permalink to this headline">#</a></h4>
 <p>Prints the hardware version of the device. Takes no arguments.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter config hardwarever
-<span class="m">1</span> <span class="o">(</span>0x1<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>config<span class="w"> </span>hardwarever
+<span class="m">1</span><span class="w"> </span><span class="o">(</span>0x1<span class="o">)</span>
 </pre></div>
 </div>
 </section>
@@ -1761,33 +1761,33 @@ subcommands listed below.</p>
 <section id="help">
 <h4>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h4>
 <p>Prints help information about <code class="docutils literal notranslate"><span class="pre">ble</span></code> commands group.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble <span class="nb">help</span>
-  <span class="nb">help</span>            Usage: ble &lt;subcommand&gt;
-  adv             Enable or disable advertisement. Usage: ble adv &lt;start<span class="p">|</span>stop<span class="p">|</span>state&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>ble<span class="w"> </span><span class="nb">help</span>
+<span class="w">  </span><span class="nb">help</span><span class="w">            </span>Usage:<span class="w"> </span>ble<span class="w"> </span>&lt;subcommand&gt;
+<span class="w">  </span>adv<span class="w">             </span>Enable<span class="w"> </span>or<span class="w"> </span>disable<span class="w"> </span>advertisement.<span class="w"> </span>Usage:<span class="w"> </span>ble<span class="w"> </span>adv<span class="w"> </span>&lt;start<span class="p">|</span>stop<span class="p">|</span>state&gt;
 </pre></div>
 </div>
 </section>
 <section id="adv-start">
 <h4>adv start<a class="headerlink" href="#adv-start" title="Permalink to this headline">#</a></h4>
 <p>Enables Bluetooth LE advertising.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv start
-Starting BLE advertising
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>ble<span class="w"> </span>adv<span class="w"> </span>start
+Starting<span class="w"> </span>BLE<span class="w"> </span>advertising
 </pre></div>
 </div>
 </section>
 <section id="adv-stop">
 <h4>adv stop<a class="headerlink" href="#adv-stop" title="Permalink to this headline">#</a></h4>
 <p>Disables Bluetooth LE advertising.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv stop
-Stopping BLE advertising
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>ble<span class="w"> </span>adv<span class="w"> </span>stop
+Stopping<span class="w"> </span>BLE<span class="w"> </span>advertising
 </pre></div>
 </div>
 </section>
 <section id="adv-status">
 <h4>adv status<a class="headerlink" href="#adv-status" title="Permalink to this headline">#</a></h4>
 <p>Prints the information about the current Bluetooth LE advertising status.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter ble adv state
-BLE advertising is disabled
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>ble<span class="w"> </span>adv<span class="w"> </span>state
+BLE<span class="w"> </span>advertising<span class="w"> </span>is<span class="w"> </span>disabled
 </pre></div>
 </div>
 </section>
@@ -1800,24 +1800,24 @@ subcommands listed below.</p>
 <section id="start">
 <h4>start<a class="headerlink" href="#start" title="Permalink to this headline">#</a></h4>
 <p>Starts the NFC tag emulation.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc start
-NFC tag emulation started
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>nfc<span class="w"> </span>start
+NFC<span class="w"> </span>tag<span class="w"> </span>emulation<span class="w"> </span>started
 </pre></div>
 </div>
 </section>
 <section id="stop">
 <h4>stop<a class="headerlink" href="#stop" title="Permalink to this headline">#</a></h4>
 <p>Stops the NFC tag emulation.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc stop
-NFC tag emulation stopped
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>nfc<span class="w"> </span>stop
+NFC<span class="w"> </span>tag<span class="w"> </span>emulation<span class="w"> </span>stopped
 </pre></div>
 </div>
 </section>
 <section id="state">
 <h4>state<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h4>
 <p>Prints the information about the NFC tag emulation status.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter nfc state
-NFC tag emulation is disabled
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>nfc<span class="w"> </span>state
+NFC<span class="w"> </span>tag<span class="w"> </span>emulation<span class="w"> </span>is<span class="w"> </span>disabled
 </pre></div>
 </div>
 </section>
@@ -1831,18 +1831,18 @@ below.</p>
 <h4>browse<a class="headerlink" href="#browse" title="Permalink to this headline">#</a></h4>
 <p>Browses for DNS services of <code class="docutils literal notranslate"><span class="pre">_matterc_udp</span></code> type and prints the received
 response. Takes no argument.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter dns browse
-Browsing ...
-DNS browse succeeded:
-   Hostname: 0E824F0CA6DE309C
-   Vendor ID: <span class="m">9050</span>
-   Product ID: <span class="m">20043</span>
-   Long discriminator: <span class="m">3840</span>
-   Device type: <span class="m">0</span>
-   Device name:
-   Commissioning mode: <span class="m">0</span>
-   IP addresses:
-      fd08:b65e:db8e:f9c7:2cc2:2043:1366:3b31
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>dns<span class="w"> </span>browse
+Browsing<span class="w"> </span>...
+DNS<span class="w"> </span>browse<span class="w"> </span>succeeded:
+<span class="w">   </span>Hostname:<span class="w"> </span>0E824F0CA6DE309C
+<span class="w">   </span>Vendor<span class="w"> </span>ID:<span class="w"> </span><span class="m">9050</span>
+<span class="w">   </span>Product<span class="w"> </span>ID:<span class="w"> </span><span class="m">20043</span>
+<span class="w">   </span>Long<span class="w"> </span>discriminator:<span class="w"> </span><span class="m">3840</span>
+<span class="w">   </span>Device<span class="w"> </span>type:<span class="w"> </span><span class="m">0</span>
+<span class="w">   </span>Device<span class="w"> </span>name:
+<span class="w">   </span>Commissioning<span class="w"> </span>mode:<span class="w"> </span><span class="m">0</span>
+<span class="w">   </span>IP<span class="w"> </span>addresses:
+<span class="w">      </span>fd08:b65e:db8e:f9c7:2cc2:2043:1366:3b31
 </pre></div>
 </div>
 </section>
@@ -1850,11 +1850,11 @@ DNS browse succeeded:
 <h4>resolve<a class="headerlink" href="#resolve" title="Permalink to this headline">#</a></h4>
 <p>Resolves the specified Matter node service given by the <fabric-id> and
 <node-id>.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$ matter dns resolve &lt;fabric-id&gt; &lt;node-id&gt;
-Resolving ...
-DNS resolve <span class="k">for</span> 000000014A77CBB3-0000000000BC5C01 succeeded:
-   IP address: fd08:b65e:db8e:f9c7:8052:1a8e:4dd4:e1f3
-   Port: <span class="m">5540</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uart:~$<span class="w"> </span>matter<span class="w"> </span>dns<span class="w"> </span>resolve<span class="w"> </span>&lt;fabric-id&gt;<span class="w"> </span>&lt;node-id&gt;
+Resolving<span class="w"> </span>...
+DNS<span class="w"> </span>resolve<span class="w"> </span><span class="k">for</span><span class="w"> </span>000000014A77CBB3-0000000000BC5C01<span class="w"> </span>succeeded:
+<span class="w">   </span>IP<span class="w"> </span>address:<span class="w"> </span>fd08:b65e:db8e:f9c7:8052:1a8e:4dd4:e1f3
+<span class="w">   </span>Port:<span class="w"> </span><span class="m">5540</span>
 </pre></div>
 </div>
 </section>

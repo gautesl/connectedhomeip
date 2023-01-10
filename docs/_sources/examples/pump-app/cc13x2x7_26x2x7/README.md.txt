@@ -26,7 +26,7 @@ Instruments CC13XX_26XX family of Wireless MCUs.
 
 ## Introduction
 
-![CC1352R1_LAUNCHXL](../../../../../../examples/pump-app/cc13x2x7_26x2x7/doc/images/cc1352r1_launchxl.jpg)
+![CC1352R1_LAUNCHXL](doc/images/cc1352r1_launchxl.jpg)
 
 The CC13XX_26XX pump example application provides a working demonstration of a
 connected pump device. This uses the open-source Matter implementation and the
@@ -117,11 +117,11 @@ Code Composer Studio can be used to load the image and debug the source code.
 
 ### UniFlash
 
-[Programming UniFlash](../../../../../../examples/pump-app/cc13x2x7_26x2x7/doc/programming-uniflash.md)
+[Programming UniFlash](doc/programming-uniflash.md)
 
 ### Code Composer Studio
 
-[Programming and Debugging with CCS](../../../../../../examples/pump-app/cc13x2x7_26x2x7/doc/programming-ccs.md)
+[Programming and Debugging with CCS](doc/programming-ccs.md)
 
 ## Viewing Logging Output
 

@@ -1218,19 +1218,19 @@ Configuration: Standard</p>
 - Start a new Code Composer Studio Workspace. This can be named anything you
 would like. But it is recommended that you use a blank workspace.
 
-![CCS step 1](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-1.jpg)
+![CCS step 1](images/ccs-1.jpg)
 
 - Create a new Target Configuration File by selecting `File` &gt;&gt; `New` &gt;&gt;
 `Target Configuration File`. This file can also be exported from UniFlash
 with the `download ccxml` function.
 
-![CCS step 2](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-2.jpg)
+![CCS step 2](images/ccs-2.jpg)
 
 - Name the new ccxml file a useful name. Here I use the XDS110 serial number
 from before. Leave the Location as the shared location and click `Finish` to
 create the file.
 
-![CCS step 3](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-3.jpg)
+![CCS step 3](images/ccs-3.jpg)
 
 - In the new ccxml, select the `Connection` and the `Board or Device`. This may
 be different for your setup, but all LaunchPads will use the `Texas
@@ -1238,7 +1238,7 @@ Instruments XDS110 USB Debug Probe` for the target connection. And the and a
 `CC1352R1F3` is mounted on the `CC1352R1_LAUNCHXL` LaunchPads. Builds for
 other LaunchPads should use the corresponding SoC name.
 
-![CCS step 4](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-4.jpg)
+![CCS step 4](images/ccs-4.jpg)
 
 - Now set the XDS110 serial number in the advanced tab of the ccxml. First
 select the `Advanced` tab at the bottom of the window. Then select the Debug
@@ -1247,24 +1247,24 @@ Probe in the connection tree. Then select `Select by serial number` in the
 in the `Enter the serial number` text field. Finally click `Save` to save
 your ccxml.
 
-![CCS step 5](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-5.jpg)
+![CCS step 5](images/ccs-5.jpg)
 
 - Clicking `Test Connection` with the LaunchPad connected will cause a JTAG
 Integrity scan with the Debug Probe. This is a nice way to check that your
 ccxml is setup correctly.
 
-![CCS step 6](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-6.jpg)
+![CCS step 6](images/ccs-6.jpg)
 
 - Now open the Debug Configurations dialog to setup a new debug configuration.
 Select `Run` &gt;&gt; `Debug Configurations...`.
 
-![CCS step 7](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-7.jpg)
+![CCS step 7](images/ccs-7.jpg)
 
 - Create a new launch configuration from the default CCS launch configuration.
 Select `Code Composer Studio - Device Debugging` and then create a new launch
 configuration with the `New launch configuration` button.
 
-![CCS step 8](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-8.jpg)
+![CCS step 8](images/ccs-8.jpg)
 
 - Name your new configuration. Update the `Target Configuration` field with the
 ccxml you created earlier. Click `Apply` to save the launch configuration.
@@ -1274,29 +1274,29 @@ every time. The Debug session can be started with the `Debug` button in the
 `Debug Configurations` dialog, or by selecting `Run` &gt;&gt; `Debug History` &gt;&gt;
 `&lt;launch configuration name&gt;`.
 
-![CCS step 9](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-9.jpg)
+![CCS step 9](images/ccs-9.jpg)
 
 - Now that the Debug session is started we can connect to the target. Make sure
 that the right Debug Probe is selected in the `Debug` window and click
 `Connect Target`.
 
-![CCS step 9](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-10.jpg)
+![CCS step 9](images/ccs-10.jpg)
 
 - The target MCU is connected. The MCU is halted on connection by default.
 Select the `Load Program...` option to select the ELF image to load.
 
-![CCS step 9](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-11.jpg)
+![CCS step 9](images/ccs-11.jpg)
 
 - Navigate to the ELF file
 (`${connectedhomeip}/examples/lock-app/cc13x2_26x2/out/debug/chip-cc13x2_26x2-lock-example.out`
 file) in the `Load Program` dialog. Click `OK` to begin loading the target.
 
-![CCS step 9](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-12.jpg)
+![CCS step 9](images/ccs-12.jpg)
 
 - After locating the source file for `main.cpp` we can step through the code
 as it executes.
 
-![CCS step 9](../../../../../../../examples/pump-controller-app/cc13x2x7_26x2x7/doc/images/ccs-13.jpg)
+![CCS step 9](images/ccs-13.jpg)
 
 [ccs]: https://www.ti.com/tool/CCSTUDIO
 </pre></div>

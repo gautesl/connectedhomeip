@@ -14,7 +14,7 @@ found at [code-signing](https://developer.apple.com/support/code-signing/).
 
 ## Building the Example Application
 
-See [the build guide](../../../../guides/BUILDING.md) for general
+See [the build guide](../../guides/BUILDING.md#prerequisites) for general
 background on build prerequisites.
 
 Building the example application is quite straightforward.

@@ -1625,9 +1625,9 @@ in the terminal.</p>
 see how to use different CHIP tools to commission and control the application
 within a WiFi network.</p>
 <p>After commissioning is successful, announce OTA provider’s presence using
-<code class="docutils literal notranslate"><span class="pre">OtaSoftwareUpdateRequestor</span></code> cluster with <code class="docutils literal notranslate"><span class="pre">AnnounceOtaProvider</span></code> command. On
+<code class="docutils literal notranslate"><span class="pre">OtaSoftwareUpdateRequestor</span></code> cluster with <code class="docutils literal notranslate"><span class="pre">AnnounceOTAProvider</span></code> command. On
 receiving this command OTA requestor will query for OTA image:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; zcl OtaSoftwareUpdateRequestor AnnounceOtaProvider 1234 0 0 providerNodeId=1235 vendorId=9020 announcementReason=0
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-device-ctrl &gt; zcl OtaSoftwareUpdateRequestor AnnounceOTAProvider 1234 0 0 providerNodeId=1235 vendorId=9020 announcementReason=0
 </pre></div>
 </div>
 <p>The OTA requestor should communicate with provider, download update image and
@@ -1677,9 +1677,8 @@ correct <code class="docutils literal notranslate"><span class="pre">chip-tool</
 project with Mbed OS can be found in
 <a class="reference internal" href="../../../guides/mbedos_add_new_target.html"><span class="doc std std-doc">MbedNewTarget</span></a></p></li>
 <li><p>Some useful information about HW platform specific settings can be found in
-<code class="docutils literal notranslate"><span class="pre">ota-requestor-app/mbed/mbed_app.json</span></code>.
-Information about this file syntax and its meaning in mbed-os project can be
-found here:
+<code class="docutils literal notranslate"><span class="pre">ota-requestor-app/mbed/mbed_app.json</span></code>. Information about this file syntax
+and its meaning in mbed-os project can be found here:
 <a class="reference external" href="https://os.mbed.com/docs/mbed-os/latest/program-setup/advanced-configuration.html">Mbed-Os configuration system</a>)</p></li>
 </ul>
 </section>

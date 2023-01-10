@@ -8,7 +8,7 @@ The following diagram shows a simplified structure of a Matter application that
 runs on the nRF Connect platform and uses BLE and Thread stacks for
 communication purposes:
 
-![nrfconnect platform overview](../../../guides/images/chip_nrfconnect_overview_simplified.svg)
+![nrfconnect platform overview](./images/chip_nrfconnect_overview_simplified.svg)
 
 > **Note**: For readability, the diagram does not show all projects components,
 > only the most important ones for a typical Matter application.

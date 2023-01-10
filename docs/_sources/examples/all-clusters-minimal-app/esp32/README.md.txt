@@ -4,16 +4,16 @@ A prototype application that demonstrates device commissioning and cluster
 control.
 
 Please
-[setup ESP-IDF and CHIP Environment](../../../../../guides/esp32/setup_idf_chip.md)
+[setup ESP-IDF and CHIP Environment](../../../guides/esp32/setup_idf_chip.md)
 and refer
-[building and commissioning](../../../../../guides/esp32/build_app_and_commission.md)
+[building and commissioning](../../../guides/esp32/build_app_and_commission.md)
 guides to get started.
 
 ---
 
 -   [Cluster control](#cluster-control)
--   [Matter OTA guide](../../../../../guides/esp32/ota.md)
--   [RPC console and Device Tracing](../../../../../guides/esp32/rpc_console.md)
+-   [Matter OTA guide](../../../guides/esp32/ota.md)
+-   [RPC console and Device Tracing](../../../guides/esp32/rpc_console.md)
 
 ---
 

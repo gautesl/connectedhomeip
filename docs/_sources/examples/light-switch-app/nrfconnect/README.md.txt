@@ -3,13 +3,13 @@
 The nRF Connect Light Switch Example demonstrates how to remotely control a
 lighting devices such as light bulbs or LEDs. The application should be used
 together with the
-[lighting app example](../../../../../../examples/lighting-app/nrfconnect/README.md). The light
+[lighting app example](../../lighting-app/nrfconnect/README.md). The light
 switch uses buttons to test changing the lighting application example LED state
 and works as a brightness dimmer. You can use this example as a reference for
 creating your own application.
 
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
+<img src="../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
+<img src="../../platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
 
 The example is based on
 [Matter](https://github.com/project-chip/connectedhomeip) and Nordic
@@ -64,7 +64,7 @@ This example is running on the nRF Connect platform, which is based on Nordic
 Semiconductor's
 [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 and [Zephyr RTOS](https://zephyrproject.org/). Visit Matter's
-[nRF Connect platform overview](../../../../../guides/nrfconnect_platform_overview.md)
+[nRF Connect platform overview](../../../guides/nrfconnect_platform_overview.md)
 to read more about the platform structure and dependencies.
 
 By default, the Matter accessory device has IPv6 networking disabled. You must
@@ -231,9 +231,9 @@ The example supports building and running on the following devices:
 
 | Hardware platform                                                                                               | Build target               | Platform image                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)                       | `nrf52840dk_nrf52840`      | <details><summary>nRF52840 DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details> |
-| [nRF5340 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF5340-DK)                         | `nrf5340dk_nrf5340_cpuapp` | <details><summary>nRF5340 DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF5340_DK_info-medium.jpg" alt="nRF5340 DK"/></details>    |
-| [nRF7002 DK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf7002.html#nrf7002dk-nrf5340) | `nrf7002dk_nrf5340_cpuapp` | <details><summary>nRF7002DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nrf7002dk.jpg" alt="nRF7002 DK"/></details>                  |
+| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)                       | `nrf52840dk_nrf52840`      | <details><summary>nRF52840 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details> |
+| [nRF5340 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF5340-DK)                         | `nrf5340dk_nrf5340_cpuapp` | <details><summary>nRF5340 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF5340_DK_info-medium.jpg" alt="nRF5340 DK"/></details>    |
+| [nRF7002 DK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf7002.html#nrf7002dk-nrf5340) | `nrf7002dk_nrf5340_cpuapp` | <details><summary>nRF7002DK</summary><img src="../../platform/nrfconnect/doc/images/nrf7002dk.jpg" alt="nRF7002 DK"/></details>                  |
 
 ### IPv6 network support
 
@@ -250,9 +250,9 @@ If you want to test the Light Switch Example application with other devices, you
 also need to flash and program the following examples using the compatible
 development kits:
 
--   [Lighting Example Application](../../../../../../examples/lighting-app/nrfconnect/README.md)
+-   [Lighting Example Application](../../lighting-app/nrfconnect/README.md)
 
-Read the [CHIP Tool user guide](../../../../../guides/chip_tool_guide.md) to
+Read the [CHIP Tool user guide](../../../guides/chip_tool_guide.md) to
 learn how to commission the lighting device to the same Matter network using the
 CHIP Tool.
 
@@ -323,9 +323,9 @@ platform image.
 
     -   If pressed for more than 0.5 seconds, it changes the brightness of the
         light on the bound lighting bulb device
-        ([lighting-app](../../../../../../examples/lighting-app/nrfconnect/README.md)). The brightness is
-        changing from 0% to 100% with 1% increments every 300 milliseconds as
-        long as **Button 2** is pressed.
+        ([lighting-app](../../../../../../examples/lighting-app/nrfconnect/README.md)). The
+        brightness is changing from 0% to 100% with 1% increments every 300
+        milliseconds as long as **Button 2** is pressed.
 
 -   On nRF7002 DK:
 
@@ -358,7 +358,7 @@ platform image.
 
 **SEGGER J-Link USB port** can be used to get logs from the device or
 communicate with it using the
-[command line interface](../../../../../guides/nrfconnect_examples_cli.md).
+[command line interface](../../../guides/nrfconnect_examples_cli.md).
 
 **NFC port with antenna attached** can be used to start the
 [rendezvous](#bluetooth-le-rendezvous) by providing the commissioning
@@ -391,7 +391,7 @@ the Light Switch Example application by using the Matter CLI:
     uart:~$ switch groups onoff off    : sends multicast Off command to  all bound devices in a group
     uart:~$ switch groups onoff toggle : sends multicast Toggle command to all bound devices in a group
 
-Check the [CLI user guide](../../../../../guides/nrfconnect_examples_cli.md) to
+Check the [CLI user guide](../../../guides/nrfconnect_examples_cli.md) to
 learn how to use other CLI commands of the application.
 
 <hr>
@@ -624,7 +624,7 @@ depending on the selected board:
     those platforms have DFU enabled by default.
 
 For more information, see the
-[Configuring nRF Connect SDK examples](../../../../../guides/nrfconnect_examples_configuration.md)
+[Configuring nRF Connect SDK examples](../../../guides/nrfconnect_examples_configuration.md)
 page.
 
 <hr>
@@ -650,13 +650,13 @@ directory:
 
 After building and flashing the example, you can test its functionalities. For
 this purpose, you need to prepare a second device that is programmed with the
-[Lighting Example](../../../../../../examples/lighting-app/nrfconnect/README.md), perform the binding process,
-and add Access Control Lists (ACLs).
+[Lighting Example](../../lighting-app/nrfconnect/README.md), perform the binding
+process, and add Access Control Lists (ACLs).
 
 ### Commissioning the lighting device
 
 To commission the Lighting Example Application to the same Matter network, read
-the [CHIP Tool user guide](../../../../../guides/chip_tool_guide.md).
+the [CHIP Tool user guide](../../../guides/chip_tool_guide.md).
 
 ### Binding cluster and endpoints
 
@@ -667,11 +667,11 @@ To perform binding, you need a controller that can write the binding table to
 the light switch device and write proper ACL to the endpoint light bulb on the
 [Lighting Example application](../../../../../../examples/lighting-app/nrfconnect/README.md)). For
 example, you can use the
-[CHIP Tool for Windows or Linux](../../../../../../examples/chip-tool/README.md) as the controller.
-The ACL should contain information about all clusters that can
-be called by the light switch application. See the section about interacting
-with ZCL clusters in the
-[CHIP Tool's user guide](../../../../../guides/chip_tool_guide.md)
+[CHIP Tool for Windows or Linux](../../chip-tool/README.md) as the controller.
+The ACL should contain information about all clusters that can be called by the
+light switch application. See the section about interacting with ZCL clusters in
+the
+[CHIP Tool's user guide](../../../guides/chip_tool_guide.md#interacting-with-data-model-clusters)
 for more information about ACLs.
 
 You can perform the binding process to a single remote endpoint (unicast
@@ -689,11 +689,11 @@ same Matter network.
 To perform the unicast binding process, complete the following steps:
 
 1.  Build the CHIP Tool according to the steps from the
-    [CHIP Tool user guide](../../../../../guides/chip_tool_guide.md).
+    [CHIP Tool user guide](../../../guides/chip_tool_guide.md#building-and-running-the-chip-tool).
 2.  Go to the CHIP Tool build directory.
 3.  Add an ACL to the development kit that is programmed with the
-    [Lighting Application Example](../../../../../../examples/lighting-app/nrfconnect/README.md) by running
-    the following command:
+    [Lighting Application Example](../../lighting-app/nrfconnect/README.md) by
+    running the following command:
 
         chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": [{"cluster": 6, "endpoint": 1, "deviceType": null}, {"cluster": 8, "endpoint": 1, "deviceType": null}]}]' 1 0
 
@@ -729,10 +729,10 @@ The group multicast binding lets you control more than one lighting device at a
 time using a single light switch.
 
 The group multicast binding targets all development kits that are programmed
-with the [Lighting Application Example](../../../../../../examples/lighting-app/nrfconnect/README.md) and
-added to the same multicast group. After the binding is established, the light
-switch device can send multicast requests, and all of the devices in the bound
-groups can run the received command.
+with the [Lighting Application Example](../../lighting-app/nrfconnect/README.md)
+and added to the same multicast group. After the binding is established, the
+light switch device can send multicast requests, and all of the devices in the
+bound groups can run the received command.
 
 In this scenario, commands are provided for a light switch device with the
 `nodeId = 2` and a light bulb device with `nodeId = 1`, both commissioned to the
@@ -741,7 +741,7 @@ same Matter network.
 To perform the unicast binding process, complete the following steps:
 
 1.  Build the CHIP Tool according to the steps from the
-    [CHIP Tool user guide](../../../../../guides/chip_tool_guide.md).
+    [CHIP Tool user guide](../../../guides/chip_tool_guide.md#building-and-running-the-chip-tool).
 2.  Go to the CHIP Tool build directory.
 
 3.  Add the light switch device to the multicast group by running the following
@@ -788,5 +788,5 @@ switch subscribe-event short-release 1 20 <node_id> 2 --is-urgent true --keepSub
 ### Testing Device Firmware Upgrade
 
 Read the
-[DFU tutorial](../../../../../guides/nrfconnect_examples_software_update.md) to
+[DFU tutorial](../../../guides/nrfconnect_examples_software_update.md) to
 see how to upgrade your device firmware.

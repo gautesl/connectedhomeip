@@ -1346,30 +1346,30 @@ dataset and CASE credentials are then provided.</p>
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Build the example application:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/connectedhomeip
-$ git submodule update --init
-$ ./scripts/examples/gn_build_example.sh examples/lighting-app/infineon/cyw30739 out/lighting-app
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip
+$<span class="w"> </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+$<span class="w"> </span>./scripts/examples/gn_build_example.sh<span class="w"> </span>examples/lighting-app/infineon/cyw30739<span class="w"> </span>out/lighting-app
 </pre></div>
 </div>
 </li>
 <li><p>To delete generated executable, libraries and object files use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/connectedhomeip
-$ rm -rf ./out/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip
+$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>./out/
 </pre></div>
 </div>
 </li>
 <li><p>OR use GN/Ninja directly</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/connectedhomeip/examples/lighting-app/infineon/cyw30739
-$ git submodule update --init
-$ <span class="nb">source</span> third_party/connectedhomeip/scripts/activate.sh
-$ gn gen out/debug
-$ ninja -C out/debug
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip/examples/lighting-app/infineon/cyw30739
+$<span class="w"> </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>third_party/connectedhomeip/scripts/activate.sh
+$<span class="w"> </span>gn<span class="w"> </span>gen<span class="w"> </span>out/debug
+$<span class="w"> </span>ninja<span class="w"> </span>-C<span class="w"> </span>out/debug
 </pre></div>
 </div>
 </li>
 <li><p>To delete generated executable, libraries and object files use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/connectedhomeip/examples/lighting-app/infineon/cyw30739
-$ rm -rf out/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip/examples/lighting-app/infineon/cyw30739
+$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>out/
 </pre></div>
 </div>
 </li>
@@ -1384,10 +1384,10 @@ a production build, manufacturers can provision certifications, keys, and CD by
 the following arguments:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">matter_dac</span></code>, <code class="docutils literal notranslate"><span class="pre">matter_dac_key</span></code>, <code class="docutils literal notranslate"><span class="pre">matter_pai</span></code>, <code class="docutils literal notranslate"><span class="pre">matter_cd</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./scripts/examples/gn_build_example.sh examples/lighting-app/infineon/cyw30739 out/lighting-app <span class="se">\</span>
-<span class="s1">&#39;matter_dac=&quot;/path/to/dac.der&quot;&#39;</span> <span class="se">\</span>
-<span class="s1">&#39;matter_dac_key=&quot;/path/to/dac_key.der&quot;&#39;</span> <span class="se">\</span>
-<span class="s1">&#39;matter_pai=&quot;/path/to/pai.der&quot;&#39;</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./scripts/examples/gn_build_example.sh<span class="w"> </span>examples/lighting-app/infineon/cyw30739<span class="w"> </span>out/lighting-app<span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;matter_dac=&quot;/path/to/dac.der&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;matter_dac_key=&quot;/path/to/dac_key.der&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;matter_pai=&quot;/path/to/pai.der&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="s1">&#39;matter_cd=&quot;/path/to/cd.der&quot;&#39;</span>
 </pre></div>
 </div>
@@ -1411,8 +1411,8 @@ the following arguments:</p>
 <h3>Run Flash Script<a class="headerlink" href="#run-flash-script" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>On the command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/connectedhomeip/examples/lighting-app/infineon/cyw30739
-$ python3 out/debug/chip-cyw30739-lighting-example.flash.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip/examples/lighting-app/infineon/cyw30739
+$<span class="w"> </span>python3<span class="w"> </span>out/debug/chip-cyw30739-lighting-example.flash.py
 </pre></div>
 </div>
 </li>
@@ -1430,13 +1430,13 @@ for more information on how to setup a border router on a raspberryPi.</p></li>
 Chip tool standalone, Android or iOS app</p>
 <p><a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/controller/python/README.md">Python Controller</a></p>
 <p>Here is an example with the Python controller:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ chip-device-ctrl
-chip-device-ctrl &gt; connect -ble <span class="m">3840</span> <span class="m">20202021</span> <span class="m">1234</span>
-chip-device-ctrl &gt; zcl NetworkCommissioning AddThreadNetwork <span class="m">1234</span> <span class="m">0</span> <span class="m">0</span> <span class="nv">operationalDataset</span><span class="o">=</span>hex:0e080000000000000000000300000b35060004001fffe00208dead00beef00cafe0708fddead00beef000005108e11d8ea8ffaa875713699f59e8807e0030a4f70656e5468726561640102c2980410edc641eb63b100b87e90a9980959befc0c0402a0fff8 <span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span> <span class="nv">timeoutMs</span><span class="o">=</span><span class="m">1000</span>
-chip-device-ctrl &gt; zcl NetworkCommissioning EnableNetwork <span class="m">1234</span> <span class="m">0</span> <span class="m">0</span> <span class="nv">networkID</span><span class="o">=</span>hex:dead00beef00cafe <span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span> <span class="nv">timeoutMs</span><span class="o">=</span><span class="m">1000</span>
-chip-device-ctrl &gt; close-ble
-chip-device-ctrl &gt; resolve <span class="m">1234</span>
-chip-device-ctrl &gt; zcl OnOff Toggle <span class="m">1234</span> <span class="m">1</span> <span class="m">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chip-device-ctrl
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>connect<span class="w"> </span>-ble<span class="w"> </span><span class="m">3840</span><span class="w"> </span><span class="m">20202021</span><span class="w"> </span><span class="m">1234</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>NetworkCommissioning<span class="w"> </span>AddThreadNetwork<span class="w"> </span><span class="m">1234</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">operationalDataset</span><span class="o">=</span>hex:0e080000000000000000000300000b35060004001fffe00208dead00beef00cafe0708fddead00beef000005108e11d8ea8ffaa875713699f59e8807e0030a4f70656e5468726561640102c2980410edc641eb63b100b87e90a9980959befc0c0402a0fff8<span class="w"> </span><span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">timeoutMs</span><span class="o">=</span><span class="m">1000</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>NetworkCommissioning<span class="w"> </span>EnableNetwork<span class="w"> </span><span class="m">1234</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">networkID</span><span class="o">=</span>hex:dead00beef00cafe<span class="w"> </span><span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">timeoutMs</span><span class="o">=</span><span class="m">1000</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>close-ble
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>resolve<span class="w"> </span><span class="m">1234</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>OnOff<span class="w"> </span>Toggle<span class="w"> </span><span class="m">1234</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </li>

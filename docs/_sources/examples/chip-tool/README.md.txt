@@ -11,7 +11,7 @@ An example application that uses Matter to send messages to a Matter server.
 
 ## Building the Example Application
 
-See [the build guide](../../../../guides/BUILDING.md) for general
+See [the build guide](../../guides/BUILDING.md#prerequisites) for general
 background on build prerequisites.
 
 Building the example application is quite straightforward. It can either be done
@@ -225,7 +225,7 @@ the target cluster name, the target command name, the Group Id in Node Id form
 (`0xffffffffffffXXXX`) and an used endpoint Id. Take note that Only commands and
 attributes write can be send with Group Id. Also note that a group ACL needs to
 be installed before a command sent to the group will be accepted. See
-[the access control guide](../../../../guides/access-control-guide.md)
+[the access control guide](../../guides/access-control-guide.md#installing-a-group-acl)
 
 E.G. sending to group Id 0x4141
 

@@ -1394,15 +1394,15 @@ the minimal set of files needed to flash a device. See the function
 <p>Next, ensure that the examples in <code class="docutils literal notranslate"><span class="pre">ci_allow_list</span></code> build in a container using the
 relevant platform image. You can simulate the workflow locally by mounting your
 CHIP repo into a container and executing the CI command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run -it --mount <span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span> connectedhomeip/chip-build-<span class="nv">$PLATFORM</span>:<span class="nv">$VERSION</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span><span class="w"> </span>connectedhomeip/chip-build-<span class="nv">$PLATFORM</span>:<span class="nv">$VERSION</span>
 </pre></div>
 </div>
 <p>In the container:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown -R <span class="k">$(</span>whoami<span class="k">)</span> /workspace
-<span class="nb">cd</span> /workspace
-<span class="nb">source</span> ./scripts/bootstrap.sh
-<span class="nb">source</span> ./scripts/activate.sh
-./examples/chef/chef.py --ci -t <span class="nv">$PLATFORM</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span>/workspace
+<span class="nb">cd</span><span class="w"> </span>/workspace
+<span class="nb">source</span><span class="w"> </span>./scripts/bootstrap.sh
+<span class="nb">source</span><span class="w"> </span>./scripts/activate.sh
+./examples/chef/chef.py<span class="w"> </span>--ci<span class="w"> </span>-t<span class="w"> </span><span class="nv">$PLATFORM</span>
 </pre></div>
 </div>
 <p>Once you are confident the CI examples build and bundle in a container, add a
@@ -1410,33 +1410,33 @@ new job to the chef workflow.</p>
 <p>Replace all instances of <code class="docutils literal notranslate"><span class="pre">$PLATFORM</span></code> with the new platform. Replace <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code>
 with the image version used in the rest of the workflows, or update the image
 version for all images in the workflow as needed.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">chef_$PLATFORM</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chef - $PLATFORM CI Examples</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.actor != &#39;restyled-io[bot]&#39;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">chef_$PLATFORM</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Chef - $PLATFORM CI Examples</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.actor != &#39;restyled-io[bot]&#39;</span>
 
-<span class="w">    </span><span class="nt">container</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">connectedhomeip/chip-build-$PLATFORM:$VERSION</span><span class="w"></span>
-<span class="w">        </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--user root</span><span class="w"></span>
+<span class="w">    </span><span class="nt">container</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">connectedhomeip/chip-build-$PLATFORM:$VERSION</span>
+<span class="w">        </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--user root</span>
 
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wandalen/wretry.action@v1.0.36</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
-<span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">              </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
-<span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">                  </span><span class="no">token: ${{ github.token }}</span><span class="w"></span>
-<span class="w">              </span><span class="nt">attempt_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="w">              </span><span class="nt">attempt_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span><span class="w"></span>
-<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/checkout_submodules.py --shallow --platform $PLATFORM</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bootstrap</span><span class="w"></span>
-<span class="w">          </span><span class="nt">timeout-minutes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span><span class="w"></span>
-<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/build/gn_bootstrap.sh</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI Examples $PLATFORM</span><span class="w"></span>
-<span class="w">          </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span><span class="w"></span>
-<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">              </span><span class="no">./scripts/run_in_build_env.sh &quot;./examples/chef/chef.py --ci -t $PLATFORM&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wandalen/wretry.action@v1.0.36</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+<span class="w">          </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">                  </span><span class="no">token: ${{ github.token }}</span>
+<span class="w">              </span><span class="nt">attempt_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">              </span><span class="nt">attempt_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/checkout_submodules.py --shallow --platform $PLATFORM</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bootstrap</span>
+<span class="w">          </span><span class="nt">timeout-minutes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scripts/build/gn_bootstrap.sh</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI Examples $PLATFORM</span>
+<span class="w">          </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
+<span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">              </span><span class="no">./scripts/run_in_build_env.sh &quot;./examples/chef/chef.py --ci -t $PLATFORM&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -1454,32 +1454,32 @@ platform is integrated into chef CD, the toolchain should be copied into
 version.</p>
 <p>Finally, add the new platform to <code class="docutils literal notranslate"><span class="pre">cd_platforms</span></code> in <code class="docutils literal notranslate"><span class="pre">cicd_config.json</span></code>. The
 configuration should follow the following schema:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;$PLATFORM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;output_archive_prefix_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;option_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;option_2&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;output_archive_prefix_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;$PLATFORM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;output_archive_prefix_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;option_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;option_2&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;output_archive_prefix_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Take note of the configuration for <code class="docutils literal notranslate"><span class="pre">linux</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;linux&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;linux_x86&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;x64&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;linux_arm64_ipv6only&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arm64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--ipv6only&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="p">},</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;linux&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;linux_x86&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;x64&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;linux_arm64_ipv6only&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--cpu_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arm64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--ipv6only&quot;</span><span class="p">]</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 <p>This will produce output archives prefixed <code class="docutils literal notranslate"><span class="pre">linux_x86</span></code> and
 <code class="docutils literal notranslate"><span class="pre">linux_arm_64_ipv6only</span></code> and will append the respective options to each build
 command for these targets.</p>
 <p>To test your configuration locally, you may employ a similar strategy as in CI:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run -it --mount <span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span> connectedhomeip/chip-build-vscode:<span class="nv">$VERSION</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,target<span class="o">=</span>/workspace,type<span class="o">=</span><span class="nb">bind</span><span class="w"> </span>connectedhomeip/chip-build-vscode:<span class="nv">$VERSION</span>
 </pre></div>
 </div>
 <p>In the container:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown -R <span class="k">$(</span>whoami<span class="k">)</span> /workspace
-<span class="nb">cd</span> /workspace
-<span class="nb">source</span> ./scripts/bootstrap.sh
-<span class="nb">source</span> ./scripts/activate.sh
-./examples/chef/chef.py --build_all --keep_going
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span>/workspace
+<span class="nb">cd</span><span class="w"> </span>/workspace
+<span class="nb">source</span><span class="w"> </span>./scripts/bootstrap.sh
+<span class="nb">source</span><span class="w"> </span>./scripts/activate.sh
+./examples/chef/chef.py<span class="w"> </span>--build_all<span class="w"> </span>--keep_going
 </pre></div>
 </div>
 <p>You may also use the Google Cloud Build local builder as detailed in the

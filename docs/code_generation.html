@@ -1438,7 +1438,7 @@ form
 <p>Since this is tedious to type, the SDK provides a
 <code class="docutils literal notranslate"><span class="pre">scripts/tools/zap/run_zaptool.sh</span></code> script to automate this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure zap is in $PATH or set $ZAP_INSTALL_PATH or $ZAP_DEVELOPMENT_PATH</span>
-./scripts/tools/zap/run_zaptool.sh examples/lighting-app/lighting-common/lighting-app.zap
+./scripts/tools/zap/run_zaptool.sh<span class="w"> </span>examples/lighting-app/lighting-common/lighting-app.zap
 </pre></div>
 </div>
 </section>
@@ -1460,9 +1460,10 @@ specific codegen.</p>
 <section id="matter-parsing-and-codegen">
 <h3><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> parsing and codegen<a class="headerlink" href="#matter-parsing-and-codegen" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">*.matter</span></code> files are both human and machine readable. Code that can process
-these files is available at <code class="docutils literal notranslate"><span class="pre">scripts/idl</span></code> and <code class="docutils literal notranslate"><span class="pre">scripts/codegen.py</span></code>. You can read
-the <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/idl/README.md">scripts/idl/README.md</a> for details of how things
-work.</p>
+these files is available at <code class="docutils literal notranslate"><span class="pre">scripts/py_matter_idl</span></code> and <code class="docutils literal notranslate"><span class="pre">scripts/codegen.py</span></code>.
+You can read the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/py_matter_idl/matter_idl/README.md">scripts/py_matter_idl/matter_idl/README.md</a>
+for details of how things work.</p>
 <p><code class="docutils literal notranslate"><span class="pre">scripts/codegen.py</span></code> can generate various outputs based on an input <code class="docutils literal notranslate"><span class="pre">*.matter</span></code>
 file.</p>
 <p>The split between <code class="docutils literal notranslate"><span class="pre">.zap</span></code> and <code class="docutils literal notranslate"><span class="pre">.matter</span></code> currently exists as an experiment of code
@@ -1534,15 +1535,15 @@ via:</p>
 </div>
 <p>This can be slow (several minutes). The regen tool allows selection of only
 tests so that yaml test development goes faster.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/tools/zap_regen_all.py --type tests
-./scripts/tools/zap_regen_all.py --type tests --tests chip-tool
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/tools/zap_regen_all.py<span class="w"> </span>--type<span class="w"> </span>tests
+./scripts/tools/zap_regen_all.py<span class="w"> </span>--type<span class="w"> </span>tests<span class="w"> </span>--tests<span class="w"> </span>chip-tool
 </pre></div>
 </div>
 <p>Additionally, individual code regeneration can be done using
 <code class="docutils literal notranslate"><span class="pre">./scripts/tools/zap/generate.py</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/scripts/tools/zap/generate.py                       <span class="se">\</span>
-    examples/bridge-app/bridge-common/bridge-app.zap <span class="se">\</span>
-    -o zzz_generated/bridge-app/zap-generated
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/scripts/tools/zap/generate.py<span class="w">                       </span><span class="se">\</span>
+<span class="w">    </span>examples/bridge-app/bridge-common/bridge-app.zap<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-o<span class="w"> </span>zzz_generated/bridge-app/zap-generated
 </pre></div>
 </div>
 </section>
@@ -1569,11 +1570,11 @@ importing into build systems that do not have the pre-requisites to run code
 generation at build time or to save the code generation time at the expense
 of running code generation for every possible zap/generation type</p></li>
 <li><p>To check changes in generated code across versions, beyond the comparisons
-of golden image tests in <code class="docutils literal notranslate"><span class="pre">scripts/idl/tests</span></code></p></li>
+of golden image tests in <code class="docutils literal notranslate"><span class="pre">scripts/py_matter_idl/matter_idl/tests</span></code></p></li>
 </ul>
 <p>The script to trigger code pre-generation is <code class="docutils literal notranslate"><span class="pre">scripts/code_pregenerate.py</span></code> and
 requires the pre-generation output directory as an argument</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/code_pregenerate.py <span class="si">${</span><span class="nv">OUTPUT_DIRECTORY</span><span class="k">:-</span><span class="p">./zzz_pregenerated/</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/code_pregenerate.py<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIRECTORY</span><span class="k">:-</span><span class="p">./zzz_pregenerated/</span><span class="si">}</span>
 </pre></div>
 </div>
 </section>

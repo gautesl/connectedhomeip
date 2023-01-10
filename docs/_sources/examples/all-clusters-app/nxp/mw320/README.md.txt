@@ -16,7 +16,7 @@ to demonstrates device commissioning and cluster control over a low-power, WiFi
 
 ## Introduction
 
-![MW320](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/mw320/doc/images/mw320.jpg)
+![MW320](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/mw320/doc/images/mw320.jpg)
 
 The example targets the
 [NXP MW320 WiFi Micro controller Soc](https://www.nxp.com/products/wireless/wi-fi-plus-bluetooth/88mw32x-802-11n-wi-fi-microcontroller-soc:88MW32X)
@@ -87,4 +87,4 @@ $ sudo python2 flashprog.py -l Matter/layout-4m.txt --boot2 Matter/boot2.bin --w
 
 After MW320 is reset, console will allow you to enter commands:
 
-![MW320_CONSOLE](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/nxp/mw320/doc/images/mw320_console.jpg)
+![MW320_CONSOLE](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/mw320/doc/images/mw320_console.jpg)

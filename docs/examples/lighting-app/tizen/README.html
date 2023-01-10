@@ -1319,20 +1319,20 @@ title="Print to PDF"
 <section id="building-binary">
 <h2>Building binary<a class="headerlink" href="#building-binary" title="Permalink to this headline">#</a></h2>
 <p>Activating environment</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ./scripts/activate.sh
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>./scripts/activate.sh
 </pre></div>
 </div>
 <p>Generating tizen-arm-light</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gn gen --check <span class="se">\</span>
-    --fail-on-unused-args <span class="se">\</span>
-    --export-compile-commands <span class="se">\</span>
-    --root<span class="o">=</span><span class="nv">$PW_PROJECT_ROOT</span>/examples/lighting-app/tizen <span class="se">\</span>
-    <span class="s2">&quot;--args=target_os=\&quot;tizen\&quot; target_cpu=\&quot;arm\&quot; tizen_sdk_root=\&quot;</span><span class="nv">$TIZEN_SDK_ROOT</span><span class="s2">\&quot; tizen_sdk_sysroot=\&quot;</span><span class="nv">$TIZEN_SDK_SYSROOT</span><span class="s2">\&quot;&quot;</span> <span class="se">\</span>
-    <span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gn<span class="w"> </span>gen<span class="w"> </span>--check<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--fail-on-unused-args<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--export-compile-commands<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--root<span class="o">=</span><span class="nv">$PW_PROJECT_ROOT</span>/examples/lighting-app/tizen<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;--args=target_os=\&quot;tizen\&quot; target_cpu=\&quot;arm\&quot; tizen_sdk_root=\&quot;</span><span class="nv">$TIZEN_SDK_ROOT</span><span class="s2">\&quot; tizen_sdk_sysroot=\&quot;</span><span class="nv">$TIZEN_SDK_SYSROOT</span><span class="s2">\&quot;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light
 </pre></div>
 </div>
 <p>Building tizen-arm-light</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ninja -C <span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ninja<span class="w"> </span>-C<span class="w"> </span><span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light
 </pre></div>
 </div>
 </section>
@@ -1341,26 +1341,26 @@ title="Print to PDF"
 <p>For packaging the Tizen APP, there is a need to generate an author certificate
 and security profile using the commands described below. Change password and
 author data as needed.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$TIZEN_SDK_ROOT</span>/tools/ide/bin/tizen certificate <span class="se">\</span>
-    --alias<span class="o">=</span>CHIP <span class="se">\</span>
-    --name<span class="o">=</span>CHIP <span class="se">\</span>
-    --email<span class="o">=</span>chip@tizen.org <span class="se">\</span>
-    --password<span class="o">=</span>chiptizen
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$TIZEN_SDK_ROOT</span>/tools/ide/bin/tizen<span class="w"> </span>certificate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--alias<span class="o">=</span>CHIP<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="o">=</span>CHIP<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--email<span class="o">=</span>chip@tizen.org<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--password<span class="o">=</span>chiptizen
 
-<span class="nv">$TIZEN_SDK_ROOT</span>/tools/ide/bin/tizen security-profiles add <span class="se">\</span>
-    --active <span class="se">\</span>
-    --name<span class="o">=</span>CHIP <span class="se">\</span>
-    --author<span class="o">=</span><span class="nv">$HOME</span>/tizen-sdk-data/keystore/author/author.p12 <span class="se">\</span>
-    --password<span class="o">=</span>chiptizen
+<span class="nv">$TIZEN_SDK_ROOT</span>/tools/ide/bin/tizen<span class="w"> </span>security-profiles<span class="w"> </span>add<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--active<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--name<span class="o">=</span>CHIP<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--author<span class="o">=</span><span class="nv">$HOME</span>/tizen-sdk-data/keystore/author/author.p12<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--password<span class="o">=</span>chiptizen
 </pre></div>
 </div>
 <p>This is only <em>one-time action</em>. To regenerate the author certificate and
 security profile, you have to remove files from the <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory using
 specified commands:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm -r <span class="se">\</span>
-    <span class="nv">$HOME</span>/tizen-sdk-data <span class="se">\</span>
-    <span class="nv">$HOME</span>/.tizen-cli-config <span class="se">\</span>
-    <span class="nv">$HOME</span>/.secretsdb
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$HOME</span>/tizen-sdk-data<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$HOME</span>/.tizen-cli-config<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$HOME</span>/.secretsdb
 </pre></div>
 </div>
 <p>After that, normally call scripts to generate the author certificate and
@@ -1370,14 +1370,14 @@ security profile mentioned previously.</p>
 <p>Regenerating the author certificate and security profile makes it necessary to
 remove the previously installed Tizen app. You can’t reinstall an application on
 the Tizen device with a different certificate.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkgcmd -u -n org.tizen.matter.example.lighting
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkgcmd<span class="w"> </span>-u<span class="w"> </span>-n<span class="w"> </span>org.tizen.matter.example.lighting
 </pre></div>
 </div>
 </section>
 </section>
 <section id="packaging-app">
 <h2>Packaging APP<a class="headerlink" href="#packaging-app" title="Permalink to this headline">#</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ninja -C <span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light chip-lighting-app:tpk
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ninja<span class="w"> </span>-C<span class="w"> </span><span class="nv">$PW_PROJECT_ROOT</span>/out/tizen-arm-light<span class="w"> </span>chip-lighting-app:tpk
 </pre></div>
 </div>
 </section>
@@ -1385,7 +1385,7 @@ the Tizen device with a different certificate.</p>
 <h2>Installing TPK<a class="headerlink" href="#installing-tpk" title="Permalink to this headline">#</a></h2>
 <p>Upload TPK package to device under test (DUT). Install it with <code class="docutils literal notranslate"><span class="pre">pkgcmd</span></code> as
 follows:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkgcmd -i -t tpk -p org.tizen.matter.example.lighting-1.0.0.tpk
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkgcmd<span class="w"> </span>-i<span class="w"> </span>-t<span class="w"> </span>tpk<span class="w"> </span>-p<span class="w"> </span>org.tizen.matter.example.lighting-1.0.0.tpk
 </pre></div>
 </div>
 </section>
@@ -1397,7 +1397,7 @@ behavior. However, passed strings cannot start with “-” (minus) character an
 all arguments have to consist of name and value. Boolean options (option without
 argument) should have value equal to “true”.</p>
 <p>e.g.:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>app_launcher --start<span class="o">=</span>org.tizen.matter.example.lighting discriminator <span class="m">43</span> wifi <span class="nb">true</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>app_launcher<span class="w"> </span>--start<span class="o">=</span>org.tizen.matter.example.lighting<span class="w"> </span>discriminator<span class="w"> </span><span class="m">43</span><span class="w"> </span>wifi<span class="w"> </span><span class="nb">true</span>
 </pre></div>
 </div>
 </section>

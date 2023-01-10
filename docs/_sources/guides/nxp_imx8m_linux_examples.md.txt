@@ -4,11 +4,11 @@ This document describes how to build below Linux examples with the NXP embedded
 Linux Yocto SDK and then run the output executable files on the **NXP i.MX 8M**
 **Mini EVK** development board.
 
--   [CHIP Linux All-clusters Example](../../../../examples/all-clusters-app/linux/README.md)
--   [CHIP Linux Lighting Example](../../../../examples/lighting-app/linux/README.md)
+-   [CHIP Linux All-clusters Example](../examples/all-clusters-app/linux/README.md)
+-   [CHIP Linux Lighting Example](../examples/lighting-app/linux/README.md)
 -   [CHIP Linux Thermostat Example](https://github.com/project-chip/connectedhomeip/tree/master/examples/thermostat/linux)
--   [CHIP Linux CHIP-tool Example](../../../../examples/chip-tool/README.md)
--   [CHIP Linux OTA-provider Example](../../../../examples/ota-provider-app/linux/README.md)
+-   [CHIP Linux CHIP-tool Example](../examples/chip-tool/README.md)
+-   [CHIP Linux OTA-provider Example](../examples/ota-provider-app/linux/README.md)
 
 This document has been tested on:
 

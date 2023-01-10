@@ -1983,9 +1983,9 @@ opposite one on the bound lighting device
 (<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">lighting-app</span></a>)</p></li>
 <li><p>If pressed for more than 0.5 seconds, it changes the brightness of the
 light on the bound lighting bulb device
-(<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">lighting-app</span></a>). The brightness is
-changing from 0% to 100% with 1% increments every 300 milliseconds as
-long as <strong>Button 2</strong> is pressed.</p></li>
+(<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">lighting-app</span></a>). The
+brightness is changing from 0% to 100% with 1% increments every 300
+milliseconds as long as <strong>Button 2</strong> is pressed.</p></li>
 </ul>
 </li>
 <li><p>On nRF7002 DK:</p>
@@ -2311,8 +2311,8 @@ directory:</p>
 <h2>Testing the example<a class="headerlink" href="#testing-the-example" title="Permalink to this headline">#</a></h2>
 <p>After building and flashing the example, you can test its functionalities. For
 this purpose, you need to prepare a second device that is programmed with the
-<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Example</span></a>, perform the binding process,
-and add Access Control Lists (ACLs).</p>
+<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Example</span></a>, perform the binding
+process, and add Access Control Lists (ACLs).</p>
 <section id="commissioning-the-lighting-device">
 <h3>Commissioning the lighting device<a class="headerlink" href="#commissioning-the-lighting-device" title="Permalink to this headline">#</a></h3>
 <p>To commission the Lighting Example Application to the same Matter network, read
@@ -2327,10 +2327,10 @@ the light switch device and write proper ACL to the endpoint light bulb on the
 <a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Example application</span></a>). For
 example, you can use the
 <a class="reference internal" href="../../chip-tool/README.html"><span class="doc std std-doc">CHIP Tool for Windows or Linux</span></a> as the controller.
-The ACL should contain information about all clusters that can
-be called by the light switch application. See the section about interacting
-with ZCL clusters in the
-<a class="reference internal" href="../../../guides/chip_tool_guide.html"><span class="doc std std-doc">CHIP Tool’s user guide</span></a>
+The ACL should contain information about all clusters that can be called by the
+light switch application. See the section about interacting with ZCL clusters in
+the
+<a class="reference internal" href="../../../guides/chip_tool_guide.html#interacting-with-data-model-clusters"><span class="std std-doc">CHIP Tool’s user guide</span></a>
 for more information about ACLs.</p>
 <p>You can perform the binding process to a single remote endpoint (unicast
 binding) or to a group of remote endpoints (group multicast).</p>
@@ -2346,11 +2346,11 @@ same Matter network.</p>
 <p>To perform the unicast binding process, complete the following steps:</p>
 <ol class="arabic">
 <li><p>Build the CHIP Tool according to the steps from the
-<a class="reference internal" href="../../../guides/chip_tool_guide.html"><span class="doc std std-doc">CHIP Tool user guide</span></a>.</p></li>
+<a class="reference internal" href="../../../guides/chip_tool_guide.html#building-and-running-the-chip-tool"><span class="std std-doc">CHIP Tool user guide</span></a>.</p></li>
 <li><p>Go to the CHIP Tool build directory.</p></li>
 <li><p>Add an ACL to the development kit that is programmed with the
-<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Application Example</span></a> by running
-the following command:</p>
+<a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Application Example</span></a> by
+running the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chip-tool accesscontrol write acl &#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: [2], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}]}]&#39; 1 0
 </pre></div>
 </div>
@@ -2389,17 +2389,17 @@ programmed with the Lighting Application Example.</p>
 <p>The group multicast binding lets you control more than one lighting device at a
 time using a single light switch.</p>
 <p>The group multicast binding targets all development kits that are programmed
-with the <a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Application Example</span></a> and
-added to the same multicast group. After the binding is established, the light
-switch device can send multicast requests, and all of the devices in the bound
-groups can run the received command.</p>
+with the <a class="reference internal" href="../../lighting-app/nrfconnect/README.html"><span class="doc std std-doc">Lighting Application Example</span></a>
+and added to the same multicast group. After the binding is established, the
+light switch device can send multicast requests, and all of the devices in the
+bound groups can run the received command.</p>
 <p>In this scenario, commands are provided for a light switch device with the
 <code class="docutils literal notranslate"><span class="pre">nodeId</span> <span class="pre">=</span> <span class="pre">2</span></code> and a light bulb device with <code class="docutils literal notranslate"><span class="pre">nodeId</span> <span class="pre">=</span> <span class="pre">1</span></code>, both commissioned to the
 same Matter network.</p>
 <p>To perform the unicast binding process, complete the following steps:</p>
 <ol class="arabic">
 <li><p>Build the CHIP Tool according to the steps from the
-<a class="reference internal" href="../../../guides/chip_tool_guide.html"><span class="doc std std-doc">CHIP Tool user guide</span></a>.</p></li>
+<a class="reference internal" href="../../../guides/chip_tool_guide.html#building-and-running-the-chip-tool"><span class="std std-doc">CHIP Tool user guide</span></a>.</p></li>
 <li><p>Go to the CHIP Tool build directory.</p></li>
 <li><p>Add the light switch device to the multicast group by running the following
 command:</p>
@@ -2441,8 +2441,8 @@ use <a class="reference internal" href="#buttons"><span class="std std-doc">ligh
 </li>
 <li><p>Subscribe to the <code class="docutils literal notranslate"><span class="pre">InitialPress</span></code> and <code class="docutils literal notranslate"><span class="pre">ShortRelease</span></code> event notifications:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>switch subscribe-event initial-press <span class="m">1</span> <span class="m">20</span> &lt;node_id&gt; <span class="m">2</span> --is-urgent <span class="nb">true</span>
-switch subscribe-event short-release <span class="m">1</span> <span class="m">20</span> &lt;node_id&gt; <span class="m">2</span> --is-urgent <span class="nb">true</span> --keepSubscriptions <span class="nb">true</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>switch<span class="w"> </span>subscribe-event<span class="w"> </span>initial-press<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>&lt;node_id&gt;<span class="w"> </span><span class="m">2</span><span class="w"> </span>--is-urgent<span class="w"> </span><span class="nb">true</span>
+switch<span class="w"> </span>subscribe-event<span class="w"> </span>short-release<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>&lt;node_id&gt;<span class="w"> </span><span class="m">2</span><span class="w"> </span>--is-urgent<span class="w"> </span><span class="nb">true</span><span class="w"> </span>--keepSubscriptions<span class="w"> </span><span class="nb">true</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">

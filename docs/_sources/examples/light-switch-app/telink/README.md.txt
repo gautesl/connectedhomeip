@@ -2,7 +2,7 @@
 
 The Telink Light Switch Example demonstrates how to remotely control a lighting
 devices such as light bulbs or LEDs. The application should be used together
-with the [lighting app example](../../../../../../examples/lighting-app/telink/README.md). The light
+with the [lighting app example](../../lighting-app/telink/README.md). The light
 switch uses buttons to test changing the lighting application example LED state
 and works as a brightness dimmer. You can use this example as a reference for
 creating your own application.

@@ -1347,24 +1347,24 @@ creating your own application.</p>
 <h2>Build and flash<a class="headerlink" href="#build-and-flash" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>Pull docker image from repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker pull connectedhomeip/chip-build-telink:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>connectedhomeip/chip-build-telink:latest
 </pre></div>
 </div>
 </li>
 <li><p>Run docker container:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -it --rm -v <span class="si">${</span><span class="nv">CHIP_BASE</span><span class="si">}</span>:/root/chip -v /dev/bus/usb:/dev/bus/usb --device-cgroup-rule <span class="s2">&quot;c 189:* rmw&quot;</span> connectedhomeip/chip-build-telink:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">CHIP_BASE</span><span class="si">}</span>:/root/chip<span class="w"> </span>-v<span class="w"> </span>/dev/bus/usb:/dev/bus/usb<span class="w"> </span>--device-cgroup-rule<span class="w"> </span><span class="s2">&quot;c 189:* rmw&quot;</span><span class="w"> </span>connectedhomeip/chip-build-telink:latest
 </pre></div>
 </div>
 <p>here <code class="docutils literal notranslate"><span class="pre">${CHIP_BASE}</span></code> is directory which contains CHIP repo files <strong>!!!Pay
 attention that OUTPUT_DIR should contains ABSOLUTE path to output dir</strong></p>
 </li>
 <li><p>Activate the build environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ./scripts/activate.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>./scripts/activate.sh
 </pre></div>
 </div>
 </li>
 <li><p>In the example dir run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ west build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>west<span class="w"> </span>build
 </pre></div>
 </div>
 </li>
@@ -1493,7 +1493,7 @@ first binding command with cluster no. 6.</p>
 <ol class="arabic">
 <li><p>Add an ACL to the development kit that is programmed with the Lighting
 Application Example by running the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool accesscontrol write acl <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: [&lt;light-switch-node-id&gt;], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}]}]&#39;</span> &lt;lighting-node-id&gt; <span class="m">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>accesscontrol<span class="w"> </span>write<span class="w"> </span>acl<span class="w"> </span><span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: [&lt;light-switch-node-id&gt;], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}]}]&#39;</span><span class="w"> </span>&lt;lighting-node-id&gt;<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 <p>In this command:</p>
@@ -1508,7 +1508,7 @@ cluster no. 8 is the Level Control cluster).</p></li>
 it to receive commands from the light switch device.</p>
 </li>
 <li><p>Add a binding table to the Light Switch binding cluster:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool binding write binding <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;node&quot;: &lt;lighting-node-id&gt;, &quot;endpoint&quot;: 1, &quot;cluster&quot;: 6}, {&quot;fabricIndex&quot;: 1, &quot;node&quot;: &lt;lighting-node-id&gt;, &quot;endpoint&quot;: 1, &quot;cluster&quot;: 8}]&#39;</span> &lt;light-switch-node-id&gt; <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>binding<span class="w"> </span>write<span class="w"> </span>binding<span class="w"> </span><span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;node&quot;: &lt;lighting-node-id&gt;, &quot;endpoint&quot;: 1, &quot;cluster&quot;: 6}, {&quot;fabricIndex&quot;: 1, &quot;node&quot;: &lt;lighting-node-id&gt;, &quot;endpoint&quot;: 1, &quot;cluster&quot;: 8}]&#39;</span><span class="w"> </span>&lt;light-switch-node-id&gt;<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <p>In this command:</p>
@@ -1537,7 +1537,7 @@ command.</p>
 <ol class="arabic">
 <li><p>Add an ACL to the lighting endpoint permissions by running the following
 command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool accesscontrol write acl <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: [&lt;light-switch-node-id&gt;], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}]}]&#39;</span> &lt;lighting-node-id&gt; <span class="m">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>accesscontrol<span class="w"> </span>write<span class="w"> </span>acl<span class="w"> </span><span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 5, &quot;authMode&quot;: 2, &quot;subjects&quot;: [112233], &quot;targets&quot;: null}, {&quot;fabricIndex&quot;: 1, &quot;privilege&quot;: 3, &quot;authMode&quot;: 2, &quot;subjects&quot;: [&lt;light-switch-node-id&gt;], &quot;targets&quot;: [{&quot;cluster&quot;: 6, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}, {&quot;cluster&quot;: 8, &quot;endpoint&quot;: 1, &quot;deviceType&quot;: null}]}]&#39;</span><span class="w"> </span>&lt;lighting-node-id&gt;<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 <p>In this command:</p>
@@ -1553,7 +1553,7 @@ light switch device.</p>
 </li>
 <li><p>Add the light switch device to the multicast group by running the following
 command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool tests TestGroupDemoConfig --nodeId &lt;light-switch-node-id&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>tests<span class="w"> </span>TestGroupDemoConfig<span class="w"> </span>--nodeId<span class="w"> </span>&lt;light-switch-node-id&gt;
 </pre></div>
 </div>
 </li>
@@ -1562,12 +1562,12 @@ for each of the light bulbs, using the appropriate <code class="docutils literal
 user-defined ID of the node being commissioned except
 <code class="docutils literal notranslate"><span class="pre">&lt;light-switch-node-id&gt;</span></code> due to use this <code class="docutils literal notranslate"><span class="pre">&lt;light-switch-node-id&gt;</span></code> for
 light-switch) for each of them:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool tests TestGroupDemoConfig --nodeId &lt;lighting-node-id&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>tests<span class="w"> </span>TestGroupDemoConfig<span class="w"> </span>--nodeId<span class="w"> </span>&lt;lighting-node-id&gt;
 </pre></div>
 </div>
 </li>
 <li><p>Add Binding commands for group multicast:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool binding write binding <span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;group&quot;: 257}]&#39;</span> &lt;light-switch-node-id&gt; <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./chip-tool<span class="w"> </span>binding<span class="w"> </span>write<span class="w"> </span>binding<span class="w"> </span><span class="s1">&#39;[{&quot;fabricIndex&quot;: 1, &quot;group&quot;: 257}]&#39;</span><span class="w"> </span>&lt;light-switch-node-id&gt;<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </li>

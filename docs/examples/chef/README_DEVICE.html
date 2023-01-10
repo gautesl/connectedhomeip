@@ -1297,11 +1297,11 @@ title="Print to PDF"
 <section id="help">
 <h3>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
 <p>List the Device CLI commands.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; device <span class="nb">help</span>
-  <span class="nb">help</span>            Usage: device &lt;subcommand&gt;
-  start           Start the device layer. Usage: device start
-  get             Get configuration value. Usage: device get &lt;param_name&gt;
-  config          Dump entire configuration of device. Usage: device dump
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>device<span class="w"> </span><span class="nb">help</span>
+<span class="w">  </span><span class="nb">help</span><span class="w">            </span>Usage:<span class="w"> </span>device<span class="w"> </span>&lt;subcommand&gt;
+<span class="w">  </span>start<span class="w">           </span>Start<span class="w"> </span>the<span class="w"> </span>device<span class="w"> </span>layer.<span class="w"> </span>Usage:<span class="w"> </span>device<span class="w"> </span>start
+<span class="w">  </span>get<span class="w">             </span>Get<span class="w"> </span>configuration<span class="w"> </span>value.<span class="w"> </span>Usage:<span class="w"> </span>device<span class="w"> </span>get<span class="w"> </span>&lt;param_name&gt;
+<span class="w">  </span>config<span class="w">          </span>Dump<span class="w"> </span>entire<span class="w"> </span>configuration<span class="w"> </span>of<span class="w"> </span>device.<span class="w"> </span>Usage:<span class="w"> </span>device<span class="w"> </span>dump
 Done
 </pre></div>
 </div>
@@ -1309,20 +1309,20 @@ Done
 <section id="config">
 <h3>config<a class="headerlink" href="#config" title="Permalink to this headline">#</a></h3>
 <p>Dump the configuration of the device.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; device config
-VendorId:        235a
-ProductId:       feff
-HardwareVersion: <span class="m">0001</span>
-SerialNumber:    &lt;None&gt;
-ServiceId:       &lt;None&gt;
-FabricId:        &lt;None&gt;
-PinCode:         &lt;None&gt;
-Discriminator:   &lt;None&gt;
-DeviceId:        &lt;None&gt;
-DeviceCert:      &lt;None&gt;
-DeviceCaCerts:   &lt;None&gt;
-MfrDeviceId:     &lt;None&gt;
-MfrDeviceCert:   &lt;None&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>device<span class="w"> </span>config
+VendorId:<span class="w">        </span>235a
+ProductId:<span class="w">       </span>feff
+HardwareVersion:<span class="w"> </span><span class="m">0001</span>
+SerialNumber:<span class="w">    </span>&lt;None&gt;
+ServiceId:<span class="w">       </span>&lt;None&gt;
+FabricId:<span class="w">        </span>&lt;None&gt;
+PinCode:<span class="w">         </span>&lt;None&gt;
+Discriminator:<span class="w">   </span>&lt;None&gt;
+DeviceId:<span class="w">        </span>&lt;None&gt;
+DeviceCert:<span class="w">      </span>&lt;None&gt;
+DeviceCaCerts:<span class="w">   </span>&lt;None&gt;
+MfrDeviceId:<span class="w">     </span>&lt;None&gt;
+MfrDeviceCert:<span class="w">   </span>&lt;None&gt;
 MfgDeviceCaCerts:&lt;None&gt;
 </pre></div>
 </div>
@@ -1349,7 +1349,7 @@ MfgDeviceCaCerts:&lt;None&gt;
 <li><p>serviceid: Service Identifier</p></li>
 <li><p>fabricid: Fabric Identifier</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; device get vendorid
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>device<span class="w"> </span>get<span class="w"> </span>vendorid
 235a
 Done
 </pre></div>
@@ -1358,9 +1358,9 @@ Done
 <section id="start">
 <h3>start<a class="headerlink" href="#start" title="Permalink to this headline">#</a></h3>
 <p>Initialize the Matter stack and start the device layer event loop.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; device start
-Init CHIP Stack
-Starting Platform Manager Event Loop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>device<span class="w"> </span>start
+Init<span class="w"> </span>CHIP<span class="w"> </span>Stack
+Starting<span class="w"> </span>Platform<span class="w"> </span>Manager<span class="w"> </span>Event<span class="w"> </span>Loop
 Done
 </pre></div>
 </div>

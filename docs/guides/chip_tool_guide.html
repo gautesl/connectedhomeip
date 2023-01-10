@@ -1827,7 +1827,8 @@ placed.</p>
 <em>clusters</em> in the Data Model (for example, pairing or discover commands). Each
 listed command can however become the root of the new more complex command by
 appending it with sub-commands. Examples of specific commands and their use
-cases are described in the <a class="reference internal" href="#supported-commands-and-options"><span class="std std-doc">Supported commands and options</span></a> section.</p>
+cases are described in the
+<a class="reference internal" href="#supported-commands-and-options"><span class="std std-doc">Supported commands and options</span></a> section.</p>
 <hr>
 </section>
 </section>
@@ -2148,23 +2149,23 @@ otasoftwareupdaterequestor subscribe-event state-transition 5 10 ${NODE_ID} 0
 </pre></div>
 </div>
 <p><strong>Example of output:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647346057</span>.900626<span class="o">][</span><span class="m">394605</span>:394605<span class="o">]</span> CHIP:TOO: Missing cluster name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647346057</span>.900626<span class="o">][</span><span class="m">394605</span>:394605<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Missing<span class="w"> </span>cluster<span class="w"> </span>name
 Usage:
-  ./chip-tool cluster_name command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>cluster_name<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Clusters:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * accesscontrol                                                                     <span class="p">|</span>
-  <span class="p">|</span> * accountlogin                                                                      <span class="p">|</span>
-  <span class="p">|</span> * administratorcommissioning                                                        <span class="p">|</span>
-  <span class="p">|</span> * alarms                                                                            <span class="p">|</span>
-  <span class="p">|</span> * any                                                                               <span class="p">|</span>
-  <span class="p">|</span> * appliancecontrol                                                                  <span class="p">|</span>
-  <span class="p">|</span> * applianceeventsandalert                                                           <span class="p">|</span>
-  <span class="p">|</span> * applianceidentification                                                           <span class="p">|</span>
-  <span class="p">|</span> * appliancestatistics                                                               <span class="p">|</span>
-  <span class="p">|</span> * applicationbasic                                                                  <span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Clusters:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>accesscontrol<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>accountlogin<span class="w">                                                                      </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>administratorcommissioning<span class="w">                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>alarms<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>any<span class="w">                                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>appliancecontrol<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>applianceeventsandalert<span class="w">                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>applianceidentification<span class="w">                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>appliancestatistics<span class="w">                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>applicationbasic<span class="w">                                                                  </span><span class="p">|</span>
 </pre></div>
 </div>
 </section>
@@ -2185,30 +2186,30 @@ command pattern:</p>
 </pre></div>
 </div>
 <p><strong>Example of output:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417645</span>.182824<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span> CHIP:TOO: Missing <span class="nb">command</span> name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417645</span>.182824<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Missing<span class="w"> </span><span class="nb">command</span><span class="w"> </span>name
 Usage:
-  ./chip-tool onoff command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>onoff<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * command-by-id                                                                     <span class="p">|</span>
-  <span class="p">|</span> * off                                                                               <span class="p">|</span>
-  <span class="p">|</span> * on                                                                                <span class="p">|</span>
-  <span class="p">|</span> * toggle                                                                            <span class="p">|</span>
-  <span class="p">|</span> * off-with-effect                                                                   <span class="p">|</span>
-  <span class="p">|</span> * on-with-recall-global-scene                                                       <span class="p">|</span>
-  <span class="p">|</span> * on-with-timed-off                                                                 <span class="p">|</span>
-  <span class="p">|</span> * read-by-id                                                                        <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * write-by-id                                                                       <span class="p">|</span>
-  <span class="p">|</span> * write                                                                             <span class="p">|</span>
-  <span class="p">|</span> * subscribe-by-id                                                                   <span class="p">|</span>
-  <span class="p">|</span> * subscribe                                                                         <span class="p">|</span>
-  <span class="p">|</span> * read-event-by-id                                                                  <span class="p">|</span>
-  <span class="p">|</span> * subscribe-event-by-id                                                             <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-<span class="o">[</span><span class="m">1647417645</span>.183836<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:84: Error 0x0000002F
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>command-by-id<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>off<span class="w">                                                                               </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on<span class="w">                                                                                </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>toggle<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>off-with-effect<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on-with-recall-global-scene<span class="w">                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on-with-timed-off<span class="w">                                                                 </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>read-by-id<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>write-by-id<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>write<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe-by-id<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>read-event-by-id<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe-event-by-id<span class="w">                                                             </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647417645</span>.183836<span class="o">][</span><span class="m">404411</span>:404411<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Run<span class="w"> </span><span class="nb">command</span><span class="w"> </span>failure:<span class="w"> </span>../../examples/chip-tool/commands/common/Commands.cpp:84:<span class="w"> </span>Error<span class="w"> </span>0x0000002F
 </pre></div>
 </div>
 </section>
@@ -2229,25 +2230,25 @@ pattern:</p>
 </pre></div>
 </div>
 <p><strong>Example of output:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417857</span>.913942<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span> CHIP:TOO: Missing attribute name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417857</span>.913942<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Missing<span class="w"> </span>attribute<span class="w"> </span>name
 Usage:
-  ./chip-tool onoff <span class="nb">read</span> attribute-name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>onoff<span class="w"> </span><span class="nb">read</span><span class="w"> </span>attribute-name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Attributes:                                                                         <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * on-off                                                                            <span class="p">|</span>
-  <span class="p">|</span> * global-scene-control                                                              <span class="p">|</span>
-  <span class="p">|</span> * on-time                                                                           <span class="p">|</span>
-  <span class="p">|</span> * off-wait-time                                                                     <span class="p">|</span>
-  <span class="p">|</span> * start-up-on-off                                                                   <span class="p">|</span>
-  <span class="p">|</span> * server-generated-command-list                                                     <span class="p">|</span>
-  <span class="p">|</span> * client-generated-command-list                                                     <span class="p">|</span>
-  <span class="p">|</span> * attribute-list                                                                    <span class="p">|</span>
-  <span class="p">|</span> * feature-map                                                                       <span class="p">|</span>
-  <span class="p">|</span> * cluster-revision                                                                  <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-<span class="o">[</span><span class="m">1647417857</span>.914110<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:120: Error 0x0000002F
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Attributes:<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on-off<span class="w">                                                                            </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>global-scene-control<span class="w">                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>on-time<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>off-wait-time<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>start-up-on-off<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>server-generated-command-list<span class="w">                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>client-generated-command-list<span class="w">                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>attribute-list<span class="w">                                                                    </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>feature-map<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>cluster-revision<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647417857</span>.914110<span class="o">][</span><span class="m">404444</span>:404444<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Run<span class="w"> </span><span class="nb">command</span><span class="w"> </span>failure:<span class="w"> </span>../../examples/chip-tool/commands/common/Commands.cpp:120:<span class="w"> </span>Error<span class="w"> </span>0x0000002F
 </pre></div>
 </div>
 </section>
@@ -2269,10 +2270,10 @@ pattern:</p>
 </pre></div>
 </div>
 <p><strong>Example of output:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417976</span>.556313<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span> CHIP:TOO: InitArgs: Wrong arguments number: <span class="m">0</span> instead of <span class="m">2</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647417976</span>.556313<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>InitArgs:<span class="w"> </span>Wrong<span class="w"> </span>arguments<span class="w"> </span>number:<span class="w"> </span><span class="m">0</span><span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span><span class="m">2</span>
 Usage:
-  ./chip-tool onoff on node-id/group-id endpoint-id-ignored-for-group-commands <span class="o">[</span>--paa-trust-store-path<span class="o">]</span> <span class="o">[</span>--commissioner-name<span class="o">]</span> <span class="o">[</span>--trace_file<span class="o">]</span> <span class="o">[</span>--trace_log<span class="o">]</span> <span class="o">[</span>--ble-adapter<span class="o">]</span> <span class="o">[</span>--timedInteractionTimeoutMs<span class="o">]</span> <span class="o">[</span>--suppressResponse<span class="o">]</span>
-<span class="o">[</span><span class="m">1647417976</span>.556362<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:135: Error 0x0000002F
+<span class="w">  </span>./chip-tool<span class="w"> </span>onoff<span class="w"> </span>on<span class="w"> </span>node-id/group-id<span class="w"> </span>endpoint-id-ignored-for-group-commands<span class="w"> </span><span class="o">[</span>--paa-trust-store-path<span class="o">]</span><span class="w"> </span><span class="o">[</span>--commissioner-name<span class="o">]</span><span class="w"> </span><span class="o">[</span>--trace_file<span class="o">]</span><span class="w"> </span><span class="o">[</span>--trace_log<span class="o">]</span><span class="w"> </span><span class="o">[</span>--ble-adapter<span class="o">]</span><span class="w"> </span><span class="o">[</span>--timedInteractionTimeoutMs<span class="o">]</span><span class="w"> </span><span class="o">[</span>--suppressResponse<span class="o">]</span>
+<span class="o">[</span><span class="m">1647417976</span>.556362<span class="o">][</span><span class="m">404456</span>:404456<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Run<span class="w"> </span><span class="nb">command</span><span class="w"> </span>failure:<span class="w"> </span>../../examples/chip-tool/commands/common/Commands.cpp:135:<span class="w"> </span>Error<span class="w"> </span>0x0000002F
 </pre></div>
 </div>
 <section id="selected-command-options">
@@ -2443,7 +2444,8 @@ following command:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pairing</span></code> command supports different means regarding Matter device
 commissioning procedure.</p>
 <p>Thread and Wi-Fi commissioning use cases are described in the
-<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a> section.</p>
+<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a>
+section.</p>
 <p>To list all <code class="docutils literal notranslate"><span class="pre">pairing</span></code> sub-commands, run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool pairing
 </pre></div>
@@ -2451,7 +2453,8 @@ commissioning procedure.</p>
 </section>
 <section id="interacting-with-data-model-clusters">
 <h3>Interacting with Data Model clusters<a class="headerlink" href="#interacting-with-data-model-clusters" title="Permalink to this headline">#</a></h3>
-<p>As mentioned in the <a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a>
+<p>As mentioned in the
+<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using the CHIP Tool for Matter device testing</span></a>
 section, executing the <code class="docutils literal notranslate"><span class="pre">chip-tool</span></code> command with a particular cluster name lists
 all operations supported for this cluster, as in the following command pattern:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./chip-tool &lt;cluster_name&gt;
@@ -2462,24 +2465,24 @@ all operations supported for this cluster, as in the following command pattern:<
 </pre></div>
 </div>
 <p><strong>Example of output:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647502596</span>.396184<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span> CHIP:TOO: Missing <span class="nb">command</span> name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1647502596</span>.396184<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Missing<span class="w"> </span><span class="nb">command</span><span class="w"> </span>name
 Usage:
-  ./chip-tool binding command_name <span class="o">[</span>param1 param2 ...<span class="o">]</span>
+<span class="w">  </span>./chip-tool<span class="w"> </span>binding<span class="w"> </span>command_name<span class="w"> </span><span class="o">[</span>param1<span class="w"> </span>param2<span class="w"> </span>...<span class="o">]</span>
 
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> Commands:                                                                           <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-  <span class="p">|</span> * command-by-id                                                                     <span class="p">|</span>
-  <span class="p">|</span> * read-by-id                                                                        <span class="p">|</span>
-  <span class="p">|</span> * <span class="nb">read</span>                                                                              <span class="p">|</span>
-  <span class="p">|</span> * write-by-id                                                                       <span class="p">|</span>
-  <span class="p">|</span> * write                                                                             <span class="p">|</span>
-  <span class="p">|</span> * subscribe-by-id                                                                   <span class="p">|</span>
-  <span class="p">|</span> * subscribe                                                                         <span class="p">|</span>
-  <span class="p">|</span> * read-event-by-id                                                                  <span class="p">|</span>
-  <span class="p">|</span> * subscribe-event-by-id                                                             <span class="p">|</span>
-  +-------------------------------------------------------------------------------------+
-<span class="o">[</span><span class="m">1647502596</span>.396299<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span> CHIP:TOO: Run <span class="nb">command</span> failure: ../../examples/chip-tool/commands/common/Commands.cpp:84: Error 0x0000002F
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>Commands:<span class="w">                                                                           </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>command-by-id<span class="w">                                                                     </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>read-by-id<span class="w">                                                                        </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span><span class="nb">read</span><span class="w">                                                                              </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>write-by-id<span class="w">                                                                       </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>write<span class="w">                                                                             </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe-by-id<span class="w">                                                                   </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe<span class="w">                                                                         </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>read-event-by-id<span class="w">                                                                  </span><span class="p">|</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>subscribe-event-by-id<span class="w">                                                             </span><span class="p">|</span>
+<span class="w">  </span>+-------------------------------------------------------------------------------------+
+<span class="o">[</span><span class="m">1647502596</span>.396299<span class="o">][</span><span class="m">411686</span>:411686<span class="o">]</span><span class="w"> </span>CHIP:TOO:<span class="w"> </span>Run<span class="w"> </span><span class="nb">command</span><span class="w"> </span>failure:<span class="w"> </span>../../examples/chip-tool/commands/common/Commands.cpp:84:<span class="w"> </span>Error<span class="w"> </span>0x0000002F
 </pre></div>
 </div>
 <p>According to this list, the <code class="docutils literal notranslate"><span class="pre">binding</span></code> cluster supports operations such as read
@@ -2535,7 +2538,8 @@ implemented.</p></li>
 <p>Multi-admin feature allows you to join Matter device to several Matter fabrics
 and administer it by several different Matter administrators. First you need to
 commission the Matter device to first fabric following the
-<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using CHIP Tool for Matter device testing</span></a> section.</p>
+<a class="reference internal" href="#using-chip-tool-for-matter-device-testing"><span class="std std-doc">Using CHIP Tool for Matter device testing</span></a>
+section.</p>
 <p>Before it is possible to commission a Matter device to a new fabric, the
 administrator from first fabric must open the commissioning window for a new
 administrator from another fabric.</p>

@@ -5,8 +5,8 @@ device with one basic bolt. It uses buttons to test changing the lock and device
 states and LEDs to show the state of these changes. You can use this example as
 a reference for creating your own application.
 
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
-<img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
+<img src="../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png" alt="Nordic Semiconductor logo"/>
+<img src="../../platform/nrfconnect/doc/images/nRF52840-DK-small.png" alt="nRF52840 DK">
 
 The example is based on
 [Matter](https://github.com/project-chip/connectedhomeip) and Nordic
@@ -53,7 +53,7 @@ This example is running on the nRF Connect platform, which is based on Nordic
 Semiconductor's
 [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 and [Zephyr RTOS](https://zephyrproject.org/). Visit Matter's
-[nRF Connect platform overview](../../../../../guides/nrfconnect_platform_overview.md)
+[nRF Connect platform overview](../../../guides/nrfconnect_platform_overview.md)
 to read more about the platform structure and dependencies.
 
 By default, the Matter accessory device has IPv6 networking disabled. You must
@@ -173,9 +173,9 @@ The example supports building and running on the following devices:
 
 | Hardware platform                                                                                               | Build target               | Platform image                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)                       | `nrf52840dk_nrf52840`      | <details><summary>nRF52840 DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details> |
-| [nRF5340 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF5340-DK)                         | `nrf5340dk_nrf5340_cpuapp` | <details><summary>nRF5340 DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nRF5340_DK_info-medium.jpg" alt="nRF5340 DK"/></details>    |
-| [nRF7002 DK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf7002.html#nrf7002dk-nrf5340) | `nrf7002dk_nrf5340_cpuapp` | <details><summary>nRF7002DK</summary><img src="../../../../../../examples/platform/nrfconnect/doc/images/nrf7002dk.jpg" alt="nRF7002 DK"/></details>                  |
+| [nRF52840 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)                       | `nrf52840dk_nrf52840`      | <details><summary>nRF52840 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF52840_DK_info-medium.jpg" alt="nRF52840 DK"/></details> |
+| [nRF5340 DK](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF5340-DK)                         | `nrf5340dk_nrf5340_cpuapp` | <details><summary>nRF5340 DK</summary><img src="../../platform/nrfconnect/doc/images/nRF5340_DK_info-medium.jpg" alt="nRF5340 DK"/></details>    |
+| [nRF7002 DK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf7002.html#nrf7002dk-nrf5340) | `nrf7002dk_nrf5340_cpuapp` | <details><summary>nRF7002DK</summary><img src="../../platform/nrfconnect/doc/images/nrf7002dk.jpg" alt="nRF7002 DK"/></details>                  |
 
 <hr>
 
@@ -264,7 +264,7 @@ opposite one.
 
 **SEGGER J-Link USB port** can be used to get logs from the device or
 communicate with it using the
-[command line interface](../../../../../guides/nrfconnect_examples_cli.md).
+[command line interface](../../../guides/nrfconnect_examples_cli.md).
 
 **NFC port with antenna attached** can be used to start the
 [rendezvous](#bluetooth-le-rendezvous) by providing the commissioning
@@ -501,7 +501,7 @@ depending on the selected board:
     those platforms have DFU enabled by default.
 
 For more information, see the
-[Configuring nRF Connect SDK examples](../../../../../guides/nrfconnect_examples_configuration.md)
+[Configuring nRF Connect SDK examples](../../../guides/nrfconnect_examples_configuration.md)
 page.
 
 <hr>
@@ -525,20 +525,20 @@ directory:
 
 ## Testing the example
 
-Check the [CLI tutorial](../../../../../guides/nrfconnect_examples_cli.md) to
+Check the [CLI tutorial](../../../guides/nrfconnect_examples_cli.md) to
 learn how to use command-line interface of the application.
 
 ### Testing using Linux CHIPTool
 
-Read the [CHIP Tool user guide](../../../../../guides/chip_tool_guide.md) to see
-how to use [CHIP Tool for Linux or mac OS](../../../../../../examples/chip-tool/README.md) to
+Read the [CHIP Tool user guide](../../../guides/chip_tool_guide.md) to see
+how to use [CHIP Tool for Linux or mac OS](../../chip-tool/README.md) to
 commission and control the application within a Matter-enabled Thread or Wi-Fi
 network.
 
 ### Testing using Android CHIPTool
 
 Read the
-[Android commissioning guide](../../../../../guides/nrfconnect_android_commissioning.md)
+[Android commissioning guide](../../../guides/nrfconnect_android_commissioning.md)
 to see how to use [CHIPTool](https://github.com/project-chip/connectedhomeip/blob/master/examples/android/CHIPTool/README.md) for
 Android smartphones to commission and control the application within a
 Matter-enabled Thread or Wi-Fi network.
@@ -546,5 +546,5 @@ Matter-enabled Thread or Wi-Fi network.
 ### Testing Device Firmware Upgrade
 
 Read the
-[DFU tutorial](../../../../../guides/nrfconnect_examples_software_update.md) to
+[DFU tutorial](../../../guides/nrfconnect_examples_software_update.md) to
 see how to upgrade your device firmware.

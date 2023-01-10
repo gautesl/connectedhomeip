@@ -1220,6 +1220,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-set-user-data">
+     How to set user data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-handle-user-data">
+       How to handle user data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#verifying-using-the-json-schema-tool">
      Verifying using the JSON Schema tool
     </a>
@@ -1330,6 +1342,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#creating-factory-data-json-file-with-the-first-script">
      Creating factory data JSON file with the first script
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-set-user-data">
+     How to set user data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-handle-user-data">
+       How to handle user data
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#verifying-using-the-json-schema-tool">
@@ -1443,6 +1467,11 @@ protection of the factory data partition in internal flash memory.</p>
 <li><p><a class="reference internal" href="#generating-factory-data"><span class="std std-doc">Generating factory data</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#creating-factory-data-json-file-with-the-first-script"><span class="std std-doc">Creating factory data JSON file with the first script</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-set-user-data"><span class="std std-doc">How to set user data</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-handle-user-data"><span class="std std-doc">How to handle user data</span></a></p></li>
+</ul>
+</li>
 <li><p><a class="reference internal" href="#verifying-using-the-json-schema-tool"><span class="std std-doc">Verifying using the JSON Schema tool</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#option-1-using-the-php-json-schema-tool"><span class="std std-doc">Option 1: Using the php-json-schema tool</span></a></p></li>
@@ -1636,7 +1665,7 @@ yet for this feature.</p>
 <td class="text-center"><p>variable</p></td>
 <td class="text-center"><p>JSON string</p></td>
 <td class="text-center"><p>max 1024 B</p></td>
-<td class="text-center"><p>The user data is provided in the JSON format. This parameter is optional and depends on user’s or manufacturer’s purpose (or both). It is provided as a string from persistent storage and should be parsed in the user application. This data is not used by the Matter stack.</p></td>
+<td class="text-center"><p>The user data is provided in the JSON format. This parameter is optional and depends on device manufacturer’s purpose. It is provided as a CBOR map type from persistent storage and should be parsed in the user application. This data is not used by the Matter stack. To learn how to work with user data, see <a class="reference internal" href="#how-to-set-user-data"><span class="std std-doc">How to set user data</span></a> section.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1852,6 +1881,80 @@ that you cannot create a new JSON file with the same name in the exact
 location as an existing file. To allow overwriting, add the <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code>
 option to the argument list of the Python script.</p>
 </div></blockquote>
+</section>
+<section id="how-to-set-user-data">
+<h3>How to set user data<a class="headerlink" href="#how-to-set-user-data" title="Permalink to this headline">#</a></h3>
+<p>The user data is an optional field provided in the factory data JSON file and
+depends on the manufacturer’s purpose. The <code class="docutils literal notranslate"><span class="pre">user</span></code> field in a JSON factory data
+file is represented by a flat JSON map and it can consist of <code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">int32</span></code>
+data types only. On the device side, the <code class="docutils literal notranslate"><span class="pre">user</span></code> data will be available as a CBOR
+map containing all defined <code class="docutils literal notranslate"><span class="pre">string</span></code> and <code class="docutils literal notranslate"><span class="pre">int32</span></code> fields.</p>
+<p>To add user data as an argument to the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/nrfconnect/generate_nrfconnect_chip_factory_data.py">generate_nrfconnect_chip_factory_data.py</a>
+script, add the following line to the argument list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">user</span><span class="o">-</span><span class="n">data</span> <span class="p">{</span><span class="n">user</span> <span class="n">data</span> <span class="n">JSON</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>As <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">data</span> <span class="pre">JSON</span></code>, provide a flat JSON map with a value file that consists of
+<code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">int32</span></code> types. For example, you can use a JSON file that looks like
+follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;product_name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;0x123&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When added to the argument line, the final result would look like follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">user</span><span class="o">-</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;product_name&quot;, &quot;version&quot;: 123, &quot;revision&quot;: &quot;0x123&quot;}&#39;</span>
+</pre></div>
+</div>
+<section id="how-to-handle-user-data">
+<h4>How to handle user data<a class="headerlink" href="#how-to-handle-user-data" title="Permalink to this headline">#</a></h4>
+<p>The user data is not handled anywhere in the Matter stack, so you must handle it
+in your application. To do this, you can use the
+<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataProvider.h">Factory Data Provider</a> and
+apply one of the following methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GetUserData</span></code> method to obtain raw data in the CBOR format as a
+<code class="docutils literal notranslate"><span class="pre">MutableByteSpan</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetUserKey</span></code> method that lets you search along the user data list using a
+specific key, and if the key exists in the user data, the method returns its
+value.</p></li>
+</ul>
+<p>If you opt for <code class="docutils literal notranslate"><span class="pre">GetUserKey</span></code>, complete the following steps to set up the search:</p>
+<ol class="arabic simple">
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">GetUserKey</span></code> method to your code.</p></li>
+<li><p>Given that all integer fields of the <code class="docutils literal notranslate"><span class="pre">user</span></code> Factory Data field are <code class="docutils literal notranslate"><span class="pre">int32</span></code>,
+provide a buffer that has a size of at least <code class="docutils literal notranslate"><span class="pre">4B</span></code> or an <code class="docutils literal notranslate"><span class="pre">int32_t</span></code> variable to
+<code class="docutils literal notranslate"><span class="pre">GetUserKey</span></code>. To read a string field from user data, the buffer should have a
+size of at least the length of the expected string.</p></li>
+<li><p>Set it up to read all user data fields.</p></li>
+</ol>
+<p>Only after this setup is complete, can you use all variables in your code and
+cast the result to your own purpose.</p>
+<p>The code example of how to read all fields from the JSON example one by one can
+look like follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+chip::DeviceLayer::FactoryDataProvider factoryDataProvider;
+
+factoryDataProvider.Init();
+
+uint8_t user_name[12];
+size_t name_len = sizeof(user_name);
+factoryDataProvider.GetUserKey(&quot;name&quot;, user_name, name_len);
+
+int32_t version;
+size_t version_len = sizeof(version);
+factoryDataProvider.GetUserKey(&quot;version&quot;, &amp;version, version_len);
+
+uint8_t revision[5];
+size_t revision_len = sizeof(revision);
+factoryDataProvider.GetUserKey(&quot;revision&quot;, revision, revision_len);
+```
+</pre></div>
+</div>
+</section>
 </section>
 <section id="verifying-using-the-json-schema-tool">
 <h3>Verifying using the JSON Schema tool<a class="headerlink" href="#verifying-using-the-json-schema-tool" title="Permalink to this headline">#</a></h3>
@@ -2165,9 +2268,9 @@ firmware and newly generated factory data at the same time:</p>
 <h2>Using own factory data implementation<a class="headerlink" href="#using-own-factory-data-implementation" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference internal" href="#generating-factory-data"><span class="std std-doc">factory data generation process</span></a> described above
 is only an example valid for the nRF Connect platform. You can well create a HEX
-file containing all <a class="reference internal" href="#factory-data-component-table"><span class="std std-doc">factory data components</span></a> in any
-format and then implement a parser to read out all parameters and pass them to a
-provider. Each manufacturer can implement a factory data set on its own by
+file containing all <a class="reference internal" href="#factory-data-component-table"><span class="std std-doc">factory data components</span></a> in
+any format and then implement a parser to read out all parameters and pass them
+to a provider. Each manufacturer can implement a factory data set on its own by
 implementing a parser and a factory data accessor inside the Matter stack. Use
 the <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataProvider.h">nRF Connect Provider</a>
 and <a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/src/platform/nrfconnect/FactoryDataParser.h">FactoryDataParser</a> as

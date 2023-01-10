@@ -108,14 +108,14 @@ Matter aims to build a universal IPv6-based communication protocol for smart
 home devices. The protocol defines the application layer that will be deployed
 on devices and the different link layers to help maintain interoperability. The
 following diagram illustrates the normal operational mode of the stack:
-![Matter Architecture Overview](../../images/Matter_Arch_Overview.png)
+![Matter Architecture Overview](images/Matter_Arch_Overview.png)
 
 The architecture is divided into layers to help separate the different
 responsibilities and introduce a good level of encapsulation among the various
 pieces of the protocol stack. The vast majority of interactions flow through the
 stack captured in the following Figure:
 
-![Matter Stack Architecture](../../images/Matter_Layered_Arch.png)
+![Matter Stack Architecture](images/Matter_Layered_Arch.png)
 
 1. **Application:** High-order business logic of a device. For example, an
    application that is focused on lighting might contain logic to handle turning

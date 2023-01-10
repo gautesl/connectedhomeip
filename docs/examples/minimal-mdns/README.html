@@ -1316,18 +1316,19 @@ title="Print to PDF"
                 
   <section id="minimal-mdns-example">
 <h1>Minimal mDNS example<a class="headerlink" href="#minimal-mdns-example" title="Permalink to this headline">#</a></h1>
-<p>This example demonstrates the multicast DNS (mDNS) protocol functionality in Matter.</p>
+<p>This example demonstrates the multicast DNS (mDNS) protocol functionality in
+Matter.</p>
 <section id="example-server">
 <h2>Example server<a class="headerlink" href="#example-server" title="Permalink to this headline">#</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">server.cpp</span></code> contains an example of a mdns server that can listen on
 both IPv4 and IPv6 interfaces or mDNS queries.</p>
 <p>To run, you can use:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-server -4
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-server<span class="w"> </span>-4
 </pre></div>
 </div>
 <p>which will listen on both IPv4 and IPv6 addresses, on port 5353.</p>
 <p>See</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-server --help
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-server<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>for supported options.</p>
@@ -1340,16 +1341,16 @@ the network while running.</p>
 queries for <strong>_services._dns-sd._udp.local</strong> (DNS-SD list services) and uses
 unicast queries.</p>
 <p>Example run:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-client -4
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-client<span class="w"> </span>-4
 </pre></div>
 </div>
 <p>which is likely to list a lot of answers.</p>
 <p>You can customize the queries run:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/out/minimal_mdns/minimal-mdns-client -4 -q chip-mdns-demo._matter._tcp.local
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/out/minimal_mdns/minimal-mdns-client<span class="w"> </span>-4<span class="w"> </span>-q<span class="w"> </span>chip-mdns-demo._matter._tcp.local
 </pre></div>
 </div>
 <p>see</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-client --help
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/minimal-mdns-client<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>for full command line details.</p>
@@ -1359,17 +1360,17 @@ unicast queries.</p>
 <p>This example uses the chip built-in advertiser, implemented in the file
 <code class="docutils literal notranslate"><span class="pre">advertiser.cpp</span></code>.</p>
 <p>Example runs:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser -4 -m operational
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser<span class="w"> </span>-4<span class="w"> </span>-m<span class="w"> </span>operational
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser -4 -m commissionable-node --vendor-id <span class="m">123</span> --product-id <span class="m">456</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser<span class="w"> </span>-4<span class="w"> </span>-m<span class="w"> </span>commissionable-node<span class="w"> </span>--vendor-id<span class="w"> </span><span class="m">123</span><span class="w"> </span>--product-id<span class="w"> </span><span class="m">456</span>
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser -4 -m commissioner --vendor-id <span class="m">123</span> --product-id <span class="m">456</span> --device-type <span class="m">35</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser<span class="w"> </span>-4<span class="w"> </span>-m<span class="w"> </span>commissioner<span class="w"> </span>--vendor-id<span class="w"> </span><span class="m">123</span><span class="w"> </span>--product-id<span class="w"> </span><span class="m">456</span><span class="w"> </span>--device-type<span class="w"> </span><span class="m">35</span>
 </pre></div>
 </div>
 <p>see</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser --help
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./out/minimal_mdns/mdns-advertiser<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>for full command line details.</p>
@@ -1383,7 +1384,7 @@ discovery.</p>
 <h3>Advertising to test client listings<a class="headerlink" href="#advertising-to-test-client-listings" title="Permalink to this headline">#</a></h3>
 <section id="simulated-uncommissioned-node">
 <h4>Simulated uncommissioned node<a class="headerlink" href="#simulated-uncommissioned-node" title="Permalink to this headline">#</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd -R DD200C20D25AE5F7 _matterc._udp,S52,L840,V123 . <span class="m">11111</span> <span class="nv">D</span><span class="o">=</span><span class="m">840</span> <span class="nv">VP</span><span class="o">=</span><span class="m">123</span>+456
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd<span class="w"> </span>-R<span class="w"> </span>DD200C20D25AE5F7<span class="w"> </span>_matterc._udp,S52,L840,V123<span class="w"> </span>.<span class="w"> </span><span class="m">11111</span><span class="w"> </span><span class="nv">D</span><span class="o">=</span><span class="m">840</span><span class="w"> </span><span class="nv">VP</span><span class="o">=</span><span class="m">123</span>+456
 </pre></div>
 </div>
 <p>Will create the following records</p>
@@ -1399,7 +1400,7 @@ discovery.</p>
 </section>
 <section id="simulated-commissioning-node">
 <h4>Simulated commissioning node<a class="headerlink" href="#simulated-commissioning-node" title="Permalink to this headline">#</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd -R DD200C20D25AE5F7 _matterd._udp,S52,L840,V123 . <span class="m">11111</span> <span class="nv">D</span><span class="o">=</span><span class="m">840</span> <span class="nv">VP</span><span class="o">=</span><span class="m">123</span>+456 <span class="nv">PH</span><span class="o">=</span><span class="m">3</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd<span class="w"> </span>-R<span class="w"> </span>DD200C20D25AE5F7<span class="w"> </span>_matterd._udp,S52,L840,V123<span class="w"> </span>.<span class="w"> </span><span class="m">11111</span><span class="w"> </span><span class="nv">D</span><span class="o">=</span><span class="m">840</span><span class="w"> </span><span class="nv">VP</span><span class="o">=</span><span class="m">123</span>+456<span class="w"> </span><span class="nv">PH</span><span class="o">=</span><span class="m">3</span>
 </pre></div>
 </div>
 <p>Will create the following records:</p>
@@ -1415,7 +1416,7 @@ discovery.</p>
 </section>
 <section id="simulated-commissioned-node">
 <h4>Simulated commissioned node<a class="headerlink" href="#simulated-commissioned-node" title="Permalink to this headline">#</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd -R 2906C908D115D362-8FC7772401CD0696 _matter._tcp . <span class="m">22222</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd<span class="w"> </span>-R<span class="w"> </span>2906C908D115D362-8FC7772401CD0696<span class="w"> </span>_matter._tcp<span class="w"> </span>.<span class="w"> </span><span class="m">22222</span>
 </pre></div>
 </div>
 </section>
@@ -1423,20 +1424,20 @@ discovery.</p>
 <section id="discovery-commands">
 <h3>Discovery commands<a class="headerlink" href="#discovery-commands" title="Permalink to this headline">#</a></h3>
 <p>Nodes:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd -B _matterc._udp         <span class="c1"># Nodes awaiting commissioning</span>
-dns-sd -B _matterc._udp,S52     <span class="c1"># Nodes awaiting commissioning with short discriminator 52</span>
-dns-sd -B _matterc._udp,L840    <span class="c1"># Nodes awaiting commissioning with long discriminator 840</span>
-dns-sd -B _matterc._udp,V123    <span class="c1"># Nodes awaiting commissioning with vendor id 123</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterc._udp<span class="w">         </span><span class="c1"># Nodes awaiting commissioning</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterc._udp,S52<span class="w">     </span><span class="c1"># Nodes awaiting commissioning with short discriminator 52</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterc._udp,L840<span class="w">    </span><span class="c1"># Nodes awaiting commissioning with long discriminator 840</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterc._udp,V123<span class="w">    </span><span class="c1"># Nodes awaiting commissioning with vendor id 123</span>
 
-dns-sd -B _matterd._udp         <span class="c1"># Commissionable nodes</span>
-dns-sd -B _matterd._udp,S52     <span class="c1"># Commissionable nodes with short discriminator 52</span>
-dns-sd -B _matterd._udp,L840    <span class="c1"># Commissionable nodes with long discriminator 840</span>
-dns-sd -B _matterd._udp,V123    <span class="c1"># Commissionable nodes with vendor id 123</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterd._udp<span class="w">         </span><span class="c1"># Commissionable nodes</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterd._udp,S52<span class="w">     </span><span class="c1"># Commissionable nodes with short discriminator 52</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterd._udp,L840<span class="w">    </span><span class="c1"># Commissionable nodes with long discriminator 840</span>
+dns-sd<span class="w"> </span>-B<span class="w"> </span>_matterd._udp,V123<span class="w">    </span><span class="c1"># Commissionable nodes with vendor id 123</span>
 </pre></div>
 </div>
 <p>IP Address:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd -L 2906C908D115D362-8FC7772401CD0696 _matter._tcp  <span class="c1"># find server address</span>
-dns-sd -Gv6 B75AFB458ECD.local                            <span class="c1"># get IPv6 address</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dns-sd<span class="w"> </span>-L<span class="w"> </span>2906C908D115D362-8FC7772401CD0696<span class="w"> </span>_matter._tcp<span class="w">  </span><span class="c1"># find server address</span>
+dns-sd<span class="w"> </span>-Gv6<span class="w"> </span>B75AFB458ECD.local<span class="w">                            </span><span class="c1"># get IPv6 address</span>
 </pre></div>
 </div>
 </section>

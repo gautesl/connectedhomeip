@@ -1361,16 +1361,16 @@ title="Print to PDF"
 <section id="help">
 <h3>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
 <p>List the Server CLI commands.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server <span class="nb">help</span>
-  <span class="nb">help</span>            Usage: server &lt;subcommand&gt;
-  start           Start the ZCL application server.
-  stop            Stop the ZCL application server.
-  port            Get/Set operational port of server.
-  udcport         Get/Set commissioning port of server.
-  sessions        Manage active sessions on the server.
-  exchanges       Manage active exchanges on the server.
-  endpoints       Display endpoints on the server.
-  clusters        Display clusters on the server.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span><span class="nb">help</span>
+<span class="w">  </span><span class="nb">help</span><span class="w">            </span>Usage:<span class="w"> </span>server<span class="w"> </span>&lt;subcommand&gt;
+<span class="w">  </span>start<span class="w">           </span>Start<span class="w"> </span>the<span class="w"> </span>ZCL<span class="w"> </span>application<span class="w"> </span>server.
+<span class="w">  </span>stop<span class="w">            </span>Stop<span class="w"> </span>the<span class="w"> </span>ZCL<span class="w"> </span>application<span class="w"> </span>server.
+<span class="w">  </span>port<span class="w">            </span>Get/Set<span class="w"> </span>operational<span class="w"> </span>port<span class="w"> </span>of<span class="w"> </span>server.
+<span class="w">  </span>udcport<span class="w">         </span>Get/Set<span class="w"> </span>commissioning<span class="w"> </span>port<span class="w"> </span>of<span class="w"> </span>server.
+<span class="w">  </span>sessions<span class="w">        </span>Manage<span class="w"> </span>active<span class="w"> </span>sessions<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>server.
+<span class="w">  </span>exchanges<span class="w">       </span>Manage<span class="w"> </span>active<span class="w"> </span>exchanges<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>server.
+<span class="w">  </span>endpoints<span class="w">       </span>Display<span class="w"> </span>endpoints<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>server.
+<span class="w">  </span>clusters<span class="w">        </span>Display<span class="w"> </span>clusters<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>server.
 Done
 </pre></div>
 </div>
@@ -1378,82 +1378,82 @@ Done
 <section id="clusters">
 <h3>clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">#</a></h3>
 <p>Displays all clusters in endpoint hierarchy.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server clusters
-Endpoint <span class="m">0</span>:
-  - Cluster 0x0003
-  - Cluster 0x0004
-  - Cluster 0x001D
-  - Cluster 0x001E
-  - Cluster 0x001F
-  - Cluster 0x0028
-  - Cluster 0x0029
-  - Cluster 0x002A
-  - Cluster 0x002E
-  - Cluster 0x0030
-  - Cluster 0x0031
-  - Cluster 0x0032
-  - Cluster 0x0033
-  - Cluster 0x0034
-  - Cluster 0x0035
-  - Cluster 0x0036
-  - Cluster 0x0037
-  - Cluster 0x003C
-  - Cluster 0x003E
-  - Cluster 0x003F
-  - Cluster 0x0040
-  - Cluster 0x0041
-  - Cluster 0x0405
-Endpoint <span class="m">1</span>:
-  - Cluster 0x0003
-  - Cluster 0x0004
-  - Cluster 0x0005
-  - Cluster 0x0006
-  - Cluster 0x0007
-  - Cluster 0x0008
-  - Cluster 0x000F
-  - Cluster 0x001D
-  - Cluster 0x001E
-  - Cluster 0x0025
-  - Cluster 0x002F
-  - Cluster 0x0039
-  - Cluster 0x003B
-  - Cluster 0x0040
-  - Cluster 0x0041
-  - Cluster 0x0045
-  - Cluster 0x0050
-  - Cluster 0x0101
-  - Cluster 0x0102
-  - Cluster 0x0103
-  - Cluster 0x0200
-  - Cluster 0x0201
-  - Cluster 0x0204
-  - Cluster 0x0300
-  - Cluster 0x0400
-  - Cluster 0x0402
-  - Cluster 0x0403
-  - Cluster 0x0404
-  - Cluster 0x0405
-  - Cluster 0x0406
-  - Cluster 0x0500
-  - Cluster 0x0503
-  - Cluster 0x0504
-  - Cluster 0x0505
-  - Cluster 0x0506
-  - Cluster 0x0507
-  - Cluster 0x0508
-  - Cluster 0x0509
-  - Cluster 0x050A
-  - Cluster 0x050B
-  - Cluster 0x050C
-  - Cluster 0x050D
-  - Cluster 0x050E
-  - Cluster 0x050F
-  - Cluster 0x0B04
-Endpoint <span class="m">2</span>:
-  - Cluster 0x0004
-  - Cluster 0x0006
-  - Cluster 0x001D
-  - Cluster 0x0406
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>clusters
+Endpoint<span class="w"> </span><span class="m">0</span>:
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0003
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0004
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001D
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001E
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001F
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0028
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0029
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x002A
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x002E
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0030
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0031
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0032
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0033
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0034
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0035
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0036
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0037
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x003C
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x003E
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x003F
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0040
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0041
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0405
+Endpoint<span class="w"> </span><span class="m">1</span>:
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0003
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0004
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0005
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0006
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0007
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0008
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x000F
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001D
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001E
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0025
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x002F
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0039
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x003B
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0040
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0041
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0045
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0050
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0101
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0102
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0103
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0200
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0201
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0204
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0300
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0400
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0402
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0403
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0404
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0405
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0406
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0500
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0503
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0504
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0505
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0506
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0507
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0508
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0509
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050A
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050B
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050C
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050D
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050E
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x050F
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0B04
+Endpoint<span class="w"> </span><span class="m">2</span>:
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0004
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0006
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x001D
+<span class="w">  </span>-<span class="w"> </span>Cluster<span class="w"> </span>0x0406
 Done
 </pre></div>
 </div>
@@ -1461,10 +1461,10 @@ Done
 <section id="endpoints">
 <h3>endpoints<a class="headerlink" href="#endpoints" title="Permalink to this headline">#</a></h3>
 <p>Displays all endpoints in device hierarchy.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server endpoints
-Endpoint <span class="m">0</span>
-Endpoint <span class="m">1</span>
-Endpoint <span class="m">2</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>endpoints
+Endpoint<span class="w"> </span><span class="m">0</span>
+Endpoint<span class="w"> </span><span class="m">1</span>
+Endpoint<span class="w"> </span><span class="m">2</span>
 Done
 </pre></div>
 </div>
@@ -1472,7 +1472,7 @@ Done
 <section id="port">
 <h3>port<a class="headerlink" href="#port" title="Permalink to this headline">#</a></h3>
 <p>Display the current operational port for the server node.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server port
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>port
 <span class="m">5540</span>
 Done
 </pre></div>
@@ -1485,7 +1485,7 @@ take effect.</p>
 <ul class="simple">
 <li><p>udp_port: new value to set operational port to</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server port <span class="m">5541</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>port<span class="w"> </span><span class="m">5541</span>
 Done
 </pre></div>
 </div>
@@ -1493,8 +1493,8 @@ Done
 <section id="sessions">
 <h3>sessions<a class="headerlink" href="#sessions" title="Permalink to this headline">#</a></h3>
 <p>Displays active session handles.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server sessions
-session <span class="nv">id</span><span class="o">=</span>0x0002 <span class="nv">peerSessionId</span><span class="o">=</span>0x0012 <span class="nv">peerNodeId</span><span class="o">=</span>0x000000000001b669 <span class="nv">fabricIdx</span><span class="o">=</span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>sessions
+session<span class="w"> </span><span class="nv">id</span><span class="o">=</span>0x0002<span class="w"> </span><span class="nv">peerSessionId</span><span class="o">=</span>0x0012<span class="w"> </span><span class="nv">peerNodeId</span><span class="o">=</span>0x000000000001b669<span class="w"> </span><span class="nv">fabricIdx</span><span class="o">=</span><span class="m">1</span>
 Done
 </pre></div>
 </div>
@@ -1503,9 +1503,9 @@ Done
 <h3>start<a class="headerlink" href="#start" title="Permalink to this headline">#</a></h3>
 <p>Start the App Server on the Node. This also starts the commissioning window as
 is done with the all-clusters-app.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server start
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>start
 ...
-<span class="o">[</span><span class="m">1639549415</span>.105682<span class="o">][</span><span class="m">1468836</span>:1468841<span class="o">]</span> CHIP:SVR: Server Listening...
+<span class="o">[</span><span class="m">1639549415</span>.105682<span class="o">][</span><span class="m">1468836</span>:1468841<span class="o">]</span><span class="w"> </span>CHIP:SVR:<span class="w"> </span>Server<span class="w"> </span>Listening...
 Done
 </pre></div>
 </div>
@@ -1513,7 +1513,7 @@ Done
 <section id="stop">
 <h3>stop<a class="headerlink" href="#stop" title="Permalink to this headline">#</a></h3>
 <p>Stops the App Server, closes all related sockets, and frees resources.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server stop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>stop
 Done
 </pre></div>
 </div>
@@ -1521,7 +1521,7 @@ Done
 <section id="udcport">
 <h3>udcport<a class="headerlink" href="#udcport" title="Permalink to this headline">#</a></h3>
 <p>Display the current commissioning port for the server node.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server udcport
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>udcport
 <span class="m">5550</span>
 Done
 </pre></div>
@@ -1534,7 +1534,7 @@ to take effect.</p>
 <ul class="simple">
 <li><p>udp_port: new value to set commissioning port to</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; server udcport <span class="m">5551</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>server<span class="w"> </span>udcport<span class="w"> </span><span class="m">5551</span>
 Done
 </pre></div>
 </div>

@@ -1,6 +1,6 @@
 ﻿# Matter CC1352 CC2652 Shell Application
 
-A [chip-shell](../../../../../../examples/shell/README.md) project on the Texas Instruments CC13X2_26X2 family
+A [chip-shell](../README.md) project on the Texas Instruments CC13X2_26X2 family
 of Wireless MCUs.
 
 ## Building
@@ -145,7 +145,7 @@ For insight into what other components are needed to run this example, please
 refer to our [Matter Getting Started Guide][matter-e2e-faq].
 
 For help with the shell itself, refer to the
-[shell example README](../../../../../../examples/shell/README.md).
+[shell example README](../README.md).
 
 ## TI Support
 

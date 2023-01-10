@@ -100,7 +100,7 @@ its requirements.
 > devcontainer is the recommended way to interact with Arm Mbed-OS port of the
 > Matter Project.**
 >
-> **Please read this [README.md](../../../../../VSCODE_DEVELOPMENT.md) for more
+> **Please read this [README.md](../../..//VSCODE_DEVELOPMENT.md) for more
 > information about using VSCode in container.**
 
 To initialize the development environment, download all registered sub-modules
@@ -208,7 +208,7 @@ It is possible to connect to an external gdb-server session by using specific
 
 The provider application is required to transfer image file to OTA requestor.
 Mbed example is compatible with Linux version of OTA provider example. Read the
-[OTAProvider](../../../../../../examples/ota-provider-app/linux/README.md) to see how to build and
+[OTAProvider](../../ota-provider-app/linux/README.md) to see how to build and
 run the OTA provider.
 
 #### Serial port terminal
@@ -231,15 +231,15 @@ in the terminal.
 
 #### CHIP Tools
 
-Read the [MbedCommissioning](../../../../../guides/mbedos_commissioning.md) to
+Read the [MbedCommissioning](../../../guides/mbedos_commissioning.md) to
 see how to use different CHIP tools to commission and control the application
 within a WiFi network.
 
 After commissioning is successful, announce OTA provider's presence using
-`OtaSoftwareUpdateRequestor` cluster with `AnnounceOtaProvider` command. On
+`OtaSoftwareUpdateRequestor` cluster with `AnnounceOTAProvider` command. On
 receiving this command OTA requestor will query for OTA image:
 
-    chip-device-ctrl > zcl OtaSoftwareUpdateRequestor AnnounceOtaProvider 1234 0 0 providerNodeId=1235 vendorId=9020 announcementReason=0
+    chip-device-ctrl > zcl OtaSoftwareUpdateRequestor AnnounceOTAProvider 1234 0 0 providerNodeId=1235 vendorId=9020 announcementReason=0
 
 The OTA requestor should communicate with provider, download update image and
 apply it.
@@ -258,19 +258,18 @@ apply it.
 
 The example supports building and running on the following mbed-enabled devices:
 
-| Manufacturer                                          | Hardware platform                                                         | Build target          | Platform image                                                                                                                                                                 |       Status       | Platform components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ----------------------------------------------------- | ------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Cypress<br> Semiconductor](https://www.cypress.com/) | [CY8CPROTO-062-4343W](https://os.mbed.com/platforms/CY8CPROTO-062-4343W/) | `CY8CPROTO_062_4343W` | <details><summary>CY8CPROTO-062-4343W</summary><img src="https://os.mbed.com/media/cache/platforms/p6_wifi-bt_proto.png.250x250_q85.jpg" alt="CY8CPROTO-062-4343W"/></details> | ✔                  | <details><summary>LEDs</summary><ul><li>Board has only one usable LED (LED4) which corresponds to USER LED from UI.</li><li>Lock state LED should be an external component connected to PB9_6 pin (active high).</li></ul></details> <details><summary>Buttons</summary><ul><li>SW2 push-button is not used in this example due to its interaction with WIFI module interrupt line.</li><li>Button 0 corresponds to BTN0 capacitive button.</li><li>Button 1 corresponds to BTN1 capacitive button.</li></ul></details> <details><summary>Slider</summary><ul><li>Unused</ul></details> |
+| Manufacturer                                          | Hardware platform                                                         | Build target          | Platform image                                                                                                                                                                 | Status | Platform components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------------- | ------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Cypress<br> Semiconductor](https://www.cypress.com/) | [CY8CPROTO-062-4343W](https://os.mbed.com/platforms/CY8CPROTO-062-4343W/) | `CY8CPROTO_062_4343W` | <details><summary>CY8CPROTO-062-4343W</summary><img src="https://os.mbed.com/media/cache/platforms/p6_wifi-bt_proto.png.250x250_q85.jpg" alt="CY8CPROTO-062-4343W"/></details> |   ✔    | <details><summary>LEDs</summary><ul><li>Board has only one usable LED (LED4) which corresponds to USER LED from UI.</li><li>Lock state LED should be an external component connected to PB9_6 pin (active high).</li></ul></details> <details><summary>Buttons</summary><ul><li>SW2 push-button is not used in this example due to its interaction with WIFI module interrupt line.</li><li>Button 0 corresponds to BTN0 capacitive button.</li><li>Button 1 corresponds to BTN1 capacitive button.</li></ul></details> <details><summary>Slider</summary><ul><li>Unused</ul></details> |
 
 ##### Notes
 
 -   More details and guidelines about porting new hardware into the Matter
     project with Mbed OS can be found in
-    [MbedNewTarget](../../../../../guides/mbedos_add_new_target.md)
+    [MbedNewTarget](../../../guides/mbedos_add_new_target.md)
 -   Some useful information about HW platform specific settings can be found in
-    `ota-requestor-app/mbed/mbed_app.json`.
-    Information about this file syntax and its meaning in mbed-os project can be
-    found here:
+    `ota-requestor-app/mbed/mbed_app.json`. Information about this file syntax
+    and its meaning in mbed-os project can be found here:
     [Mbed-Os configuration system](https://os.mbed.com/docs/mbed-os/latest/program-setup/advanced-configuration.html))
 
 ### Device UI

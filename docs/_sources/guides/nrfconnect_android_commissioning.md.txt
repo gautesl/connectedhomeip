@@ -48,7 +48,7 @@ The following diagram shows the connectivity between network components required
 to allow communication between devices running CHIPTool and Matter nRF Connect
 Lighting Example Application:
 
-![Matter nodes connectivity](../../../guides/images/nrfconnect_android_connectivity.png)
+![Matter nodes connectivity](./images/nrfconnect_android_connectivity.png)
 
 <hr>
 
@@ -192,7 +192,7 @@ Check the IPv6 connectivity with the device using the following steps:
 
 1. Tap **LIGHT ON/OFF & LEVEL CLUSTER**. The following screen appears:
 
-    ![CHIPTool device control screen](../../../guides/images/CHIPTool_device_commissioned.png)
+    ![CHIPTool device control screen](./images/CHIPTool_device_commissioned.png)
 
     The two textboxes at the top contain **Fabric ID** and **Node ID** of the
     last commissioned device.

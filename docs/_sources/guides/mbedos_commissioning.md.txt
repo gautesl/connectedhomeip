@@ -164,7 +164,7 @@ To make provisioning possible and to control the Matter device from Linux-based
 device, you can build and run the Matter Client example application on it.
 
 To build the POSIX CLI CHIPTool application check the guide
-[POSIX CLI guide](../../../../examples/chip-tool/README.md).
+[POSIX CLI guide](../examples/chip-tool/README.md).
 
 ### Device commissioning for CLI
 
@@ -196,7 +196,7 @@ For example:
 The client will send a single command packet and then exit.
 
 > For more details about POSIX CLI CHIPTool please visit
-> [POSIX CLI CHIPTool](../../../../examples/chip-tool/README.md)
+> [POSIX CLI CHIPTool](../examples/chip-tool/README.md)
 
 ## Python Device Controller
 

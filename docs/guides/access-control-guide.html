@@ -1928,15 +1928,15 @@ omitted, simply do not provide it when writing ACLs.</p>
 strongly typed values:</p>
 <p>The privileges are:</p>
 <ul class="simple">
-<li><p>Clusters.AccessControl.Enums.Privilege.kView</p></li>
-<li><p>Clusters.AccessControl.Enums.Privilege.kOperate</p></li>
-<li><p>Clusters.AccessControl.Enums.Privilege.kManage</p></li>
-<li><p>Clusters.AccessControl.Enums.Privilege.kAdminister</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryPrivilegeEnum.kView</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryPrivilegeEnum.kOperate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryPrivilegeEnum.kManage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryPrivilegeEnum.kAdminister</span></code></p></li>
 </ul>
 <p>The authentication modes are:</p>
 <ul class="simple">
-<li><p>Clusters.AccessControl.Enums.AuthMode.kCASE</p></li>
-<li><p>Clusters.AccessControl.Enums.AuthMode.kGroup</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryAuthModeEnum.kCASE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clusters.AccessControl.Enums.AccessControlEntryAuthModeEnum.kGroup</span></code></p></li>
 </ul>
 <p>Some typical clusters:</p>
 <ul class="simple">
@@ -1982,14 +1982,14 @@ automatically installed ACL is:</p>
 <section id="id7">
 <h4>Installing a CASE ACL<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">devCtrl</span><span class="o">.</span><span class="n">WriteAttribute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Attributes</span><span class="o">.</span><span class="n">Acl</span><span class="p">(</span> <span class="p">[</span>
-  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
-    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
-    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntryStruct</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryPrivilegeEnum</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryAuthModeEnum</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
     <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
   <span class="p">),</span>
-  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
-    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
-    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntryStruct</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryPrivilegeEnum</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryAuthModeEnum</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
     <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">4444</span><span class="p">,</span> <span class="mi">5555</span><span class="p">,</span> <span class="mi">6666</span> <span class="p">],</span>
   <span class="p">),</span>
 <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
@@ -2030,19 +2030,19 @@ automatically installed ACL is:</p>
 <section id="id8">
 <h4>Installing a Group ACL<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">devCtrl</span><span class="o">.</span><span class="n">WriteAttribute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Attributes</span><span class="o">.</span><span class="n">Acl</span><span class="p">(</span> <span class="p">[</span>
-  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
-    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
-    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntryStruct</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryPrivilegeEnum</span><span class="o">.</span><span class="n">kAdminister</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryAuthModeEnum</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
     <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
   <span class="p">),</span>
-  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
-    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
-    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntryStruct</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryPrivilegeEnum</span><span class="o">.</span><span class="n">kView</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryAuthModeEnum</span><span class="o">.</span><span class="n">kCase</span><span class="p">,</span>
     <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">4444</span><span class="p">,</span> <span class="mi">5555</span><span class="p">,</span> <span class="mi">6666</span> <span class="p">],</span>
   <span class="p">),</span>
-  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntry</span><span class="p">(</span>
-    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">Privilege</span><span class="o">.</span><span class="n">kOperate</span><span class="p">,</span>
-    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AuthMode</span><span class="o">.</span><span class="n">kGroup</span><span class="p">,</span>
+  <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">AccessControlEntryStruct</span><span class="p">(</span>
+    <span class="n">privilege</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryPrivilegeEnum</span><span class="o">.</span><span class="n">kOperate</span><span class="p">,</span>
+    <span class="n">authMode</span> <span class="o">=</span> <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Enums</span><span class="o">.</span><span class="n">AccessControlEntryAuthModeEnum</span><span class="o">.</span><span class="n">kGroup</span><span class="p">,</span>
     <span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">456</span> <span class="p">],</span>
     <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
       <span class="n">Clusters</span><span class="o">.</span><span class="n">AccessControl</span><span class="o">.</span><span class="n">Structs</span><span class="o">.</span><span class="n">Target</span><span class="p">(</span>

@@ -1241,18 +1241,18 @@ title="Print to PDF"
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>Build the Python/C library:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/connectedhomeip/
-git submodule update --init
-<span class="nb">source</span> scripts/activate.sh
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/connectedhomeip/
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+<span class="nb">source</span><span class="w"> </span>scripts/activate.sh
 
-./scripts/build_python_device.sh --chip_detail_logging <span class="nb">true</span>
+./scripts/build_python_device.sh<span class="w"> </span>--chip_detail_logging<span class="w"> </span><span class="nb">true</span>
 
-sudo su <span class="c1"># dhclient is called, needs root</span>
-<span class="nb">source</span> ./out/python_env/bin/activate
+sudo<span class="w"> </span>su<span class="w"> </span><span class="c1"># dhclient is called, needs root</span>
+<span class="nb">source</span><span class="w"> </span>./out/python_env/bin/activate
 </pre></div>
 </div>
 <p>Install the python dependencies:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip3 install python-dali
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>python-dali
 </pre></div>
 </div>
 <p>Plug-in a python-dali compatible USB-DALI interface.</p>
@@ -1260,21 +1260,21 @@ sudo su <span class="c1"># dhclient is called, needs root</span>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>Run the Python lighting matter device:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> examples/lighting-app/python
-python lighting.py
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples/lighting-app/python
+python<span class="w"> </span>lighting.py
 </pre></div>
 </div>
 <p>Control the Python lighting matter device:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ./out/python_env/bin/activate
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>./out/python_env/bin/activate
 
 chip-device-ctrl
 
-chip-device-ctrl &gt; connect -ble <span class="m">3840</span> <span class="m">20202021</span> <span class="m">12344321</span>
-chip-device-ctrl &gt; zcl NetworkCommissioning AddOrUpdateWiFiNetwork <span class="m">12344321</span> <span class="m">0</span> <span class="m">0</span> <span class="nv">ssid</span><span class="o">=</span>str:YOUR_SSID <span class="nv">credentials</span><span class="o">=</span>str:YOUR_PASSWORD <span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span>
-chip-device-ctrl &gt; zcl NetworkCommissioning ConnectNetwork <span class="m">12344321</span> <span class="m">0</span> <span class="m">0</span> <span class="nv">networkID</span><span class="o">=</span>str:YOUR_SSID <span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span>
-chip-device-ctrl &gt; close-ble
-chip-device-ctrl &gt; resolve <span class="m">5544332211</span> <span class="m">1</span> <span class="o">(</span>pass appropriate fabric ID and node ID, you can get this from get-fabricid<span class="o">)</span>
-chip-device-ctrl &gt; zcl OnOff Toggle <span class="m">12344321</span> <span class="m">1</span> <span class="m">0</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>connect<span class="w"> </span>-ble<span class="w"> </span><span class="m">3840</span><span class="w"> </span><span class="m">20202021</span><span class="w"> </span><span class="m">12344321</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>NetworkCommissioning<span class="w"> </span>AddOrUpdateWiFiNetwork<span class="w"> </span><span class="m">12344321</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">ssid</span><span class="o">=</span>str:YOUR_SSID<span class="w"> </span><span class="nv">credentials</span><span class="o">=</span>str:YOUR_PASSWORD<span class="w"> </span><span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>NetworkCommissioning<span class="w"> </span>ConnectNetwork<span class="w"> </span><span class="m">12344321</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">networkID</span><span class="o">=</span>str:YOUR_SSID<span class="w"> </span><span class="nv">breadcrumb</span><span class="o">=</span><span class="m">0</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>close-ble
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>resolve<span class="w"> </span><span class="m">5544332211</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>pass<span class="w"> </span>appropriate<span class="w"> </span>fabric<span class="w"> </span>ID<span class="w"> </span>and<span class="w"> </span>node<span class="w"> </span>ID,<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>get<span class="w"> </span>this<span class="w"> </span>from<span class="w"> </span>get-fabricid<span class="o">)</span>
+chip-device-ctrl<span class="w"> </span>&gt;<span class="w"> </span>zcl<span class="w"> </span>OnOff<span class="w"> </span>Toggle<span class="w"> </span><span class="m">12344321</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </section>

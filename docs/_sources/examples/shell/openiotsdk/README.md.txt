@@ -6,13 +6,13 @@ execution. There is a set of common shell commands which perform basic device
 operations.
 
 For more details see
-[Common shell commands](../../../../../../examples/shell/README.md).
+[Common shell commands](../README.md#matter-shell-command-details).
 
 ## Build and run
 
 For information on how to build and run this example and further information
 about the platform it is run on see
-[Open IoT SDK examples](../../../../../examples/openiotsdk_examples.md).
+[Open IoT SDK examples](../../../examples/openiotsdk_examples.md).
 
 The example name to use in the scripts is `shell`.
 
@@ -34,7 +34,7 @@ supports common Matter shell commands. They are used to control the basic
 functionalities of the device.
 
 For more details read:
-[Common shell commands](../../../../../../examples/shell/README.md)
+[Common shell commands](../README.md#matter-shell-command-details)
 
 Example:
 
