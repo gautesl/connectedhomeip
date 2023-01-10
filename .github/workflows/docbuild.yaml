@@ -1,9 +1,7 @@
 name: Documentation Build
 
 on:
-  push:
-    branches:
-      - master
+  push
 
 permissions:
   contents: write
@@ -39,11 +37,13 @@ jobs:
           make html
           touch _build/html/.nojekyll
       - name: Deploy to gh-pages
-        if: github.repository == 'project-chip/connectedhomeip'
+      #   if: github.repository == 'project-chip/connectedhomeip'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.DOXYGEN_DEPLOY_KEY }}
-          external_repository: project-chip/connectedhomeip-doc
+      #     deploy_key: ${{ secrets.SPHINX_DEPLOY_KEY }}
+      #     external_repository: project-chip/matter-doc
           publish_dir: matter/docs/_build/html
-          # Keep only the latest version of the documentation
-          force_orphan: true
+      #     # Keep only the latest version of the documentation
+          # force_orphan: true
+          destination_dir: docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
