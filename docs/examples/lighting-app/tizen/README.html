@@ -482,6 +482,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../contact-sensor-app/telink/README.html">
+     Matter Telink Contact Sensor Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../chef/README.html">
      MATTER CHEF APP
     </a>
@@ -969,11 +974,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../thermostat/efr32/README.html">
-     Matter EFR32 Thermostat Example
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../thermostat/genio/README.html">
      Matter
      <code class="docutils literal notranslate">
@@ -982,6 +982,11 @@
       </span>
      </code>
      Thermostat Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../thermostat/silabs/efr32/README.html">
+     Matter EFR32 Thermostat Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1193,16 +1198,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-tizen-sdk-certificate">
-   Preparing Tizen SDK certificate
+  <a class="reference internal nav-link" href="#preparing-tizen-sdk-certificate-optional">
+   Preparing Tizen SDK certificate (optional)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#important">
-     Important
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packaging-app">
@@ -1261,16 +1259,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-tizen-sdk-certificate">
-   Preparing Tizen SDK certificate
+  <a class="reference internal nav-link" href="#preparing-tizen-sdk-certificate-optional">
+   Preparing Tizen SDK certificate (optional)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#important">
-     Important
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packaging-app">
@@ -1336,11 +1327,16 @@ title="Print to PDF"
 </pre></div>
 </div>
 </section>
-<section id="preparing-tizen-sdk-certificate">
-<h2>Preparing Tizen SDK certificate<a class="headerlink" href="#preparing-tizen-sdk-certificate" title="Permalink to this headline">#</a></h2>
-<p>For packaging the Tizen APP, there is a need to generate an author certificate
-and security profile using the commands described below. Change password and
-author data as needed.</p>
+<section id="preparing-tizen-sdk-certificate-optional">
+<h2>Preparing Tizen SDK certificate (optional)<a class="headerlink" href="#preparing-tizen-sdk-certificate-optional" title="Permalink to this headline">#</a></h2>
+<p>When building Matter example application, this step is optional. In case when
+author certificate and security profile are not found, they will be created
+automatically. Automatically generated dummy certificate will have the following
+options: name=”Matter Example” email=”matter&#64;tizen.org” password=”0123456789”</p>
+<p>In order to create and use custom author certificate, one can use the commands
+described below. Change the certificate password and author data as needed. The
+security profile alias should not be changed, as the “CHIP” name is used in the
+Matter example build system.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$TIZEN_SDK_ROOT</span>/tools/ide/bin/tizen<span class="w"> </span>certificate<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--alias<span class="o">=</span>CHIP<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--name<span class="o">=</span>CHIP<span class="w"> </span><span class="se">\</span>
@@ -1365,15 +1361,12 @@ specified commands:</p>
 </div>
 <p>After that, normally call scripts to generate the author certificate and
 security profile mentioned previously.</p>
-<section id="important">
-<h3>Important<a class="headerlink" href="#important" title="Permalink to this headline">#</a></h3>
-<p>Regenerating the author certificate and security profile makes it necessary to
-remove the previously installed Tizen app. You can’t reinstall an application on
-the Tizen device with a different certificate.</p>
+<p>Please note, that regenerating the author certificate and security profile makes
+it necessary to remove the previously installed Tizen app. You can’t reinstall
+an application on the Tizen device with a different certificate.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pkgcmd<span class="w"> </span>-u<span class="w"> </span>-n<span class="w"> </span>org.tizen.matter.example.lighting
 </pre></div>
 </div>
-</section>
 </section>
 <section id="packaging-app">
 <h2>Packaging APP<a class="headerlink" href="#packaging-app" title="Permalink to this headline">#</a></h2>
@@ -1408,40 +1401,38 @@ argument) should have value equal to “true”.</p>
 installed.</p>
 <section id="tasks">
 <h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p>Build app:</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">the</span> <span class="n">Command</span> <span class="n">Palette</span> <span class="p">(</span><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">P</span><span class="p">)</span> <span class="o">-&gt;</span>
-    <span class="n">Tasks</span><span class="p">:</span> <span class="n">Run</span> <span class="n">Task</span> <span class="o">-&gt;</span>
-    <span class="n">Build</span> <span class="n">LightingApp</span> <span class="p">(</span><span class="n">Tizen</span><span class="p">)</span>
+<ol class="arabic">
+<li><p>Build app:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>open the Command Palette (Ctrl+Shift+P) -&gt;
+    Tasks: Run Task -&gt;
+    Build LightingApp (Tizen)
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
+</li>
 <li><p>SDB connect to device: required to run Tizen commands below if device is
-debugged over network</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">the</span> <span class="n">Command</span> <span class="n">Palette</span> <span class="p">(</span><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">P</span><span class="p">)</span> <span class="o">-&gt;</span>
-    <span class="n">Tasks</span><span class="p">:</span> <span class="n">Run</span> <span class="n">Task</span> <span class="o">-&gt;</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">device</span> <span class="p">(</span><span class="n">Tizen</span><span class="p">)</span> <span class="o">-&gt;</span>
-    <span class="n">insert</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">and</span> <span class="n">port</span>
+debugged over network</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>open the Command Palette (Ctrl+Shift+P) -&gt;
+    Tasks: Run Task -&gt; Connect to device (Tizen) -&gt;
+    insert IP address and port
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Install app: it is separated from build app step.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">the</span> <span class="n">Command</span> <span class="n">Palette</span> <span class="p">(</span><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">P</span><span class="p">)</span> <span class="o">-&gt;</span>
-    <span class="n">Tasks</span><span class="p">:</span> <span class="n">Run</span> <span class="n">Task</span> <span class="o">-&gt;</span>
-    <span class="n">Install</span> <span class="n">LightingApp</span> <span class="p">(</span><span class="n">Tizen</span><span class="p">)</span>
+</li>
+<li><p>Install app: it is separated from build app step.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>open the Command Palette (Ctrl+Shift+P) -&gt;
+    Tasks: Run Task -&gt;
+    Install LightingApp (Tizen)
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
+</li>
 <li><p>Launch LightingApp with gdbserver attached: require to install app
-previously.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">the</span> <span class="n">Command</span> <span class="n">Palette</span> <span class="p">(</span><span class="n">Ctrl</span><span class="o">+</span><span class="n">Shift</span><span class="o">+</span><span class="n">P</span><span class="p">)</span> <span class="o">-&gt;</span>
-    <span class="n">Tasks</span><span class="p">:</span> <span class="n">Run</span> <span class="n">Task</span> <span class="o">-&gt;</span>
-    <span class="n">Launch</span> <span class="n">LightingApp</span> <span class="k">with</span> <span class="n">gdbserver</span> <span class="n">attached</span> <span class="p">(</span><span class="n">Tizen</span><span class="p">)</span>
+previously.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>open the Command Palette (Ctrl+Shift+P) -&gt;
+    Tasks: Run Task -&gt;
+    Launch LightingApp with gdbserver attached (Tizen)
 </pre></div>
 </div>
+</li>
+</ol>
 </section>
 <section id="debug">
 <h3>Debug<a class="headerlink" href="#debug" title="Permalink to this headline">#</a></h3>
