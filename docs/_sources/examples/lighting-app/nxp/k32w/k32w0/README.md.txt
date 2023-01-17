@@ -41,7 +41,7 @@ network.
 
 ## Introduction
 
-![K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
+![K32W061 DK6](../../../../platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg)
 
 The K32W061 lighting example application provides a working demonstration of a
 light bulb device, built using the Project CHIP codebase and the NXP K32W061
@@ -71,7 +71,7 @@ Deployment of this firmware configuration requires the K32W061 board setups
 using the K32W061 module board, SE051 Expansion board and Generic Expansion
 board as shown below:
 
-![SE051H  + K32W061 DK6](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
+![SE051H  + K32W061 DK6](../../../../platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg)
 
 The SE051H Secure Element extension may be used for best in class security and
 offloading some of the Project CHIP cryptographic operations. Depending on your
@@ -247,7 +247,7 @@ The resulting output file can be found in out/debug/chip-k32w0x-light-example.
 ## Manufacturing data
 
 See
-[Guide for writing manufacturing data on NXP devices](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/doc/manufacturing_flow.md).
+[Guide for writing manufacturing data on NXP devices](../../../../platform/nxp/doc/manufacturing_flow.md).
 
 ## Flashing and debugging
 
@@ -355,15 +355,15 @@ example needs to be compiled inside MCUXpresso with the define _PDM_EXT_FLASH_.
 The SSBL demo application can be imported from the _Quickstart panel_: _Import
 SDK example(s)_ -> select _wireless->framework->ssbl_ application.
 
-![SSBL Application Select](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ssbl_select.JPG)
+![SSBL Application Select](../../../../platform/nxp/k32w/k32w0/doc/images/ssbl_select.JPG)
 
 The SSBL project must be compiled using the PDM_EXT_FLASH define.
 
-![PDM_EXT_FLASH](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/pdm_ext_flash.JPG)
+![PDM_EXT_FLASH](../../../../platform/nxp/k32w/k32w0/doc/images/pdm_ext_flash.JPG)
 
 Once compiled, the required ssbl file is called k32w061dk6_ssbl.bin
 
-![SSBL_BIN](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ssbl_bin.JPG)
+![SSBL_BIN](../../../../platform/nxp/k32w/k32w0/doc/images/ssbl_bin.JPG)
 
 Before writing the SSBL, it it recommanded to fully erase the internal flash:
 
@@ -420,14 +420,14 @@ DK6Programmer.exe -V2 -s <COM_PORT> -P 1000000 -Y -p FLASH@0x4000="chip-k32w0x-l
 If debugging is needed, MCUXpresso can be used then for flashing the
 application. Please make sure that the application is written at address 0x4000:
 
-![FLASH_LOCATION](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
+![FLASH_LOCATION](../../../../platform/nxp/k32w/k32w0/doc/images/flash_location.JPG)
 
 ### OTA Testing
 
 The OTA topology used for OTA testing is illustrated in the figure below.
 Topology is similar with the one used for Matter Test Events.
 
-![OTA_TOPOLOGY](https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ota_topology.JPG)
+![OTA_TOPOLOGY](../../../../platform/nxp/k32w/k32w0/doc/images/ota_topology.JPG)
 
 The concept for OTA is the next one:
 

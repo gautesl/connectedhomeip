@@ -5,8 +5,8 @@ dimmable light bulb. It uses buttons to test changing the lighting and device
 states and LEDs to show the state of these changes. You can use this example as
 a reference for creating your own application.
 
-![Nordic Smiconductor logo](https://github.com/project-chip/connectedhomeip/blob/master/platform/nrfconnect/doc/images/Logo_RGB_H-small.png)
-![nRF52840 DK](https://github.com/project-chip/connectedhomeip/blob/master/platform/nrfconnect/doc/images/nRF52840-DK-small.png)
+![Nordic Smiconductor logo](../../platform/nrfconnect/doc/images/Logo_RGB_H-small.png)
+![nRF52840 DK](../../platform/nrfconnect/doc/images/nRF52840-DK-small.png)
 
 The example is based on
 [Matter](https://github.com/project-chip/connectedhomeip) and Nordic

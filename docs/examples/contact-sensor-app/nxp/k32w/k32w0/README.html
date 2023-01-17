@@ -666,6 +666,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../../light-switch-app/silabs/SiWx917/README.html">
+     Matter EFR32 Light Switch Example
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../../light-switch-app/silabs/efr32/README.html">
      Matter EFR32 Light Switch Example
     </a>
@@ -745,6 +750,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../lock-app/qpg/README.html">
      Matter QPG6105 SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../lock-app/silabs/SiWx917/README.html">
+     Matter EFR32 Lock Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1017,6 +1027,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../window-app/nrfconnect/README.html">
      Matter nRF Connect Window Covering Example Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../window-app/silabs/SiWx917/README.html">
+     Matter EFR32 Window Covering Example
     </a>
    </li>
    <li class="toctree-l2">
@@ -1549,7 +1564,7 @@ network.</p>
 </ul>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p><img alt="K32W061 DK6" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-dk6.jpg" /></p>
+<p><img alt="K32W061 DK6" src="../../../../../_images/k32w-dk6.jpg" /></p>
 <p>The K32W061 contact sensor example application provides a working demonstration
 of a connected contact sensor device, built using the Project CHIP codebase and
 the NXP K32W061 SDK. The example supports remote access (e.g.: using CHIP Tool
@@ -1573,7 +1588,7 @@ devices.</p>
 <p>Deployment of this firmware configuration requires the K32W061 board setups
 using the K32W061 module board, SE051 Expansion board and Generic Expansion
 board as shown below:</p>
-<p><img alt="SE051H  + K32W061 DK6" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/k32w-se.jpg" /></p>
+<p><img alt="SE051H  + K32W061 DK6" src="../../../../../_images/k32w-se.jpg" /></p>
 <p>The SE051H Secure Element extension may be used for best in class security and
 offloading some of the Project CHIP cryptographic operations. Depending on your
 hardware configuration, choose one of the options below (building with or
@@ -1727,7 +1742,7 @@ the Plug&amp;Trust middleware stack may not echo to the console.</p></li>
 <section id="manufacturing-data">
 <h2>Manufacturing data<a class="headerlink" href="#manufacturing-data" title="Permalink to this headline">#</a></h2>
 <p>See
-<a class="reference external" href="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/doc/manufacturing_flow.md">Guide for writing manufacturing data on NXP devices</a>.</p>
+<a class="reference internal" href="../../../../platform/nxp/doc/manufacturing_flow.html"><span class="doc std std-doc">Guide for writing manufacturing data on NXP devices</span></a>.</p>
 </section>
 <section id="flashing-and-debugging">
 <h2>Flashing and debugging<a class="headerlink" href="#flashing-and-debugging" title="Permalink to this headline">#</a></h2>
@@ -1822,11 +1837,11 @@ application.</p>
 example needs to be compiled inside MCUXpresso with the define <em>PDM_EXT_FLASH</em>.
 The SSBL demo application can be imported from the <em>Quickstart panel</em>: <em>Import
 SDK example(s)</em> -&gt; select <em>wireless-&gt;framework-&gt;ssbl</em> application.</p>
-<p><img alt="SSBL Application Select" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ssbl_select.JPG" /></p>
+<p><img alt="SSBL Application Select" src="../../../../../_images/ssbl_select.JPG" /></p>
 <p>The SSBL project must be compiled using the PDM_EXT_FLASH define.</p>
-<p><img alt="PDM_EXT_FLASH" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/pdm_ext_flash.JPG" /></p>
+<p><img alt="PDM_EXT_FLASH" src="../../../../../_images/pdm_ext_flash.JPG" /></p>
 <p>Once compiled, the required ssbl file is called k32w061dk6_ssbl.bin</p>
-<p><img alt="SSBL_BIN" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ssbl_bin.JPG" /></p>
+<p><img alt="SSBL_BIN" src="../../../../../_images/ssbl_bin.JPG" /></p>
 <p>Before writing the SSBL, it it recommanded to fully erase the internal flash:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DK6Programmer</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">V</span> <span class="mi">5</span> <span class="o">-</span><span class="n">P</span> <span class="mi">1000000</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">COM_PORT</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">e</span> <span class="n">Flash</span>
 </pre></div>
@@ -1869,13 +1884,13 @@ SDK example(s)</em> -&gt; select <em>wireless-&gt;framework-&gt;ssbl</em> applic
 </div>
 <p>If debugging is needed, MCUXpresso can be used then for flashing the
 application. Please make sure that the application is written at address 0x4000:</p>
-<p><img alt="FLASH_LOCATION" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/flash_location.JPG" /></p>
+<p><img alt="FLASH_LOCATION" src="../../../../../_images/flash_location.JPG" /></p>
 </section>
 <section id="ota-testing">
 <h3>OTA Testing<a class="headerlink" href="#ota-testing" title="Permalink to this headline">#</a></h3>
 <p>The OTA topology used for OTA testing is illustrated in the figure below.
 Topology is similar with the one used for Matter Test Events.</p>
-<p><img alt="OTA_TOPOLOGY" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/ota_topology.JPG" /></p>
+<p><img alt="OTA_TOPOLOGY" src="../../../../../_images/ota_topology.JPG" /></p>
 <p>The concept for OTA is the next one:</p>
 <ul class="simple">
 <li><p>there is an OTA Provider Application that holds the OTA image. In our case,
@@ -1984,11 +1999,11 @@ disconnects because the board enters low power.</p>
 <p>Power Measurement Tool can be used inside MCUXpresso for checking the power
 consumption pattern: Window -&gt; Show View -&gt; Other -&gt; Power Measurement Tool. The
 configuration for this tool is the next one:</p>
-<p><img alt="POWER_CONF" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/power_conf.JPG" /></p>
+<p><img alt="POWER_CONF" src="../../../../../_images/power_conf.JPG" /></p>
 <p>Also, please make sure that the J14 jumper is set to the <em>ENABLED</em> position and
 no expansion board is attached to the DK6. A view from this tool is illustrated
 below:</p>
-<p><img alt="POWER_VIEW" src="https://github.com/project-chip/connectedhomeip/blob/master/platform/nxp/k32w/k32w0/doc/images/power_view.JPG" /></p>
+<p><img alt="POWER_VIEW" src="../../../../../_images/power_view.JPG" /></p>
 <p>Please note that that the Power Measurement Tool is not very accurate and
 professional tools must be used if exact power consumption needs to be known.</p>
 </section>
