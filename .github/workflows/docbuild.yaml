@@ -47,11 +47,15 @@ jobs:
           make html
           touch _build/html/.nojekyll
       - name: Archive cache
-        if: github.repository == 'gautesl/connectedhomeip' && github.event_name == 'push' && env.GITHUB_REF_NAME == 'master'
+        if: github.repository == 'gautesl/connectedhomeip' && github.event_name == 'push' && github.ref_name == 'master'
         uses: actions/upload-artifact@v2
         with:
           name: html
           path: matter/docs/_build/html
+      - name: Echo vars
+        run: |
+          echo "GITHUB_REF_NAME: ${{ env.GITHUB_REF_NAME }}"
+          echo "github.ref_name: ${{ github.ref_name }}"
 
   publish:
     runs-on: ubuntu-latest
