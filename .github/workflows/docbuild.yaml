@@ -1,6 +1,14 @@
 name: Documentation Build
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - master
+    paths:
+    - '.github/workflows/docbuild.yaml'
+    - '**.md'
+    - 'docs/**'
   push:
     branches:
       - master
@@ -9,7 +17,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,12 +46,29 @@ jobs:
           mkdir -p _build/src
           make html
           touch _build/html/.nojekyll
+      - name: Archive cache
+        if: github.repository == 'project-chip/connectedhomeip' && github.event_name == 'push' && env.GITHUB_REF_NAME == 'master'
+        uses: actions/upload-artifact@v2
+        with:
+          name: html
+          path: matter/docs/_build/html
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.repository == 'project-chip/connectedhomeip' && github.event_name == 'push' && github.ref_name == 'master'
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: html
+          path: html
       - name: Deploy to gh-pages
-        if: github.repository == 'project-chip/connectedhomeip'
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.DOXYGEN_DEPLOY_KEY }}
           external_repository: project-chip/connectedhomeip-doc
-          publish_dir: matter/docs/_build/html
+          publish_dir: html
           # Keep only the latest version of the documentation
           force_orphan: true
